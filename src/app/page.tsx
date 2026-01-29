@@ -15,28 +15,27 @@ import { CTASection } from '@/components/features/CTASection';
 export default function Home() {
   return (
     <>
-      {/* Video Intro */}
-      <div className="relative w-full h-[70vh] overflow-hidden">
-        <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay for text readability if needed */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-black to-transparent z-20" /> {/* Smooth blend to next section */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-[120%] object-cover object-top" // Taller height + object-top = crops bottom
-        >
-          <source src="/assets/hero-video-light.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      {/* Hero */}
       {/* Hero */}
       <section className="relative pt-32 pb-32 lg:pt-48 lg:pb-40 overflow-hidden min-h-screen flex items-center bg-transparent">
 
-        {/* Background handled globally in Layout */}
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden -z-10">
+          <div className="absolute inset-0 bg-black/60 z-10" /> {/* Darker overlay for better text readability over video */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-black to-transparent z-20" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover object-center"
+          >
+            <source src="/assets/hero-video-light.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        {/* Global background particles handled in Layout, but we have video now so it covers them. That's fine. */}
+
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-20">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -47,34 +46,34 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-brand-blue uppercase tracking-wider mx-auto lg:mx-0"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-medium text-brand-blue uppercase tracking-wider mx-auto lg:mx-0 backdrop-blur-sm"
             >
               <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
               Innovación Digital
             </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight text-white">
-              Soluciones digitales y <span className="text-gradient">tecnológicas</span> para tu negocio
+            <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight text-white drop-shadow-lg">
+              Soluciones digitales y <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-purple-400">tecnológicas</span> para tu negocio
             </h1>
 
-            <p className="text-xl text-gray-400 max-w-xl leading-relaxed mx-auto lg:mx-0">
+            <p className="text-xl text-gray-200 max-w-xl leading-relaxed mx-auto lg:mx-0 drop-shadow-md">
               Desarrollo web, aplicaciones móviles, automatización y sistemas a medida. Elevamos tu marca con tecnología de vanguardia y soporte real.
             </p>
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-3">
               {['Web', 'Apps', 'Integraciones', 'Automatización', 'UI/UX', 'Sistemas'].map(tag => (
-                <span key={tag} className="px-3 py-1 rounded-md bg-white/5 text-gray-300 text-sm border border-white/5 hover:border-brand-blue/30 transition-colors cursor-default">{tag}</span>
+                <span key={tag} className="px-3 py-1 rounded-md bg-white/10 text-gray-100 text-sm border border-white/10 hover:border-brand-blue/50 transition-colors cursor-default backdrop-blur-sm">{tag}</span>
               ))}
             </div>
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-4">
               <Link href="/contacto">
-                <Button size="lg" className="group">
+                <Button size="lg" className="group bg-brand-blue hover:bg-brand-blue/90 border-none">
                   Cotizar proyecto <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="/servicios">
-                <Button variant="outline" size="lg">Ver servicios</Button>
+                <Button variant="outline" size="lg" className="bg-white/5 border-white/20 hover:bg-white/10 text-white">Ver servicios</Button>
               </Link>
             </div>
           </motion.div>
@@ -86,25 +85,25 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="relative z-10 grid grid-cols-2 gap-4 p-6 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl transform rotate-[-5deg] hover:rotate-0 transition-transform duration-500 shadow-2xl shadow-brand-blue/10 hover:shadow-brand-blue/20">
-              <div className="col-span-2 bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 p-6 rounded-2xl border border-white/5 h-40 flex flex-col justify-end relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/30 blur-3xl rounded-full translate-x-10 -translate-y-10" />
-                <div className="h-3 w-1/3 bg-white/20 rounded mb-2 z-10" />
-                <div className="h-3 w-1/2 bg-white/20 rounded z-10" />
+            <div className="relative z-10 grid grid-cols-2 gap-4 p-6 bg-white/10 border border-white/20 rounded-3xl backdrop-blur-xl transform rotate-[-5deg] hover:rotate-0 transition-transform duration-500 shadow-2xl shadow-brand-blue/10 hover:shadow-brand-blue/20">
+              <div className="col-span-2 bg-gradient-to-br from-brand-blue/30 to-brand-purple/30 p-6 rounded-2xl border border-white/10 h-40 flex flex-col justify-end relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/40 blur-3xl rounded-full translate-x-10 -translate-y-10" />
+                <div className="h-3 w-1/3 bg-white/30 rounded mb-2 z-10" />
+                <div className="h-3 w-1/2 bg-white/30 rounded z-10" />
               </div>
-              <div className="bg-brand-black/50 p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:bg-white/5 transition-colors">
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:bg-white/10 transition-colors">
                 <div className="w-12 h-12 rounded-full bg-brand-blue/20 flex items-center justify-center">
                   <Globe className="text-brand-blue" size={24} />
                 </div>
-                <span className="text-sm font-medium text-gray-300">Web Global</span>
+                <span className="text-sm font-medium text-gray-200">Web Global</span>
               </div>
-              <div className="bg-brand-black/50 p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:bg-white/5 transition-colors">
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:bg-white/10 transition-colors">
                 <div className="w-12 h-12 rounded-full bg-brand-purple/20 flex items-center justify-center">
                   <Smartphone className="text-brand-purple" size={24} />
                 </div>
-                <span className="text-sm font-medium text-gray-300">Mobile First</span>
+                <span className="text-sm font-medium text-gray-200">Mobile First</span>
               </div>
-              <div className="col-span-2 bg-brand-black/50 p-6 rounded-2xl border border-white/5 flex items-center justify-between hover:bg-white/5 transition-colors">
+              <div className="col-span-2 bg-white/5 p-6 rounded-2xl border border-white/10 flex items-center justify-between hover:bg-white/10 transition-colors">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-500"><Zap size={20} /></div>
                   <div className="space-y-1.5">
@@ -117,8 +116,8 @@ export default function Home() {
             </div>
 
             {/* Decor elements */}
-            <div className="absolute -top-10 -right-10 w-72 h-72 bg-brand-blue/20 rounded-full blur-[100px] -z-10 animate-pulse" />
-            <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-brand-purple/20 rounded-full blur-[100px] -z-10 animate-pulse delay-700" />
+            <div className="absolute -top-10 -right-10 w-72 h-72 bg-brand-blue/30 rounded-full blur-[100px] -z-10 animate-pulse" />
+            <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-brand-purple/30 rounded-full blur-[100px] -z-10 animate-pulse delay-700" />
           </motion.div>
         </div>
       </section>
