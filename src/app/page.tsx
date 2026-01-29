@@ -26,7 +26,7 @@ export default function Home() {
           playsInline
           className="w-full h-[120%] object-cover object-top" // Taller height + object-top = crops bottom
         >
-          <source src="/assets/hero-video-v2.mp4" type="video/mp4" />
+          <source src="/assets/hero-video-light.mp4" type="video/mp4" />
         </video>
       </div>
 
