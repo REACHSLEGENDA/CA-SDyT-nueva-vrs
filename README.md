@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CA Soluciones Digitales y Tecnológicas
+
+This is a premium agency website built with Next.js 14+, Tailwind CSS (v4), and Framer Motion.
+
+## Features
+- **Modern Dark Aesthetic**: Glassmorphism, neon accents, and smooth animations.
+- **Responsive Design**: Mobile-first approach with custom interactive components.
+- **Core Pages**: Services, Portfolio (with Modal), Contact (Formspree), Packages comparison.
+- **Interactive Chatbot**: Custom decision-tree based floating assistant.
+- **Performance**: Optimized with Next.js App Router and static generation.
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. **Start production server**:
+   ```bash
+   npm start
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration
 
-## Learn More
+### Images
+- Place your logo at `public/assets/logo.png`.
+- Place your bot icon at `public/assets/bot.png`.
+- (Optional) Update portfolio placeholder images in `src/app/portafolio/page.tsx`.
 
-To learn more about Next.js, take a look at the following resources:
+### Contact Form
+The contact form uses [Formspree](https://formspree.io). 
+- Go to `src/components/features/ContactForm.tsx`.
+- Update the `useForm("mpwlzjjo")` with your own Formspree ID if needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Colors & Fonts
+- Colors are defined in `src/app/globals.css` under the `@theme` block.
+- Fonts used: `Inter` (Body) and `Sora` (Headings).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+### Vercel (Recommended)
+1. Push this code to GitHub.
+2. Log in to [Vercel](https://vercel.com).
+3. Import the repository.
+4. Click **Deploy**. Vercel will automatically detect Next.js.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Netlify
+1. Push to GitHub.
+2. Log in to Netlify.
+3. "New site from Git".
+4. Build command: `npm run build`.
+5. Publish directory: `.next`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+© 2026 CA Soluciones Digitales.
