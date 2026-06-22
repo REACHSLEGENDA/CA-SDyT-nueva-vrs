@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/Button';
 import { ChevronRight, MessageCircle, Mail, Sparkles } from 'lucide-react';
 
@@ -70,12 +70,12 @@ export function CTASection() {
                             </Link>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full sm:w-auto">
-                                <a href="https://wa.me/525633680348" target="_blank" rel="noreferrer">
+                                <a href="https://wa.me/5951145576" target="_blank" rel="noreferrer">
                                     <Button variant="outline" size="lg" className="w-full justify-center bg-white/5 border-white/10 hover:bg-brand-purple/20 hover:border-brand-purple/50 hover:text-brand-purple">
                                         <MessageCircle className="mr-2" size={20} /> WhatsApp
                                     </Button>
                                 </a>
-                                <a href="mailto:ca.sodiyte@gmail.com">
+                                <a href="mailto:contacto@casolutecdigital.com">
                                     <Button variant="outline" size="lg" className="w-full justify-center bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30">
                                         <Mail className="mr-2" size={20} /> Correo
                                     </Button>

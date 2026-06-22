@@ -1,0 +1,66 @@
+{
+  "Index": {
+    "Hero": {
+      "badge": "Agência Digital · Infraestrutura de TI",
+      "title1": "Seu negócio merece ",
+      "titleGradient": "mais do que apenas um site.",
+      "desc": "Construímos ecossistemas digitais completos: sites, aplicativos, bots, IA, redes, segurança cibernética e suporte de TI. Tudo o que você precisa para crescer e operar sem interrupções.",
+      "ctaPrimary": "Solicitar orçamento",
+      "ctaSecondary": "Ver serviços →",
+      "stats": [
+        {
+          "to": 50,
+          "suffix": "+",
+          "label": "Projetos entregues"
+        },
+        {
+          "to": 100,
+          "suffix": "%",
+          "label": "Clientes satisfeitos"
+        },
+        {
+          "to": 24,
+          "suffix": "/7",
+          "label": "Suporte disponível"
+        }
+      ]
+    },
+    "WhyChooseUs": {
+      "eyebrow": "Nosso diferencial",
+      "title": "Por que escolher a CA Soluções Digitais",
+      "subtitle": "Não somos apenas programadores. Somos parceiros estratégicos que entendem seu negócio e criam soluções escaláveis.",
+      "cards": [
+        {
+          "icon": "zap",
+          "title": "Desempenho Extremo",
+          "desc": "Sites otimizados para carregar em milissegundos. Core Web Vitals no verde garantido."
+        },
+        {
+          "icon": "shield",
+          "title": "Segurança Blindada",
+          "desc": "Proteção perimetral com Fortinet, SSL incluído e boas práticas desde o código."
+        },
+        {
+          "icon": "layout",
+          "title": "Design Premium",
+          "desc": "Estética de alto nível que posiciona sua marca acima da concorrência."
+        },
+        {
+          "icon": "cpu",
+          "title": "Escalabilidade",
+          "desc": "Arquitetura pronta para crescer. De 100 a 1 milhão de usuários sem reescrever tudo."
+        },
+        {
+          "icon": "bot",
+          "title": "Automação com IA",
+          "desc": "Integramos IA e bots para que seu negócio funcione 24 horas por dia, 7 dias por semana, sem intervenção humana."
+        },
+        {
+          "icon": "layers",
+          "title": "Suporte Real",
+          "desc": "Não desaparecemos após a entrega. Acompanhamento e manutenção contínua."
+        }
+      ]
+    }
+  }
+}

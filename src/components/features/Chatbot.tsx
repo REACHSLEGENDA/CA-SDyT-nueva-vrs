@@ -2,15 +2,19 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, RefreshCw, ChevronRight, Send } from 'lucide-react';
+import { MessageSquare, X, RefreshCw, ChevronRight, Phone, Mail } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link, usePathname } from '@/i18n/routing';
 
-type StepId = 'start' | 'services' | 'web' | 'system' | 'app' | 'marketing' | 'automation' | 'web_type' | 'sys_type' | 'marketing_goal' | 'budget' | 'timeline' | 'final' | 'classes' | 'content' | 'quote';
+type StepId =
+    | 'start'
+    | 'web' | 'system' | 'infra' | 'marketing' | 'automation' | 'packages'
+    | 'final_web' | 'final_system' | 'final_infra' | 'final_mkt' | 'final_auto' | 'final_classes' | 'final_pkg';
 
 interface Option {
     label: string;
     next: StepId;
+    icon?: string;
 }
 
 interface Step {
@@ -18,109 +22,160 @@ interface Step {
     text: string;
     options?: Option[];
     final?: boolean;
+    serviceHref?: string;
 }
 
 const steps: Record<string, Step> = {
     start: {
         id: 'start',
-        text: 'Hola, soy tu asistente virtual. ¿Qué necesitas hoy?',
+        text: 'Hola, soy el asistente de CA Soluciones 👋 ¿En qué área puedo orientarte?',
         options: [
-            { label: 'Página web', next: 'web' },
-            { label: 'Sistema / CRM / POS', next: 'system' },
-            { label: 'App móvil', next: 'app' },
-            { label: 'Marketing redes', next: 'marketing' },
-            { label: 'Automatización & IA', next: 'automation' },
-        ]
+            { label: '🌐 Sitio web o app', next: 'web' },
+            { label: '⚙️ Sistema o software', next: 'system' },
+            { label: '🔒 Infraestructura TI', next: 'infra' },
+            { label: '📈 Marketing y SEO', next: 'marketing' },
+            { label: '🤖 Automatización & IA', next: 'automation' },
+            { label: '📦 Ver paquetes', next: 'packages' },
+        ],
     },
-    // Main Service Flows
+
     web: {
         id: 'web',
-        text: 'Excelente. ¿Para qué tipo de negocio es?',
+        text: '¡Perfecto! Desarrollamos con Next.js, React y Flutter. ¿Qué tipo de proyecto tienes en mente?',
         options: [
-            { label: 'Empresa', next: 'timeline' },
-            { label: 'E-commerce', next: 'timeline' },
-            { label: 'Personal/Blog', next: 'timeline' }
-        ]
+            { label: 'Landing o sitio corporativo', next: 'final_web' },
+            { label: 'Tienda en línea', next: 'final_web' },
+            { label: 'App web a medida', next: 'final_web' },
+            { label: 'App móvil (Android/iOS)', next: 'final_web' },
+        ],
+        serviceHref: '/apps-web',
     },
+
     system: {
         id: 'system',
-        text: 'Entendido. ¿Qué buscas gestionar?',
+        text: 'Desarrollamos sistemas empresariales con Supabase y Node.js. ¿Qué necesitas gestionar?',
         options: [
-            { label: 'Inventarios/Ventas', next: 'timeline' },
-            { label: 'CRM Clientes', next: 'timeline' },
-            { label: 'Recursos Humanos', next: 'timeline' }
-        ]
+            { label: 'CRM de ventas y clientes', next: 'final_system' },
+            { label: 'Inventario / Punto de venta', next: 'final_system' },
+            { label: 'ERP o sistema a medida', next: 'final_system' },
+            { label: 'Integración de plataformas', next: 'final_system' },
+        ],
+        serviceHref: '/sistemas',
     },
-    app: {
-        id: 'app',
-        text: 'Genial. ¿Para qué plataforma?',
+
+    infra: {
+        id: 'infra',
+        text: 'Somos especialistas en infraestructura con Fortinet, Synology NAS y Windows Server. ¿Qué servicio necesitas?',
         options: [
-            { label: 'Android & iOS', next: 'timeline' },
-            { label: 'Solo Android', next: 'timeline' },
-            { label: 'Web App (PWA)', next: 'timeline' }
-        ]
+            { label: 'Redes y conectividad', next: 'final_infra' },
+            { label: 'Ciberseguridad / Firewall', next: 'final_infra' },
+            { label: 'Videovigilancia CCTV', next: 'final_infra' },
+            { label: 'Servidores / NAS / Nube privada', next: 'final_infra' },
+            { label: 'Soporte técnico mensual', next: 'final_infra' },
+        ],
+        serviceHref: '/infraestructura-ti',
     },
+
     marketing: {
         id: 'marketing',
-        text: 'Perfecto. ¿Qué objetivo tienes?',
+        text: 'Posicionamos tu negocio en Google y en motores de IA. ¿Qué área te interesa?',
         options: [
-            { label: 'Más ventas', next: 'timeline' },
-            { label: 'Más seguidores', next: 'timeline' },
-            { label: 'Branding', next: 'timeline' }
-        ]
+            { label: 'SEO técnico en Google', next: 'final_mkt' },
+            { label: 'AEO (ChatGPT, Gemini, Claude)', next: 'final_mkt' },
+            { label: 'Google Business & Maps', next: 'final_mkt' },
+            { label: 'Redes sociales y contenido', next: 'final_mkt' },
+        ],
+        serviceHref: '/seo-aeo',
     },
+
     automation: {
         id: 'automation',
-        text: 'La IA es el futuro. ¿Qué tarea quieres automatizar?',
+        text: 'Automatizamos procesos y construimos agentes de IA. ¿Qué quieres optimizar?',
         options: [
-            { label: 'Chatbots', next: 'timeline' },
-            { label: 'Procesos Repetitivos', next: 'timeline' },
-            { label: 'Integración APIs', next: 'timeline' }
-        ]
+            { label: 'Bot de WhatsApp con IA', next: 'final_auto' },
+            { label: 'Flujos y procesos repetitivos', next: 'final_auto' },
+            { label: 'Integraciones entre sistemas', next: 'final_auto' },
+            { label: 'Agente de IA personalizado', next: 'final_auto' },
+        ],
+        serviceHref: '/automatizacion',
     },
 
-    // Legacy keys to prevent crashes if user has old history
-    classes: { id: 'classes', text: 'Para clases, contáctanos directamente.', final: true },
-    content: { id: 'content', text: 'Entendido.', options: [{ label: 'Continuar', next: 'timeline' }] },
-
-    // Common Flows
-    timeline: {
-        id: 'timeline',
-        text: '¿Para cuándo te gustaría lanzar?',
+    packages: {
+        id: 'packages',
+        text: 'Tenemos paquetes diseñados para diferentes etapas de crecimiento. ¿Cuál te llama la atención?',
         options: [
-            { label: 'Lo antes posible', next: 'budget' },
-            { label: 'En 1 mes', next: 'budget' },
-            { label: 'Sin prisa', next: 'budget' }
-        ]
+            { label: '🚀 Despegue Digital', next: 'final_pkg' },
+            { label: '📊 Tráfico y Conversión', next: 'final_pkg' },
+            { label: '✨ Ecosistema Premium IA', next: 'final_pkg' },
+            { label: '🏢 Plan TI Empresarial', next: 'final_pkg' },
+        ],
+        serviceHref: '/paquetes-web',
     },
-    budget: {
-        id: 'budget',
-        text: 'Gracias. ¿Tienes un presupuesto estimado?',
-        options: [
-            { label: 'Básico', next: 'final' },
-            { label: 'Medio', next: 'final' },
-            { label: 'Premium', next: 'final' }
-        ]
-    },
-    quote: { id: 'quote', text: 'Perfecto.', options: [{ label: 'Ver opciones', next: 'final' }] },
 
-    final: {
-        id: 'final',
-        text: '¡Perfecto! Aquí tienes las mejores opciones para contactarnos:',
-        final: true
-    }
+    // ─── Finales con texto contextual ────────────────────────────────────
+    final_web: {
+        id: 'final_web',
+        text: '¡Genial! Todos nuestros proyectos web son bajo cotización personalizada: analizamos tus requerimientos y te damos un precio justo y detallado. Sin compromisos. 👇 Contáctanos ahora:',
+        final: true,
+        serviceHref: '/apps-web',
+    },
+    final_system: {
+        id: 'final_system',
+        text: 'Los sistemas a medida tienen un costo bajo cotización según la complejidad y módulos requeridos. Agenda una llamada y te presentamos una propuesta técnica sin costo. 👇',
+        final: true,
+        serviceHref: '/sistemas',
+    },
+    final_infra: {
+        id: 'final_infra',
+        text: 'Los proyectos de infraestructura TI son 100% bajo cotización, ya que dependen del equipo, alcance y ubicación. ¡Hablemos y te armamos una propuesta a medida! 👇',
+        final: true,
+        serviceHref: '/infraestructura-ti',
+    },
+    final_mkt: {
+        id: 'final_mkt',
+        text: 'Nuestras estrategias de marketing y SEO se cotizan según objetivos, competencia y alcance. Agenda una consultoría gratuita y te decimos exactamente qué necesitas. 👇',
+        final: true,
+        serviceHref: '/seo-aeo',
+    },
+    final_auto: {
+        id: 'final_auto',
+        text: 'Los proyectos de automatización e IA se cotizan según los flujos y sistemas que manejas. Cuéntanos tu caso y te proponemos la solución ideal. Precios siempre bajo cotización. 👇',
+        final: true,
+        serviceHref: '/automatizacion',
+    },
+    final_classes: {
+        id: 'final_classes',
+        text: 'Ofrecemos clases de cómputo para todos los niveles: básico, ofimática, diseño y más. Los precios varían según el plan de clases. Contáctanos para más detalles. 👇',
+        final: true,
+        serviceHref: '/clases',
+    },
+    final_pkg: {
+        id: 'final_pkg',
+        text: 'Nuestros paquetes tienen precios base, pero siempre los adaptamos a tu negocio. Contáctanos y te asesoramos sobre cuál paquete se ajusta mejor a tus metas. 👇',
+        final: true,
+        serviceHref: '/paquetes-web',
+    },
 };
 
 export function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
     const [history, setHistory] = useState<StepId[]>(['start']);
     const [isTyping, setIsTyping] = useState(false);
+    const [videoEnded, setVideoEnded] = useState(false);
+    const pathname = usePathname();
 
-    // Initial safe check ensures we always have a valid step, falling back to 'start' if history is corrupted
+    const isHeroPlaying = pathname === '/' && !videoEnded;
+
     const currentStepId = history[history.length - 1];
     const currentStep = steps[currentStepId] || steps['start'];
 
     const scrollRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const onEnd = () => setVideoEnded(true);
+        window.addEventListener('ca:heroVideoEnd', onEnd);
+        return () => window.removeEventListener('ca:heroVideoEnd', onEnd);
+    }, []);
 
     useEffect(() => {
         if (scrollRef.current) {
@@ -133,104 +188,156 @@ export function Chatbot() {
         setTimeout(() => {
             setHistory(prev => [...prev, nextId]);
             setIsTyping(false);
-        }, 600);
+        }, 700);
     };
 
-    const restart = () => {
-        setHistory(['start']);
-    };
+    const restart = () => setHistory(['start']);
 
     return (
         <>
+            {/* Trigger button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple shadow-[0_0_30px_rgba(59,130,246,0.6)] flex items-center justify-center text-white hover:scale-110 transition-transform"
+                aria-label="Abrir asistente"
+                className={`fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-ca-gradient shadow-[0_0_28px_rgba(0,207,255,0.45)] flex items-center justify-center text-white hover:scale-110 transition-all duration-700 ${
+                    isHeroPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                }`}
             >
-                {isOpen ? <X size={28} /> : (
-                    <div className="relative w-10 h-10">
-                        <Image src="/assets/chatbot-icon.png" alt="Bot" fill className="object-cover rounded-full" />
-                    </div>
-                )}
+                <AnimatePresence mode="wait" initial={false}>
+                    {isOpen ? (
+                        <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                            <X size={26} />
+                        </motion.span>
+                    ) : (
+                        <motion.div key="icon" initial={{ scale: 0.7, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.7, opacity: 0 }} transition={{ duration: 0.2 }} className="relative w-10 h-10">
+                            <Image src="/assets/chatbot-icon.png" alt="Bot" fill className="object-cover rounded-full" />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </button>
 
+            {/* Chat window */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                        initial={{ opacity: 0, scale: 0.92, y: 16 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="fixed bottom-24 right-6 z-40 w-[90vw] md:w-[400px] h-[500px] bg-brand-black border border-white/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+                        exit={{ opacity: 0, scale: 0.92, y: 16 }}
+                        transition={{ duration: 0.25, ease: 'easeOut' }}
+                        className="fixed bottom-24 right-6 z-40 w-[92vw] md:w-[400px] h-[540px] bg-ca-surface border border-ca-border rounded-2xl shadow-2xl shadow-black/40 flex flex-col overflow-hidden"
                     >
                         {/* Header */}
-                        <div className="p-4 border-b border-white/10 bg-white/5 flex justify-between items-center">
+                        <div className="p-4 border-b border-ca-border bg-ca-surface2 flex justify-between items-center shrink-0">
                             <div className="flex items-center gap-3">
-                                <div className="relative w-10 h-10 rounded-full border border-brand-blue/30 overflow-hidden">
-                                    <Image src="/assets/chatbot-icon.png" alt="Bot" fill className="object-cover" />
+                                <div className="relative w-10 h-10 rounded-full border border-ca-cyan/30 overflow-hidden">
+                                    <Image src="/assets/chatbot-icon.png" alt="CA Bot" fill className="object-cover" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-white text-sm">CA Assistant</h3>
-                                    <span className="flex items-center gap-1 text-xs text-brand-blue">
-                                        <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
-                                        Online
+                                    <h3 className="font-semibold text-ca-text text-sm">CA Asistente</h3>
+                                    <span className="flex items-center gap-1.5 text-xs text-ca-cyan">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-ca-cyan animate-pulse" />
+                                        En línea
                                     </span>
                                 </div>
                             </div>
-                            <button onClick={restart} className="p-2 hover:bg-white/10 rounded-full text-gray-400 transition-colors" title="Reiniciar chat">
-                                <RefreshCw size={16} />
+                            <button
+                                onClick={restart}
+                                title="Reiniciar"
+                                className="p-2 hover:bg-ca-border rounded-full text-ca-muted hover:text-ca-text transition-colors"
+                            >
+                                <RefreshCw size={15} />
                             </button>
                         </div>
 
-                        {/* Content */}
-                        <div className="flex-1 p-4 overflow-y-auto space-y-4 font-sans custom-scrollbar" ref={scrollRef}>
+                        {/* Messages */}
+                        <div className="flex-1 p-4 overflow-y-auto space-y-3" ref={scrollRef}>
                             {history.map((stepId, index) => {
                                 const step = steps[stepId];
-                                // Safety check for map rendering
                                 if (!step) return null;
-
                                 return (
                                     <motion.div
                                         key={`${stepId}-${index}`}
-                                        initial={{ opacity: 0, y: 10 }}
+                                        initial={{ opacity: 0, y: 8 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        className="flex flex-col items-start gap-2"
+                                        transition={{ duration: 0.3 }}
+                                        className="flex items-start gap-2.5"
                                     >
-                                        <div className="bg-white/10 p-3 rounded-2xl rounded-tl-none max-w-[85%] text-sm text-gray-200 leading-relaxed border border-white/5">
+                                        <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 mt-0.5 border border-ca-cyan/20">
+                                            <Image src="/assets/chatbot-icon.png" alt="" fill className="object-cover" />
+                                        </div>
+                                        <div className="bg-ca-surface2 border border-ca-border px-3.5 py-2.5 rounded-2xl rounded-tl-none max-w-[88%] text-sm text-ca-text leading-relaxed">
                                             {step.text}
                                         </div>
                                     </motion.div>
-                                )
+                                );
                             })}
 
                             {isTyping && (
-                                <div className="flex items-center gap-1 p-3 bg-white/10 rounded-2xl rounded-tl-none w-16">
-                                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }} />
-                                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
-                                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }} />
-                                </div>
+                                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2.5">
+                                    <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-ca-cyan/20">
+                                        <Image src="/assets/chatbot-icon.png" alt="" fill className="object-cover" />
+                                    </div>
+                                    <div className="bg-ca-surface2 border border-ca-border px-4 py-3 rounded-2xl rounded-tl-none flex items-center gap-1.5">
+                                        {[0, 0.18, 0.36].map((d, i) => (
+                                            <div key={i} className="w-2 h-2 bg-ca-muted rounded-full animate-bounce" style={{ animationDelay: `${d}s` }} />
+                                        ))}
+                                    </div>
+                                </motion.div>
                             )}
                         </div>
 
-                        {/* Actions */}
-                        <div className="p-4 border-t border-white/10 bg-white/5">
+                        {/* Actions / Options */}
+                        <div className="p-4 border-t border-ca-border bg-ca-surface2 shrink-0">
                             {currentStep.final ? (
-                                <div className="grid grid-cols-1 gap-2">
-                                    <a href="https://wa.me/525633680348" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 p-3 rounded-xl bg-green-600/20 text-green-400 hover:bg-green-600/30 transition-colors border border-green-600/30 text-sm font-medium">
-                                        <MessageSquare size={16} /> WhatsApp Directo
+                                <div className="space-y-2">
+                                    {/* Pricing note */}
+                                    <p className="text-[11px] text-ca-muted text-center mb-3 font-mono">
+                                        💡 Todos los precios son bajo cotización personalizada
+                                    </p>
+                                    <a
+                                        href="https://wa.me/525633680348"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366]/15 text-[#25D366] border border-[#25D366]/30 hover:bg-[#25D366]/25 transition-colors text-sm font-semibold"
+                                    >
+                                        <MessageSquare size={16} />
+                                        WhatsApp ahora
                                     </a>
-                                    <Link href="/contacto" className="flex items-center justify-center gap-2 p-3 rounded-xl bg-brand-blue/20 text-brand-blue hover:bg-brand-blue/30 transition-colors border border-brand-blue/30 text-sm font-medium">
-                                        <Send size={16} /> Ir a Contacto
+                                    <Link
+                                        href="/contacto"
+                                        onClick={() => setIsOpen(false)}
+                                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-ca-cyan/10 text-ca-cyan border border-ca-cyan/25 hover:bg-ca-cyan/20 transition-colors text-sm font-semibold"
+                                    >
+                                        <Mail size={15} />
+                                        Enviar formulario
                                     </Link>
+                                    {currentStep.serviceHref && (
+                                        <Link
+                                            href={currentStep.serviceHref as '/'}
+                                            onClick={() => setIsOpen(false)}
+                                            className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border border-ca-border text-ca-muted hover:text-ca-text hover:border-ca-cyan/30 transition-colors text-xs"
+                                        >
+                                            Ver página del servicio <ChevronRight size={12} />
+                                        </Link>
+                                    )}
+                                    <button
+                                        onClick={restart}
+                                        className="w-full text-center text-ca-muted/60 hover:text-ca-muted text-xs pt-1 transition-colors"
+                                    >
+                                        ← Volver al inicio
+                                    </button>
                                 </div>
                             ) : (
-                                !isTyping && (
-                                    <div className="flex flex-wrap gap-2 justify-end">
-                                        {currentStep.options?.map((opt, i) => (
+                                !isTyping && currentStep.options && (
+                                    <div className="flex flex-col gap-1.5">
+                                        {currentStep.options.map((opt, i) => (
                                             <button
                                                 key={i}
                                                 onClick={() => handleOption(opt.next)}
-                                                className="flex items-center gap-1 px-4 py-2 rounded-full bg-brand-purple/20 text-brand-purple border border-brand-purple/30 text-xs font-medium hover:bg-brand-purple/40 transition-all hover:scale-105"
+                                                className="flex items-center justify-between px-4 py-2.5 rounded-xl bg-ca-dark border border-ca-border text-ca-text text-xs font-medium hover:border-ca-cyan/40 hover:text-ca-cyan hover:bg-ca-cyan/5 transition-all text-left"
                                             >
-                                                {opt.label} <ChevronRight size={12} />
+                                                <span>{opt.label}</span>
+                                                <ChevronRight size={13} className="text-ca-muted shrink-0" />
                                             </button>
                                         ))}
                                     </div>

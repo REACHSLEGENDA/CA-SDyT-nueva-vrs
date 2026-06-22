@@ -1,0 +1,72 @@
+{
+  "Index": {
+    "Hero": {
+      "badge": "✦ Mexico-based · English-speaking · Remote-first · Global clients",
+      "title1": "Your business deserves ",
+      "titleGradient": "more than just a website.",
+      "desc": "We are a Mexican digital agency building professional websites, mobile apps, custom systems, WhatsApp bots and IT infrastructure for businesses worldwide. Enterprise-level quality at competitive Latin American rates.",
+      "ctaPrimary": "Get a free quote",
+      "ctaSecondary": "See our services",
+      "stats": [
+        {
+          "to": 50,
+          "suffix": "+",
+          "label": "Projects delivered"
+        },
+        {
+          "to": 100,
+          "suffix": "%",
+          "label": "Client satisfaction"
+        },
+        {
+          "to": 24,
+          "suffix": "/7",
+          "label": "Support available"
+        },
+        {
+          "to": 60,
+          "prefix": "-",
+          "suffix": "%",
+          "label": "vs US agency rates"
+        }
+      ]
+    },
+    "WhyChooseUs": {
+      "eyebrow": "Our difference",
+      "title": "Why choose CA Digital",
+      "subtitle": "We are not just programmers. We are strategic partners who understand your business and create scalable solutions.",
+      "cards": [
+        {
+          "icon": "zap",
+          "title": "Competitive Rates",
+          "desc": "Enterprise quality at 40-60% less than US or European agencies. Same technology stack, same standards, better price."
+        },
+        {
+          "icon": "headphones",
+          "title": "English-Speaking Team",
+          "desc": "Full communication in English. No language barriers, no misunderstandings. We write docs, proposals and code comments in English."
+        },
+        {
+          "icon": "globe",
+          "title": "Remote-First, Worldwide",
+          "desc": "We have worked with clients from the US, Spain, Colombia, Argentina and beyond. Distance is not an obstacle."
+        },
+        {
+          "icon": "shield",
+          "title": "Real Accountability",
+          "desc": "We don't disappear after delivery. We offer maintenance, monitoring and continuous support."
+        },
+        {
+          "icon": "cpu",
+          "title": "Modern Tech Stack",
+          "desc": "React, Next.js, Flutter, Node.js, Supabase, n8n, OpenAI API. Same tools used by top Silicon Valley startups."
+        },
+        {
+          "icon": "layers",
+          "title": "IT Infrastructure Experts",
+          "desc": "Beyond digital: networks, Fortinet firewalls, Windows Server, Synology NAS, CCTV and on-site support for Mexico and LATAM clients."
+        }
+      ]
+    }
+  }
+}

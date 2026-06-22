@@ -1,0 +1,66 @@
+{
+  "Index": {
+    "Hero": {
+      "badge": "Agencia Digital · Infraestructura TI",
+      "title1": "Tu negocio merece ",
+      "titleGradient": "más que una página web.",
+      "desc": "Construimos ecosistemas digitales completos: webs, apps, bots, IA, redes, ciberseguridad y soporte TI. Todo lo que necesitas para crecer y operar sin interrupciones.",
+      "ctaPrimary": "Cotizar proyecto",
+      "ctaSecondary": "Ver servicios →",
+      "stats": [
+        {
+          "to": 50,
+          "suffix": "+",
+          "label": "Proyectos entregados"
+        },
+        {
+          "to": 100,
+          "suffix": "%",
+          "label": "Clientes satisfechos"
+        },
+        {
+          "to": 24,
+          "suffix": "/7",
+          "label": "Soporte disponible"
+        }
+      ]
+    },
+    "WhyChooseUs": {
+      "eyebrow": "Nuestra diferencia",
+      "title": "Por qué elegirnos",
+      "subtitle": "No somos solo programadores. Somos socios estratégicos que entienden tu negocio y crean soluciones escalables.",
+      "cards": [
+        {
+          "icon": "zap",
+          "title": "Rendimiento Extremo",
+          "desc": "Sitios optimizados para cargar en milisegundos. Core Web Vitals en verde garantizado."
+        },
+        {
+          "icon": "shield",
+          "title": "Seguridad Blindada",
+          "desc": "Protección perimetral con Fortinet, SSL incluido y buenas prácticas desde el código."
+        },
+        {
+          "icon": "layout",
+          "title": "Diseño Premium",
+          "desc": "Estética high-end que posiciona tu marca por encima de la competencia."
+        },
+        {
+          "icon": "cpu",
+          "title": "Escalabilidad",
+          "desc": "Arquitectura lista para crecer. De 100 a 1 millón de usuarios sin reescribir todo."
+        },
+        {
+          "icon": "bot",
+          "title": "Automatización IA",
+          "desc": "Integramos IA y bots para que tu negocio funcione 24/7 sin intervención humana."
+        },
+        {
+          "icon": "layers",
+          "title": "Soporte Real",
+          "desc": "No desaparecemos tras la entrega. Acompañamiento y mantenimiento continuo."
+        }
+      ]
+    }
+  }
+}
