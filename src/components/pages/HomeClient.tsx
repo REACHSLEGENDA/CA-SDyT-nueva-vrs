@@ -91,14 +91,14 @@ export function HomeClient() {
     return (
         <>
             {/* ─── VIDEO INTRO ─────────────────────────────────────── */}
-            <section className="-mt-20 relative h-screen overflow-hidden">
+            <section className="-mt-20 relative h-screen overflow-hidden bg-black flex items-center justify-center">
                 <video
                     ref={videoRef}
                     autoPlay
                     muted
                     playsInline
                     onEnded={reveal}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-contain md:object-cover"
                     style={{ objectPosition: '50% 20%' }}
                     aria-hidden="true"
                 >
