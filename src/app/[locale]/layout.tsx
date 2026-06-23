@@ -17,6 +17,7 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   display: "swap",
+  preload: false,
 });
 
 const syne = Syne({
@@ -24,6 +25,7 @@ const syne = Syne({
   subsets: ["latin"],
   weight: ["700", "800"],
   display: "swap",
+  preload: false,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {

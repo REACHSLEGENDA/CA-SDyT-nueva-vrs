@@ -194,7 +194,7 @@ export function HomeClient() {
                         initial={{ opacity: 0, x: 24 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
-                        className="hidden lg:block relative"
+                        className="relative mt-8 lg:mt-0"
                     >
                         <div className="relative rounded-2xl overflow-hidden border border-ca-border shadow-2xl shadow-ca-cyan/5">
                             <div className="bg-ca-surface p-4">
