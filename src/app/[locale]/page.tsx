@@ -13,25 +13,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       metadataBase: new URL('https://casolutecdigital.com'),
       title: 'CA Digital Solutions | Web Development, Apps & IT Services Worldwide',
-      description: 'Mexican software agency serving clients worldwide. We build professional websites, mobile apps, custom CRM systems, automation with AI, WhatsApp bots and IT infrastructure. Remote work. Competitive prices. Real support.',
+      description: 'Professional software agency serving businesses worldwide. We design and build custom websites, mobile apps, CRM systems, AI automation, and IT solutions. English-speaking team, competitive remote rates, and enterprise-grade support.',
       keywords: [
-        'web development agency Mexico', 'affordable web development Latin America', 'Next.js development agency',
-        'React web development remote', 'custom software development Mexico', 'web development company Mexico English',
-        'mobile app development Mexico', 'Flutter app development agency', 'Android iOS app development Latin America',
-        'custom CRM development', 'SaaS development agency Latin America', 'custom software remote team Mexico',
-        'IT support services Mexico', 'network installation Mexico', 'Fortinet firewall setup Mexico',
-        'Windows Server 2025 setup', 'Synology NAS configuration', 'Google Workspace admin Mexico',
-        'AI automation agency', 'WhatsApp bot development', 'business automation Mexico', 'n8n automation agency',
-        'SEO agency Mexico English', 'AEO optimization agency', 'affordable web development English speaking Mexico',
-        'nearshore software development Mexico', 'outsource web development Mexico', 'hire Mexican developers'
+        // General Global Keywords (High Volume)
+        'web development agency',
+        'custom software development',
+        'mobile app development company',
+        'custom CRM development',
+        'AI automation agency',
+        'hire Next.js developers',
+        'React web development remote',
+        'SaaS development agency',
+        'Flutter app development company',
+        'WhatsApp bot development',
+        'n8n automation services',
+        'AEO optimization agency',
+        'affordable web development agency',
+        'custom software development remote',
+        // Nearshore & Mexico Specific Keywords (High Value B2B)
+        'nearshore software development Mexico',
+        'outsource web development Mexico',
+        'software development agency Latin America',
+        'affordable web development Mexico',
+        'hire developers in Mexico English speaking',
+        'IT support services Mexico'
       ],
       openGraph: {
         type: 'website',
         locale: 'en_US',
         url: 'https://casolutecdigital.com/en',
         siteName: 'CA Digital Solutions',
-        title: 'CA Digital Solutions | Web, Apps & IT Services — Mexico-based, Global Reach',
-        description: 'We build websites, apps, CRM systems, WhatsApp bots and IT infrastructure for businesses worldwide. Mexico-based team, English-speaking, remote-first. Competitive rates, enterprise quality.',
+        title: 'CA Digital Solutions | Web, Apps & IT Services — Enterprise Quality, Competitive Rates',
+        description: 'Professional software agency building custom websites, mobile apps, CRM systems, and AI automation for businesses worldwide. English-speaking remote team, competitive rates.',
         images: [{ url: '/assets/og-image-en.jpg', width: 1200, height: 630 }]
       },
       alternates: {
