@@ -17,7 +17,7 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   display: "swap",
-  preload: false,
+  preload: true,
 });
 
 const syne = Syne({
@@ -25,22 +25,12 @@ const syne = Syne({
   subsets: ["latin"],
   weight: ["700", "800"],
   display: "swap",
-  preload: false,
+  preload: true,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return {
-    alternates: {
-      languages: {
-        'es-MX':  'https://casolutecdigital.com/',
-        'en':     'https://casolutecdigital.com/en/',
-        'es-419': 'https://casolutecdigital.com/es-419/',
-        'es-ES':  'https://casolutecdigital.com/es-es/',
-        'pt-BR':  'https://casolutecdigital.com/pt-br/',
-        'x-default': 'https://casolutecdigital.com/en/',
-      },
-    },
     icons: {
       icon: "https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png",
     },

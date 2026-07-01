@@ -1,45 +1,84 @@
 import { MetadataRoute } from 'next';
+import { routing } from '@/i18n/routing';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://casolutecdigital.com';
   const now = new Date();
   
-  const esRoutes = [
-    '', '/servicios', '/redes-empresariales', '/ciberseguridad',
-    '/servidores', '/soporte-tecnico', '/videovigilancia-cctv',
-    '/google-workspace', '/seo-aeo', '/apps-moviles',
-    '/sistemas', '/automatizacion', '/portafolio', '/nosotros', '/contacto',
+  // Rutas canónicas reales en el proyecto
+  const routes = [
+    '/',
+    '/servicios',
+    '/apps-web',
+    '/apps-moviles',
+    '/sistemas',
+    '/automatizacion',
+    '/seo-aeo',
+    '/infraestructura-ti',
+    '/marketing',
+    '/paquetes-web',
+    '/clases',
+    '/portafolio',
+    '/nosotros',
+    '/contacto',
+    '/legal/privacidad',
+    '/legal/terminos'
   ];
-  
-  const enRoutes = [
-    '/en', '/en/services', '/en/services/web-development',
-    '/en/services/mobile-app-development', '/en/services/custom-crm',
-    '/en/services/automation-ai', '/en/services/whatsapp-bot',
-    '/en/services/seo-aeo', '/en/services/ui-ux-design', '/en/contact',
-  ];
-  
-  const es419Routes = ['/es-419', '/es-419/servicios', '/es-419/contacto'];
-  const esEsRoutes  = ['/es-es', '/es-es/servicios', '/es-es/contacto'];
-  const ptBrRoutes  = ['/pt-br', '/pt-br/servicos', '/pt-br/contato'];
-  
-  return [
-    ...esRoutes.map(r => ({
-      url: `${base}${r}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: r === '' ? 1.0 : 0.8,
-    })),
-    ...enRoutes.map(r => ({
-      url: `${base}${r}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: r === '/en' ? 1.0 : 0.9,
-    })),
-    ...[...es419Routes, ...esEsRoutes, ...ptBrRoutes].map(r => ({
-      url: `${base}${r}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-  ];
+
+  const locales = ['es-MX', 'en', 'es-419', 'es-ES', 'pt-BR'];
+  const sitemapEntries: MetadataRoute.Sitemap = [];
+
+  locales.forEach(locale => {
+    routes.forEach(route => {
+      // Determinar la ruta correspondiente según next-intl pathnames
+      let localizedPath = route;
+      const config = (routing.pathnames as any)[route];
+      
+      if (config) {
+        if (typeof config === 'string') {
+          localizedPath = config;
+        } else if (config[locale]) {
+          localizedPath = config[locale];
+        } else if (config[routing.defaultLocale]) {
+          localizedPath = config[routing.defaultLocale];
+        }
+      }
+
+      // Manejar subrutas de legal que no están explícitas en pathnames
+      if (route.startsWith('/legal/')) {
+        localizedPath = route;
+      }
+
+      let url = '';
+      if (locale === 'es-MX') {
+        // es-MX es el idioma por defecto sin prefijo
+        url = `${base}${localizedPath === '/' ? '' : localizedPath}`;
+      } else {
+        url = `${base}/${locale.toLowerCase()}${localizedPath === '/' ? '' : localizedPath}`;
+      }
+
+      // Prioridad y frecuencia de actualización
+      let priority = 0.8;
+      let changeFrequency: 'weekly' | 'monthly' = 'weekly';
+
+      if (route === '/') {
+        priority = 1.0;
+      } else if (['/servicios', '/contacto', '/nosotros'].includes(route)) {
+        priority = 0.9;
+      } else if (route.startsWith('/legal/')) {
+        priority = 0.5;
+        changeFrequency = 'monthly';
+      }
+
+      sitemapEntries.push({
+        url,
+        lastModified: now,
+        changeFrequency,
+        priority
+      });
+    });
+  });
+
+  return sitemapEntries;
 }
+

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { HomeClient } from '@/components/pages/HomeClient';
 import { getTranslations } from 'next-intl/server';
+import { faqs } from '@/lib/faqData';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -160,11 +161,28 @@ export default async function Page({ params }: Props) {
     }
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(faq => ({
+      '@type': 'Question',
+      'name': faq.question,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': faq.answer
+      }
+    }))
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <HomeClient />
     </>
