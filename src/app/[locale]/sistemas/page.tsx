@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SystemsPageClient from './SistemasClient';
-import { getPageMetadata, getServiceSchema } from '@/lib/seoUtils';
+import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -30,12 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
   const schema = getServiceSchema('Desarrollo de Sistemas a Medida (CRM & ERP)', locale);
+  const breadcrumb = getBreadcrumbSchema('/sistemas', locale, locale === 'en' ? 'Custom Systems' : locale === 'pt-BR' ? 'Sistemas sob Medida' : 'Sistemas a Medida');
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <SystemsPageClient />
     </>

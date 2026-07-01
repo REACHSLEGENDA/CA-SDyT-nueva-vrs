@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import AppsWebPageClient from './AppsWebClient';
-import { getPageMetadata, getServiceSchema } from '@/lib/seoUtils';
+import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -30,12 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
   const schema = getServiceSchema('Desarrollo Web Premium', locale);
+  const breadcrumb = getBreadcrumbSchema('/apps-web', locale, locale === 'en' ? 'Web Development' : locale === 'pt-BR' ? 'Desenvolvimento Web' : 'Desarrollo Web');
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <AppsWebPageClient />
     </>

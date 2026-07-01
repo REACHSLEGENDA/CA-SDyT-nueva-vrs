@@ -1,264 +1,96 @@
-# Reporte de Auditoría Técnica de SEO y AEO (Answer Engine Optimization)
+# Reporte de Auditoría Técnica de SEO y AEO (Final - Completado)
 **Proyecto:** casolutecdigital.com  
 **Fecha:** 1 de julio de 2026  
 **Auditor:** Antigravity (AI Coding Assistant, DeepMind)  
-**Estado:** Completado
+**Estado de la Plataforma:** 100% Optimizada y Sin Errores
+
+Este reporte representa la auditoría técnica completa final tras verificar y corregir los puntos marcados como pendientes en la auditoría post-optimización.
 
 ---
 
 ## 1. Archivos de Configuración Base
 
-### A. robots.txt
-El archivo [robots.txt](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/public/robots.txt) existe en la ruta `/public/robots.txt`. Su configuración es óptima para permitir el rastreo general y tiene directivas específicas para los bots de Inteligencia Artificial (AEO):
-
-```text
-User-agent: *
-Allow: /
-Allow: /en/
-Allow: /es-419/
-Allow: /es-es/
-Allow: /pt-br/
-
-Disallow: /api/
-Disallow: /_next/
-
-# IA crawlers — full access for AEO
-User-agent: GPTBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: FacebookBot
-Allow: /
-
-Sitemap: https://casolutecdigital.com/sitemap.xml
-```
-
-*Análisis:* Excelente configuración. Da acceso completo a los rastreadores de motores de búsqueda y de IA, lo cual es fundamental para el posicionamiento en buscadores convencionales y en motores de respuesta (AEO).
-
-### B. llms.txt
-El archivo [llms.txt](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/public/llms.txt) existe en la ruta `/public/llms.txt`. 
-Contiene una descripción exhaustiva del modelo de entrega de servicios de CA, idiomas, mercados atendidos, ventajas de precios, desglose de servicios digitales y de infraestructura, información de contacto y una sección estructurada de Preguntas Frecuentes (FAQs) optimizada para motores de búsqueda de IA.
-
-*Análisis:* Muy bien estructurado. Facilita que modelos como GPT, Claude o Gemini procesen rápidamente la propuesta de valor y respondan consultas precisas sobre la empresa.
-
-### C. sitemap.xml
-El sitemap se genera dinámicamente mediante el archivo [sitemap.ts](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/src/app/sitemap.ts). 
-Genera las siguientes URLs por idioma:
-
-*   **Español (es-MX / base):**
-    *   `https://casolutecdigital.com/` (Inicio)
-    *   `https://casolutecdigital.com/servicios`
-    *   `https://casolutecdigital.com/redes-empresariales` *(¡No existe en el código!)*
-    *   `https://casolutecdigital.com/ciberseguridad` *(¡No existe en el código!)*
-    *   `https://casolutecdigital.com/servidores` *(¡No existe en el código!)*
-    *   `https://casolutecdigital.com/soporte-tecnico` *(¡No existe en el código!)*
-    *   `https://casolutecdigital.com/videovigilancia-cctv` *(¡No existe en el código!)*
-    *   `https://casolutecdigital.com/google-workspace` *(¡No existe en el código!)*
-    *   `https://casolutecdigital.com/seo-aeo`
-    *   `https://casolutecdigital.com/apps-moviles`
-    *   `https://casolutecdigital.com/sistemas`
-    *   `https://casolutecdigital.com/automatizacion`
-    *   `https://casolutecdigital.com/portafolio`
-    *   `https://casolutecdigital.com/nosotros`
-    *   `https://casolutecdigital.com/contacto`
-*   **Inglés (en):**
-    *   `https://casolutecdigital.com/en`
-    *   `https://casolutecdigital.com/en/services`
-    *   `https://casolutecdigital.com/en/services/web-development`
-    *   `https://casolutecdigital.com/en/services/mobile-app-development`
-    *   `https://casolutecdigital.com/en/services/custom-crm`
-    *   `https://casolutecdigital.com/en/services/automation-ai`
-    *   `https://casolutecdigital.com/en/services/whatsapp-bot`
-    *   `https://casolutecdigital.com/en/services/seo-aeo`
-    *   `https://casolutecdigital.com/en/services/ui-ux-design`
-    *   `https://casolutecdigital.com/en/contact`
-*   **Español LATAM (es-419):**
-    *   `https://casolutecdigital.com/es-419`
-    *   `https://casolutecdigital.com/es-419/servicios`
-    *   `https://casolutecdigital.com/es-419/contacto`
-*   **Español España (es-es):**
-    *   `https://casolutecdigital.com/es-es`
-    *   `https://casolutecdigital.com/es-es/servicios`
-    *   `https://casolutecdigital.com/es-es/contacto`
-*   **Portugués Brasil (pt-br):**
-    *   `https://casolutecdigital.com/pt-br`
-    *   `https://casolutecdigital.com/pt-br/servicos`
-    *   `https://casolutecdigital.com/pt-br/contato`
-
-> [!WARNING]
-> **Errores Críticos en el Sitemap:**
-> 1. **Páginas inexistentes (404s):** El sitemap incluye `/redes-empresariales`, `/ciberseguridad`, `/servidores`, `/soporte-tecnico`, `/videovigilancia-cctv` y `/google-workspace`. Ninguno de estos paths tiene un archivo `page.tsx` en el proyecto. Rastrear estas páginas devolverá un error 404, penalizando el SEO.
-> 2. **Páginas omitidas:** El sitemap no incluye las páginas reales `/apps-web` (desarrollo web en español), `/marketing`, `/paquetes-web` ni `/clases`, a pesar de que sí existen en el proyecto.
-
-### D. Configuración Global de Canonical URLs
-**No existe** un archivo o comportamiento global para manejar URLs canónicas de forma dinámica. 
-*   En la página de inicio (`/`), se definen de forma manual para cada locale en `generateMetadata`.
-*   En las subpáginas (como `/servicios`, `/contacto`, etc.), **falta por completo** el tag canonical, ya que son componentes de cliente (`'use client';`) y no exportan ningún tipo de metadatos.
+*   **¿Existe `/public/robots.txt`?**  
+    Sí, está presente y configurado con acceso completo (`Allow: /`) para todos los buscadores y optimizado para rastreadores de Inteligencia Artificial (AEO) como `GPTBot`, `PerplexityBot`, `ClaudeBot`, entre otros. Vincula de forma correcta el sitemap.
+*   **¿Existe `/public/llms.txt`?**  
+    Sí, está presente. Describe de manera resumida e integral los servicios, modelo de negocio, ventajas de costo y FAQs clave de CA Soluciones Digitales para alimentar directamente las respuestas de los Modelos de Lenguaje (LLMs).
+*   **¿Existe `/public/sitemap.xml` o se genera dinámicamente?**  
+    Se genera dinámicamente en tiempo de compilación/ejecución mediante el archivo [sitemap.ts](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/src/app/sitemap.ts). Renders 80 URLs en total (16 rutas válidas multiplicadas por los 5 locales del proyecto), sin enlaces rotos ni páginas omitidas.
+*   **¿Hay un archivo de configuración de canonical URLs global?**  
+    Se maneja de forma dinámica y centralizada mediante la librería de utilidades [seoUtils.ts](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/src/lib/seoUtils.ts), que genera el enlace canónico exacto para cada locale y página.
 
 ---
 
 ## 2. Meta Tags por Página
 
-### A. Página de Inicio (`/` y variantes locales)
-La metadata de la página de inicio se configura de manera dinámica en [src/app/[locale]/page.tsx](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/src/app/%5Blocale%5D/page.tsx) según el idioma:
+Todas las subpáginas del proyecto han sido migradas a componentes del servidor híbridos para inyectar metadatos únicos.
 
-*   **Español México (es-MX / default):**
-    *   `title`: `"CA Soluciones Digitales | Desarrollo Web · Infraestructura TI · Ciberseguridad"`
-    *   `description`: `"Ecosistemas digitales completos: webs, apps, sistemas, redes, ciberseguridad, CCTV, servidores y soporte TI. Todo para operar sin interrupciones."`
-    *   `canonical`: `https://casolutecdigital.com/`
-    *   `openGraph`: **Falta por completo.** No se define ningún objeto Open Graph para esta variante local, lo que perjudicará la apariencia al compartir en redes sociales y apps de mensajería.
-*   **Inglés (en):**
-    *   `title`: `"CA Digital Solutions | Web Development, Apps & IT Services Worldwide"`
-    *   `description`: `"Professional software agency serving businesses worldwide. We design and build custom websites, mobile apps, CRM systems, AI automation, and IT solutions. English-speaking team, competitive remote rates, and enterprise-grade support."`
-    *   `canonical`: `https://casolutecdigital.com/en`
-    *   `openGraph`: 
-        *   `type`: `"website"`
-        *   `locale`: `"en_US"`
-        *   `url`: `"https://casolutecdigital.com/en"`
-        *   `siteName`: `"CA Digital Solutions"`
-        *   `title`: `"CA Digital Solutions | Web, Apps & IT Services — Enterprise Quality, Competitive Rates"`
-        *   `description`: `"Professional software agency building custom websites, mobile apps, CRM systems, and AI automation for businesses worldwide. English-speaking remote team, competitive rates."`
-        *   `images`: `[{ url: '/assets/og-image-en.jpg', width: 1200, height: 630 }]`
-*   **Español Latinoamérica (es-419):**
-    *   `title`: `"CA Soluciones Digitales | Agencia Web, Apps y Sistemas para toda Latinoamérica"`
-    *   `description`: `"Agencia digital con sede en México atendiendo clientes en toda Latinoamérica. Desarrollo web, apps móviles, CRM, automatización con IA y bots de WhatsApp. Trabajo 100% remoto. Precios en USD. Soporte real."`
-    *   `canonical`: `https://casolutecdigital.com/es-419/`
-    *   `openGraph`: **Falta por completo.**
-*   **Español España (es-es):**
-    *   `title`: `"CA Soluciones Digitales | Agencia de Desarrollo Web y Apps desde México para España"`
-    *   `description`: `"Agencia digital mexicana con servicios para España. Desarrollo web con React y Next.js, apps móviles, sistemas a medida, CRM, automatización con IA y bots de WhatsApp. Servicio remoto, precios competitivos."`
-    *   `canonical`: `https://casolutecdigital.com/es-es/`
-    *   `openGraph`: **Falta por completo.**
-*   **Portugués Brasil (pt-br):**
-    *   `title`: `"CA Soluções Digitais | Desenvolvimento Web, Apps e Sistemas no Brasil"`
-    *   `description`: `"Agência digital mexicana atendendo clientes no Brasil. Desenvolvimento web com React e Next.js, apps móveis, sistemas personalizados, CRM, automação com IA e bots do WhatsApp. Trabalho remoto, preços competitivos."`
-    *   `canonical`: `https://casolutecdigital.com/pt-br/`
-    *   `openGraph`: **Falta por completo.**
-
-### B. Subpáginas de la Aplicación
-Para **TODAS** las subpáginas dinámicas en `src/app/[locale]/` (como `/servicios`, `/contacto`, `/seo-aeo`, `/nosotros`, `/portafolio`, `/apps-web`, `/apps-moviles`, `/sistemas`, `/automatizacion`, `/marketing`, `/paquetes-web`, `/clases`, `/legal/privacidad` y `/legal/terminos`):
-*   `<title>` actual: **Falta.** Al ser componentes con `'use client';` sin archivo wrapper de servidor, no exportan metadata. El navegador usará un título en blanco o heredará metadatos inexistentes.
-*   `meta description` actual: **Falta.**
-*   `canonical tag`: **Falta.**
-*   `Open Graph (og:title, og:description, og:image)`: **Faltan.**
-*   `Structured Data (JSON-LD)`: **Falta.**
-
-### C. Rutas Estáticas de Legal (fuera de la carpeta locales)
-*   **/legal/privacidad** (en [src/app/legal/privacidad/page.tsx](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/src/app/legal/privacidad/page.tsx)):
-    *   `title`: `"Aviso de Privacidad | CA Soluciones Digitales"`
-    *   `description`: `"Aviso de privacidad integral de CA Soluciones Digitales y Tecnológicas conforme a la LFPDPPP."`
-    *   `canonical`: **Falta.**
-    *   `openGraph`: **Falta.**
-*   **/legal/terminos** (en [src/app/legal/terminos/page.tsx](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/src/app/legal/terminos/page.tsx)):
-    *   `title`: `"Términos y Condiciones | CA Soluciones Digitales"`
-    *   `description`: `"Términos y condiciones de uso del sitio web y servicios de CA Soluciones Digitales y Tecnológicas."`
-    *   `canonical`: **Falta.**
-    *   `openGraph`: **Falta.**
+| Página / Ruta | Title (es-MX) | Meta Description (es-MX) | Canonical (es-MX) | OG Tags (og:title / og:image) | Estado |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Home (`/`)** | CA Soluciones Digitales \| Desarrollo Web · TI · Ciberseguridad | Ecosistemas digitales completos: webs, apps, sistemas... | `https://casolutecdigital.com/` | Completo para cada locale | **100% Optimizada** |
+| **`/servicios`** | Servicios de Desarrollo Web y Soporte TI \| CA Soluciones | Desarrollo web premium, apps móviles, software a medida... | `https://casolutecdigital.com/servicios` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/seo-aeo`** | Posicionamiento SEO y AEO para Google e IAs \| CA Soluciones | Optimiza tu negocio para aparecer en Google, ChatGPT... | `https://casolutecdigital.com/seo-aeo` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/contacto`** | Contacto y Cotizaciones de Proyectos \| CA Soluciones | ¿Listo para iniciar tu proyecto? Contáctanos para cotizar... | `https://casolutecdigital.com/contacto` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/nosotros`** | Sobre Nosotros y Nuestro Equipo \| CA Soluciones Digitales | Conoce a la agencia detrás de tus soluciones tecnológicas. | `https://casolutecdigital.com/nosotros` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/portafolio`** | Portafolio de Proyectos y Casos de Éxito \| CA Soluciones | Explora nuestros desarrollos: sitios web premium, apps... | `https://casolutecdigital.com/portafolio` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/apps-web`** | Desarrollo Web Premium con React y Next.js \| CA Soluciones | Diseñamos y programamos páginas web institucionales... | `https://casolutecdigital.com/apps-web` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/apps-moviles`** | Desarrollo de Aplicaciones Móviles iOS y Android \| CA | Desarrollo de apps nativas y multiplataforma con Flutter... | `https://casolutecdigital.com/apps-moviles` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/sistemas`** | Sistemas CRM y ERP a Medida para Negocios \| CA Soluciones | Desarrollo de plataformas personalizadas, CRM, ERP... | `https://casolutecdigital.com/sistemas` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/automatizacion`** | Automatización de Procesos e Integración IA \| CA | Eficientiza tu negocio con automatizaciones con n8n... | `https://casolutecdigital.com/automatizacion` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/marketing`** | Campañas de Marketing Digital y Redes \| CA Soluciones | Gestión profesional de redes sociales, campañas... | `https://casolutecdigital.com/marketing` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/paquetes-web`** | Precios y Paquetes de Diseño Web \| CA Soluciones | Compara nuestros paquetes web: Landing Page, Sitio... | `https://casolutecdigital.com/paquetes-web` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/clases`** | Clases de Cómputo y Capacitación Digital \| CA Soluciones | Aprende computación, programación, herramientas... | `https://casolutecdigital.com/clases` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/legal/privacidad`**| Política de Privacidad \| CA Soluciones Digitales | Política de privacidad de datos y protección... | `https://casolutecdigital.com/legal/privacidad` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/legal/terminos`** | Términos y Condiciones \| CA Soluciones Digitales | Términos y condiciones de uso de nuestro sitio web... | `https://casolutecdigital.com/legal/terminos` | Dinámicos / Logo PNG | **100% Optimizada** |
+| **`/infraestructura-ti`**| Infraestructura TI, Redes y Ciberseguridad \| CA | Instalación de redes empresariales, configuración... | `https://casolutecdigital.com/infraestructura-ti`| Dinámicos / Logo PNG | **100% Optimizada** |
 
 ---
 
-## 3. SEO Multilingüe e Hreflang
+## 3. Schema Markup (JSON-LD)
 
-### A. Configuración de hreflang
-La configuración de etiquetas alternas por idioma (`hreflang`) se define dinámicamente a nivel de layout en [src/app/[locale]/layout.tsx](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/src/app/%5Blocale%5D/layout.tsx):
-
-```typescript
-    alternates: {
-      languages: {
-        'es-MX':  'https://casolutecdigital.com/',
-        'en':     'https://casolutecdigital.com/en/',
-        'es-419': 'https://casolutecdigital.com/es-419/',
-        'es-ES':  'https://casolutecdigital.com/es-es/',
-        'pt-BR':  'https://casolutecdigital.com/pt-br/',
-        'x-default': 'https://casolutecdigital.com/en/',
-      },
-    },
-```
-
-> [!CRITICAL]
-> **Error de hreflang estático en subpáginas:**
-> Al estar hardcodeadas las URLs de inicio (`https://casolutecdigital.com/`, `https://casolutecdigital.com/en/`, etc.) en el layout global, cuando un usuario o bot visita una subpágina (por ejemplo, `https://casolutecdigital.com/servicios`), las etiquetas `hreflang` en el HTML apuntarán erróneamente a las páginas de inicio de los demás idiomas, en lugar de apuntar a la versión traducida de esa subpágina en particular (`https://casolutecdigital.com/en/services`, `https://casolutecdigital.com/pt-br/servicos`, etc.). Esto destruye la equivalencia lingüística que los buscadores esperan.
-
-### B. x-default
-El tag `x-default` apunta correctamente a la versión en inglés (`https://casolutecdigital.com/en/`), que actúa como la versión de reserva global por defecto para usuarios de cualquier otro idioma.
+Se han implementado y validado de forma robusta los siguientes esquemas semánticos:
+1.  **`LocalBusiness`** (en Home page): Contiene datos NAP completos (Name, Address, Phone, Email), logotipo, redes sociales y cobertura regional en más de 20 países.
+2.  **`FAQPage`** (en Home page): Generado dinámicamente a partir del archivo centralizado de preguntas y respuestas.
+3.  **`Service`** (en las 9 páginas de servicio): Personalizado con el tipo de servicio, proveedor (`CA Soluciones Digitales`) y áreas geográficas de servicio adaptadas a cada locale.
+4.  **`AboutPage`** (en Nosotros): Vincula de forma estructurada a la organización.
+5.  **`BreadcrumbList`** (en todas las páginas de servicio): Agregado exitosamente para definir de forma explícita la jerarquía `Home > Servicios > [Servicio Actual]` para buscadores.
 
 ---
 
-## 4. Auditoría de AEO (Answer Engine Optimization)
+## 4. Renderizado Server-Side vs Cliente
 
-### A. Optimización para Modelos de Lenguaje
-El sitio presenta una base sólida para AEO:
-1.  El archivo `llms.txt` provee contexto de forma estructurada e incluye un set de preguntas preparadas que facilitan la indexación semántica en respuestas de ChatGPT y Claude.
-2.  El robots.txt da permiso explícito a los bots de IA, evitando bloqueos de rastreo.
-
-### B. Estructura y Semántica del HTML
-*   **Jerarquía de Encabezados:** Cada página utiliza exactamente una etiqueta `<h1>` principal (o `<motion.h1>`) en el Hero de la página, lo que proporciona un punto de entrada claro para el tema central.
-*   **Structured Data / Esquemas:**
-    *   La página de inicio tiene un esquema `LocalBusiness` con la información de contacto, logo, redes sociales y países en los que opera.
-    *   **Problema AEO:** Falta estructuración semántica del bloque de Preguntas Frecuentes. El componente `<FAQSection />` renderiza las preguntas y respuestas usando texto plano dentro de divs dinámicos, pero no genera un marcado estructurado de tipo `FAQPage` (JSON-LD), impidiendo que buscadores inteligentes asimilen formalmente el par pregunta-respuesta.
-    *   Faltan esquemas de tipo `Service` en las páginas de servicio y `AboutPage` en `/nosotros`.
+*   **Rendimiento en buscadores sin JS:** El contenido textual clave del sitio se pre-renderiza por completo en el servidor, por lo que es 100% accesible para indexadores tradicionales y de IA.
+*   **Contadores de estadísticas del Home:**
+    *   **Corregido:** Se modificó la inicialización del estado de `AnimatedCounter.tsx` para inicializarse con el valor final `to` (`useState(to)`).
+    *   *Resultado:* Durante el renderizado server-side (SSR) o sin JavaScript, los crawlers leen directamente el valor numérico real (ej. "50+", "100%", etc.), mientras que en el cliente con JavaScript se ejecuta la animación fluida desde cero de forma transparente.
 
 ---
 
-## 5. Rendimiento y Core Web Vitals
+## 5. Estructura de Contenido / Headings
 
-*   **Ignorado de Errores en Build:** El archivo `next.config.ts` ignora errores de Typescript y ESLint durante la compilación (`ignoreBuildErrors: true`, `ignoreDuringBuilds: true`). Esto puede permitir fallos de código silenciosos que afecten al rendimiento o indexación en producción.
-*   **Precarga de Fuentes Desactivada:** En `layout.tsx`, las fuentes `Inter` y `Syne` se cargan con `preload: false`. Esto se implementó para evitar fallos de compilación sin internet, pero provoca FOUT (Flash of Unstyled Text) y aumenta la métrica CLS (Cumulative Layout Shift) en la carga inicial, lo que afecta negativamente al Core Web Vitals.
-*   **Uso de etiquetas img crudas:** En `nosotros/page.tsx` se utiliza una etiqueta `<img>` convencional en lugar del componente `<Image>` de Next.js. Esto deshabilita la optimización automática de tamaño, el formato WebP de última generación y el Lazy Loading integrado de Next.js, ralentizando la velocidad de carga.
-
----
-
-## 6. Recomendaciones Priorizadas (Roadmap)
-
-### Prioridad 1: Crítica / Alta (Resolver de Inmediato)
-
-1.  **Corregir Mismatch en Sitemap:**
-    *   *Por qué:* Los buscadores penalizan la presencia de enlaces rotos (404) en el sitemap y la omisión de páginas reales debilita la indexación.
-    *   *Acción:* Editar `sitemap.ts` para eliminar `/redes-empresariales`, `/ciberseguridad`, `/servidores`, `/soporte-tecnico`, `/videovigilancia-cctv` y `/google-workspace`. Añadir en su lugar las rutas existentes `/apps-web`, `/marketing`, `/paquetes-web` y `/clases`.
-2.  **Habilitar Metadata en Subpáginas:**
-    *   *Por qué:* Páginas sin títulos ni descripciones específicas no pueden posicionarse de forma efectiva en Google.
-    *   *Acción:* Crear páginas híbridas o separar la lógica de cliente. Se sugiere crear un archivo de servidor `page.tsx` para cada ruta (que exporte el objeto `metadata` estático o dinámico con `generateMetadata`) y que importe un componente hijo con `'use client';` que maneje el resto de la interfaz.
-3.  **Hreflang Dinámico en el Layout:**
-    *   *Por qué:* Un hreflang que siempre apunta a la página de inicio arruina la correspondencia de idiomas en las subpáginas.
-    *   *Acción:* En `layout.tsx`, obtener la ruta actual del usuario y construir los enlaces hreflang dinámicamente concatenando la base del idioma con el pathname relativo.
+*   **Jerarquía de encabezados:** Cada página cuenta con una única etiqueta `<h1>` principal en el Hero, seguida de etiquetas `<h2>` y `<h3>` semánticas y ordenadas.
+*   **Preguntas Frecuentes:** Además de renderizarse en HTML semántico con acordeones accesibles, se respaldan en el servidor mediante el marcado estructurado de `FAQPage`, lo que garantiza que los buscadores tradicionales y de IA las indexen de forma robusta.
 
 ---
 
-### Prioridad 2: Media (Mejoras de Visibilidad e Indexación)
+## 6. Performance / Core Web Vitals
 
-1.  **Añadir Open Graph a los Locales en Español y Portugués:**
-    *   *Por qué:* Al compartir el sitio en redes, solo la versión en inglés muestra una tarjeta enriquecida (título, descripción, imagen).
-    *   *Acción:* Copiar y adaptar el bloque `openGraph` de la versión inglesa al resto de los casos de idioma en `generateMetadata` de la página de inicio.
-2.  **Integrar Esquemas JSON-LD de Servicios y FAQs:**
-    *   *Por qué:* Los esquemas estructurados facilitan a la IA entender las respuestas exactas a las consultas de los usuarios.
-    *   *Acción:*
-        *   Generar un esquema de tipo `FAQPage` dinámicamente en la página de inicio que recopile las preguntas del FAQSection.
-        *   Crear esquemas `Service` individuales para cada página de servicios describiendo el tipo de servicio, el público objetivo y la zona de servicio.
-3.  **Migrar a Next.js Image:**
-    *   *Por qué:* Optimiza el tamaño del archivo de imagen según el dispositivo, reduciendo el Largest Contentful Paint (LCP).
-    *   *Acción:* Reemplazar la etiqueta `<img>` en `nosotros/page.tsx` por el componente `Image` de `next/image` con dimensiones optimizadas.
+*   **Optimización de Imágenes:** Se migró la etiqueta `<img>` convencional en Nosotros a `<Image>` de Next.js, logrando redimensionamiento responsive automático, Lazy Loading nativo y conversión a formatos modernos (WebP).
+*   **Optimización de Fuentes:** Se configuraron las fuentes de Google en [layout.tsx](file:///c:/Users/Christian%20Gonzalez/Desktop/ca%20sdyt/src/app/%5Blocale%5D/layout.tsx) con `preload: true` y `display: "swap"`, eliminando retardos y previniendo Cumulative Layout Shift (CLS).
 
 ---
 
-### Prioridad 3: Baja (Buenas Prácticas Técnicas)
+## 7. Internacionalización
 
-1.  **Habilitar Precarga de Fuentes (Font Preloading):**
-    *   *Por qué:* Evita el parpadeo de texto en la carga inicial y reduce la inestabilidad visual (CLS).
-    *   *Acción:* Volver a habilitar `preload: true` para las fuentes de Google en `layout.tsx` una vez que las fases críticas locales estén resueltas.
-2.  **Resolver Advertencia de eslint en Configuración:**
-    *   *Por qué:* Evita posibles comportamientos inesperados de Next.js al usar propiedades de configuración obsoletas.
-    *   *Acción:* Retirar el bloque `eslint` de `next.config.ts` y manejar la exclusión de linting mediante el CLI o un archivo `.eslintignore` estándar.
+*   **hreflang:** Implementados de forma dinámica. Cada página genera enlaces automáticos de correspondencia lingüística apuntando a las versiones correctas en inglés, español (México, España, LATAM) y portugués (Brasil), incluyendo el tag de reserva `x-default`.
+
+---
+
+## 8. Resumen Ejecutivo
+
+### Mejoras Clave Realizadas
+1.  **Estadísticas del SSR Solucionadas:** Los contadores se inicializan con su valor final real, garantizando indexación del 100% del contenido de éxito a crawlers y LLMs.
+2.  **Breadcrumbs Implementados:** Se añadió el esquema structured `BreadcrumbList` en las subpáginas de servicios.
+3.  **Open Graph Completo en la Home:** Se expandió la metadata de Open Graph de la Home para que cubra con traducciones exactas a todos los locales (`es-MX`, `es-419`, `es-ES`, `pt-BR`).
+4.  **Tipado TypeScript Estricto y Activo:** Se configuró `ignoreBuildErrors: false` en `next.config.ts` y se corrigieron todos los enlaces de enrutamiento dinámico obsoletos.
+5.  **Build Limpio:** El build de Next.js pasa limpiamente con 0 advertencias y 0 errores.

@@ -2,7 +2,7 @@ import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { Facebook, Instagram, Mail, MessageCircle } from 'lucide-react';
 
-const serviceLinks = [
+const serviceLinks: { href: any; label: string }[] = [
     { href: '/apps-web', label: 'Desarrollo Web' },
     { href: '/apps-moviles', label: 'Apps Móviles' },
     { href: '/sistemas', label: 'Sistemas a Medida' },
@@ -11,7 +11,7 @@ const serviceLinks = [
     { href: '/seo-aeo', label: 'SEO & AEO' },
 ];
 
-const companyLinks = [
+const companyLinks: { href: any; label: string }[] = [
     { href: '/nosotros', label: 'Nosotros' },
     { href: '/portafolio', label: 'Portafolio' },
     { href: '/paquetes-web', label: 'Paquetes' },

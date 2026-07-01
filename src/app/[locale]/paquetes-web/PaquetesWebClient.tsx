@@ -93,7 +93,7 @@ export default function WebPackagesPage() {
                                 ))}
                             </ul>
 
-                            <Link href="/contacto?servicio=Despegue+Digital" className="block">
+                            <Link href={{ pathname: '/contacto', query: { servicio: 'Despegue Digital' } }} className="block">
                                 <button className="w-full py-3 rounded-xl border border-ca-border text-ca-text font-medium hover:border-ca-cyan/40 hover:text-ca-cyan transition-all">
                                     Elegir plan →
                                 </button>
@@ -148,7 +148,7 @@ export default function WebPackagesPage() {
                                 ))}
                             </ul>
 
-                            <Link href="/contacto?servicio=Tráfico+y+Conversión" className="block">
+                            <Link href={{ pathname: '/contacto', query: { servicio: 'Tráfico y Conversión' } }} className="block">
                                 <button className="w-full py-3 rounded-xl bg-ca-gradient text-white font-semibold hover:opacity-90 hover:scale-[1.02] transition-all shadow-lg shadow-ca-cyan/20">
                                     Elegir plan →
                                 </button>
@@ -199,7 +199,7 @@ export default function WebPackagesPage() {
                                 ))}
                             </ul>
 
-                            <Link href="/contacto?servicio=Ecosistema+Premium+IA" className="block">
+                            <Link href={{ pathname: '/contacto', query: { servicio: 'Ecosistema Premium IA' } }} className="block">
                                 <button className="w-full py-3 rounded-xl border border-ca-purple/40 text-ca-purple font-medium hover:bg-ca-purple/10 transition-all">
                                     Elegir plan →
                                 </button>
@@ -252,7 +252,7 @@ export default function WebPackagesPage() {
                                 ))}
                             </ul>
 
-                            <Link href="/contacto?servicio=Plan+TI+Empresarial" className="block">
+                            <Link href={{ pathname: '/contacto', query: { servicio: 'Plan TI Empresarial' } }} className="block">
                                 <button className="w-full py-3 rounded-xl bg-ca-surface border border-ca-cyan/30 text-ca-cyan font-semibold hover:bg-ca-cyan/10 transition-all shadow-md shadow-ca-cyan/10">
                                     Solicitar Plan TI →
                                 </button>

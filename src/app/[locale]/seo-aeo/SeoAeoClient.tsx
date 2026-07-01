@@ -63,7 +63,7 @@ export default function SeoAeoPage() {
                     transition={{ delay: 0.4 }}
                 >
                     <Link
-                        href="/contacto?servicio=SEO+Técnico+y+AEO"
+                        href={{ pathname: '/contacto', query: { servicio: 'SEO Técnico y AEO' } }}
                         className="bg-ca-gradient text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-ca-cyan/20"
                     >
                         Auditoría SEO gratuita →
@@ -300,7 +300,7 @@ export default function SeoAeoPage() {
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link
-                            href="/contacto?servicio=SEO+Técnico+y+AEO"
+                            href={{ pathname: '/contacto', query: { servicio: 'SEO Técnico y AEO' } }}
                             className="bg-ca-gradient text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-ca-cyan/20"
                         >
                             Quiero posicionarme →

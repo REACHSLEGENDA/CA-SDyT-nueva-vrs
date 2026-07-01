@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight, Phone, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const links = [
+const links: { href: any; label: string }[] = [
     { href: '/', label: 'Inicio' },
     { href: '/nosotros', label: 'Nosotros' },
     { href: '/servicios', label: 'Servicios' },

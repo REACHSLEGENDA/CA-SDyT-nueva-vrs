@@ -64,6 +64,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'CRM personalizado Latinoamérica', 'automatización con IA empresa LATAM', 'bot WhatsApp empresa LATAM',
         'agencia digital México para LATAM', 'outsourcing desarrollo software LATAM', 'agencia web remota español'
       ],
+      openGraph: {
+        type: 'website',
+        locale: 'es_MX',
+        url: 'https://casolutecdigital.com/es-419',
+        siteName: 'CA Soluciones Digitales',
+        title: 'CA Soluciones Digitales | Agencia Web, Apps y Sistemas para toda Latinoamérica',
+        description: 'Agencia digital con sede en México atendiendo clientes en toda Latinoamérica. Desarrollo web, apps móviles, CRM, automatización con IA y bots de WhatsApp. Trabajo 100% remoto. Precios en USD. Soporte real.',
+        images: [{ url: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png', width: 1200, height: 630 }]
+      },
       alternates: {
         canonical: 'https://casolutecdigital.com/es-419/'
       }
@@ -79,6 +88,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'apps móviles para empresas España', 'CRM personalizado España', 'automatización IA para empresas España',
         'bot WhatsApp empresas España', 'agencia digital hispanohablante', 'nearshore desarrollo software España'
       ],
+      openGraph: {
+        type: 'website',
+        locale: 'es_ES',
+        url: 'https://casolutecdigital.com/es-es',
+        siteName: 'CA Soluciones Digitales',
+        title: 'CA Soluciones Digitales | Agencia de Desarrollo Web y Apps desde México para España',
+        description: 'Agencia digital mexicana con servicios para España. Desarrollo web con React y Next.js, apps móviles, sistemas a medida, CRM, automatización con IA y bots de WhatsApp. Servicio remoto, precios competitivos.',
+        images: [{ url: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png', width: 1200, height: 630 }]
+      },
       alternates: {
         canonical: 'https://casolutecdigital.com/es-es/'
       }
@@ -94,6 +112,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'aplicativo móvel Android iOS Brasil', 'CRM personalizado Brasil', 'automação de processos IA Brasil',
         'bot WhatsApp empresas Brasil', 'outsourcing software desenvolvimento Brasil', 'agência digital LATAM português'
       ],
+      openGraph: {
+        type: 'website',
+        locale: 'pt_BR',
+        url: 'https://casolutecdigital.com/pt-br',
+        siteName: 'CA Soluções Digitais',
+        title: 'CA Soluções Digitais | Desenvolvimento Web, Apps e Sistemas no Brasil',
+        description: 'Agência digital mexicana atendendo clientes no Brasil. Desenvolvimento web com React e Next.js, apps móveis, sistemas personalizados, CRM, automação com IA e bots do WhatsApp. Trabalho remoto, preços competitivos.',
+        images: [{ url: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png', width: 1200, height: 630 }]
+      },
       alternates: {
         canonical: 'https://casolutecdigital.com/pt-br/'
       }
@@ -104,6 +131,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: 'CA Soluciones Digitales | Desarrollo Web · Infraestructura TI · Ciberseguridad',
     description: 'Ecosistemas digitales completos: webs, apps, sistemas, redes, ciberseguridad, CCTV, servidores y soporte TI. Todo para operar sin interrupciones.',
+    openGraph: {
+      type: 'website',
+      locale: 'es_MX',
+      url: 'https://casolutecdigital.com',
+      siteName: 'CA Soluciones Digitales',
+      title: 'CA Soluciones Digitales | Desarrollo Web · Infraestructura TI · Ciberseguridad',
+      description: 'Ecosistemas digitales completos: webs, apps, sistemas, redes, ciberseguridad, CCTV, servidores y soporte TI. Todo para operar sin interrupciones.',
+      images: [{ url: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png', width: 1200, height: 630 }]
+    },
     alternates: {
       canonical: 'https://casolutecdigital.com/'
     }

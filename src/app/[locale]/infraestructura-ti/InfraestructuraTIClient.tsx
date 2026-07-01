@@ -28,7 +28,7 @@ const SERVICIOS_TI = [
             'Monitoreo continuo con PRTG — detección de fallas antes de que afecten',
             'Wi-Fi empresarial con cobertura garantizada',
         ],
-        link: '/contacto?servicio=Redes+y+Conectividad+Profesional',
+        link: { pathname: '/contacto' as const, query: { servicio: 'Redes y Conectividad Profesional' } },
     },
     {
         id: 'ciberseguridad',
@@ -44,7 +44,7 @@ const SERVICIOS_TI = [
             'Auditorías de seguridad y reportes de cumplimiento',
             'Respuesta a incidentes y recuperación',
         ],
-        link: '/contacto?servicio=Ciberseguridad+y+Protección+de+Datos',
+        link: { pathname: '/contacto' as const, query: { servicio: 'Ciberseguridad' } },
     },
     {
         id: 'cctv',
@@ -60,7 +60,7 @@ const SERVICIOS_TI = [
             'Alertas de movimiento y notificaciones inteligentes',
             'Integración con sistemas de control de acceso',
         ],
-        link: '/contacto?servicio=Videovigilancia+CCTV',
+        link: { pathname: '/contacto' as const, query: { servicio: 'Videovigilancia CCTV' } },
     },
     {
         id: 'servidores',
@@ -76,7 +76,7 @@ const SERVICIOS_TI = [
             'Virtualización con Hyper-V o VMware',
             'Monitoreo de recursos y alertas de capacidad',
         ],
-        link: '/contacto?servicio=Servidores+y+Nube+Privada+(NAS/Windows+Server)',
+        link: { pathname: '/contacto' as const, query: { servicio: 'Servidores y Nube Privada' } },
     },
     {
         id: 'soporte',
@@ -92,7 +92,7 @@ const SERVICIOS_TI = [
             'Control y gestión de inventarios tecnológicos para multisucursales',
             'Soporte remoto inmediato via herramientas de acceso seguro',
         ],
-        link: '/contacto?servicio=Soporte+Técnico+Integral',
+        link: { pathname: '/contacto' as const, query: { servicio: 'Soporte Técnico Integral' } },
     },
 ];
 
@@ -141,7 +141,7 @@ export default function InfraestructuraTIPage() {
                     transition={{ delay: 0.4 }}
                 >
                     <Link
-                        href="/contacto?servicio=Plan+TI+Empresarial"
+                        href={{ pathname: '/contacto', query: { servicio: 'Plan TI Empresarial' } }}
                         className="bg-ca-gradient text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-ca-cyan/20"
                     >
                         Diagnóstico TI gratuito →
@@ -342,7 +342,7 @@ export default function InfraestructuraTIPage() {
                                 ))}
                             </ul>
                             <Link
-                                href="/contacto?servicio=Plan+TI+Empresarial"
+                                href={{ pathname: '/contacto', query: { servicio: 'Plan TI Empresarial' } }}
                                 className="inline-flex items-center gap-2 bg-ca-gradient text-white font-semibold px-7 py-3.5 rounded-xl hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-ca-cyan/20"
                             >
                                 Solicitar Plan TI <ArrowRight size={16} />
@@ -388,13 +388,13 @@ export default function InfraestructuraTIPage() {
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link
-                            href="/contacto?servicio=Plan+TI+Empresarial"
+                            href={{ pathname: '/contacto', query: { servicio: 'Plan TI Empresarial' } }}
                             className="bg-ca-gradient text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-ca-cyan/20"
                         >
                             Contactar especialista TI →
                         </Link>
                         <Link
-                            href="/paquetes-web#ti"
+                            href={{ pathname: '/paquetes-web', hash: 'ti' }}
                             className="border border-ca-border text-ca-text px-8 py-3.5 rounded-xl hover:border-ca-cyan/40 hover:text-ca-cyan transition-all"
                         >
                             Ver Plan TI Empresarial

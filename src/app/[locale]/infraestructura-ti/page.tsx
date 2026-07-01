@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import InfraestructuraTIClient from './InfraestructuraTIClient';
-import { getPageMetadata, getServiceSchema } from '@/lib/seoUtils';
+import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -30,12 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
   const schema = getServiceSchema('Servicios de Infraestructura de TI, Redes y Ciberseguridad', locale);
+  const breadcrumb = getBreadcrumbSchema('/infraestructura-ti', locale, locale === 'en' ? 'IT Infrastructure' : locale === 'pt-BR' ? 'Infraestrutura TI' : 'Infraestructura TI');
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <InfraestructuraTIClient />
     </>

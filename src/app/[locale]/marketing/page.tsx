@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import MarketingPageClient from './MarketingClient';
-import { getPageMetadata, getServiceSchema } from '@/lib/seoUtils';
+import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -30,12 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
   const schema = getServiceSchema('Marketing Digital y Gestión de Redes Sociales', locale);
+  const breadcrumb = getBreadcrumbSchema('/marketing', locale, locale === 'en' ? 'Marketing' : locale === 'pt-BR' ? 'Marketing' : 'Marketing');
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <MarketingPageClient />
     </>

@@ -126,3 +126,33 @@ export function getAboutPageSchema() {
     }
   };
 }
+
+export function getBreadcrumbSchema(route: string, locale: string, pageName: string) {
+  const homeName = locale === 'en' ? 'Home' : locale === 'pt-BR' ? 'Início' : 'Inicio';
+  const servicesName = locale === 'en' ? 'Services' : locale === 'pt-BR' ? 'Serviços' : 'Servicios';
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': homeName,
+        'item': getCanonicalUrl('/', locale)
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': servicesName,
+        'item': getCanonicalUrl('/servicios', locale)
+      },
+      {
+        '@type': 'ListItem',
+        'position': 3,
+        'name': pageName,
+        'item': getCanonicalUrl(route, locale)
+      }
+    ]
+  };
+}

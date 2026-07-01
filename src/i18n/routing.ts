@@ -47,7 +47,9 @@ export const routing = defineRouting({
     '/marketing': '/marketing',
     '/paquetes-web': '/paquetes-web',
     '/clases': '/clases',
-    '/legal': '/legal'
+    '/legal': '/legal',
+    '/legal/privacidad': '/legal/privacidad',
+    '/legal/terminos': '/legal/terminos'
   }
 });
 

@@ -18,7 +18,7 @@ export function AnimatedCounter({
     prefix = '',
     className = '',
 }: AnimatedCounterProps) {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(to);
     const startTimeRef = useRef<number | null>(null);
     const frameRef = useRef<number>(0);
 

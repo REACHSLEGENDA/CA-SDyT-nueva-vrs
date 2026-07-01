@@ -20,7 +20,7 @@ interface SubService {
     title: string;
     desc: string;
     bullets: string[];
-    pageLink?: string;   // ruta a la página detallada (si existe)
+    pageLink?: any;   // ruta a la página detallada (si existe)
 }
 
 interface Category {
@@ -353,7 +353,7 @@ export default function ServicesPage() {
                                                     </Link>
                                                 )}
                                                 <Link
-                                                    href={`/contacto?servicio=${encodeURIComponent(svc.title)}`}
+                                                    href={{ pathname: '/contacto', query: { servicio: svc.title } }}
                                                     onClick={(e) => e.stopPropagation()}
                                                     className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-ca-cyan border border-ca-cyan/30 px-3 py-1.5 rounded-lg hover:bg-ca-cyan/10 transition-colors"
                                                 >
@@ -398,7 +398,7 @@ export default function ServicesPage() {
                                                                 </Link>
                                                             )}
                                                             <Link
-                                                                href={`/contacto?servicio=${encodeURIComponent(svc.title)}`}
+                                                                href={{ pathname: '/contacto', query: { servicio: svc.title } }}
                                                                 onClick={(e) => e.stopPropagation()}
                                                                 className="inline-flex items-center gap-2 text-sm font-medium text-ca-cyan hover:gap-3 transition-all"
                                                             >
