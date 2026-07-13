@@ -23,6 +23,8 @@ import {
     Network
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import { getTechLogo } from '@/components/ui/TechLogos';
+import Image from 'next/image';
 
 export default function SystemsPage() {
     return (
@@ -71,25 +73,25 @@ export default function SystemsPage() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <SystemCard
-                        icon={<Users />}
+                        icon={<Image src="/assets/crm.png" alt="CRM" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="CRM Estratégico"
                         desc="Control total del ciclo de vida del cliente. Embudos de venta, seguimiento comercial y gestión de leads con alertas inteligentes."
                         features={["Embudo Personalizado", "Historial de Interacciones", "Automatización de Email"]}
                     />
                     <SystemCard
-                        icon={<ShoppingCart />}
+                        icon={<Image src="/assets/pos.png" alt="POS" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="POS / Punto de Venta"
                         desc="Sistemas de venta rápida con control de inventarios, reportes de caja en vivo e integración de facturación electrónica."
                         features={["Multi-sucursal", "Gestión de Stock", "Tickets y Facturación"]}
                     />
                     <SystemCard
-                        icon={<ClipboardList />}
+                        icon={<Image src="/assets/erp.png" alt="ERP" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="ERP & Gestión Interna"
                         desc="Administración integral de recursos: nómina, proveedores, logística y finanzas en una sola plataforma segura."
                         features={["Contabilidad Básica", "Gestión de Proveedores", "Control de Activos"]}
                     />
                     <SystemCard
-                        icon={<Database />}
+                        icon={<Image src="/assets/datos.png" alt="Datos" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Migración de Datos"
                         desc="Modernizamos tus sistemas antiguos. Pasamos tu info de Excel o software legacy a bases de datos cloud modernas."
                         features={["Limpieza de Datos", "Arquitectura en la Nube", "Cero Downtime"]}
@@ -204,8 +206,8 @@ export default function SystemsPage() {
 // Child Components
 function SystemCard({ icon, title, desc, features }: { icon: any, title: string, desc: string, features: string[] }) {
     return (
-        <Card className="p-8 flex flex-col h-full bg-white/[0.02] border-white/10 hover:border-brand-cyan/40 hover:bg-brand-cyan/[0.03] transition-all duration-500 group">
-            <div className="w-14 h-14 rounded-2xl bg-brand-cyan/10 flex items-center justify-center text-brand-cyan mb-8 group-hover:scale-110 group-hover:bg-brand-cyan group-hover:text-brand-black transition-all">
+        <Card className="p-8 flex flex-col h-full bg-white/[0.02] border-white/10 hover:border-brand-cyan/40 hover:bg-brand-cyan/[0.03] transition-all duration-500 group overflow-hidden">
+            <div className="mb-6 flex justify-start group-hover:scale-110 transition-transform duration-300">
                 {icon}
             </div>
             <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
@@ -248,10 +250,11 @@ function StepLine({ num, title, desc }: { num: string, title: string, desc: stri
 }
 
 function TechIcon({ name }: { name: string }) {
+    const logo = getTechLogo(name, { size: 24 });
     return (
         <div className="flex flex-col items-center gap-3">
-            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-xs text-white bg-white/5">
-                <Cpu size={20} className="text-gray-400" />
+            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-xs text-white bg-white/5 hover:border-brand-cyan/40 hover:bg-brand-cyan/5 transition-colors duration-300">
+                {logo || <Cpu size={20} className="text-gray-400" />}
             </div>
             <span className="text-[10px] text-gray-500 uppercase tracking-widest">{name}</span>
         </div>

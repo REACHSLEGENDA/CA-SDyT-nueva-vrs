@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Section } from '@/components/ui/Section';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -10,6 +11,7 @@ import {
     Sparkles, Target, LineChart, Award
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import { getTechLogo } from '@/components/ui/TechLogos';
 
 const MOTORES_IA = [
     { name: 'ChatGPT', color: 'text-emerald-400', bg: 'bg-emerald-400/10 border-emerald-400/20' },
@@ -86,11 +88,18 @@ export default function SeoAeoPage() {
                     transition={{ delay: 0.55 }}
                 >
                     <span className="text-xs text-ca-muted font-mono mr-2 self-center">Visibilidad en:</span>
-                    {MOTORES_IA.map((m) => (
-                        <span key={m.name} className={`text-xs font-mono font-semibold px-3 py-1.5 rounded-full border ${m.color} ${m.bg}`}>
-                            {m.name}
-                        </span>
-                    ))}
+                    {MOTORES_IA.map((m) => {
+                        const logo = getTechLogo(m.name, { size: 14, className: 'flex-shrink-0' });
+                        return (
+                            <span
+                                key={m.name}
+                                className={`inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-3 py-1.5 rounded-full border ${m.color} ${m.bg} hover:scale-105 transition-transform duration-300`}
+                            >
+                                {logo}
+                                {m.name}
+                            </span>
+                        );
+                    })}
                 </motion.div>
             </Section>
 
@@ -105,7 +114,7 @@ export default function SeoAeoPage() {
                 <div className="grid md:grid-cols-3 gap-6">
                     {[
                         {
-                            icon: <Search size={28} className="text-ca-cyan" />,
+                            icon: <Image src="/assets/seo.png" alt="SEO" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'cyan' as const,
                             title: 'SEO Técnico',
                             desc: 'Optimizamos la estructura, velocidad, Core Web Vitals, schema markup y arquitectura de tu sitio para que Google lo entienda y posicione primero.',
@@ -118,7 +127,7 @@ export default function SeoAeoPage() {
                             ],
                         },
                         {
-                            icon: <Bot size={28} className="text-ca-purple" />,
+                            icon: <Image src="/assets/aeo.png" alt="AEO" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'purple' as const,
                             title: 'AEO — Optimización para IAs',
                             desc: 'El AEO (Answer Engine Optimization) es el SEO del futuro. Optimizamos tu contenido para que ChatGPT, Gemini, Claude y Perplexity te citen en sus respuestas.',
@@ -131,7 +140,7 @@ export default function SeoAeoPage() {
                             ],
                         },
                         {
-                            icon: <MapPin size={28} className="text-emerald-400" />,
+                            icon: <Image src="/assets/maps.png" alt="Google Maps" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'none' as const,
                             title: 'Google Business & SEO Local',
                             desc: 'Optimizamos y gestionamos tu ficha en Google Maps para que clientes locales te encuentren antes que a la competencia.',
@@ -151,8 +160,8 @@ export default function SeoAeoPage() {
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
                         >
-                            <GlassCard glow={item.glow} className="p-7 h-full flex flex-col">
-                                <div className="w-12 h-12 rounded-xl bg-ca-surface2 border border-ca-border flex items-center justify-center mb-5">
+                            <GlassCard glow={item.glow} className="p-7 h-full flex flex-col group overflow-hidden">
+                                <div className="mb-6 flex justify-start group-hover:scale-110 transition-transform duration-300">
                                     {item.icon}
                                 </div>
                                 <h3 className="font-display font-black text-xl text-ca-text mb-3">{item.title}</h3>

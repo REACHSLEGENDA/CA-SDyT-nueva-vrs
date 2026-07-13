@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -73,21 +74,21 @@ export default function ClassesPage() {
 
                 <div className="grid lg:grid-cols-3 gap-8">
                     <ClassTrack
-                        icon={<Monitor size={40} />}
+                        icon={<Image src="/assets/office.png" alt="Office" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Productividad & Office"
                         desc="Domina el entorno Windows y la suite de Office de forma profesional. Optimiza tu flujo de trabajo administrativo y personal."
                         topics={["Excel Avanzado (Fórmulas/Tablas)", "Word & PowerPoint Profesional", "Gestión de Correo & Cloud", "Seguridad Digital Básica"]}
                         color="blue"
                     />
                     <ClassTrack
-                        icon={<Terminal size={40} />}
+                        icon={<Image src="/assets/desarrollo.png" alt="Desarrollo" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Desarrollo & Programación"
                         desc="Aprende a construir el internet. Desde lógica de programación hasta frameworks modernos utilizados por la élite tecnológica."
                         topics={["HTML5, CSS3 & JavaScript", "React & Next.js Frameworks", "Bases de Datos & SQL", "Despliegue de Aplicaciones"]}
                         color="purple"
                     />
                     <ClassTrack
-                        icon={<Presentation size={40} />}
+                        icon={<Image src="/assets/marketing.png" alt="Marketing" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Marketing & Gestión"
                         desc="Habilidades digitales enfocadas en negocio. Aprende a gestionar tus canales y herramientas de venta de forma autónoma."
                         topics={["Gestión de Redes Sociales", "Principios de Diseño Gráfico", "WhatsApp Business Pro", "Analytics & Reportes"]}
@@ -201,18 +202,12 @@ export default function ClassesPage() {
 
 // Child Components
 function ClassTrack({ icon, title, desc, topics, color }: { icon: any, title: string, desc: string, topics: string[], color: 'blue' | 'purple' | 'cyan' }) {
-    const accents = {
-        blue: 'text-brand-blue bg-brand-blue/10 border-brand-blue/20',
-        purple: 'text-brand-purple bg-brand-purple/10 border-brand-purple/20',
-        cyan: 'text-brand-cyan bg-brand-cyan/10 border-brand-cyan/20'
-    };
-
     return (
-        <Card className="p-10 flex flex-col h-full hover:bg-white/5 transition-all duration-500 group relative">
+        <Card className="p-10 flex flex-col h-full hover:bg-white/5 transition-all duration-500 group relative overflow-hidden">
             <div className="absolute top-0 right-0 p-8 opacity-5">
                 {icon}
             </div>
-            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center border-2 mb-8 ${accents[color]} group-hover:scale-110 transition-transform`}>
+            <div className="mb-6 flex justify-start group-hover:scale-110 transition-transform duration-300">
                 {icon}
             </div>
             <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-gradient transition-all">{title}</h3>

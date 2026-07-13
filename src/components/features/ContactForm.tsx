@@ -5,6 +5,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useSearchParams } from 'next/navigation';
 import { Loader2, CheckCircle2 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { playSound } from '@/lib/sound';
 
 const SERVICE_OPTIONS = [
     { group: 'Desarrollo Digital', options: [
@@ -49,6 +50,7 @@ function ContactFormInner() {
 
     useEffect(() => {
         if (state.succeeded) {
+            playSound('success');
             toast.success('¡Mensaje enviado! Te contactamos en menos de 2 horas.');
         }
         if (state.errors && Object.keys(state.errors).length > 0) {

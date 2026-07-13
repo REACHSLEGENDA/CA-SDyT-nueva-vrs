@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import { GlassCard } from '@/components/ui/GlassCard';
@@ -19,6 +20,7 @@ import { ProcessSection } from '@/components/features/ProcessSection';
 import { FAQSection } from '@/components/features/FAQSection';
 import { CTASection } from '@/components/features/CTASection';
 import { heroVideoStart, heroVideoEnd } from '@/lib/heroState';
+import { getTechLogo } from '@/components/ui/TechLogos';
 
 const TECH_TAGS = [
     'React', 'Next.js', 'Node.js', 'Supabase', 'Flutter', 'Fortinet',
@@ -189,63 +191,38 @@ export function HomeClient() {
 
                     {/* Columna derecha — mockup flotante */}
                     <motion.div
-                        animate={{ y: [0, -12, 0] }}
+                        animate={{ y: [0, -15, 0] }}
                         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                        initial={{ opacity: 0, x: 24 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        className="relative mt-8 lg:mt-0"
+                        className="relative mt-8 lg:mt-0 w-full flex justify-center"
                     >
-                        <div className="relative rounded-2xl overflow-hidden border border-ca-border shadow-2xl shadow-ca-cyan/5">
-                            <div className="bg-ca-surface p-4">
-                                <div className="flex gap-2 mb-4">
-                                    <div className="w-3 h-3 rounded-full bg-red-500/60" />
-                                    <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-                                    <div className="w-3 h-3 rounded-full bg-green-500/60" />
-                                </div>
-                                <div className="bg-ca-dark rounded-xl p-6 space-y-4">
-                                    <div className="h-3 bg-ca-cyan/40 rounded-full w-3/4" />
-                                    <div className="h-2 bg-ca-muted/20 rounded-full w-full" />
-                                    <div className="h-2 bg-ca-muted/20 rounded-full w-5/6" />
-                                    <div className="grid grid-cols-3 gap-3 mt-5">
-                                        {[
-                                            { icon: <Globe size={18} className="text-ca-cyan" />, label: 'Web' },
-                                            { icon: <Network size={18} className="text-ca-purple" />, label: 'Redes' },
-                                            { icon: <ShieldCheck size={18} className="text-ca-mid" />, label: 'Cyber' },
-                                        ].map((item) => (
-                                            <div
-                                                key={item.label}
-                                                className="bg-ca-surface2 rounded-lg p-3 h-20 flex flex-col items-center justify-center gap-2 border border-ca-border"
-                                            >
-                                                {item.icon}
-                                                <span className="text-[10px] font-mono text-ca-muted">{item.label}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="flex items-center justify-between mt-4 p-3 bg-ca-surface2 rounded-lg border border-ca-border">
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-2 h-2 rounded-full bg-ca-success animate-pulse" />
-                                            <span className="text-[11px] text-ca-muted font-mono">Active</span>
-                                        </div>
-                                        <span className="text-ca-cyan text-xs font-bold font-mono">+240%</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="relative w-full max-w-lg">
+                            <Image
+                                src="/assets/home.png"
+                                alt="CA Digital Services"
+                                width={600}
+                                height={450}
+                                className="w-full h-auto object-contain"
+                                priority
+                            />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-ca-cyan/15 rounded-full blur-[100px] -z-10" />
                         </div>
-                        <div className="absolute -inset-6 bg-ca-cyan/4 rounded-3xl blur-2xl -z-10" />
                     </motion.div>
                 </div>
 
                 <div className="relative z-10 overflow-hidden pb-8 mt-4" aria-hidden="true">
                     <div className="flex animate-badge-scroll whitespace-nowrap gap-4 w-max">
-                        {TECH_TAGS.map((tech, i) => (
-                            <span
-                                key={i}
-                                className="font-mono text-xs text-ca-muted border border-ca-border px-3 py-1.5 rounded-full bg-ca-surface/50"
-                            >
-                                {tech}
-                            </span>
-                        ))}
+                        {TECH_TAGS.map((tech, i) => {
+                            const logo = getTechLogo(tech, { size: 16 });
+                            return (
+                                <span
+                                    key={i}
+                                    className="inline-flex items-center gap-2.5 font-mono text-xs text-ca-muted border border-ca-border px-3.5 py-1.5 rounded-full bg-ca-surface/50"
+                                >
+                                    {logo}
+                                    {tech}
+                                </span>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
@@ -295,12 +272,12 @@ export function HomeClient() {
                 />
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     {[
-                        { icon: <Globe size={24} />, label: 'Web & Apps', color: 'text-ca-cyan' },
-                        { icon: <Bot size={24} />, label: 'IA & Bots', color: 'text-pink-400' },
-                        { icon: <Network size={24} />, label: 'Redes TI', color: 'text-ca-mid' },
-                        { icon: <ShieldCheck size={24} />, label: 'Ciberseguridad', color: 'text-ca-success' },
-                        { icon: <Camera size={24} />, label: 'CCTV', color: 'text-ca-purple' },
-                        { icon: <Headphones size={24} />, label: 'Soporte TI', color: 'text-yellow-400' },
+                        { imgSrc: '/assets/web-app.png', label: 'Web & Apps' },
+                        { imgSrc: '/assets/ia.png', label: 'IA & Bots' },
+                        { imgSrc: '/assets/redes.png', label: 'Redes TI' },
+                        { imgSrc: '/assets/ciber.png', label: 'Ciberseguridad' },
+                        { imgSrc: '/assets/cctv.png', label: 'CCTV' },
+                        { imgSrc: '/assets/it.png', label: 'Soporte TI' },
                     ].map((item, i) => (
                         <motion.div
                             key={item.label}
@@ -311,8 +288,14 @@ export function HomeClient() {
                         >
                             <Link href="/servicios">
                                 <GlassCard className="p-5 text-center group cursor-pointer" glow="cyan">
-                                    <div className={`${item.color} mb-3 flex justify-center group-hover:scale-110 transition-transform`}>
-                                        {item.icon}
+                                    <div className="mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <Image
+                                            src={item.imgSrc}
+                                            alt={item.label}
+                                            width={192}
+                                            height={192}
+                                            className="w-48 h-48 max-w-full object-contain"
+                                        />
                                     </div>
                                     <span className="text-xs font-medium text-ca-muted group-hover:text-ca-text transition-colors">
                                         {item.label}
@@ -339,30 +322,38 @@ export function HomeClient() {
                     title="Tecnologías que usamos"
                     subtitle="Las mismas herramientas que usan startups y empresas globales, ahora al servicio de tu negocio."
                 />
-                <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
                     {[
-                        { name: 'React / Next.js', icon: <Code2 size={18} className="text-blue-400" /> },
-                        { name: 'Tailwind CSS', icon: <Layout size={18} className="text-ca-cyan" /> },
-                        { name: 'Node.js', icon: <Server size={18} className="text-green-500" /> },
-                        { name: 'APIs & GraphQL', icon: <Globe size={18} className="text-purple-400" /> },
-                        { name: 'MySQL / Postgres', icon: <Database size={18} className="text-blue-500" /> },
-                        { name: 'Supabase', icon: <Zap size={18} className="text-emerald-400" /> },
-                        { name: 'Fortinet', icon: <ShieldCheck size={18} className="text-ca-success" /> },
-                        { name: 'Synology NAS', icon: <Server size={18} className="text-ca-muted" /> },
-                        { name: 'Windows Server', icon: <Cpu size={18} className="text-blue-400" /> },
-                        { name: 'PRTG', icon: <Network size={18} className="text-ca-mid" /> },
-                        { name: 'Integraciones', icon: <Plug size={18} className="text-yellow-400" /> },
-                        { name: 'Flutter / Kotlin', icon: <Smartphone size={18} className="text-ca-purple" /> },
-                    ].map(({ name, icon }) => (
-                        <motion.div
-                            key={name}
-                            whileHover={{ y: -3, scale: 1.03 }}
-                            className="flex items-center gap-3 px-5 py-3 rounded-xl bg-ca-surface border border-ca-border hover:border-ca-cyan/30 transition-all duration-300 cursor-default"
-                        >
-                            {icon}
-                            <span className="text-ca-muted text-sm font-medium hover:text-ca-text">{name}</span>
-                        </motion.div>
-                    ))}
+                        { name: 'React / Next.js', displayName: 'React / Next.js' },
+                        { name: 'Tailwind CSS', displayName: 'Tailwind CSS' },
+                        { name: 'TypeScript', displayName: 'TypeScript' },
+                        { name: 'JavaScript', displayName: 'JavaScript' },
+                        { name: 'Node.js', displayName: 'Node.js' },
+                        { name: 'Supabase', displayName: 'Supabase' },
+                        { name: 'WordPress', displayName: 'WordPress' },
+                        { name: 'PHP', displayName: 'PHP' },
+                        { name: 'MySQL / Postgres', displayName: 'MySQL' },
+                        { name: 'Fortinet', displayName: 'Fortinet' },
+                        { name: 'Synology NAS', displayName: 'Synology NAS' },
+                        { name: 'PRTG', displayName: 'PRTG Monitor' },
+                    ].map(({ name, displayName }) => {
+                        const logo = getTechLogo(name, { size: 32 });
+                        return (
+                            <motion.div
+                                key={name}
+                                whileHover={{ y: -4, scale: 1.05 }}
+                                className="flex flex-col items-center justify-center p-5 rounded-2xl bg-ca-surface/40 border border-ca-border hover:border-ca-cyan/30 transition-all duration-300 group cursor-default"
+                                title={displayName}
+                            >
+                                <div className="h-10 flex items-center justify-center mb-3">
+                                    {logo}
+                                </div>
+                                <span className="text-ca-muted text-xs font-mono text-center group-hover:text-ca-cyan transition-colors line-clamp-1">
+                                    {displayName}
+                                </span>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </Section>
 

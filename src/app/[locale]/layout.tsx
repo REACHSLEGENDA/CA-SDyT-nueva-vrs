@@ -7,6 +7,7 @@ import { Chatbot } from "@/components/features/Chatbot";
 import { CookieBanner } from "@/components/features/CookieBanner";
 import { DynamicBackground } from "@/components/layout/DynamicBackground";
 import { Toaster } from "react-hot-toast";
+import { SoundListener } from "@/components/features/SoundListener";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -65,6 +66,7 @@ export default async function LocaleLayout({
             <Footer />
             <Chatbot />
             <CookieBanner />
+            <SoundListener />
           </div>
 
           <Toaster

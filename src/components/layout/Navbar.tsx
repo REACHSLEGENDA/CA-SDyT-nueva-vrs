@@ -47,6 +47,14 @@ export function Navbar() {
         document.body.style.overflow = isOpen ? 'hidden' : '';
     }, [isOpen]);
 
+    const handleOpen = () => {
+        setIsOpen(true);
+    };
+
+    const handleClose = () => {
+        setIsOpen(false);
+    };
+
     return (
         <>
             <nav
@@ -109,7 +117,8 @@ export function Navbar() {
 
                         {/* Hamburger */}
                         <button
-                            onClick={() => setIsOpen(true)}
+                            onClick={handleOpen}
+                            data-sound="toggle"
                             aria-label="Abrir menú"
                             className="w-10 h-10 flex items-center justify-center rounded-xl bg-ca-surface/80 hover:bg-ca-surface border border-ca-border transition-colors text-ca-text"
                         >
@@ -135,8 +144,8 @@ export function Navbar() {
 
                         <div className="container mx-auto px-4 py-8 h-full flex flex-col relative z-10">
                             {/* Header */}
-                            <div className="flex justify-between items-center mb-12">
-                                <Link href="/" onClick={() => setIsOpen(false)} className="relative h-9 w-32">
+                             <div className="flex justify-between items-center mb-12">
+                                <Link href="/" onClick={handleClose} className="relative h-9 w-32">
                                     <Image
                                         src="/assets/logo.png"
                                         alt="CA Soluciones Digitales"
@@ -146,7 +155,8 @@ export function Navbar() {
                                     />
                                 </Link>
                                 <button
-                                    onClick={() => setIsOpen(false)}
+                                    onClick={handleClose}
+                                    data-sound="toggle"
                                     aria-label="Cerrar menú"
                                     className="w-10 h-10 flex items-center justify-center rounded-xl bg-ca-surface border border-ca-border hover:border-ca-cyan/30 transition-colors text-ca-text"
                                 >
@@ -170,7 +180,7 @@ export function Navbar() {
                                             >
                                                 <Link
                                                     href={link.href}
-                                                    onClick={() => setIsOpen(false)}
+                                                    onClick={handleClose}
                                                     className={cn(
                                                         'flex items-center justify-between p-3.5 rounded-xl border transition-all group',
                                                         pathname === link.href

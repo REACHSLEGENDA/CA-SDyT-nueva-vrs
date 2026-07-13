@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -76,21 +77,21 @@ export default function AutomationPage() {
 
                 <div className="grid lg:grid-cols-3 gap-8">
                     <AutoCard
-                        icon={<Bot size={40} />}
+                        icon={<Image src="/assets/ia.png" alt="IA" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Agentes y Chatbots con IA"
                         desc="No son simples bots de botones. Implementamos cerebros digitales con GPT-4 que entienden contexto, califican prospectos y cierran ventas en WhatsApp, Facebook y Web."
                         features={["Integración con OpenAI / Claude", "Conexión a tu Base de Datos", "Traspaso a Humano Inteligente", "Multilenguaje y Multicanal"]}
                         color="pink"
                     />
                     <AutoCard
-                        icon={<Workflow size={40} />}
+                        icon={<Image src="/assets/workflow.png" alt="Workflows" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Workflows Avanzados"
                         desc="Conectamos tus herramientas favoritas (CRM, Slack, Google, ERP) usando Make.com y Zapier. Cuando ocurre 'A', tu sistema ejecuta 'B', 'C' y 'D' automáticamente."
                         features={["Reducción de Errores Humanos", "Ahorro de +40h Semanales", "Sincronización de Leads", "Alertas en Tiempo Real"]}
                         color="purple"
                     />
                     <AutoCard
-                        icon={<Plug size={40} />}
+                        icon={<Image src="/assets/api.png" alt="API" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Integración de APIs"
                         desc="Creamos puentes de comunicación entre sistemas que originalmente no pueden hablar entre sí. Desarrollo de middleware seguro para flujo de datos constante."
                         features={["Webhooks Personalizados", "Seguridad End-to-End", "Documentación Técnica", "Escalabilidad Cloud"]}
@@ -230,15 +231,9 @@ export default function AutomationPage() {
 
 // Child Components
 function AutoCard({ icon, title, desc, features, color }: { icon: any, title: string, desc: string, features: string[], color: 'pink' | 'purple' | 'blue' }) {
-    const accents = {
-        pink: 'text-pink-500 bg-pink-500/10 border-pink-500/20',
-        purple: 'text-brand-purple bg-brand-purple/10 border-brand-purple/20',
-        blue: 'text-brand-blue bg-brand-blue/10 border-brand-blue/20'
-    };
-
     return (
-        <Card className="p-10 flex flex-col h-full hover:bg-white/5 transition-all duration-500 group">
-            <div className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 mb-8 ${accents[color]} group-hover:scale-110 transition-transform`}>
+        <Card className="p-10 flex flex-col h-full hover:bg-white/5 transition-all duration-500 group overflow-hidden">
+            <div className="mb-6 flex justify-start group-hover:scale-110 transition-transform duration-300">
                 {icon}
             </div>
             <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-gradient transition-all">{title}</h3>

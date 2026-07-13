@@ -98,7 +98,7 @@ export default function MarketingPage() {
                             "Segmentación Avanzada",
                             "Retargeting Estratégico",
                             "Pruebas A/B de Creativos",
-                            "Optimización de ROAS"
+                            "Optimización de Presupuesto"
                         ]}
                     />
                 </div>
