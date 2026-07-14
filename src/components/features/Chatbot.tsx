@@ -8,7 +8,9 @@ import { Link, usePathname } from '@/i18n/routing';
 
 type StepId =
     | 'start'
-    | 'web' | 'system' | 'infra' | 'marketing' | 'automation' | 'packages'
+    | 'grow_options' | 'tech_options' | 'classes_intro' | 'about_intro'
+    | 'web' | 'system' | 'system_migration' | 'infra' | 'marketing' | 'automation' | 'packages'
+    | 'about_portfolio' | 'about_us_info'
     | 'final_web' | 'final_system' | 'final_infra' | 'final_mkt' | 'final_auto' | 'final_classes' | 'final_pkg';
 
 interface Option {
@@ -28,88 +30,161 @@ interface Step {
 const steps: Record<string, Step> = {
     start: {
         id: 'start',
-        text: 'Hola, soy el asistente de CA Soluciones 👋 ¿En qué área puedo orientarte?',
+        text: '¡Hola! Soy Cassie, tu asistente digital en CA Soluciones y Tecnología. 🤖✨ Estoy aquí para ayudarte a diseñar el ecosistema tecnológico de tu negocio. ¿En qué puedo apoyarte hoy?',
         options: [
-            { label: '🌐 Sitio web o app', next: 'web' },
-            { label: '⚙️ Sistema o software', next: 'system' },
-            { label: '🔒 Infraestructura TI', next: 'infra' },
-            { label: '📈 Marketing y SEO', next: 'marketing' },
-            { label: '🤖 Automatización & IA', next: 'automation' },
-            { label: '📦 Ver paquetes', next: 'packages' },
+            { label: '📈 Hacer crecer mi negocio o ventas', next: 'grow_options' },
+            { label: '⚙️ Resolver una necesidad técnica o de software', next: 'tech_options' },
+            { label: '📚 Capacitación / Clases de informática', next: 'classes_intro' },
+            { label: '🏢 Conocer más sobre CA Soluciones', next: 'about_intro' },
+        ],
+    },
+
+    grow_options: {
+        id: 'grow_options',
+        text: '¡Excelente decisión! Para impulsar tus ventas y presencia, contamos con varios frentes digitales. ¿Qué área te interesa fortalecer?',
+        options: [
+            { label: '🌐 Crear un Sitio Web o App Móvil', next: 'web' },
+            { label: '🤖 Automatización de Procesos con IA', next: 'automation' },
+            { label: '📈 Posicionamiento SEO y motores de IA (AEO)', next: 'marketing' },
+            { label: '📦 Ver Paquetes de Desarrollo Web', next: 'packages' },
+            { label: '← Volver al inicio', next: 'start' },
+        ],
+    },
+
+    tech_options: {
+        id: 'tech_options',
+        text: 'Entendido. En la parte técnica, ayudamos a que tu negocio opere de manera segura, rápida y sin interrupciones. ¿Qué requiere tu empresa?',
+        options: [
+            { label: '⚙️ Un Sistema a medida (CRM, POS, ERP)', next: 'system' },
+            { label: '🔒 Seguridad de Red, Servidores o CCTV', next: 'infra' },
+            { label: '💾 Migración de Datos (Excel a Cloud)', next: 'system_migration' },
+            { label: '← Volver al inicio', next: 'start' },
+        ],
+    },
+
+    classes_intro: {
+        id: 'classes_intro',
+        text: '¡Súper! Ofrecemos capacitación personalizada para que tú o tu equipo dominen las herramientas clave. ¿En qué área deseas especializarte?',
+        options: [
+            { label: '💻 Ofimática y Computación Básica', next: 'final_classes' },
+            { label: '⚡ Desarrollo Web y Programación', next: 'final_classes' },
+            { label: '🎨 Marketing Digital y Redes', next: 'final_classes' },
+            { label: '← Volver al inicio', next: 'start' },
+        ],
+    },
+
+    about_intro: {
+        id: 'about_intro',
+        text: 'Somos una agencia digital con sede en México atendiendo clientes en toda Latinoamérica. Nos especializamos en desarrollo web, apps, CRM, automatización de WhatsApp con IA y soporte de infraestructura TI. ¿Qué te gustaría explorar?',
+        options: [
+            { label: '📂 Ver nuestro Portafolio de proyectos', next: 'about_portfolio' },
+            { label: '👥 Conocer sobre nosotros y el equipo', next: 'about_us_info' },
+            { label: '← Volver al inicio', next: 'start' },
         ],
     },
 
     web: {
         id: 'web',
-        text: '¡Perfecto! Desarrollamos con Next.js, React y Flutter. ¿Qué tipo de proyecto tienes en mente?',
+        text: '¡Perfecto! Desarrollamos con tecnologías robustas como Next.js, React y Flutter para apps móviles. ¿Qué tipo de plataforma necesitas?',
         options: [
-            { label: 'Landing o sitio corporativo', next: 'final_web' },
-            { label: 'Tienda en línea', next: 'final_web' },
-            { label: 'App web a medida', next: 'final_web' },
-            { label: 'App móvil (Android/iOS)', next: 'final_web' },
+            { label: 'Landing page o Sitio corporativo', next: 'final_web' },
+            { label: 'Tienda en línea (E-commerce)', next: 'final_web' },
+            { label: 'Aplicación Web a medida', next: 'final_web' },
+            { label: 'App Móvil (Android & iOS)', next: 'final_web' },
+            { label: '← Volver', next: 'grow_options' },
         ],
         serviceHref: '/apps-web',
     },
 
     system: {
         id: 'system',
-        text: 'Desarrollamos sistemas empresariales con Supabase y Node.js. ¿Qué necesitas gestionar?',
+        text: 'Diseñamos sistemas desde cero con Supabase y Node.js para erradicar cuellos de botella. ¿Qué necesitas digitalizar?',
         options: [
-            { label: 'CRM de ventas y clientes', next: 'final_system' },
-            { label: 'Inventario / Punto de venta', next: 'final_system' },
-            { label: 'ERP o sistema a medida', next: 'final_system' },
-            { label: 'Integración de plataformas', next: 'final_system' },
+            { label: 'Embudo de ventas y prospectos (CRM)', next: 'final_system' },
+            { label: 'Punto de venta y control de stock (POS)', next: 'final_system' },
+            { label: 'Administración de recursos / Nómina (ERP)', next: 'final_system' },
+            { label: '← Volver', next: 'tech_options' },
+        ],
+        serviceHref: '/sistemas',
+    },
+
+    system_migration: {
+        id: 'system_migration',
+        text: 'Modernizamos bases de datos legacy o tablas de Excel hacia bases de datos cloud seguras y centralizadas. ¿Qué volumen de datos manejas?',
+        options: [
+            { label: 'Bajo (Tablas de Excel o Access)', next: 'final_system' },
+            { label: 'Alto (Sistemas antiguos o ERP local)', next: 'final_system' },
+            { label: '← Volver', next: 'tech_options' },
         ],
         serviceHref: '/sistemas',
     },
 
     infra: {
         id: 'infra',
-        text: 'Somos especialistas en infraestructura con Fortinet, Synology NAS y Windows Server. ¿Qué servicio necesitas?',
+        text: 'Instalamos y configuramos firewalls Fortinet, almacenamiento Synology NAS y servidores seguros. ¿Qué requiere tu espacio?',
         options: [
-            { label: 'Redes y conectividad', next: 'final_infra' },
-            { label: 'Ciberseguridad / Firewall', next: 'final_infra' },
-            { label: 'Videovigilancia CCTV', next: 'final_infra' },
-            { label: 'Servidores / NAS / Nube privada', next: 'final_infra' },
-            { label: 'Soporte técnico mensual', next: 'final_infra' },
+            { label: 'Ciberseguridad y protección de red (Firewall)', next: 'final_infra' },
+            { label: 'Servidores locales o Nube privada (NAS)', next: 'final_infra' },
+            { label: 'CCTV / Cámaras de videovigilancia', next: 'final_infra' },
+            { label: '← Volver', next: 'tech_options' },
         ],
         serviceHref: '/infraestructura-ti',
     },
 
     marketing: {
         id: 'marketing',
-        text: 'Posicionamos tu negocio en Google y en motores de IA. ¿Qué área te interesa?',
+        text: 'Hoy en día no basta con aparecer en Google; también optimizamos para respuestas de IA (ChatGPT, Gemini, Perplexity). ¿En qué te enfocas?',
         options: [
-            { label: 'SEO técnico en Google', next: 'final_mkt' },
-            { label: 'AEO (ChatGPT, Gemini, Claude)', next: 'final_mkt' },
-            { label: 'Google Business & Maps', next: 'final_mkt' },
-            { label: 'Redes sociales y contenido', next: 'final_mkt' },
+            { label: 'Aparecer en búsquedas de Google (SEO)', next: 'final_mkt' },
+            { label: 'Respuestas de IA (AEO: ChatGPT, Gemini)', next: 'final_mkt' },
+            { label: 'Ficha de Google Maps y Negocio Local', next: 'final_mkt' },
+            { label: '← Volver', next: 'grow_options' },
         ],
         serviceHref: '/seo-aeo',
     },
 
     automation: {
         id: 'automation',
-        text: 'Automatizamos procesos y construimos agentes de IA. ¿Qué quieres optimizar?',
+        text: 'La automatización con IA (n8n, Make) reduce hasta un 80% el tiempo operativo. ¿Cuál es tu prioridad?',
         options: [
-            { label: 'Bot de WhatsApp con IA', next: 'final_auto' },
-            { label: 'Flujos y procesos repetitivos', next: 'final_auto' },
-            { label: 'Integraciones entre sistemas', next: 'final_auto' },
-            { label: 'Agente de IA personalizado', next: 'final_auto' },
+            { label: 'Bot de WhatsApp inteligente (GPT-4)', next: 'final_auto' },
+            { label: 'Conectar sistemas (CRM, Hojas de cálculo, etc.)', next: 'final_auto' },
+            { label: 'Automatizar tareas y flujos repetitivos', next: 'final_auto' },
+            { label: '← Volver', next: 'grow_options' },
         ],
         serviceHref: '/automatizacion',
     },
 
     packages: {
         id: 'packages',
-        text: 'Tenemos paquetes diseñados para diferentes etapas de crecimiento. ¿Cuál te llama la atención?',
+        text: 'Contamos con planes fijos llave en mano ideales para lanzar tu negocio rápido. ¿Cuál te interesa evaluar?',
         options: [
-            { label: '🚀 Despegue Digital', next: 'final_pkg' },
-            { label: '📊 Tráfico y Conversión', next: 'final_pkg' },
-            { label: '✨ Ecosistema Premium IA', next: 'final_pkg' },
-            { label: '🏢 Plan TI Empresarial', next: 'final_pkg' },
+            { label: '🚀 Plan Despegue Digital (Sitio web corporativo)', next: 'final_pkg' },
+            { label: '📊 Plan Tráfico y Conversión (SEO local y campaña)', next: 'final_pkg' },
+            { label: '✨ Ecosistema Premium (Web + Bot IA + AEO)', next: 'final_pkg' },
+            { label: '← Volver', next: 'grow_options' },
         ],
         serviceHref: '/paquetes-web',
+    },
+
+    about_portfolio: {
+        id: 'about_portfolio',
+        text: '¡Genial! Hemos desarrollado plataformas de e-commerce, sitios de marcas internacionales y automatizaciones empresariales. Puedes verlos en detalle en nuestra sección de Portafolio. ¿Te gustaría cotizar?',
+        options: [
+            { label: '¡Sí, cotizar ahora!', next: 'final_web' },
+            { label: '← Volver', next: 'about_intro' },
+        ],
+        serviceHref: '/portafolio',
+    },
+
+    about_us_info: {
+        id: 'about_us_info',
+        text: 'En CA Soluciones nos apasiona crear software robusto, escalable y limpio. Nos basamos en la transparencia y calidad técnica. ¿Quieres cotizar un proyecto con nosotros?',
+        options: [
+            { label: '¡Sí, platicar del proyecto!', next: 'final_web' },
+            { label: '← Volver', next: 'about_intro' },
+        ],
+        serviceHref: '/nosotros',
     },
 
     // ─── Finales con texto contextual ────────────────────────────────────
@@ -186,7 +261,7 @@ export function Chatbot() {
         const interval = setInterval(() => {
             idx = (idx + 1) % frames.length;
             setFrame(frames[idx]);
-        }, 250); // 250ms por frame para una animación fluida
+        }, 350); // 350ms por frame para una animación un poco más lenta y fluida
         return () => clearInterval(interval);
     }, [isHovered, isOpen]);
 
@@ -208,6 +283,14 @@ export function Chatbot() {
 
     return (
         <>
+            {/* Preloader de imágenes para evitar trabas en la animación */}
+            <div className="sr-only select-none pointer-events-none opacity-0 w-0 h-0 overflow-hidden">
+                <Image src="/assets/bot1.png" alt="" width={1} height={1} priority />
+                <Image src="/assets/bot2.png" alt="" width={1} height={1} priority />
+                <Image src="/assets/bot3.png" alt="" width={1} height={1} priority />
+                <Image src="/assets/bot4.png" alt="" width={1} height={1} priority />
+            </div>
+
             {/* Speech bubble balloon (globito de texto) */}
             <AnimatePresence>
                 {isHovered && !isOpen && !isHeroPlaying && (
@@ -216,7 +299,7 @@ export function Chatbot() {
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         exit={{ opacity: 0, scale: 0.8, x: 12 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
-                        className="fixed right-28 bottom-[48px] z-50 bg-ca-surface border border-ca-border px-4 py-2.5 rounded-2xl rounded-br-none shadow-[0_4px_20px_rgba(0,0,0,0.4)] font-mono font-bold text-xs text-ca-cyan tracking-wide whitespace-nowrap pointer-events-none"
+                        className="fixed right-30 bottom-[64px] z-50 bg-ca-surface border border-ca-border px-4 py-2.5 rounded-2xl rounded-br-none shadow-[0_4px_20px_rgba(0,0,0,0.4)] font-mono font-bold text-xs text-ca-cyan tracking-wide whitespace-nowrap pointer-events-none"
                     >
                         ¿Necesitas ayuda?
                         <div className="absolute right-0 bottom-3 translate-x-1/2 rotate-45 w-3 h-3 bg-ca-surface border-r border-b border-ca-border" />
@@ -230,10 +313,15 @@ export function Chatbot() {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 aria-label="Abrir asistente"
-                className={`fixed bottom-6 right-6 z-40 transition-all duration-300 hover:scale-110 flex items-center justify-center ${
+                className={`fixed z-40 transition-all duration-300 hover:scale-110 flex items-center justify-center ${
                     isHeroPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
                 }`}
-                style={{ width: '96px', height: '96px' }}
+                style={{ 
+                    width: isOpen ? '48px' : '112px', 
+                    height: isOpen ? '48px' : '112px',
+                    bottom: isOpen ? '16px' : '20px',
+                    right: isOpen ? '24px' : '20px'
+                }}
             >
                 <AnimatePresence mode="wait" initial={false}>
                     {isOpen ? (
@@ -243,9 +331,9 @@ export function Chatbot() {
                             animate={{ rotate: 0, opacity: 1 }}
                             exit={{ rotate: 90, opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="w-16 h-16 rounded-full bg-ca-gradient shadow-[0_0_28px_rgba(0,207,255,0.45)] flex items-center justify-center text-white"
+                            className="w-12 h-12 rounded-full bg-ca-gradient shadow-[0_0_20px_rgba(0,207,255,0.4)] flex items-center justify-center text-white"
                         >
-                            <X size={26} />
+                            <X size={20} />
                         </motion.div>
                     ) : (
                         <motion.div
@@ -254,7 +342,7 @@ export function Chatbot() {
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.7, opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="relative w-24 h-24 filter drop-shadow-[0_4px_12px_rgba(0,207,255,0.3)]"
+                            className="relative w-28 h-28 filter drop-shadow-[0_4px_12px_rgba(0,207,255,0.3)]"
                         >
                             <Image
                                 src={isHovered ? "/assets/bot4.png" : `/assets/bot${frame}.png`}
@@ -276,18 +364,21 @@ export function Chatbot() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.92, y: 16 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
-                        className="fixed bottom-24 right-6 z-40 w-[92vw] md:w-[400px] h-[540px] bg-ca-surface border border-ca-border rounded-2xl shadow-2xl shadow-black/40 flex flex-col overflow-hidden"
+                        className="fixed bottom-20 right-6 z-40 w-[92vw] md:w-[400px] h-[550px] bg-ca-dark/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(0,207,255,0.03)] flex flex-col overflow-hidden"
                     >
                         {/* Header */}
-                        <div className="p-4 border-b border-ca-border bg-ca-surface2 flex justify-between items-center shrink-0">
+                        <div className="p-4 border-b border-white/5 bg-white/[0.02] flex justify-between items-center shrink-0">
                             <div className="flex items-center gap-3">
-                                <div className="relative w-10 h-10 rounded-full border border-ca-cyan/30 overflow-hidden bg-ca-surface2 flex items-center justify-center">
-                                    <Image src="/assets/bot4.png" alt="CA Bot" fill className="object-contain p-1" />
+                                <div className="relative w-10 h-10 rounded-full border border-ca-cyan/20 overflow-hidden shadow-[0_0_15px_rgba(0,207,255,0.15)]">
+                                    <Image src="/assets/chat.jpeg" alt="CA Bot" fill className="object-cover" />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-ca-text text-sm">CA Asistente</h3>
-                                    <span className="flex items-center gap-1.5 text-xs text-ca-cyan">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-ca-cyan animate-pulse" />
+                                    <h3 className="font-semibold text-white text-sm">Cassie</h3>
+                                    <span className="flex items-center gap-1.5 text-[11px] text-ca-cyan">
+                                        <span className="relative flex h-1.5 w-1.5">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ca-cyan opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-ca-cyan"></span>
+                                        </span>
                                         En línea
                                     </span>
                                 </div>
@@ -295,14 +386,14 @@ export function Chatbot() {
                             <button
                                 onClick={restart}
                                 title="Reiniciar"
-                                className="p-2 hover:bg-ca-border rounded-full text-ca-muted hover:text-ca-text transition-colors"
+                                className="p-2 hover:bg-white/5 rounded-lg text-ca-muted hover:text-ca-cyan transition-colors"
                             >
-                                <RefreshCw size={15} />
+                                <RefreshCw size={14} />
                             </button>
                         </div>
 
                         {/* Messages */}
-                        <div className="flex-1 p-4 overflow-y-auto space-y-3" ref={scrollRef}>
+                        <div className="flex-1 p-4 overflow-y-auto space-y-4 chatbot-scrollbar" ref={scrollRef}>
                             {history.map((stepId, index) => {
                                 const step = steps[stepId];
                                 if (!step) return null;
@@ -312,26 +403,29 @@ export function Chatbot() {
                                         initial={{ opacity: 0, y: 8 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.3 }}
-                                        className="flex items-start gap-2.5"
+                                        className="flex items-start gap-3"
                                     >
-                                        <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 mt-0.5 border border-ca-cyan/20 bg-ca-surface flex items-center justify-center">
-                                            <Image src="/assets/bot4.png" alt="" fill className="object-contain p-0.5" />
+                                        <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 mt-0.5 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+                                            <Image src="/assets/chat.jpeg" alt="" fill className="object-cover" />
                                         </div>
-                                        <div className="bg-ca-surface2 border border-ca-border px-3.5 py-2.5 rounded-2xl rounded-tl-none max-w-[88%] text-sm text-ca-text leading-relaxed">
-                                            {step.text}
+                                        <div className="bg-white/[0.03] border border-white/5 px-4 py-3 rounded-2xl rounded-tl-none max-w-[85%] text-sm text-ca-text leading-relaxed shadow-sm">
+                                            {stepId === 'start' && index > 0
+                                                ? '¡De vuelta al menú principal! ¿Qué otra área del ecosistema tecnológico de tu negocio te gustaría explorar o cotizar hoy?'
+                                                : step.text
+                                            }
                                         </div>
                                     </motion.div>
                                 );
                             })}
 
                             {isTyping && (
-                                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2.5">
-                                    <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-ca-cyan/20 bg-ca-surface flex items-center justify-center">
-                                        <Image src="/assets/bot4.png" alt="" fill className="object-contain p-0.5" />
+                                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3">
+                                    <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+                                        <Image src="/assets/chat.jpeg" alt="" fill className="object-cover" />
                                     </div>
-                                    <div className="bg-ca-surface2 border border-ca-border px-4 py-3 rounded-2xl rounded-tl-none flex items-center gap-1.5">
+                                    <div className="bg-white/[0.03] border border-white/5 px-4 py-3.5 rounded-2xl rounded-tl-none flex items-center gap-1.5 shadow-sm">
                                         {[0, 0.18, 0.36].map((d, i) => (
-                                            <div key={i} className="w-2 h-2 bg-ca-muted rounded-full animate-bounce" style={{ animationDelay: `${d}s` }} />
+                                            <div key={i} className="w-1.5 h-1.5 bg-ca-cyan/60 rounded-full animate-bounce" style={{ animationDelay: `${d}s` }} />
                                         ))}
                                     </div>
                                 </motion.div>
@@ -339,18 +433,18 @@ export function Chatbot() {
                         </div>
 
                         {/* Actions / Options */}
-                        <div className="p-4 border-t border-ca-border bg-ca-surface2 shrink-0">
+                        <div className="p-5 border-t border-white/5 bg-white/[0.01] shrink-0">
                             {currentStep.final ? (
-                                <div className="space-y-2">
+                                <div className="space-y-2.5">
                                     {/* Pricing note */}
-                                    <p className="text-[11px] text-ca-muted text-center mb-3 font-mono">
+                                    <p className="text-[10px] text-ca-muted text-center mb-3 font-mono tracking-wider">
                                         💡 Todos los precios son bajo cotización personalizada
                                     </p>
                                     <a
                                         href="https://wa.me/525633680348"
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366]/15 text-[#25D366] border border-[#25D366]/30 hover:bg-[#25D366]/25 transition-colors text-sm font-semibold"
+                                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 hover:bg-[#25D366]/20 hover:border-[#25D366]/30 transition-all text-sm font-bold shadow-sm"
                                     >
                                         <MessageSquare size={16} />
                                         WhatsApp ahora
@@ -358,7 +452,7 @@ export function Chatbot() {
                                     <Link
                                         href="/contacto"
                                         onClick={() => setIsOpen(false)}
-                                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-ca-cyan/10 text-ca-cyan border border-ca-cyan/25 hover:bg-ca-cyan/20 transition-colors text-sm font-semibold"
+                                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-ca-cyan/10 text-ca-cyan border border-ca-cyan/20 hover:bg-ca-cyan/20 hover:border-ca-cyan/30 transition-all text-sm font-bold shadow-sm"
                                     >
                                         <Mail size={15} />
                                         Enviar formulario
@@ -367,9 +461,9 @@ export function Chatbot() {
                                         <Link
                                             href={currentStep.serviceHref as '/'}
                                             onClick={() => setIsOpen(false)}
-                                            className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border border-ca-border text-ca-muted hover:text-ca-text hover:border-ca-cyan/30 transition-colors text-xs"
+                                            className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border border-white/5 text-ca-muted hover:text-ca-text hover:border-ca-cyan/20 hover:bg-white/[0.02] transition-all text-xs"
                                         >
-                                            Ver página del servicio <ChevronRight size={12} />
+                                            Ver página del servicio <ChevronRight size={12} className="translate-y-[0.5px]" />
                                         </Link>
                                     )}
                                     <button
@@ -381,15 +475,15 @@ export function Chatbot() {
                                 </div>
                             ) : (
                                 !isTyping && currentStep.options && (
-                                    <div className="flex flex-col gap-1.5">
+                                    <div className="flex flex-col gap-2">
                                         {currentStep.options.map((opt, i) => (
                                             <button
                                                 key={i}
                                                 onClick={() => handleOption(opt.next)}
-                                                className="flex items-center justify-between px-4 py-2.5 rounded-xl bg-ca-dark border border-ca-border text-ca-text text-xs font-medium hover:border-ca-cyan/40 hover:text-ca-cyan hover:bg-ca-cyan/5 transition-all text-left"
+                                                className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/[0.01] border border-white/5 text-ca-text text-xs font-semibold hover:border-ca-cyan/30 hover:text-ca-cyan hover:bg-ca-cyan/[0.03] transition-all text-left shadow-sm group"
                                             >
                                                 <span>{opt.label}</span>
-                                                <ChevronRight size={13} className="text-ca-muted shrink-0" />
+                                                <ChevronRight size={13} className="text-ca-muted group-hover:text-ca-cyan group-hover:translate-x-0.5 transition-all shrink-0" />
                                             </button>
                                         ))}
                                     </div>
