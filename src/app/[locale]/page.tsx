@@ -10,6 +10,18 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
+  const robots = {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  } as const;
+
   if (locale === 'en') {
     return {
       metadataBase: new URL('https://casolutecdigital.com'),
@@ -39,6 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'hire developers in Mexico English speaking',
         'IT support services Mexico'
       ],
+      robots,
       openGraph: {
         type: 'website',
         locale: 'en_US',
@@ -62,8 +75,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'agencia de desarrollo web Latinoamérica', 'desarrollo web Colombia', 'desarrollo web Argentina',
         'desarrollo web Chile', 'desarrollo web Perú', 'desarrollo web Venezuela', 'apps móviles LATAM',
         'CRM personalizado Latinoamérica', 'automatización con IA empresa LATAM', 'bot WhatsApp empresa LATAM',
-        'agencia digital México para LATAM', 'outsourcing desarrollo software LATAM', 'agencia web remota español'
+        'agencia digital México para LATAM', 'outsourcing desarrollo software LATAM', 'agencia web remota español',
+        'desarrollo de sistemas a medida colombia peru chile ecuador'
       ],
+      robots,
       openGraph: {
         type: 'website',
         locale: 'es_MX',
@@ -86,8 +101,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       keywords: [
         'agencia desarrollo web México para España', 'desarrollo web barato para España', 'outsourcing web España México',
         'apps móviles para empresas España', 'CRM personalizado España', 'automatización IA para empresas España',
-        'bot WhatsApp empresas España', 'agencia digital hispanohablante', 'nearshore desarrollo software España'
+        'bot WhatsApp empresas España', 'agencia digital hispanohablante', 'nearshore desarrollo software España',
+        'desarrollo de paginas web madrid barcelona valencia'
       ],
+      robots,
       openGraph: {
         type: 'website',
         locale: 'es_ES',
@@ -110,8 +127,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       keywords: [
         'agência desenvolvimento web México Brasil', 'desenvolvimento web React Next.js Brasil',
         'aplicativo móvel Android iOS Brasil', 'CRM personalizado Brasil', 'automação de processos IA Brasil',
-        'bot WhatsApp empresas Brasil', 'outsourcing software desenvolvimento Brasil', 'agência digital LATAM português'
+        'bot WhatsApp empresas Brasil', 'outsourcing software desenvolvimento Brasil', 'agência digital LATAM português',
+        'desenvolvimento de sistemas sao paulo rio de janeiro'
       ],
+      robots,
       openGraph: {
         type: 'website',
         locale: 'pt_BR',
@@ -131,6 +150,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: 'CA Soluciones Digitales | Desarrollo Web · Infraestructura TI · Ciberseguridad',
     description: 'Ecosistemas digitales completos: webs, apps, sistemas, redes, ciberseguridad, CCTV, servidores y soporte TI. Todo para operar sin interrupciones.',
+    keywords: [
+      'desarrollo web mexico', 'creacion de paginas web cdmx', 'sistemas web a medida mexico',
+      'agencia de software mexico', 'desarrollo de apps moviles mexico', 'automatizacion de procesos con ia mexico',
+      'soporte ti y ciberseguridad cdmx', 'outsourcing ti mexico', 'desarrolladores nextjs react mexico',
+      'servidores y redes monterrey guadalajara', 'agencia digital mexico', 'consultoria ti mexico',
+      'outsourcing desarrollo de software espana latam'
+    ],
+    robots,
     openGraph: {
       type: 'website',
       locale: 'es_MX',
