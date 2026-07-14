@@ -299,7 +299,7 @@ export function Chatbot() {
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         exit={{ opacity: 0, scale: 0.8, x: 12 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
-                        className="fixed right-30 bottom-[64px] z-50 bg-ca-surface border border-ca-border px-4 py-2.5 rounded-2xl rounded-br-none shadow-[0_4px_20px_rgba(0,0,0,0.4)] font-mono font-bold text-xs text-ca-cyan tracking-wide whitespace-nowrap pointer-events-none"
+                        className="fixed right-30 md:right-40 bottom-[64px] md:bottom-[80px] z-50 bg-ca-surface border border-ca-border px-4 py-2.5 rounded-2xl rounded-br-none shadow-[0_4px_20px_rgba(0,0,0,0.4)] font-mono font-bold text-xs text-ca-cyan tracking-wide whitespace-nowrap pointer-events-none"
                     >
                         ¿Necesitas ayuda?
                         <div className="absolute right-0 bottom-3 translate-x-1/2 rotate-45 w-3 h-3 bg-ca-surface border-r border-b border-ca-border" />
@@ -322,13 +322,11 @@ export function Chatbot() {
                 aria-label="Abrir asistente"
                 className={`fixed z-40 transition-all duration-300 hover:scale-110 flex items-center justify-center ${
                     isHeroPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                } ${
+                    isOpen 
+                        ? 'w-12 h-12 bottom-4 right-6' 
+                        : 'w-28 h-28 md:w-36 md:h-36 bottom-5 right-5 md:bottom-6 md:right-6'
                 }`}
-                style={{ 
-                    width: isOpen ? '48px' : '112px', 
-                    height: isOpen ? '48px' : '112px',
-                    bottom: isOpen ? '16px' : '20px',
-                    right: isOpen ? '24px' : '20px'
-                }}
             >
                 <AnimatePresence mode="wait" initial={false}>
                     {isOpen ? (
@@ -349,7 +347,7 @@ export function Chatbot() {
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.7, opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="relative w-28 h-28 filter drop-shadow-[0_4px_12px_rgba(0,207,255,0.3)]"
+                            className="relative w-28 h-28 md:w-36 md:h-36 filter drop-shadow-[0_4px_12px_rgba(0,207,255,0.3)]"
                         >
                             <Image
                                 src={isHovered ? "/assets/bot4.png" : `/assets/bot${frame}.png`}
