@@ -13,7 +13,20 @@ export default function AboutPage() {
         <div className="pt-20 min-h-screen">
 
             {/* 1. Hero Section */}
-            <Section className="text-center pb-12">
+            <Section className="text-center pb-12 flex flex-col items-center">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="relative w-60 h-60 md:w-72 md:h-72 mb-6 drop-shadow-[0_8px_24px_rgba(139,92,246,0.2)]"
+                >
+                    <Image
+                        src="/assets/nosotros.png"
+                        alt="Pasión por la tecnología - Cassie"
+                        fill
+                        className="object-contain"
+                        priority
+                    />
+                </motion.div>
 
                 <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-8 leading-tight">
                     Más que una agencia, somos tu <br className="hidden md:block" />
@@ -37,7 +50,7 @@ export default function AboutPage() {
                         <div className="absolute -inset-4 bg-gradient-to-r from-brand-blue/20 to-brand-purple/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
                             <Image
-                                src="/assets/nosotros.png"
+                                src="https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/sobre-nosotros.png"
                                 alt="Sobre Nosotros - CA Soluciones"
                                 width={600}
                                 height={400}
