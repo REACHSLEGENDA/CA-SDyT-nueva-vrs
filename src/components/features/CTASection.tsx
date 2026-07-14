@@ -100,7 +100,7 @@ export function CTASection() {
                                 className="relative w-40 h-40 md:w-44 md:h-44 drop-shadow-[0_8px_20px_rgba(0,207,255,0.25)]"
                             >
                                 <Image
-                                    src="/assets/bot4.png"
+                                    src="/assets/cta.png"
                                     alt="Cassie"
                                     fill
                                     className="object-contain"
