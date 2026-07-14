@@ -309,8 +309,15 @@ export function Chatbot() {
 
             {/* Trigger button */}
             <button
-                onClick={() => setIsOpen(!isOpen)}
-                onMouseEnter={() => setIsHovered(true)}
+                onClick={() => {
+                    setIsOpen(!isOpen);
+                    setIsHovered(false);
+                }}
+                onMouseEnter={() => {
+                    if (typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches) {
+                        setIsHovered(true);
+                    }
+                }}
                 onMouseLeave={() => setIsHovered(false)}
                 aria-label="Abrir asistente"
                 className={`fixed z-40 transition-all duration-300 hover:scale-110 flex items-center justify-center ${

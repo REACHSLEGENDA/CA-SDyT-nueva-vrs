@@ -136,13 +136,13 @@ export function Navbar() {
                         animate={{ opacity: 1, clipPath: 'circle(150% at 100% 0%)' }}
                         exit={{ opacity: 0, clipPath: 'circle(0% at 100% 0%)' }}
                         transition={{ duration: 0.5, ease: 'easeInOut' }}
-                        className="fixed inset-0 z-[60] bg-ca-dark/95 backdrop-blur-2xl"
+                        className="fixed inset-0 z-[60] bg-ca-dark/95 backdrop-blur-2xl overflow-y-auto"
                     >
                         {/* Ambient glow */}
                         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-ca-cyan/5 rounded-full blur-[120px] pointer-events-none" />
                         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-ca-purple/5 rounded-full blur-[120px] pointer-events-none" />
 
-                        <div className="container mx-auto px-4 py-8 h-full flex flex-col relative z-10">
+                        <div className="container mx-auto px-4 py-8 min-h-full flex flex-col relative z-10">
                             {/* Header */}
                              <div className="flex justify-between items-center mb-12">
                                 <Link href="/" onClick={handleClose} className="relative h-9 w-32">
