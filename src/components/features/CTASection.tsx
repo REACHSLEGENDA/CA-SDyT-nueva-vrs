@@ -27,7 +27,7 @@ export function CTASection() {
                     {/* Glow Border Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-purple/5 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-[2s] pointer-events-none" />
 
-                    <div className="grid lg:grid-cols-[1.3fr_1fr_0.8fr] gap-8 lg:gap-10 items-center">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
 
                         {/* Content */}
                         <motion.div
@@ -49,40 +49,40 @@ export function CTASection() {
                                 Creamos soluciones digitales rápidas, seguras y escalables. Cuéntanos tu idea y te enviamos una cotización clara sin compromiso.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                                <div className="flex items-center gap-2 text-sm text-gray-400">
+                            <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center lg:justify-start text-sm text-gray-400">
+                                <div className="flex items-center gap-2">
                                     <span className="w-2 h-2 rounded-full bg-brand-purple" /> Desarrollo Profesional
                                 </div>
-                                <div className="flex items-center gap-2 text-sm text-gray-400">
+                                <div className="flex items-center gap-2">
                                     <span className="w-2 h-2 rounded-full bg-brand-purple" /> Soporte Real
                                 </div>
-                                <div className="flex items-center gap-2 text-sm text-gray-400">
+                                <div className="flex items-center gap-2">
                                     <span className="w-2 h-2 rounded-full bg-brand-purple" /> Tecnología Moderna
                                 </div>
                             </div>
-                        </motion.div>
 
-                        {/* Actions */}
-                        <div className="flex flex-col gap-4 w-full sm:max-w-xs justify-center mx-auto lg:mx-0">
-                            <Link href="/contacto" className="w-full">
-                                <Button size="lg" className="w-full bg-gradient-to-r from-brand-purple to-brand-blue hover:scale-105 shadow-[0_0_40px_rgba(139,92,246,0.3)] border-0 text-md py-6 px-6">
-                                    Cotizar Proyecto <ChevronRight className="ml-1" size={18} />
-                                </Button>
-                            </Link>
+                            {/* Actions (Buttons) */}
+                            <div className="flex flex-col sm:flex-row gap-4 items-center pt-4 justify-center lg:justify-start w-full">
+                                <Link href="/contacto" className="w-full sm:w-auto">
+                                    <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-brand-purple to-brand-blue hover:scale-105 shadow-[0_0_40px_rgba(139,92,246,0.3)] border-0 text-md py-6 px-8">
+                                        Cotizar Proyecto <ChevronRight className="ml-1" size={18} />
+                                    </Button>
+                                </Link>
 
-                            <div className="grid grid-cols-2 gap-3 w-full">
-                                <a href="https://wa.me/5951145576" target="_blank" rel="noreferrer" className="w-full">
-                                    <Button variant="outline" size="lg" className="w-full justify-center bg-white/5 border-white/10 hover:bg-brand-purple/20 hover:border-brand-purple/50 hover:text-brand-purple text-sm py-5 px-3">
-                                        <MessageCircle className="mr-1.5" size={16} /> WhatsApp
-                                    </Button>
-                                </a>
-                                <a href="mailto:contacto@casolutecdigital.com" className="w-full">
-                                    <Button variant="outline" size="lg" className="w-full justify-center bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30 text-sm py-5 px-3">
-                                        <Mail className="mr-1.5" size={16} /> Correo
-                                    </Button>
-                                </a>
+                                <div className="flex gap-3 w-full sm:w-auto">
+                                    <a href="https://wa.me/5951145576" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+                                        <Button variant="outline" size="lg" className="w-full justify-center bg-white/5 border-white/10 hover:bg-brand-purple/20 hover:border-brand-purple/50 hover:text-brand-purple text-sm py-5 px-4">
+                                            <MessageCircle className="mr-1.5" size={16} /> WhatsApp
+                                        </Button>
+                                    </a>
+                                    <a href="mailto:contacto@casolutecdigital.com" className="w-full sm:w-auto">
+                                        <Button variant="outline" size="lg" className="w-full justify-center bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30 text-sm py-5 px-4">
+                                            <Mail className="mr-1.5" size={16} /> Correo
+                                        </Button>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Character (Cassie) */}
                         <motion.div
@@ -92,12 +92,12 @@ export function CTASection() {
                             className="relative flex justify-center items-center lg:justify-end"
                         >
                             {/* Radial Glow behind Cassie */}
-                            <div className="absolute w-40 h-40 rounded-full bg-ca-cyan/15 blur-[50px] pointer-events-none" />
+                            <div className="absolute w-64 h-64 rounded-full bg-ca-cyan/20 blur-[60px] pointer-events-none" />
                             
                             <motion.div
-                                animate={{ y: [0, -8, 0] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="relative w-40 h-40 md:w-44 md:h-44 drop-shadow-[0_8px_20px_rgba(0,207,255,0.25)]"
+                                animate={{ y: [0, -10, 0] }}
+                                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 drop-shadow-[0_12px_30px_rgba(0,207,255,0.35)]"
                             >
                                 <Image
                                     src="/assets/cta.png"
