@@ -12,12 +12,11 @@ export default function AboutPage() {
     return (
         <div className="pt-20 min-h-screen">
 
-            {/* 1. Hero Section */}
-            <Section className="text-center pb-12 flex flex-col items-center">
+            <Section className="text-center !py-0 !pt-6 md:!pt-8 pb-12 flex flex-col items-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="relative w-60 h-60 md:w-72 md:h-72 mb-6 drop-shadow-[0_8px_24px_rgba(139,92,246,0.2)]"
+                    className="relative w-64 h-64 md:w-80 md:h-80 mb-4 drop-shadow-[0_8px_24px_rgba(139,92,246,0.2)]"
                 >
                     <Image
                         src="/assets/nosotros.png"
