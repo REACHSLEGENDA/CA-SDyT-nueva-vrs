@@ -162,6 +162,8 @@ export function Chatbot() {
     const [history, setHistory] = useState<StepId[]>(['start']);
     const [isTyping, setIsTyping] = useState(false);
     const [videoEnded, setVideoEnded] = useState(false);
+    const [frame, setFrame] = useState(1);
+    const [isHovered, setIsHovered] = useState(false);
     const pathname = usePathname();
 
     const isHeroPlaying = pathname === '/' && !videoEnded;
@@ -176,6 +178,17 @@ export function Chatbot() {
         window.addEventListener('ca:heroVideoEnd', onEnd);
         return () => window.removeEventListener('ca:heroVideoEnd', onEnd);
     }, []);
+
+    useEffect(() => {
+        if (isHovered || isOpen) return;
+        const frames = [1, 2, 3, 2];
+        let idx = 0;
+        const interval = setInterval(() => {
+            idx = (idx + 1) % frames.length;
+            setFrame(frames[idx]);
+        }, 250); // 250ms por frame para una animación fluida
+        return () => clearInterval(interval);
+    }, [isHovered, isOpen]);
 
     useEffect(() => {
         if (scrollRef.current) {
@@ -195,22 +208,61 @@ export function Chatbot() {
 
     return (
         <>
+            {/* Speech bubble balloon (globito de texto) */}
+            <AnimatePresence>
+                {isHovered && !isOpen && !isHeroPlaying && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8, x: 12 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
+                        exit={{ opacity: 0, scale: 0.8, x: 12 }}
+                        transition={{ duration: 0.25, ease: 'easeOut' }}
+                        className="fixed right-28 bottom-[48px] z-50 bg-ca-surface border border-ca-border px-4 py-2.5 rounded-2xl rounded-br-none shadow-[0_4px_20px_rgba(0,0,0,0.4)] font-mono font-bold text-xs text-ca-cyan tracking-wide whitespace-nowrap pointer-events-none"
+                    >
+                        ¿Necesitas ayuda?
+                        <div className="absolute right-0 bottom-3 translate-x-1/2 rotate-45 w-3 h-3 bg-ca-surface border-r border-b border-ca-border" />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* Trigger button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
                 aria-label="Abrir asistente"
-                className={`fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-ca-gradient shadow-[0_0_28px_rgba(0,207,255,0.45)] flex items-center justify-center text-white hover:scale-110 transition-all duration-700 ${
+                className={`fixed bottom-6 right-6 z-40 transition-all duration-300 hover:scale-110 flex items-center justify-center ${
                     isHeroPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
                 }`}
+                style={{ width: '96px', height: '96px' }}
             >
                 <AnimatePresence mode="wait" initial={false}>
                     {isOpen ? (
-                        <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                        <motion.div
+                            key="x"
+                            initial={{ rotate: -90, opacity: 0 }}
+                            animate={{ rotate: 0, opacity: 1 }}
+                            exit={{ rotate: 90, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="w-16 h-16 rounded-full bg-ca-gradient shadow-[0_0_28px_rgba(0,207,255,0.45)] flex items-center justify-center text-white"
+                        >
                             <X size={26} />
-                        </motion.span>
+                        </motion.div>
                     ) : (
-                        <motion.div key="icon" initial={{ scale: 0.7, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.7, opacity: 0 }} transition={{ duration: 0.2 }} className="relative w-10 h-10">
-                            <Image src="/assets/chatbot-icon.png" alt="Bot" fill className="object-cover rounded-full" />
+                        <motion.div
+                            key="icon"
+                            initial={{ scale: 0.7, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.7, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="relative w-24 h-24 filter drop-shadow-[0_4px_12px_rgba(0,207,255,0.3)]"
+                        >
+                            <Image
+                                src={isHovered ? "/assets/bot4.png" : `/assets/bot${frame}.png`}
+                                alt="Bot"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -229,8 +281,8 @@ export function Chatbot() {
                         {/* Header */}
                         <div className="p-4 border-b border-ca-border bg-ca-surface2 flex justify-between items-center shrink-0">
                             <div className="flex items-center gap-3">
-                                <div className="relative w-10 h-10 rounded-full border border-ca-cyan/30 overflow-hidden">
-                                    <Image src="/assets/chatbot-icon.png" alt="CA Bot" fill className="object-cover" />
+                                <div className="relative w-10 h-10 rounded-full border border-ca-cyan/30 overflow-hidden bg-ca-surface2 flex items-center justify-center">
+                                    <Image src="/assets/bot4.png" alt="CA Bot" fill className="object-contain p-1" />
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-ca-text text-sm">CA Asistente</h3>
@@ -262,8 +314,8 @@ export function Chatbot() {
                                         transition={{ duration: 0.3 }}
                                         className="flex items-start gap-2.5"
                                     >
-                                        <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 mt-0.5 border border-ca-cyan/20">
-                                            <Image src="/assets/chatbot-icon.png" alt="" fill className="object-cover" />
+                                        <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 mt-0.5 border border-ca-cyan/20 bg-ca-surface flex items-center justify-center">
+                                            <Image src="/assets/bot4.png" alt="" fill className="object-contain p-0.5" />
                                         </div>
                                         <div className="bg-ca-surface2 border border-ca-border px-3.5 py-2.5 rounded-2xl rounded-tl-none max-w-[88%] text-sm text-ca-text leading-relaxed">
                                             {step.text}
@@ -274,8 +326,8 @@ export function Chatbot() {
 
                             {isTyping && (
                                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2.5">
-                                    <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-ca-cyan/20">
-                                        <Image src="/assets/chatbot-icon.png" alt="" fill className="object-cover" />
+                                    <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-ca-cyan/20 bg-ca-surface flex items-center justify-center">
+                                        <Image src="/assets/bot4.png" alt="" fill className="object-contain p-0.5" />
                                     </div>
                                     <div className="bg-ca-surface2 border border-ca-border px-4 py-3 rounded-2xl rounded-tl-none flex items-center gap-1.5">
                                         {[0, 0.18, 0.36].map((d, i) => (
