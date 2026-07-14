@@ -3,7 +3,7 @@
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { Target, Lightbulb, Users, CheckCircle2, Award, Zap, ShieldCheck, Heart } from 'lucide-react';
+import { Target, Lightbulb, Users, CheckCircle2, Award, Zap, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
@@ -14,14 +14,6 @@ export default function AboutPage() {
 
             {/* 1. Hero Section */}
             <Section className="text-center pb-12">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-brand-purple text-sm font-medium mb-6"
-                >
-                    <Heart size={14} className="fill-brand-purple" />
-                    <span>Pasión por la tecnología</span>
-                </motion.div>
 
                 <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-8 leading-tight">
                     Más que una agencia, somos tu <br className="hidden md:block" />
@@ -45,7 +37,7 @@ export default function AboutPage() {
                         <div className="absolute -inset-4 bg-gradient-to-r from-brand-blue/20 to-brand-purple/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
                             <Image
-                                src="https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/sobre-nosotros.png"
+                                src="/assets/nosotros.png"
                                 alt="Sobre Nosotros - CA Soluciones"
                                 width={600}
                                 height={400}

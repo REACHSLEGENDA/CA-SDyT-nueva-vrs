@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { ContactForm } from '@/components/features/ContactForm';
 import { Section } from '@/components/ui/Section';
-import { Mail, Phone, MapPin, MessageSquare, Linkedin, Facebook, Instagram, Twitter, CheckCircle2, Zap, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageSquare, CheckCircle2, Zap, Clock, ShieldCheck } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 
 export default function ContactPage() {
@@ -64,16 +64,7 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        {/* Social Links */}
-                        <div className="pt-8 border-t border-white/5">
-                            <h4 className="text-gray-500 text-sm font-bold uppercase tracking-widest mb-6">Síguenos en Redes</h4>
-                            <div className="flex gap-4">
-                                <SocialIcon href="#" icon={<Linkedin size={20} />} />
-                                <SocialIcon href="#" icon={<Facebook size={20} />} />
-                                <SocialIcon href="#" icon={<Instagram size={20} />} />
-                                <SocialIcon href="#" icon={<Twitter size={20} />} />
-                            </div>
-                        </div>
+
                     </div>
 
                     {/* Right Column: Contact Form */}
