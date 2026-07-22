@@ -28,6 +28,26 @@ interface Project {
 
 const portfolioItems: Project[] = [
     {
+        id: 1,
+        title: 'APEN',
+        url: 'https://apen.mx/',
+        imageUrl: '/assets/apen-preview.png',
+        type: 'Proyecto Top',
+        client: 'Energía & Proyectos',
+        stack: 'Desarrollo, Marketing, AEO y presencia digital desde 0',
+        description: 'Sitio corporativo de alta gama para empresa administradora de proyectos energéticos. Diseño industrial premium con video background.',
+    },
+    {
+        id: 3,
+        title: 'Healthcare Training Experience',
+        url: 'https://healthcareexp.com/',
+        imageUrl: '/assets/healthcare-preview.png',
+        type: 'Proyecto Top',
+        client: 'Salud & Capacitación',
+        stack: 'Web y plataforma de portal de alumnos y certificados y pasarelas',
+        description: 'Plataforma de capacitación y entrenamiento para profesionales del sector salud. Experiencia de aprendizaje digital especializada.',
+    },
+    {
         id: 9,
         title: 'Trestle Media',
         url: 'https://trestle-media.com/',
@@ -78,16 +98,6 @@ const portfolioItems: Project[] = [
         description: 'Sitio web para clínica especializada en odontología natural y biológica. Diseño moderno con enfoque en la salud integral y estética dental.',
     },
     {
-        id: 1,
-        title: 'APEN',
-        url: 'https://apen.mx/',
-        imageUrl: '/assets/apen-preview.png',
-        type: 'Desarrollo Completo',
-        client: 'Energía & Proyectos',
-        stack: 'Web corporativa + SEO',
-        description: 'Sitio corporativo de alta gama para empresa administradora de proyectos energéticos. Diseño industrial premium con video background.',
-    },
-    {
         id: 2,
         title: 'GIKINX',
         url: 'https://gikinx.mx/',
@@ -96,16 +106,6 @@ const portfolioItems: Project[] = [
         client: 'Media & Entretenimiento',
         stack: 'Portal de noticias + CMS',
         description: 'Portal de noticias gaming, anime y esports. Categorías por scroll infinito, diseño dark con acento naranja y ticker de categorías.',
-    },
-    {
-        id: 3,
-        title: 'Healthcare Training Experience',
-        url: 'https://healthcareexp.com/',
-        imageUrl: '/assets/healthcare-preview.png',
-        type: 'Desarrollo Completo',
-        client: 'Salud & Capacitación',
-        stack: 'Web Platform + LMS',
-        description: 'Plataforma de capacitación y entrenamiento para profesionales del sector salud. Experiencia de aprendizaje digital especializada.',
     },
     {
         id: 4,
@@ -230,6 +230,7 @@ const CA_PRODUCTS: CaProduct[] = [
 ];
 
 const TYPE_COLOR: Record<string, string> = {
+    'Proyecto Top': 'text-amber-400 font-black',
     'Desarrollo Completo': 'text-ca-cyan',
     'Colaboración': 'text-ca-purple',
     'App Web': 'text-ca-mid',
