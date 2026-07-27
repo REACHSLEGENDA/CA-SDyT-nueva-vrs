@@ -5,6 +5,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useSearchParams } from 'next/navigation';
 import { Loader2, CheckCircle2 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { ThinkingOrb } from 'thinking-orbs';
 import { playSound } from '@/lib/sound';
 
 const SERVICE_OPTIONS = [
@@ -189,7 +190,7 @@ function ContactFormInner() {
                            flex items-center justify-center gap-2"
             >
                 {state.submitting ? (
-                    <><Loader2 size={16} className="animate-spin" /> Enviando...</>
+                    <><ThinkingOrb state="working" size={20} /> Enviando...</>
                 ) : (
                     'Enviar mensaje →'
                 )}
