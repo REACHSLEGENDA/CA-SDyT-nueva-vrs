@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, RefreshCw, ChevronRight, Phone, Mail } from 'lucide-react';
 import Image from 'next/image';
 import { Link, usePathname } from '@/i18n/routing';
+import { ThinkingOrb } from 'thinking-orbs';
+import { BorderBeam } from 'border-beam';
 
 type StepId =
     | 'start'
@@ -369,9 +371,14 @@ export function Chatbot() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.92, y: 16 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
-                        className="fixed bottom-20 right-6 z-40 w-[92vw] md:w-[400px] h-[550px] bg-ca-dark/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(0,207,255,0.03)] flex flex-col overflow-hidden"
+                        className="fixed bottom-20 right-6 z-40 w-[92vw] md:w-[400px] h-[550px]"
                     >
-                        {/* Header */}
+                        <BorderBeam 
+                            size="md" 
+                            colorVariant="ocean" 
+                            className="w-full h-full bg-ca-dark/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(0,207,255,0.03)] flex flex-col overflow-hidden"
+                        >
+                            {/* Header */}
                         <div className="p-4 border-b border-white/5 bg-white/[0.02] flex justify-between items-center shrink-0">
                             <div className="flex items-center gap-3">
                                 <div className="relative w-10 h-10 rounded-full border border-ca-cyan/20 overflow-hidden shadow-[0_0_15px_rgba(0,207,255,0.15)]">
@@ -428,10 +435,8 @@ export function Chatbot() {
                                     <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
                                         <Image src="/assets/chat.jpeg" alt="" fill className="object-cover" />
                                     </div>
-                                    <div className="bg-white/[0.03] border border-white/5 px-4 py-3.5 rounded-2xl rounded-tl-none flex items-center gap-1.5 shadow-sm">
-                                        {[0, 0.18, 0.36].map((d, i) => (
-                                            <div key={i} className="w-1.5 h-1.5 bg-ca-cyan/60 rounded-full animate-bounce" style={{ animationDelay: `${d}s` }} />
-                                        ))}
+                                    <div className="bg-white/[0.03] border border-white/5 px-4 py-2 rounded-2xl rounded-tl-none flex items-center justify-center gap-1.5 shadow-sm text-ca-cyan">
+                                        <ThinkingOrb state="composing" size={20} />
                                     </div>
                                 </motion.div>
                             )}
@@ -482,19 +487,21 @@ export function Chatbot() {
                                 !isTyping && currentStep.options && (
                                     <div className="flex flex-col gap-2">
                                         {currentStep.options.map((opt, i) => (
-                                            <button
-                                                key={i}
-                                                onClick={() => handleOption(opt.next)}
-                                                className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/[0.01] border border-white/5 text-ca-text text-xs font-semibold hover:border-ca-cyan/30 hover:text-ca-cyan hover:bg-ca-cyan/[0.03] transition-all text-left shadow-sm group"
-                                            >
-                                                <span>{opt.label}</span>
-                                                <ChevronRight size={13} className="text-ca-muted group-hover:text-ca-cyan group-hover:translate-x-0.5 transition-all shrink-0" />
-                                            </button>
+                                            <BorderBeam key={i} size="line" colorVariant="ocean" duration={3} className="rounded-xl p-[1px]">
+                                                <button
+                                                    onClick={() => handleOption(opt.next)}
+                                                    className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white/[0.01] border border-white/5 text-ca-text text-xs font-semibold hover:border-ca-cyan/30 hover:text-ca-cyan hover:bg-ca-cyan/[0.03] transition-all text-left shadow-sm group"
+                                                >
+                                                    <span>{opt.label}</span>
+                                                    <ChevronRight size={13} className="text-ca-muted group-hover:text-ca-cyan group-hover:translate-x-0.5 transition-all shrink-0" />
+                                                </button>
+                                            </BorderBeam>
                                         ))}
                                     </div>
                                 )
                             )}
                         </div>
+                        </BorderBeam>
                     </motion.div>
                 )}
             </AnimatePresence>
