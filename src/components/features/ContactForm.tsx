@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { useSearchParams } from 'next/navigation';
 import { Loader2, CheckCircle2 } from 'lucide-react';
@@ -46,30 +46,55 @@ const INPUT_CLASS =
 
 function ContactFormInner() {
     const [state, handleSubmit] = useForm('mpwlzjjo');
+    const [isSimulatedSending, setIsSimulatedSending] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
     const searchParams = useSearchParams();
     const preSelected = searchParams?.get('servicio') ?? '';
 
     useEffect(() => {
-        if (state.succeeded) {
+        if (state.succeeded && !isSimulatedSending) {
+            setShowSuccess(true);
             playSound('success');
             toast.success('¡Mensaje enviado! Te contactamos en menos de 2 horas.');
         }
         if (state.errors && Object.keys(state.errors).length > 0) {
             toast.error('Hubo un error. Intenta de nuevo o escríbenos por WhatsApp.');
+            setIsSimulatedSending(false);
         }
-    }, [state.succeeded, state.errors]);
+    }, [state.succeeded, state.errors, isSimulatedSending]);
 
-    if (state.succeeded) {
+    const handleCustomSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSimulatedSending(true);
+        setTimeout(() => {
+            setIsSimulatedSending(false);
+        }, 5000);
+        handleSubmit(e);
+    };
+
+    if (isSimulatedSending || state.submitting) {
         return (
-            <div className="p-8 bg-ca-success/5 border border-ca-success/20 rounded-2xl text-center">
-                <CheckCircle2 size={40} className="text-ca-success mx-auto mb-3" />
-                <h3 className="text-xl font-bold text-ca-text mb-1">¡Mensaje enviado!</h3>
-                <p className="text-ca-muted text-sm">
+            <div className="p-10 bg-ca-dark/40 border border-ca-cyan/20 rounded-2xl text-center flex flex-col items-center justify-center min-h-[350px] shadow-[0_0_30px_rgba(0,207,255,0.05)]">
+                <ThinkingOrb state="searching" size={64} className="mb-6 opacity-90" />
+                <h3 className="text-xl font-bold text-ca-text mb-2 font-display">Procesando solicitud...</h3>
+                <p className="text-ca-muted text-sm max-w-[250px]">
+                    Estableciendo conexión segura y enviando tus datos a nuestro equipo.
+                </p>
+            </div>
+        );
+    }
+
+    if (showSuccess) {
+        return (
+            <div className="p-8 bg-ca-success/5 border border-ca-success/20 rounded-2xl text-center min-h-[350px] flex flex-col items-center justify-center">
+                <CheckCircle2 size={44} className="text-ca-success mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-ca-text mb-2">¡Mensaje enviado!</h3>
+                <p className="text-ca-muted text-sm max-w-[280px]">
                     Te responderemos en menos de 2 horas a tu correo o WhatsApp.
                 </p>
                 <button
                     onClick={() => window.location.reload()}
-                    className="mt-5 text-ca-cyan text-sm font-medium hover:underline"
+                    className="mt-6 px-6 py-2.5 bg-ca-success/10 rounded-full text-ca-success text-sm font-semibold hover:bg-ca-success/20 transition-colors"
                 >
                     Enviar otro mensaje
                 </button>
@@ -78,7 +103,7 @@ function ContactFormInner() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleCustomSubmit} className="space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
                     <label htmlFor="name" className="text-xs font-medium text-ca-muted uppercase tracking-wider">
@@ -189,8 +214,8 @@ function ContactFormInner() {
                            shadow-lg shadow-ca-cyan/20 disabled:opacity-60 disabled:pointer-events-none
                            flex items-center justify-center gap-2"
             >
-                {state.submitting ? (
-                    <><ThinkingOrb state="working" size={20} /> Enviando...</>
+                {isSimulatedSending || state.submitting ? (
+                    <><ThinkingOrb state="searching" size={20} /> Enviando...</>
                 ) : (
                     'Enviar mensaje →'
                 )}

@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/Button';
 import { ChevronRight, MessageCircle, Mail, Sparkles } from 'lucide-react';
 import Image from 'next/image';
+import { BorderBeam } from 'border-beam';
 
 export function CTASection() {
     return (
@@ -22,7 +23,7 @@ export function CTASection() {
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="max-w-5xl mx-auto bg-brand-black/40 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 overflow-hidden relative group">
+                <BorderBeam size="md" colorVariant="ocean" duration={12} className="max-w-5xl mx-auto bg-brand-black/40 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 overflow-hidden relative group">
 
                     {/* Glow Border Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-purple/5 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-[2s] pointer-events-none" />
@@ -110,7 +111,7 @@ export function CTASection() {
                         </motion.div>
 
                     </div>
-                </div>
+                </BorderBeam>
             </div>
         </section>
     );
