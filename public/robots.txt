@@ -6,9 +6,11 @@ Allow: /es-es/
 Allow: /pt-br/
 
 Disallow: /api/
-Disallow: /_next/
 
 # IA crawlers — full access for AEO
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 

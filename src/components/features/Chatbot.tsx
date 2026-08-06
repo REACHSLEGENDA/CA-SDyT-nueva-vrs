@@ -6,7 +6,6 @@ import { MessageSquare, X, RefreshCw, ChevronRight, Phone, Mail } from 'lucide-r
 import Image from 'next/image';
 import { Link, usePathname } from '@/i18n/routing';
 import { ThinkingOrb } from 'thinking-orbs';
-import { BorderBeam } from 'border-beam';
 
 type StepId =
     | 'start'
@@ -373,11 +372,7 @@ export function Chatbot() {
                         transition={{ duration: 0.25, ease: 'easeOut' }}
                         className="fixed bottom-20 right-6 z-40 w-[92vw] md:w-[400px] h-[550px]"
                     >
-                        <BorderBeam 
-                            size="md" 
-                            colorVariant="ocean" 
-                            className="w-full h-full bg-ca-dark/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(0,207,255,0.03)] flex flex-col overflow-hidden"
-                        >
+                        <div className="w-full h-full bg-ca-dark/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(0,207,255,0.03)] flex flex-col overflow-hidden">
                             {/* Header */}
                         <div className="p-4 border-b border-white/5 bg-white/[0.02] flex justify-between items-center shrink-0">
                             <div className="flex items-center gap-3">
@@ -451,7 +446,7 @@ export function Chatbot() {
                                         💡 Todos los precios son bajo cotización personalizada
                                     </p>
                                     <a
-                                        href="https://wa.me/525633680348"
+                                        href="https://wa.me/525951145576"
                                         target="_blank"
                                         rel="noreferrer"
                                         className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 hover:bg-[#25D366]/20 hover:border-[#25D366]/30 transition-all text-sm font-bold shadow-sm"
@@ -487,21 +482,20 @@ export function Chatbot() {
                                 !isTyping && currentStep.options && (
                                     <div className="flex flex-col gap-2">
                                         {currentStep.options.map((opt, i) => (
-                                            <BorderBeam key={i} size="line" colorVariant="ocean" duration={3} className="rounded-xl p-[1px]">
-                                                <button
-                                                    onClick={() => handleOption(opt.next)}
-                                                    className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white/[0.01] border border-white/5 text-ca-text text-xs font-semibold hover:border-ca-cyan/30 hover:text-ca-cyan hover:bg-ca-cyan/[0.03] transition-all text-left shadow-sm group"
-                                                >
-                                                    <span>{opt.label}</span>
-                                                    <ChevronRight size={13} className="text-ca-muted group-hover:text-ca-cyan group-hover:translate-x-0.5 transition-all shrink-0" />
-                                                </button>
-                                            </BorderBeam>
+                                            <button
+                                                key={i}
+                                                onClick={() => handleOption(opt.next)}
+                                                className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white/[0.01] border border-white/5 text-ca-text text-xs font-semibold hover:border-ca-cyan/30 hover:text-ca-cyan hover:bg-ca-cyan/[0.03] transition-all text-left shadow-sm group"
+                                            >
+                                                <span>{opt.label}</span>
+                                                <ChevronRight size={13} className="text-ca-muted group-hover:text-ca-cyan group-hover:translate-x-0.5 transition-all shrink-0" />
+                                            </button>
                                         ))}
                                     </div>
                                 )
                             )}
                         </div>
-                        </BorderBeam>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

@@ -1,20 +1,38 @@
 import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
 
+export const SITE_URL = 'https://casolutecdigital.com';
+export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/assets/home.png`;
+export const BUSINESS_NAME = 'CA Soluciones Digitales y Tecnol\u00f3gicas';
+export const BUSINESS_PHONE = '+52 595 114 5576';
+export const BUSINESS_EMAIL = 'contacto@casolutecdigital.com';
+export const BUSINESS_WHATSAPP = 'https://wa.me/525951145576';
+export const BUSINESS_SOCIALS = ['https://www.instagram.com/ca.sodiyte', 'https://www.facebook.com/ca.sodiyte'];
+
+const OPEN_GRAPH_LOCALES: Record<string, string> = {
+  'es-MX': 'es_MX',
+  'en': 'en_US',
+  'es-419': 'es_419',
+  'es-ES': 'es_ES',
+  'pt-BR': 'pt_BR',
+};
+type LocalizedPathname = string | Partial<Record<string, string>>;
+
+
 export function getCanonicalUrl(route: string, locale: string): string {
-  const base = 'https://casolutecdigital.com';
+  const base = SITE_URL;
   
   // Manejar subrutas de legal que no están explícitas en pathnames
   let localizedPath = route;
   if (!route.startsWith('/legal/')) {
-    const pathnameConfig = (routing.pathnames as any)[route];
+    const pathnameConfig = (routing.pathnames as unknown as Record<string, LocalizedPathname>)[route];
     if (pathnameConfig) {
       if (typeof pathnameConfig === 'string') {
         localizedPath = pathnameConfig;
-      } else if (pathnameConfig[locale]) {
-        localizedPath = pathnameConfig[locale];
-      } else if (pathnameConfig[routing.defaultLocale]) {
-        localizedPath = pathnameConfig[routing.defaultLocale];
+      } else {
+        localizedPath = pathnameConfig[locale]
+          ?? pathnameConfig[routing.defaultLocale]
+          ?? route;
       }
     }
   }
@@ -30,6 +48,17 @@ export function getCanonicalUrl(route: string, locale: string): string {
   }
 
   return `${base}/${locale.toLowerCase()}${localizedPath}`;
+}
+
+export function getLanguageAlternates(route: string): Record<string, string> {
+  return {
+    'es-MX': getCanonicalUrl(route, 'es-MX'),
+    'en': getCanonicalUrl(route, 'en'),
+    'es-419': getCanonicalUrl(route, 'es-419'),
+    'es-ES': getCanonicalUrl(route, 'es-ES'),
+    'pt-BR': getCanonicalUrl(route, 'pt-BR'),
+    'x-default': getCanonicalUrl(route, routing.defaultLocale),
+  };
 }
 
 function getRouteKeywords(route: string, locale: string): string[] {
@@ -99,14 +128,7 @@ export function getPageMetadata(
   
   const canonicalUrl = getCanonicalUrl(route, locale);
   
-  const languages: Record<string, string> = {
-    'es-MX': getCanonicalUrl(route, 'es-MX'),
-    'en': getCanonicalUrl(route, 'en'),
-    'es-419': getCanonicalUrl(route, 'es-419'),
-    'es-ES': getCanonicalUrl(route, 'es-ES'),
-    'pt-BR': getCanonicalUrl(route, 'pt-BR'),
-    'x-default': getCanonicalUrl(route, 'en'),
-  };
+  const languages = getLanguageAlternates(route);
 
   // Default Regional Keywords per locale to cover LATAM, Spain, US, Brazil
   const defaultKeywords: Record<string, string[]> = {
@@ -144,9 +166,13 @@ export function getPageMetadata(
 
   const routeKeywords = getRouteKeywords(route, locale);
   const baseKeywords = defaultKeywords[locale] || defaultKeywords['es-MX'];
+  const openGraphLocale = OPEN_GRAPH_LOCALES[locale] || OPEN_GRAPH_LOCALES['es-MX'];
+  const alternateLocales = Object.values(OPEN_GRAPH_LOCALES).filter(value => value !== openGraphLocale);
+
   const keywords = [...routeKeywords, ...baseKeywords];
 
   return {
+    metadataBase: new URL(SITE_URL),
     title,
     description,
     keywords,
@@ -167,17 +193,34 @@ export function getPageMetadata(
     },
     openGraph: {
       type: 'website',
-      locale: locale === 'en' ? 'en_US' : locale === 'pt-BR' ? 'pt_BR' : 'es_MX',
+      locale: openGraphLocale,
+      alternateLocale: alternateLocales,
       url: canonicalUrl,
       siteName: 'CA Soluciones Digitales',
       title,
       description,
-      images: [{ url: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png', width: 1200, height: 630 }]
-    }
+      images: [{
+        url: DEFAULT_SOCIAL_IMAGE,
+        width: 1672,
+        height: 941,
+        alt: 'CA Soluciones Digitales y Tecnologicas',
+      }]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [DEFAULT_SOCIAL_IMAGE],
+    },
   };
 }
 
-export function getServiceSchema(serviceType: string, locale: string) {
+export function getServiceSchema(
+  serviceType: string,
+  locale: string,
+  route = '/servicios',
+  description?: string
+) {
   const countries = {
     'es-MX': ['Mexico'],
     'en': ['United States', 'Canada', 'United Kingdom', 'Germany', 'France', 'India', 'United Arab Emirates'],
@@ -190,21 +233,27 @@ export function getServiceSchema(serviceType: string, locale: string) {
     '@type': 'Country',
     'name': country
   }));
+  const serviceUrl = getCanonicalUrl(route, locale);
+
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     'name': serviceType,
     'serviceType': serviceType,
+    '@id': `${serviceUrl}#service`,
+    'url': serviceUrl,
+    ...(description ? { 'description': description } : {}),
     'provider': {
       '@type': 'LocalBusiness',
-      'name': 'CA Soluciones Digitales y Tecnológicas',
+      '@id': `${SITE_URL}/#organization`,
+      'name': BUSINESS_NAME,
       'alternateName': 'CA Digital Solutions',
-      'url': 'https://casolutecdigital.com',
-      'logo': 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png',
-      'image': 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png',
-      'telephone': '+52 56 3368 0348',
-      'email': 'ca.sodiyte@gmail.com',
+      'url': SITE_URL,
+      'logo': `${SITE_URL}/assets/logo.png`,
+      'image': DEFAULT_SOCIAL_IMAGE,
+      'telephone': BUSINESS_PHONE,
+      'email': BUSINESS_EMAIL,
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Mexico City',
@@ -221,14 +270,11 @@ export function getAboutPageSchema() {
     '@type': 'AboutPage',
     'mainEntity': {
       '@type': 'Organization',
-      'name': 'CA Soluciones Digitales y Tecnológicas',
+      'name': BUSINESS_NAME,
       'alternateName': 'CA Digital Solutions',
-      'url': 'https://casolutecdigital.com',
-      'logo': 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png',
-      'sameAs': [
-        'https://www.instagram.com/ca.sodiyte',
-        'https://www.facebook.com/ca.sodiyte'
-      ]
+      'url': SITE_URL,
+      'logo': `${SITE_URL}/assets/logo.png`,
+      'sameAs': BUSINESS_SOCIALS
     }
   };
 }

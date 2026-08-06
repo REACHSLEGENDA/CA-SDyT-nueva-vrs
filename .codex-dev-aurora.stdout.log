@@ -1,0 +1,69 @@
+
+> ca-tech-agency@0.1.0 dev
+> next dev -p 3000
+
+▲ Next.js 16.1.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.66.201.15:3000
+
+✓ Starting...
+✓ Ready in 5s
+○ Compiling /[locale] ...
+ GET / 200 in 10.8s (proxy.ts: 22ms)
+ GET / 200 in 1338ms (compile: 60ms, proxy.ts: 33ms, render: 1245ms)
+ GET /es-419 200 in 1361ms (compile: 86ms, proxy.ts: 118ms, render: 1157ms)
+ GET / 200 in 1696ms (compile: 90ms, proxy.ts: 106ms, render: 1500ms)
+ GET /seo-aeo 200 in 11.2s (compile: 8.7s, proxy.ts: 42ms, render: 2.5s)
+✓ Compiled in 1000ms
+ GET /seo-aeo 200 in 2.6s (compile: 1110ms, proxy.ts: 124ms, render: 1360ms)
+ GET /seo-aeo 200 in 999ms (compile: 514ms, proxy.ts: 117ms, render: 368ms)
+ GET /es-419 200 in 1008ms (compile: 391ms, proxy.ts: 106ms, render: 510ms)
+ GET /es-419 200 in 293ms (compile: 32ms, proxy.ts: 107ms, render: 154ms)
+ GET /seo-aeo 200 in 667ms (compile: 19ms, proxy.ts: 10ms, render: 637ms)
+ GET / 200 in 151ms (compile: 32ms, proxy.ts: 19ms, render: 100ms)
+✓ Compiled in 1101ms
+ GET /es-419 200 in 9.7s (compile: 3.1s, proxy.ts: 673ms, render: 5.9s)
+ GET /es-419 200 in 12.5s (compile: 2.0s, proxy.ts: 48ms, render: 10.4s)
+ GET / 200 in 13.1s (compile: 1381ms, proxy.ts: 38ms, render: 11.7s)
+ GET / 200 in 10.3s (compile: 3.5s, proxy.ts: 968ms, render: 5.9s)
+ GET / 200 in 18.5s (compile: 3.7s, proxy.ts: 1099ms, render: 13.7s)
+ GET /es-419 200 in 18.9s (compile: 1199ms, proxy.ts: 827ms, render: 16.9s)
+ GET / 200 in 1183ms (compile: 53ms, proxy.ts: 40ms, render: 1090ms)
+✓ Compiled in 1469ms
+ GET /es-419 200 in 2.6s (compile: 1077ms, proxy.ts: 92ms, render: 1447ms)
+ GET / 200 in 2.5s (compile: 1597ms, proxy.ts: 48ms, render: 876ms)
+ GET /es-419 200 in 1062ms (compile: 330ms, proxy.ts: 156ms, render: 576ms)
+ GET / 200 in 780ms (compile: 296ms, proxy.ts: 162ms, render: 323ms)
+✓ Compiled in 399ms
+ GET / 200 in 2.6s (compile: 578ms, proxy.ts: 34ms, render: 1988ms)
+ GET /es-419 200 in 2.6s (compile: 933ms, proxy.ts: 53ms, render: 1606ms)
+ GET / 200 in 1432ms (compile: 220ms, proxy.ts: 544ms, render: 668ms)
+ GET /es-419 200 in 1216ms (compile: 305ms, proxy.ts: 442ms, render: 469ms)
+ GET / 200 in 2.9s (compile: 72ms, proxy.ts: 29ms, render: 2.8s)
+ GET /es-419 200 in 290ms (compile: 81ms, proxy.ts: 72ms, render: 137ms)
+✓ Compiled in 1140ms
+ GET /es-419 200 in 4.3s (compile: 263ms, proxy.ts: 233ms, render: 3.8s)
+ GET /es-419 200 in 5.8s (compile: 751ms, proxy.ts: 53ms, render: 5.0s)
+ GET / 200 in 4.3s (compile: 893ms, proxy.ts: 176ms, render: 3.2s)
+ GET / 200 in 5.8s (compile: 1101ms, proxy.ts: 64ms, render: 4.7s)
+ GET / 200 in 6.3s (compile: 118ms, proxy.ts: 237ms, render: 5.9s)
+ GET /es-419 200 in 6.3s (compile: 206ms, proxy.ts: 248ms, render: 5.8s)
+ GET / 200 in 460ms (compile: 21ms, proxy.ts: 13ms, render: 426ms)
+✓ Compiled in 312ms
+✓ Compiled in 893ms
+ GET /es-419 200 in 12.4s (compile: 8.1s, proxy.ts: 319ms, render: 3.9s)
+ GET /es-419 200 in 14.6s (compile: 1207ms, proxy.ts: 73ms, render: 13.3s)
+ GET / 200 in 12.8s (compile: 9.5s, proxy.ts: 330ms, render: 2.9s)
+ GET / 200 in 14.9s (compile: 1541ms, proxy.ts: 39ms, render: 13.3s)
+ GET /es-419 200 in 16.2s (compile: 2.2s, proxy.ts: 78ms, render: 14.0s)
+ GET / 200 in 16.2s (compile: 2.9s, proxy.ts: 1829ms, render: 11.6s)
+ GET / 200 in 706ms (compile: 32ms, proxy.ts: 24ms, render: 650ms)
+✓ Compiled in 922ms
+ GET /es-419 200 in 8.5s (compile: 5.0s, proxy.ts: 619ms, render: 2.9s)
+ GET /es-419 200 in 11.7s (compile: 2.1s, proxy.ts: 96ms, render: 9.5s)
+ GET / 200 in 8.7s (compile: 5.9s, proxy.ts: 650ms, render: 2.2s)
+ GET / 200 in 11.9s (compile: 2.8s, proxy.ts: 116ms, render: 9.0s)
+ GET /es-419 200 in 13.3s (compile: 3.5s, proxy.ts: 218ms, render: 9.5s)
+ GET / 200 in 13.3s (compile: 1949ms, proxy.ts: 2.9s, render: 8.4s)
+ GET / 200 in 831ms (compile: 41ms, proxy.ts: 16ms, render: 774ms)
+✓ Compiled in 482ms

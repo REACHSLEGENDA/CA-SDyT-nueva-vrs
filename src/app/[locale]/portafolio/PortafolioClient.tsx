@@ -6,7 +6,6 @@ import { Section } from '@/components/ui/Section';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Badge } from '@/components/ui/Badge';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { BorderBeam } from 'border-beam';
 import {
     ExternalLink, Code, Globe, BarChart3, Users,
     MessageCircle, Briefcase, ShoppingBag, Building2,
@@ -290,7 +289,7 @@ export default function PortfolioPage() {
                             onMouseEnter={() => setHoveredId(item.id)}
                             onMouseLeave={() => setHoveredId(null)}
                         >
-                            <BorderBeam size="md" colorVariant="ocean" duration={10} className="h-full rounded-2xl p-[1px]">
+                            <div className="h-full rounded-2xl border border-ca-border">
                                 <GlassCard hover className="h-full flex flex-col overflow-hidden p-0 rounded-2xl bg-ca-dark/40 backdrop-blur-md">
                                 {/* Image */}
                                 <div className="h-48 w-full relative overflow-hidden bg-ca-surface2">
@@ -333,7 +332,7 @@ export default function PortfolioPage() {
                                     </a>
                                 </div>
                                 </GlassCard>
-                            </BorderBeam>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

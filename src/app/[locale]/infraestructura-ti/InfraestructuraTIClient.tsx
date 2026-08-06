@@ -147,7 +147,7 @@ export default function InfraestructuraTIPage() {
                         Diagnóstico TI gratuito →
                     </Link>
                     <a
-                        href="https://wa.me/5951145576"
+                        href="https://wa.me/525951145576"
                         target="_blank"
                         rel="noreferrer"
                         className="border border-ca-border text-ca-text px-8 py-3.5 rounded-xl hover:border-ca-cyan/40 hover:text-ca-cyan transition-all flex items-center justify-center gap-2"

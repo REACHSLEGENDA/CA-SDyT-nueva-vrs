@@ -500,7 +500,7 @@ export const TECH_LOGOS: Record<string, (props: TechLogoProps) => React.JSX.Elem
     'Claude': ClaudeLogo,
     'Perplexity': PerplexityLogo,
     'Copilot': CopilotLogo,
-    'Google SGE': GoogleLogo,
+    'Google AI Mode': GoogleLogo,
 };
 
 export function getTechLogo(name: string, props: TechLogoProps = {}) {

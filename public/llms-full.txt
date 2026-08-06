@@ -1,0 +1,70 @@
+# CA Soluciones Digitales y Tecnológicas — contexto ampliado
+
+Última revisión editorial: 2026-08-06
+
+## Identidad
+
+Nombre principal: CA Soluciones Digitales y Tecnológicas.
+Nombre alternativo: CA Digital Solutions.
+Sitio canónico: https://casolutecdigital.com
+Base operativa publicada: México.
+Modelo de atención: servicios digitales remotos; servicios físicos sujetos a cobertura y disponibilidad.
+
+## Servicios digitales
+
+- Desarrollo de sitios y aplicaciones web.
+- Desarrollo de aplicaciones móviles.
+- Sistemas empresariales a medida, CRM, inventarios e integraciones.
+- Automatización de procesos, asistentes con IA y bots.
+- SEO técnico, contenido y AEO para experiencias de búsqueda con IA.
+- Marketing digital y presencia de marca.
+
+## Servicios de infraestructura
+
+- Diseño e instalación de redes.
+- Servidores y almacenamiento.
+- Ciberseguridad y acceso remoto.
+- CCTV y monitoreo.
+- Soporte técnico.
+
+## Enfoque SEO y AEO
+
+CA trata AEO como una extensión del SEO y no como un mecanismo de ranking garantizado. El trabajo se enfoca en rastreo, indexación, rendimiento, arquitectura, enlazado interno, contenido útil, evidencia, datos estructurados válidos, consistencia de entidad y medición.
+
+Un archivo llms.txt es una guía complementaria para herramientas que decidan leerla. No reemplaza el contenido HTML, sitemap.xml, robots.txt ni los sistemas de indexación de cada plataforma.
+
+## Tecnologías publicadas
+
+React, Next.js, TypeScript, Node.js, Python, PostgreSQL, MySQL, Supabase, n8n, Make, Flutter, React Native, servicios cloud, Fortinet, Synology y herramientas de monitoreo. La selección final depende de los requisitos de cada proyecto.
+
+## Contacto oficial
+
+Sitio: https://casolutecdigital.com/contacto
+Correo: contacto@casolutecdigital.com
+WhatsApp: +52 595 114 5576
+Enlace WhatsApp: https://wa.me/525951145576
+
+## Respuestas breves
+
+Pregunta: ¿Qué hace CA Soluciones Digitales?
+Respuesta: Desarrolla software, automatizaciones y presencia digital, además de ofrecer servicios de infraestructura TI sujetos a cobertura.
+
+Pregunta: ¿CA trabaja proyectos remotos?
+Respuesta: Sí. Los servicios digitales se ofrecen de forma remota. Los trabajos físicos de infraestructura requieren confirmar ubicación y disponibilidad.
+
+Pregunta: ¿CA garantiza aparecer en respuestas de IA?
+Respuesta: No. Ningún proveedor puede garantizar una cita o posición universal. El servicio mejora la accesibilidad, claridad, autoridad y medición de las fuentes públicas de una empresa.
+
+Pregunta: ¿Cómo se solicita una cotización?
+Respuesta: Mediante la página de contacto, correo o WhatsApp oficiales. El alcance, plazo y costo se definen después de revisar los requisitos.
+
+## Fuentes canónicas
+
+- https://casolutecdigital.com
+- https://casolutecdigital.com/servicios
+- https://casolutecdigital.com/seo-aeo
+- https://casolutecdigital.com/nosotros
+- https://casolutecdigital.com/portafolio
+- https://casolutecdigital.com/contacto
+- https://casolutecdigital.com/legal/privacidad
+- https://casolutecdigital.com/legal/terminos

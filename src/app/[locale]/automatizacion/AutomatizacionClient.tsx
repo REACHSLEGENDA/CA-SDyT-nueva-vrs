@@ -58,7 +58,7 @@ export default function AutomationPage() {
                             Automatizar mi Negocio
                         </Button>
                     </Link>
-                    <a href="https://wa.me/5951145576" className="w-full sm:w-auto">
+                    <a href="https://wa.me/525951145576" className="w-full sm:w-auto">
                         <Button size="lg" className="w-full px-12 h-16 text-lg bg-pink-600 hover:bg-pink-500 text-white border-0 shadow-[0_0_20px_rgba(236,72,153,0.3)]">
                             Demo de Chatbot IA
                         </Button>
@@ -219,7 +219,7 @@ export default function AutomationPage() {
                         <Link href="/contacto" className="w-full sm:w-auto">
                             <Button size="lg" className="w-full px-12 h-16 text-lg">Hablar con un Especialista</Button>
                         </Link>
-                        <a href="https://wa.me/5951145576" className="w-full sm:w-auto">
+                        <a href="https://wa.me/525951145576" className="w-full sm:w-auto">
                             <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">Cotizar Bot de WhatsApp</Button>
                         </a>
                     </div>

@@ -106,7 +106,7 @@ export function Navbar() {
                     <div className="flex items-center gap-3">
                         {/* CTA WhatsApp */}
                         <a
-                            href="https://wa.me/5951145576"
+                            href="https://wa.me/525951145576"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hidden md:inline-flex items-center gap-2 bg-ca-gradient text-white font-semibold px-5 py-2.5 rounded-xl
@@ -219,7 +219,7 @@ export function Navbar() {
                                                 contacto@casolutecdigital.com
                                             </a>
                                             <a
-                                                href="https://wa.me/5951145576"
+                                                href="https://wa.me/525951145576"
                                                 className="flex items-center gap-3 text-ca-muted hover:text-ca-cyan transition-colors text-sm group"
                                             >
                                                 <div className="w-9 h-9 rounded-lg bg-ca-surface border border-ca-border flex items-center justify-center group-hover:border-ca-cyan/30 transition-colors">
@@ -232,7 +232,7 @@ export function Navbar() {
 
                                     <div className="pt-6 border-t border-ca-border">
                                         <a
-                                            href="https://wa.me/5951145576"
+                                            href="https://wa.me/525951145576"
                                             onClick={() => setIsOpen(false)}
                                             className="block w-full text-center bg-ca-gradient text-white font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity"
                                         >

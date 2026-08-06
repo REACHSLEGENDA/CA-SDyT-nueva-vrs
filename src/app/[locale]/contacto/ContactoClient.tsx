@@ -38,7 +38,7 @@ export default function ContactPage() {
 
                         <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
                             <ContactCard
-                                href="https://wa.me/5951145576"
+                                href="https://wa.me/525951145576"
                                 icon={<Phone size={24} />}
                                 title="Llámanos / WhatsApp"
                                 value="+52 595 114 5576"

@@ -317,7 +317,7 @@ export default function WebPackagesPage() {
                                 Cotizar proyecto
                             </button>
                         </Link>
-                        <a href="https://wa.me/5951145576" target="_blank" rel="noreferrer">
+                        <a href="https://wa.me/525951145576" target="_blank" rel="noreferrer">
                             <button className="border border-ca-border text-ca-text px-10 py-3.5 rounded-xl hover:border-ca-cyan/40 hover:text-ca-cyan transition-all flex items-center gap-2">
                                 <MessageCircle size={18} /> WhatsApp
                             </button>

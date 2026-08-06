@@ -183,7 +183,7 @@ export default function ClassesPage() {
                         <Link href="/contacto" className="w-full sm:w-auto">
                             <Button size="lg" className="w-full px-12 h-16 text-lg">Agendar mi Clase</Button>
                         </Link>
-                        <a href="https://wa.me/5951145576" className="w-full sm:w-auto">
+                        <a href="https://wa.me/525951145576" className="w-full sm:w-auto">
                             <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg border-green-500/50 hover:bg-green-500/10 hover:text-green-400">
                                 <MessageCircle className="mr-3" /> WhatsApp Educativo
                             </Button>

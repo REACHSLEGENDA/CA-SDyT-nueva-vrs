@@ -12,6 +12,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { SITE_URL } from '@/lib/seoUtils';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,14 +30,18 @@ const syne = Syne({
   preload: true,
 });
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  return {
-    icons: {
-      icon: "https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/logo.png",
-    },
-  };
-}
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  applicationName: 'CA Soluciones Digitales',
+  authors: [{ name: 'CA Soluciones Digitales', url: SITE_URL }],
+  creator: 'CA Soluciones Digitales',
+  publisher: 'CA Soluciones Digitales',
+  category: 'technology',
+  referrer: 'origin-when-cross-origin',
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
 
 export default async function LocaleLayout({
   children,

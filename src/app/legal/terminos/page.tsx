@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const LAST_UPDATE = '22 de junio de 2025';
 const COMPANY    = 'CA | Soluciones Digitales y Tecnológicas';
-const EMAIL      = 'ca.sodiyte@gmail.com';
+const EMAIL      = 'contacto@casolutecdigital.com';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
     return (
@@ -156,7 +156,7 @@ export default function TerminosPage() {
                     <p>Para cualquier duda, aclaración o reclamación relacionada con estos términos, contáctanos:</p>
                     <ul className="list-disc list-inside space-y-1 pl-2">
                         <li>Correo: <a href={`mailto:${EMAIL}`} className="text-ca-cyan hover:underline">{EMAIL}</a></li>
-                        <li>WhatsApp: <a href="https://wa.me/525633680348" target="_blank" rel="noopener noreferrer" className="text-ca-cyan hover:underline">+52 56 3368 0348</a></li>
+                        <li>WhatsApp: <a href="https://wa.me/525951145576" target="_blank" rel="noopener noreferrer" className="text-ca-cyan hover:underline">+52 595 114 5576</a></li>
                     </ul>
                 </Section>
 

@@ -1,0 +1,356 @@
+.background {
+    --cursor-x: 50vw;
+    --cursor-y: 50vh;
+    --parallax-x: 0px;
+    --parallax-y: 0px;
+    --parallax-x-reverse: 0px;
+    --parallax-y-reverse: 0px;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    contain: strict;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 50% 48%, #0a1020 0%, #050812 42%, #010205 100%);
+}
+
+.depth {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    background:
+        repeating-linear-gradient(118deg, transparent 0 96px, rgb(0 207 255 / 3.5%) 97px, transparent 98px 194px),
+        repeating-linear-gradient(62deg, transparent 0 124px, rgb(123 47 190 / 3%) 125px, transparent 126px 250px);
+    animation: depthDrift 28s linear infinite;
+}
+
+.parallaxField {
+    position: absolute;
+    width: 72vmax;
+    height: 58vmax;
+    will-change: transform;
+}
+
+.parallaxFieldCyan {
+    top: -26vmax;
+    left: -24vmax;
+    transform: translate3d(var(--parallax-x), var(--parallax-y), 0);
+}
+
+.parallaxFieldPurple {
+    right: -26vmax;
+    bottom: -28vmax;
+    transform: translate3d(var(--parallax-x-reverse), var(--parallax-y-reverse), 0);
+}
+
+.colorField {
+    width: 100%;
+    height: 100%;
+    border-radius: 42% 58% 54% 46% / 48% 42% 58% 52%;
+    will-change: transform, opacity;
+}
+
+.colorFieldCyan {
+    background:
+        radial-gradient(ellipse at 58% 62%, rgb(0 207 255 / 22%), rgb(74 108 247 / 9%) 38%, transparent 70%);
+    animation: colorFieldCyan 20s ease-in-out infinite alternate;
+}
+
+.colorFieldPurple {
+    background:
+        radial-gradient(ellipse at 42% 38%, rgb(123 47 190 / 24%), rgb(74 108 247 / 8%) 40%, transparent 70%);
+    animation: colorFieldPurple 24s ease-in-out infinite alternate;
+}
+
+.fluxLines {
+    position: absolute;
+    inset: -6%;
+    width: 112%;
+    height: 112%;
+    overflow: visible;
+    fill: none;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+    transform: translate3d(var(--parallax-x-reverse), var(--parallax-y-reverse), 0);
+    will-change: transform;
+}
+
+.fluxCyan,
+.fluxPurple {
+    fill: none;
+    stroke-width: 1.2;
+    stroke-dasharray: 4 14;
+    vector-effect: non-scaling-stroke;
+}
+
+.fluxCyan {
+    stroke: url("#reactive-flux-cyan");
+    animation: fluxTravel 18s linear infinite;
+}
+
+.fluxPurple {
+    stroke: url("#reactive-flux-purple");
+    animation: fluxTravel 24s linear infinite reverse;
+}
+
+.cursorField,
+.cursorEcho {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transform: translate3d(var(--cursor-x), var(--cursor-y), 0) translate(-50%, -50%);
+    transform-origin: center;
+    will-change: transform;
+}
+
+.cursorField {
+    width: clamp(280px, 42vmax, 650px);
+    aspect-ratio: 1;
+}
+
+.cursorEcho {
+    width: clamp(180px, 28vmax, 430px);
+    aspect-ratio: 1;
+    opacity: 0.58;
+    transition: transform 180ms linear;
+}
+
+.cursorAura {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, rgb(212 250 255 / 17%) 0%, rgb(0 207 255 / 15%) 8%, rgb(74 108 247 / 11%) 28%, rgb(123 47 190 / 8%) 46%, transparent 70%);
+    animation: auraBreathe 5.5s ease-in-out infinite;
+}
+
+.cursorLens {
+    position: absolute;
+    inset: 12%;
+    border-radius: 50%;
+    opacity: 0.7;
+    background:
+        conic-gradient(from 0deg, transparent 0 12%, rgb(0 207 255 / 42%) 16%, transparent 23% 48%, rgb(123 47 190 / 46%) 54%, transparent 62% 82%, rgb(74 108 247 / 34%) 88%, transparent 94%);
+    -webkit-mask-image: radial-gradient(circle, transparent 0 47%, black 48% 50%, transparent 51%);
+    mask-image: radial-gradient(circle, transparent 0 47%, black 48% 50%, transparent 51%);
+    animation: lensRotate 14s linear infinite;
+}
+
+.orbitRing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform-origin: center;
+}
+
+.orbitRingOuter {
+    width: 58%;
+    height: 34%;
+    border: 1px dashed rgb(0 207 255 / 35%);
+    animation: orbitOuter 11s linear infinite;
+}
+
+.orbitRingInner {
+    width: 38%;
+    height: 62%;
+    border: 1px solid rgb(158 89 232 / 25%);
+    animation: orbitInner 15s linear infinite reverse;
+}
+
+.cursorCore {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgb(133 231 255 / 68%);
+    border-radius: 50%;
+    background: rgb(5 14 28 / 72%);
+    box-shadow:
+        0 0 18px rgb(0 207 255 / 44%),
+        0 0 42px rgb(74 108 247 / 24%);
+    transform: translate(-50%, -50%);
+    animation: corePulse 2.8s ease-in-out infinite;
+}
+
+.cursorCore span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #d8faff;
+    box-shadow: 0 0 12px #00cfff;
+}
+
+.echoRing {
+    position: absolute;
+    inset: 8%;
+    border: 1px solid rgb(123 47 190 / 18%);
+    border-radius: 50%;
+    animation: echoPulse 6s ease-in-out infinite;
+}
+
+.vignette {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgb(0 0 0 / 52%), transparent 22%, transparent 78%, rgb(0 0 0 / 52%)),
+        radial-gradient(circle at center, transparent 36%, rgb(0 0 0 / 48%) 100%);
+}
+
+.grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.018;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes depthDrift {
+    to {
+        transform: translate3d(97px, 0, 0);
+    }
+}
+
+@keyframes colorFieldCyan {
+    from {
+        transform: rotate(-8deg) scale(0.94);
+        opacity: 0.62;
+    }
+
+    to {
+        transform: rotate(7deg) scale(1.08);
+        opacity: 0.92;
+    }
+}
+
+@keyframes colorFieldPurple {
+    from {
+        transform: rotate(6deg) scale(1.06);
+        opacity: 0.58;
+    }
+
+    to {
+        transform: rotate(-9deg) scale(0.94);
+        opacity: 0.9;
+    }
+}
+
+@keyframes fluxTravel {
+    to {
+        stroke-dashoffset: -216;
+    }
+}
+
+@keyframes auraBreathe {
+    0%,
+    100% {
+        opacity: 0.62;
+        transform: scale(0.92);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes lensRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbitOuter {
+    from {
+        transform: translate(-50%, -50%) rotate(12deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(372deg);
+    }
+}
+
+@keyframes orbitInner {
+    from {
+        transform: translate(-50%, -50%) rotate(68deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(428deg);
+    }
+}
+
+@keyframes corePulse {
+    0%,
+    100% {
+        opacity: 0.72;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.12);
+    }
+}
+
+@keyframes echoPulse {
+    0%,
+    100% {
+        opacity: 0.26;
+        transform: scale(0.84);
+    }
+
+    50% {
+        opacity: 0.72;
+        transform: scale(1.08);
+    }
+}
+
+@media (pointer: coarse) {
+    .cursorField,
+    .cursorEcho {
+        left: 50%;
+        top: 44%;
+    }
+
+    .cursorField {
+        width: min(88vw, 480px);
+    }
+
+    .cursorEcho {
+        width: min(62vw, 340px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .depth,
+    .colorField,
+    .fluxCyan,
+    .fluxPurple,
+    .cursorAura,
+    .cursorLens,
+    .orbitRing,
+    .cursorCore,
+    .echoRing {
+        animation: none;
+    }
+
+    .cursorField,
+    .cursorEcho,
+    .parallaxField,
+    .fluxLines {
+        transform: none;
+    }
+
+    .cursorField,
+    .cursorEcho {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

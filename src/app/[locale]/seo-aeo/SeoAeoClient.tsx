@@ -6,12 +6,12 @@ import { Section } from '@/components/ui/Section';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import {
-    Search, TrendingUp, Globe, Bot, Star, CheckCircle2,
-    BarChart3, Zap, MessageSquare, Eye, MapPin, ArrowRight,
-    Sparkles, Target, LineChart, Award
+    CheckCircle2, BarChart3, Zap, MessageSquare,
+    Eye, Target, LineChart, Award
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { getTechLogo } from '@/components/ui/TechLogos';
+import { AeoFAQSection } from '@/components/features/AeoFAQSection';
 
 const MOTORES_IA = [
     { name: 'ChatGPT', color: 'text-emerald-400', bg: 'bg-emerald-400/10 border-emerald-400/20' },
@@ -19,7 +19,7 @@ const MOTORES_IA = [
     { name: 'Claude', color: 'text-orange-400', bg: 'bg-orange-400/10 border-orange-400/20' },
     { name: 'Perplexity', color: 'text-purple-400', bg: 'bg-purple-400/10 border-purple-400/20' },
     { name: 'Copilot', color: 'text-ca-cyan', bg: 'bg-ca-cyan/10 border-ca-cyan/20' },
-    { name: 'Google SGE', color: 'text-ca-mid', bg: 'bg-ca-mid/10 border-ca-mid/20' },
+    { name: 'Google AI Mode', color: 'text-ca-mid', bg: 'bg-ca-mid/10 border-ca-mid/20' },
 ];
 
 export default function SeoAeoPage() {
@@ -53,9 +53,9 @@ export default function SeoAeoPage() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.25 }}
                 >
-                    El SEO ya no es solo posicionarte en Google. Hoy ChatGPT, Gemini y Claude responden
-                    preguntas de tus clientes. Nosotros hacemos que tu negocio aparezca en todos — motores
-                    de búsqueda tradicionales y motores de IA generativa.
+                    El SEO sigue siendo la base para aparecer en buscadores y experiencias con IA.
+                    Mejoramos las señales técnicas, editoriales y de entidad que ayudan a estos sistemas a
+                    encontrar, comprender y evaluar tu negocio como una fuente útil.
                 </motion.p>
 
                 <motion.div
@@ -71,7 +71,7 @@ export default function SeoAeoPage() {
                         Auditoría SEO gratuita →
                     </Link>
                     <a
-                        href="https://wa.me/5951145576"
+                        href="https://wa.me/525951145576"
                         target="_blank"
                         rel="noreferrer"
                         className="border border-ca-border text-ca-text px-8 py-3.5 rounded-xl hover:border-ca-cyan/40 hover:text-ca-cyan transition-all flex items-center justify-center gap-2"
@@ -129,14 +129,14 @@ export default function SeoAeoPage() {
                         {
                             icon: <Image src="/assets/aeo.png" alt="AEO" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'purple' as const,
-                            title: 'AEO — Optimización para IAs',
-                            desc: 'El AEO (Answer Engine Optimization) es el SEO del futuro. Optimizamos tu contenido para que ChatGPT, Gemini, Claude y Perplexity te citen en sus respuestas.',
+                            title: 'AEO — Visibilidad en búsquedas con IA',
+                            desc: 'Mejoramos la accesibilidad, claridad y respaldo de tu contenido para aumentar su elegibilidad como fuente en ChatGPT, Gemini, Claude, Perplexity y otras experiencias de búsqueda.',
                             bullets: [
-                                'Contenido optimizado para LLMs',
-                                'Formato de respuestas directas',
-                                'FAQ estructurado con schema',
-                                'Autoridad de marca ante la IA',
-                                'Monitoreo de menciones en IA',
+                                'Contenido útil y respuestas directas',
+                                'Rastreo para buscadores y asistentes',
+                                'Datos de marca consistentes',
+                                'Schema válido y fuentes verificables',
+                                'Medición de menciones y conversiones',
                             ],
                         },
                         {
@@ -188,29 +188,30 @@ export default function SeoAeoPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <span className="font-mono text-xs text-ca-cyan uppercase tracking-widest">Por qué importa el AEO</span>
+                        <span className="font-mono text-xs text-ca-cyan uppercase tracking-widest">El AEO empieza con buen SEO</span>
                         <h2 className="font-display font-black text-3xl md:text-4xl text-ca-text mt-3 mb-5 leading-tight">
-                            Tus clientes preguntan a la IA antes de buscar en Google.
+                            La IA cita fuentes que puede encontrar, entender y evaluar.
                         </h2>
                         <p className="text-ca-muted leading-relaxed mb-6">
-                            Más del 30% de las búsquedas informativas ya pasan primero por IAs generativas.
-                            Si tu negocio no aparece en sus respuestas, no existes para esos usuarios.
-                            Nosotros nos aseguramos de que sí existas.
+                            No existe un botón para ocupar una posición universal en una respuesta de IA.
+                            Trabajamos la base técnica, el contenido, la entidad y las referencias que aumentan
+                            la elegibilidad de tu negocio como fuente útil.
                         </p>
                         <div className="space-y-4">
                             {[
-                                { label: 'Búsquedas en Google', value: '8.5B/día', color: 'text-ca-cyan' },
-                                { label: 'Consultas a ChatGPT', value: '100M+/día', color: 'text-emerald-400' },
-                                { label: 'Negocios optimizados para IA', value: '< 3%', color: 'text-ca-purple' },
-                            ].map((stat) => (
-                                <div key={stat.label} className="flex items-center justify-between py-3 border-b border-ca-border">
-                                    <span className="text-ca-muted text-sm">{stat.label}</span>
-                                    <span className={`font-mono font-bold text-sm ${stat.color}`}>{stat.value}</span>
+                                { label: 'Rastreo e indexación', value: 'Base técnica', color: 'text-ca-cyan' },
+                                { label: 'Entidad y datos consistentes', value: 'Confianza', color: 'text-emerald-400' },
+                                { label: 'Respuestas útiles y verificables', value: 'Contenido', color: 'text-ca-purple' },
+                                { label: 'Medición en buscadores y asistentes', value: 'Mejora continua', color: 'text-ca-mid' },
+                            ].map((item) => (
+                                <div key={item.label} className="flex items-center justify-between gap-4 py-3 border-b border-ca-border">
+                                    <span className="text-ca-muted text-sm">{item.label}</span>
+                                    <span className={`font-mono font-bold text-xs ${item.color}`}>{item.value}</span>
                                 </div>
                             ))}
                         </div>
                         <p className="mt-5 text-xs text-ca-muted font-mono">
-                            ↑ La oportunidad: el 97% de los negocios aún no optimizan para IA.
+                            La meta es mejorar visibilidad y conversiones con evidencia, no promesas artificiales.
                         </p>
                     </motion.div>
 
@@ -222,34 +223,26 @@ export default function SeoAeoPage() {
                         <GlassCard glow="cyan" className="p-8">
                             <div className="flex items-center gap-3 mb-6">
                                 <BarChart3 size={22} className="text-ca-cyan" />
-                                <h3 className="font-bold text-ca-text">Resultados típicos en 90 días</h3>
+                                <h3 className="font-bold text-ca-text">Qué optimizamos realmente</h3>
                             </div>
                             <div className="space-y-5">
                                 {[
-                                    { label: 'Tráfico orgánico', value: '+120%', bar: 'bg-ca-cyan', pct: '70%' },
-                                    { label: 'Posición en Google Maps', value: 'Top 3', bar: 'bg-emerald-500', pct: '85%' },
-                                    { label: 'Menciones en IAs', value: 'Presencia', bar: 'bg-ca-purple', pct: '60%' },
-                                    { label: 'Velocidad de carga', value: '100/100', bar: 'bg-ca-mid', pct: '95%' },
+                                    { title: 'Descubrimiento', desc: 'Robots, sitemap, indexación, canonicals y acceso a recursos.' },
+                                    { title: 'Comprensión', desc: 'Arquitectura, HTML semántico, enlazado y respuestas claras.' },
+                                    { title: 'Confianza', desc: 'Entidad consistente, fuentes, experiencia y datos verificables.' },
+                                    { title: 'Medición', desc: 'Consultas, páginas, clics, conversiones, menciones y citas observables.' },
                                 ].map((item) => (
-                                    <div key={item.label} className="space-y-1.5">
-                                        <div className="flex justify-between text-sm">
-                                            <span className="text-ca-muted">{item.label}</span>
-                                            <span className="font-mono font-bold text-ca-text">{item.value}</span>
-                                        </div>
-                                        <div className="h-1.5 w-full bg-ca-surface2 rounded-full overflow-hidden">
-                                            <motion.div
-                                                initial={{ width: 0 }}
-                                                whileInView={{ width: item.pct }}
-                                                viewport={{ once: true }}
-                                                transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
-                                                className={`h-full rounded-full ${item.bar}`}
-                                            />
+                                    <div key={item.title} className="flex items-start gap-3">
+                                        <CheckCircle2 size={16} className="text-ca-cyan mt-1 shrink-0" />
+                                        <div>
+                                            <p className="font-semibold text-ca-text text-sm">{item.title}</p>
+                                            <p className="text-ca-muted text-sm leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
                             </div>
-                            <p className="mt-6 text-xs text-ca-muted">
-                                * Resultados varían según industria, competencia y estado inicial del sitio.
+                            <p className="mt-6 text-xs text-ca-muted border-t border-ca-border pt-4">
+                                Ningún buscador o asistente garantiza una cita. Reportamos señales que sí se pueden observar y mejorar.
                             </p>
                         </GlassCard>
                     </motion.div>
@@ -290,6 +283,8 @@ export default function SeoAeoPage() {
                     ))}
                 </div>
             </Section>
+
+            <AeoFAQSection />
 
             {/* ─── CTA ─────────────────────────────────────────────── */}
             <Section className="py-24 text-center">

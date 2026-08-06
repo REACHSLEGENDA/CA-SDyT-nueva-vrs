@@ -5,7 +5,6 @@ import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/Button';
 import { ChevronRight, MessageCircle, Mail, Sparkles } from 'lucide-react';
 import Image from 'next/image';
-import { BorderBeam } from 'border-beam';
 
 export function CTASection() {
     return (
@@ -19,11 +18,11 @@ export function CTASection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 via-brand-purple/10 to-transparent opacity-60" />
                 <div className="absolute -top-1/2 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-brand-purple/10 rounded-full blur-[150px] animate-pulse" />
                 {/* Tech Grid Overlay */}
-                <div className="absolute inset-0 bg-[url('/assets/grid.svg')] opacity-[0.05]" />
+                <div className="absolute inset-0 bg-grid-pattern opacity-[0.05]" />
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <BorderBeam size="md" colorVariant="ocean" duration={12} className="max-w-5xl mx-auto bg-brand-black/40 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 overflow-hidden relative group">
+                <div className="max-w-5xl mx-auto bg-brand-black/40 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 overflow-hidden relative group">
 
                     {/* Glow Border Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-purple/5 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-[2s] pointer-events-none" />
@@ -71,7 +70,7 @@ export function CTASection() {
                                 </Link>
 
                                 <div className="flex gap-3 w-full sm:w-auto">
-                                    <a href="https://wa.me/5951145576" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+                                    <a href="https://wa.me/525951145576" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
                                         <Button variant="outline" size="lg" className="w-full justify-center bg-white/5 border-white/10 hover:bg-brand-purple/20 hover:border-brand-purple/50 hover:text-brand-purple text-sm py-5 px-4">
                                             <MessageCircle className="mr-1.5" size={16} /> WhatsApp
                                         </Button>
@@ -111,7 +110,7 @@ export function CTASection() {
                         </motion.div>
 
                     </div>
-                </BorderBeam>
+                </div>
             </div>
         </section>
     );

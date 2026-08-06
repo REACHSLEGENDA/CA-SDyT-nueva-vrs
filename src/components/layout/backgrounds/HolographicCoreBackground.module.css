@@ -1,0 +1,394 @@
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse at 75% 51%, rgba(23, 100, 152, 0.22), transparent 34%),
+        radial-gradient(ellipse at 80% 48%, rgba(119, 48, 183, 0.12), transparent 44%),
+        linear-gradient(142deg, #02050b 0%, #040813 47%, #080719 100%);
+}
+
+.ambient {
+    position: absolute;
+    inset: 0;
+    background:
+        conic-gradient(from 205deg at 76% 51%, transparent 0deg, rgba(40, 208, 255, 0.045) 48deg, transparent 94deg),
+        radial-gradient(circle at 76% 51%, rgba(34, 221, 255, 0.08), transparent 23%);
+    animation: holoAmbient 11s ease-in-out infinite alternate;
+}
+
+.interface {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100vw, 1600px);
+    height: max(100vh, 900px);
+    overflow: visible;
+    transform: translate(-50%, -50%);
+}
+
+.grid {
+    opacity: 0.62;
+}
+
+.infrastructure {
+    fill: none;
+    stroke: rgba(102, 157, 199, 0.15);
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 3 8;
+    vector-effect: non-scaling-stroke;
+}
+
+.infrastructureNodes {
+    fill: rgba(4, 11, 23, 0.96);
+    stroke: rgba(86, 218, 243, 0.38);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+
+.infrastructureNodes > * {
+    animation: holoNode 6s ease-in-out infinite;
+}
+
+.infrastructureNodes > :nth-child(even) {
+    animation-delay: -3s;
+    stroke: rgba(182, 100, 255, 0.42);
+}
+
+.hologramDeck {
+    fill: none;
+    vector-effect: non-scaling-stroke;
+}
+
+.deckOuter,
+.deckMiddle,
+.deckInner {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.deckOuter {
+    stroke: rgba(76, 193, 226, 0.17);
+    stroke-width: 1;
+    stroke-dasharray: 2 10;
+    animation: holoDeckScale 10s ease-in-out infinite;
+}
+
+.deckMiddle {
+    stroke: rgba(122, 81, 206, 0.24);
+    stroke-width: 1;
+    stroke-dasharray: 24 8 2 8;
+    animation: holoDash 28s linear infinite reverse;
+}
+
+.deckInner {
+    stroke: rgba(67, 221, 246, 0.26);
+    stroke-width: 1;
+    stroke-dasharray: 1 6;
+    animation: holoDash 18s linear infinite;
+}
+
+.deckArcCyan,
+.deckArcViolet {
+    fill: none;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.deckArcCyan {
+    stroke: url('#holo-core-scan');
+    stroke-width: 2;
+    stroke-dasharray: 92 84 10 116;
+    animation: holoDash 22s linear infinite;
+}
+
+.deckArcViolet {
+    stroke: url('#holo-core-edge');
+    stroke-width: 1.5;
+    stroke-dasharray: 52 118 8 76;
+    opacity: 0.7;
+    animation: holoDash 30s linear infinite reverse;
+}
+
+.energyPulse {
+    fill: none;
+    stroke: rgba(85, 234, 255, 0.45);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+
+.energyPulse circle:first-child {
+    stroke: none;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: coreEnergy 5.5s ease-in-out infinite;
+}
+
+.energyPulse circle:nth-child(2),
+.energyPulse circle:nth-child(3) {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: coreWave 5s ease-out infinite;
+}
+
+.energyPulse circle:nth-child(3) {
+    animation-delay: -2.5s;
+}
+
+.chipAssembly {
+    vector-effect: non-scaling-stroke;
+}
+
+.chipShadow {
+    fill: rgba(4, 12, 25, 0.76);
+    stroke: rgba(83, 166, 207, 0.13);
+    stroke-width: 1;
+}
+
+.chipFrame {
+    fill: rgba(4, 12, 25, 0.88);
+    stroke: url('#holo-core-edge');
+    stroke-width: 1.5;
+}
+
+.chipCorners {
+    fill: none;
+    stroke: rgba(160, 239, 255, 0.72);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.chipDie {
+    fill: rgba(11, 23, 44, 0.9);
+    stroke: rgba(105, 96, 221, 0.6);
+    stroke-width: 1;
+}
+
+.dieTracks {
+    fill: none;
+    stroke: rgba(89, 187, 226, 0.25);
+    stroke-width: 1;
+}
+
+.coreWindow {
+    fill: rgba(32, 179, 219, 0.14);
+    stroke: rgba(105, 235, 255, 0.88);
+    stroke-width: 1.5;
+    animation: coreWindow 4s ease-in-out infinite;
+}
+
+.coreMark {
+    fill: none;
+    stroke: #c1f7ff;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+}
+
+.chipPins {
+    stroke: rgba(65, 205, 235, 0.64);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.chipPins line:nth-child(4n),
+.chipPins line:nth-child(4n + 1) {
+    stroke: rgba(175, 91, 244, 0.58);
+}
+
+.chipScan {
+    fill: none;
+    stroke: url('#holo-core-scan');
+    stroke-width: 2;
+    opacity: 0;
+    animation: chipScan 6.5s ease-in-out infinite;
+}
+
+.rotatingTicks {
+    fill: none;
+    stroke-width: 1.4;
+    vector-effect: non-scaling-stroke;
+    transform-box: view-box;
+    transform-origin: 1200px 455px;
+    animation: tickRotate 36s linear infinite;
+}
+
+.rotatingTicks circle:first-child {
+    stroke: rgba(54, 218, 244, 0.52);
+    stroke-dasharray: 2 15;
+}
+
+.rotatingTicks circle:last-child {
+    stroke: rgba(176, 86, 245, 0.28);
+    stroke-dasharray: 32 14 2 14;
+}
+
+.leftTelemetry,
+.rightTelemetry {
+    fill: rgba(73, 216, 241, 0.34);
+    stroke: rgba(99, 166, 205, 0.19);
+    stroke-width: 1;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.leftTelemetry path,
+.rightTelemetry path {
+    stroke-dasharray: 2 8;
+}
+
+.leftTelemetry rect {
+    stroke: none;
+    transform-box: fill-box;
+    transform-origin: left center;
+    animation: telemetryLoad 7s ease-in-out infinite;
+}
+
+.leftTelemetry rect:nth-of-type(2) {
+    animation-delay: -2.3s;
+}
+
+.leftTelemetry rect:nth-of-type(3) {
+    animation-delay: -4.6s;
+}
+
+.statusMarkers {
+    fill: rgba(3, 10, 21, 0.94);
+    stroke: rgba(84, 210, 239, 0.42);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+
+.statusMarkers > g {
+    animation: holoNode 7s ease-in-out infinite;
+}
+
+.statusMarkers > g:nth-child(2),
+.statusMarkers > g:nth-child(4) {
+    animation-delay: -3.5s;
+    stroke: rgba(177, 90, 241, 0.48);
+}
+
+.scanBand {
+    position: absolute;
+    top: 0;
+    right: 6%;
+    width: min(52vw, 860px);
+    height: 12%;
+    opacity: 0;
+    background: linear-gradient(to bottom, transparent, rgba(60, 217, 246, 0.045), transparent);
+    animation: interfaceScan 13s ease-in-out infinite;
+}
+
+.vignette {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(2, 5, 11, 0.28) 0%, transparent 42%, transparent 84%, rgba(2, 4, 11, 0.22) 100%),
+        radial-gradient(ellipse at center, transparent 48%, rgba(1, 3, 8, 0.54) 100%);
+}
+
+.texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.11;
+    background-image:
+        repeating-linear-gradient(0deg, transparent 0 3px, rgba(135, 216, 236, 0.025) 4px),
+        repeating-linear-gradient(90deg, transparent 0 11px, rgba(129, 95, 194, 0.018) 12px);
+}
+
+@keyframes holoAmbient {
+    from { opacity: 0.58; }
+    to { opacity: 1; }
+}
+
+@keyframes holoNode {
+    0%, 100% { opacity: 0.34; }
+    48% { opacity: 0.9; }
+}
+
+@keyframes holoDeckScale {
+    0%, 100% { opacity: 0.48; transform: scale(0.985); }
+    50% { opacity: 0.88; transform: scale(1.01); }
+}
+
+@keyframes holoDash {
+    to { stroke-dashoffset: -620; }
+}
+
+@keyframes coreEnergy {
+    0%, 100% { opacity: 0.52; transform: scale(0.86); }
+    50% { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes coreWave {
+    0% { opacity: 0.58; transform: scale(0.7); }
+    78%, 100% { opacity: 0; transform: scale(2.2); }
+}
+
+@keyframes coreWindow {
+    0%, 100% { fill-opacity: 0.54; }
+    50% { fill-opacity: 1; }
+}
+
+@keyframes chipScan {
+    0%, 12% { opacity: 0; transform: translateY(0); }
+    22% { opacity: 0.85; }
+    70% { opacity: 0.42; }
+    82%, 100% { opacity: 0; transform: translateY(156px); }
+}
+
+@keyframes tickRotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes telemetryLoad {
+    0%, 100% { opacity: 0.34; transform: scaleX(0.34); }
+    55% { opacity: 0.82; transform: scaleX(1); }
+}
+
+@keyframes interfaceScan {
+    0%, 8% { opacity: 0; transform: translateY(-14vh); }
+    18% { opacity: 0.75; }
+    74% { opacity: 0.25; }
+    86%, 100% { opacity: 0; transform: translateY(102vh); }
+}
+
+@media (max-width: 720px) {
+    .interface {
+        width: 1440px;
+        height: 900px;
+        transform: translate(-60%, -50%);
+    }
+
+    .leftTelemetry,
+    .infrastructure {
+        opacity: 0.5;
+    }
+
+    .scanBand {
+        right: -12%;
+        width: 92vw;
+    }
+
+    .vignette {
+        background: radial-gradient(ellipse at center, transparent 40%, rgba(1, 3, 8, 0.62) 100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .background *,
+    .background *::before,
+    .background *::after {
+        animation: none !important;
+    }
+
+    .scanBand {
+        display: none;
+    }
+}

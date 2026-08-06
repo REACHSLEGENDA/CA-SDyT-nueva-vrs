@@ -3,7 +3,6 @@ import { routing } from '@/i18n/routing';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://casolutecdigital.com';
-  const now = new Date();
   
   // Rutas canónicas reales en el proyecto
   const routes = [
@@ -72,7 +71,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       sitemapEntries.push({
         url,
-        lastModified: now,
         changeFrequency,
         priority
       });

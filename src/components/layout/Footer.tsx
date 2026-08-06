@@ -60,7 +60,7 @@ export function Footer() {
                                 color="hover:bg-pink-600 hover:border-pink-600"
                             />
                             <SocialBtn
-                                href="https://wa.me/5951145576"
+                                href="https://wa.me/525951145576"
                                 icon={<MessageCircle size={16} />}
                                 label="WhatsApp"
                                 color="hover:bg-green-600 hover:border-green-600"
@@ -125,7 +125,7 @@ export function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="https://wa.me/5951145576"
+                                    href="https://wa.me/525951145576"
                                     className="flex items-start gap-3 text-ca-muted text-sm hover:text-ca-cyan transition-colors group"
                                 >
                                     <div className="w-8 h-8 rounded-lg bg-ca-surface2 border border-ca-border flex items-center justify-center shrink-0 mt-0.5 group-hover:border-ca-cyan/30 transition-colors">
@@ -138,7 +138,7 @@ export function Footer() {
 
                         {/* CTA */}
                         <a
-                            href="https://wa.me/5951145576"
+                            href="https://wa.me/525951145576"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mt-6 inline-flex items-center gap-2 bg-ca-gradient text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-ca-cyan/15"

@@ -1,0 +1,277 @@
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse at 70% 49%, rgba(16, 74, 111, 0.2), transparent 30%),
+        radial-gradient(ellipse at 77% 56%, rgba(79, 37, 139, 0.12), transparent 34%),
+        linear-gradient(140deg, #02050b 0%, #040914 48%, #070817 100%);
+}
+
+.ambient {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 70.5% 49%, rgba(0, 217, 255, 0.08), transparent 20%),
+        radial-gradient(ellipse at 76% 55%, rgba(157, 73, 255, 0.07), transparent 26%);
+    animation: portalBreathe 11s ease-in-out infinite alternate;
+}
+
+.portal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100vw, 1600px);
+    height: max(100vh, 900px);
+    overflow: visible;
+    transform: translate(-50%, -50%);
+}
+
+.depthRails,
+.secondaryRails,
+.dataLanes,
+.dataSignals,
+.portalFrames,
+.aperture,
+.depthMarkers,
+.telemetry {
+    vector-effect: non-scaling-stroke;
+}
+
+.depthRails,
+.secondaryRails {
+    fill: none;
+    stroke-linecap: round;
+}
+
+.depthRails {
+    stroke: rgba(82, 163, 208, 0.13);
+    stroke-width: 1;
+}
+
+.depthRails path {
+    stroke-dasharray: 2 17;
+    animation: railFlow 13s linear infinite;
+}
+
+.depthRails path:nth-child(3n + 2) {
+    stroke: rgba(151, 86, 229, 0.12);
+    animation-duration: 17s;
+}
+
+.secondaryRails {
+    stroke: rgba(100, 143, 192, 0.07);
+    stroke-width: 1;
+}
+
+.secondaryRails path {
+    stroke-dasharray: 1 25;
+    animation: railFlow 20s linear infinite reverse;
+}
+
+.portalFrames {
+    fill: none;
+    stroke: rgba(74, 185, 224, 0.32);
+    stroke-width: 1;
+}
+
+.portalFrames path {
+    transform-box: view-box;
+    transform-origin: 1130px 440px;
+    animation: frameApproach 24s linear infinite;
+}
+
+.portalFrames path:nth-child(even) {
+    stroke: rgba(155, 83, 238, 0.28);
+}
+
+.portalFrames path:nth-child(1) { animation-delay: -4s; }
+.portalFrames path:nth-child(2) { animation-delay: -8s; }
+.portalFrames path:nth-child(3) { animation-delay: -12s; }
+.portalFrames path:nth-child(4) { animation-delay: -16s; }
+.portalFrames path:nth-child(5) { animation-delay: -20s; }
+.portalFrames path:nth-child(6) { animation-delay: -24s; }
+
+.dataLanes,
+.dataSignals {
+    fill: none;
+    stroke-linecap: round;
+}
+
+.dataLanes {
+    stroke: rgba(84, 152, 197, 0.13);
+    stroke-width: 1;
+}
+
+.dataLanes path:nth-child(even) {
+    stroke: rgba(149, 84, 222, 0.11);
+}
+
+.dataSignals {
+    stroke-width: 2;
+}
+
+.dataSignals path {
+    stroke-dasharray: 2 54 8 410;
+    animation: packetTravel 12s linear infinite;
+}
+
+.dataSignals path:nth-child(2) { animation-delay: -7s; animation-duration: 16s; }
+.dataSignals path:nth-child(3) { animation-delay: -3s; animation-duration: 14s; }
+.dataSignals path:nth-child(4) { animation-delay: -10s; animation-duration: 18s; }
+
+.signalCyan {
+    stroke: url('#data-portal-cyan');
+}
+
+.signalViolet {
+    stroke: url('#data-portal-violet');
+}
+
+.aperture {
+    transform-box: view-box;
+    transform-origin: 1130px 440px;
+    animation: aperturePulse 8s ease-in-out infinite;
+}
+
+.gateOuter,
+.gateInner,
+.gateTicks {
+    fill: none;
+    vector-effect: non-scaling-stroke;
+}
+
+.gateOuter {
+    stroke: rgba(77, 213, 242, 0.48);
+    stroke-width: 1;
+    stroke-dasharray: 70 9 12 18;
+    animation: gateTrace 22s linear infinite;
+}
+
+.gateInner {
+    stroke: rgba(173, 103, 249, 0.54);
+    stroke-width: 1.5;
+    stroke-dasharray: 28 9;
+    animation: gateTrace 16s linear infinite reverse;
+}
+
+.gateTicks {
+    stroke: rgba(104, 224, 249, 0.42);
+    stroke-width: 1;
+}
+
+.horizonDot {
+    fill: #b8f7ff;
+    animation: horizonPulse 4.5s ease-in-out infinite;
+}
+
+.depthMarkers {
+    fill: rgba(3, 8, 17, 0.94);
+    stroke: rgba(110, 218, 242, 0.48);
+    stroke-width: 1;
+}
+
+.depthMarkers > * {
+    animation: markerFlicker 7s ease-in-out infinite;
+}
+
+.depthMarkers > *:nth-child(even) {
+    stroke: rgba(179, 106, 247, 0.52);
+    animation-delay: -3.5s;
+}
+
+.telemetry {
+    fill: #75e9ff;
+    stroke: rgba(105, 174, 212, 0.17);
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+
+.telemetry path {
+    stroke-dasharray: 2 7;
+}
+
+.centerShade,
+.vignette {
+    position: absolute;
+    inset: 0;
+}
+
+.centerShade {
+    background: linear-gradient(90deg, rgba(2, 5, 12, 0.54) 0%, rgba(2, 5, 12, 0.14) 40%, transparent 66%);
+}
+
+.vignette {
+    background: radial-gradient(ellipse at center, transparent 46%, rgba(1, 3, 8, 0.58) 100%);
+}
+
+@keyframes portalBreathe {
+    from { opacity: 0.58; }
+    to { opacity: 1; }
+}
+
+@keyframes railFlow {
+    to { stroke-dashoffset: -114; }
+}
+
+@keyframes frameApproach {
+    0% { opacity: 0; transform: scale(0.12); }
+    12% { opacity: 0.26; }
+    70% { opacity: 0.2; }
+    100% { opacity: 0; transform: scale(2.75); }
+}
+
+@keyframes packetTravel {
+    to { stroke-dashoffset: -948; }
+}
+
+@keyframes aperturePulse {
+    0%, 100% { opacity: 0.68; transform: scale(0.97); }
+    50% { opacity: 1; transform: scale(1.025); }
+}
+
+@keyframes gateTrace {
+    to { stroke-dashoffset: -180; }
+}
+
+@keyframes horizonPulse {
+    0%, 100% { opacity: 0.46; }
+    50% { opacity: 1; }
+}
+
+@keyframes markerFlicker {
+    0%, 100% { opacity: 0.32; }
+    50% { opacity: 0.9; }
+}
+
+@media (max-width: 720px) {
+    .portal {
+        width: 1450px;
+        height: 900px;
+        transform: translate(-62%, -50%);
+    }
+
+    .centerShade {
+        background: linear-gradient(90deg, rgba(2, 5, 12, 0.38), transparent 68%);
+    }
+
+    .telemetry,
+    .secondaryRails {
+        opacity: 0.5;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .background *,
+    .background *::before,
+    .background *::after {
+        animation: none !important;
+    }
+
+    .portalFrames path {
+        opacity: 0.18;
+    }
+}

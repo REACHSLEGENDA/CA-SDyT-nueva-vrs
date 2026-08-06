@@ -175,7 +175,7 @@ export default function MobileAppsPage() {
                         <Link href="/contacto" className="w-full sm:w-auto">
                             <Button size="lg" className="w-full px-12 h-16 text-lg">Empezar a Programar</Button>
                         </Link>
-                        <a href="https://wa.me/5951145576" className="w-full sm:w-auto">
+                        <a href="https://wa.me/525951145576" className="w-full sm:w-auto">
                             <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">Hablar con un Consultor</Button>
                         </a>
                     </div>

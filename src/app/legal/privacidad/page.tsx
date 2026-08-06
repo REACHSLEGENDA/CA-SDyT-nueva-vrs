@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 const LAST_UPDATE = '22 de junio de 2025';
 const COMPANY    = 'CA | Soluciones Digitales y Tecnológicas';
-const EMAIL      = 'ca.sodiyte@gmail.com';
-const WA         = '+52 56 3368 0348';
+const EMAIL      = 'contacto@casolutecdigital.com';
+const WA         = '+52 595 114 5576';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
     return (
