@@ -6,10 +6,8 @@ import { DataHighwaysBackground } from "./DataHighwaysBackground";
 import { DataPortalBackground } from "./DataPortalBackground";
 import { HexGridBackground } from "./HexGridBackground";
 import { HolographicCoreBackground } from "./HolographicCoreBackground";
-import { OrbitalCircuitBackground } from "./OrbitalCircuitBackground";
 
 const backgrounds = {
-    orbital: OrbitalCircuitBackground,
     holographic: HolographicCoreBackground,
     highways: DataHighwaysBackground,
     hex: HexGridBackground,
@@ -20,7 +18,6 @@ const backgrounds = {
 type BackgroundId = keyof typeof backgrounds;
 
 const options: Array<{ id: BackgroundId; number: string; label: string }> = [
-    { id: "orbital", number: "5", label: "Orbital" },
     { id: "holographic", number: "6", label: "Nucleo" },
     { id: "highways", number: "7", label: "Datos" },
     { id: "hex", number: "8", label: "Hex" },
