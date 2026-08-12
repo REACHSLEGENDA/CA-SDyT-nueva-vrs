@@ -21,7 +21,7 @@ import { FAQSection } from '@/components/features/FAQSection';
 import { CTASection } from '@/components/features/CTASection';
 import { heroVideoStart, heroVideoEnd } from '@/lib/heroState';
 import { getTechLogo } from '@/components/ui/TechLogos';
-import { BorderBeam } from 'border-beam';
+import { BorderBeam } from '@/components/ui/BorderBeam';
 
 const TECH_TAGS = [
     'React', 'Next.js', 'Node.js', 'Supabase', 'Flutter', 'Fortinet',

@@ -5,7 +5,7 @@ import { ContactForm } from '@/components/features/ContactForm';
 import { Section } from '@/components/ui/Section';
 import { Mail, Phone, MapPin, MessageSquare, CheckCircle2, Zap, Clock, ShieldCheck } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
-import { BorderBeam } from 'border-beam';
+import { BorderBeam } from '@/components/ui/BorderBeam';
 
 export default function ContactPage() {
     return (

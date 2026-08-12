@@ -111,7 +111,7 @@ export function CTASection() {
                         </motion.div>
 
                     </div>
-                </div>
+                </BorderBeam>
             </div>
         </section>
     );
