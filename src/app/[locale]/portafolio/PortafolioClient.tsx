@@ -38,6 +38,16 @@ const portfolioItems: Project[] = [
         description: 'Sitio corporativo de alta gama para empresa administradora de proyectos energéticos. Diseño industrial premium con video background.',
     },
     {
+        id: 20,
+        title: 'CNADOT - CENATRA',
+        url: 'https://cnadot.healthcareexp.com/',
+        imageUrl: '/assets/cnadot.png',
+        type: 'Proyecto Top',
+        client: 'Sector Salud (Gobierno)',
+        stack: 'Web, Registro & Simulación',
+        description: 'Plataforma oficial para el Curso Nacional Avanzado de Donación de Órganos y Tejidos (CENATRA). Sistema de pre-registro para programa multidisciplinario con modelo mexicano.',
+    },
+    {
         id: 3,
         title: 'Healthcare Training Experience',
         url: 'https://healthcareexp.com/',
