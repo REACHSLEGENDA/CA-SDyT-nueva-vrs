@@ -21,6 +21,7 @@ import { FAQSection } from '@/components/features/FAQSection';
 import { CTASection } from '@/components/features/CTASection';
 import { heroVideoStart, heroVideoEnd } from '@/lib/heroState';
 import { getTechLogo } from '@/components/ui/TechLogos';
+import { BorderBeam } from 'border-beam';
 
 const TECH_TAGS = [
     'React', 'Next.js', 'Node.js', 'Supabase', 'Flutter', 'Fortinet',
@@ -286,8 +287,9 @@ export function HomeClient() {
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.07 }}
                         >
-                            <Link href="/servicios">
-                                <GlassCard className="p-5 text-center group cursor-pointer" glow="cyan">
+                            <Link href="/servicios" className="block h-full">
+                                <BorderBeam size="sm" colorVariant="colorful" duration={6} className="h-full rounded-2xl p-[1px]">
+                                    <GlassCard className="p-5 text-center group cursor-pointer h-full rounded-2xl" glow="cyan">
                                     <div className="mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
                                         <Image
                                             src={item.imgSrc}
@@ -300,7 +302,8 @@ export function HomeClient() {
                                     <span className="text-xs font-medium text-ca-muted group-hover:text-ca-text transition-colors">
                                         {item.label}
                                     </span>
-                                </GlassCard>
+                                    </GlassCard>
+                                </BorderBeam>
                             </Link>
                         </motion.div>
                     ))}
@@ -342,15 +345,21 @@ export function HomeClient() {
                             <motion.div
                                 key={name}
                                 whileHover={{ y: -4, scale: 1.05 }}
-                                className="flex flex-col items-center justify-center p-5 rounded-2xl bg-ca-surface/40 border border-ca-border hover:border-ca-cyan/30 transition-all duration-300 group cursor-default"
-                                title={displayName}
+                                className="h-full"
                             >
-                                <div className="h-10 flex items-center justify-center mb-3">
+                                <BorderBeam size="sm" colorVariant="ocean" duration={5} className="h-full rounded-2xl p-[1px]">
+                                    <div
+                                        className="flex flex-col items-center justify-center p-5 rounded-2xl bg-ca-surface/40 border border-ca-border hover:border-ca-cyan/30 transition-all duration-300 group cursor-default h-full"
+                                        title={displayName}
+                                    >
+                                        <div className="h-10 flex items-center justify-center mb-3">
                                     {logo}
                                 </div>
                                 <span className="text-ca-muted text-xs font-mono text-center group-hover:text-ca-cyan transition-colors line-clamp-1">
                                     {displayName}
-                                </span>
+                                        </span>
+                                    </div>
+                                </BorderBeam>
                             </motion.div>
                         );
                     })}
