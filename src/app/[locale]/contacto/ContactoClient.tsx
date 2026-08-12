@@ -5,7 +5,6 @@ import { ContactForm } from '@/components/features/ContactForm';
 import { Section } from '@/components/ui/Section';
 import { Mail, Phone, MapPin, MessageSquare, CheckCircle2, Zap, Clock, ShieldCheck } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
-import { BorderBeam } from '@/components/ui/BorderBeam';
 
 export default function ContactPage() {
     return (
@@ -76,18 +75,16 @@ export default function ContactPage() {
                         className="relative"
                     >
                         <div className="absolute -inset-1 bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 rounded-[2.5rem] blur-xl opacity-50 -z-10" />
-                        <BorderBeam size="md" colorVariant="colorful" duration={6} brightness={2.5} className="rounded-3xl">
-                            <Card className="p-8 md:p-12 bg-brand-black/40 border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden rounded-3xl">
-                                <div className="absolute top-0 right-0 p-8 opacity-5">
-                                    <MessageSquare size={120} className="text-brand-blue" />
-                                </div>
-                                <div className="relative z-10">
-                                    <h2 className="text-3xl font-bold text-white mb-2">Cuéntanos tu proyecto</h2>
-                                    <p className="text-gray-400 mb-10">Completa el formulario y un especialista técnico se pondrá en contacto contigo.</p>
-                                    <ContactForm />
-                                </div>
-                            </Card>
-                        </BorderBeam>
+                        <Card className="p-8 md:p-12 bg-brand-black/40 border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden rounded-3xl">
+                            <div className="absolute top-0 right-0 p-8 opacity-5">
+                                <MessageSquare size={120} className="text-brand-blue" />
+                            </div>
+                            <div className="relative z-10">
+                                <h2 className="text-3xl font-bold text-white mb-2">Cuéntanos tu proyecto</h2>
+                                <p className="text-gray-400 mb-10">Completa el formulario y un especialista técnico se pondrá en contacto contigo.</p>
+                                <ContactForm />
+                            </div>
+                        </Card>
 
                         {/* Trust badge */}
                         <div className="mt-8 flex items-center justify-center gap-8 opacity-40 grayscale">
