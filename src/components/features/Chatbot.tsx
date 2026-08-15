@@ -284,13 +284,7 @@ export function Chatbot() {
 
     return (
         <>
-            {/* Preloader de imágenes para evitar trabas en la animación */}
-            <div className="sr-only select-none pointer-events-none opacity-0 w-0 h-0 overflow-hidden">
-                <Image src="/assets/bot1.png" alt="" width={1} height={1} priority />
-                <Image src="/assets/bot2.png" alt="" width={1} height={1} priority />
-                <Image src="/assets/bot3.png" alt="" width={1} height={1} priority />
-                <Image src="/assets/bot4.png" alt="" width={1} height={1} priority />
-            </div>
+            {/* Los frames de la animación están montados dentro del botón principal para evitar peticiones HTTP, por lo que el preloader antiguo ha sido eliminado. */}
 
             {/* Speech bubble balloon (globito de texto) */}
             <AnimatePresence>
@@ -350,13 +344,25 @@ export function Chatbot() {
                             transition={{ duration: 0.2 }}
                             className="relative w-28 h-28 md:w-36 md:h-36 filter drop-shadow-[0_4px_12px_rgba(0,207,255,0.3)]"
                         >
-                            <Image
-                                src={isHovered ? "/assets/bot4.png" : `/assets/bot${frame}.png`}
-                                alt="Bot"
-                                fill
-                                className="object-contain"
-                                priority
-                            />
+                            {/* Optimizamos la animación renderizando todos los frames a la vez.
+                                Usamos .webp (~24KB) en vez de .png (~2.7MB) y controlamos visibilidad con CSS.
+                                Se agrega unoptimized para que next/image no intercepte estas peticiones. */}
+                            {[1, 2, 3, 4].map((f) => {
+                                const isCurrentFrame = isHovered ? f === 4 : f === frame;
+                                return (
+                                    <Image
+                                        key={f}
+                                        src={`/assets/bot${f}.webp`}
+                                        alt={`Bot frame ${f}`}
+                                        fill
+                                        className={`object-contain transition-opacity duration-75 ${
+                                            isCurrentFrame ? 'opacity-100' : 'opacity-0'
+                                        }`}
+                                        priority
+                                        unoptimized
+                                    />
+                                );
+                            })}
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -377,7 +383,7 @@ export function Chatbot() {
                         <div className="p-4 border-b border-white/5 bg-white/[0.02] flex justify-between items-center shrink-0">
                             <div className="flex items-center gap-3">
                                 <div className="relative w-10 h-10 rounded-full border border-ca-cyan/20 overflow-hidden shadow-[0_0_15px_rgba(0,207,255,0.15)]">
-                                    <Image src="/assets/chat.jpeg" alt="CA Bot" fill className="object-cover" />
+                                    <Image src="/assets/chat.webp" alt="CA Bot" fill className="object-cover" />
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-white text-sm">Cassie</h3>
@@ -413,7 +419,7 @@ export function Chatbot() {
                                         className="flex items-start gap-3"
                                     >
                                         <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 mt-0.5 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-                                            <Image src="/assets/chat.jpeg" alt="" fill className="object-cover" />
+                                            <Image src="/assets/chat.webp" alt="" fill className="object-cover" />
                                         </div>
                                         <div className="bg-white/[0.03] border border-white/5 px-4 py-3 rounded-2xl rounded-tl-none max-w-[85%] text-sm text-ca-text leading-relaxed shadow-sm">
                                             {stepId === 'start' && index > 0
@@ -428,7 +434,7 @@ export function Chatbot() {
                             {isTyping && (
                                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3">
                                     <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-                                        <Image src="/assets/chat.jpeg" alt="" fill className="object-cover" />
+                                        <Image src="/assets/chat.webp" alt="" fill className="object-cover" />
                                     </div>
                                     <div className="bg-white/[0.03] border border-white/5 px-4 py-2 rounded-2xl rounded-tl-none flex items-center justify-center gap-1.5 shadow-sm text-ca-cyan">
                                         <ThinkingOrb state="composing" size={20} />
