@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight, Phone, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { LocaleSwitcher } from './LocaleSwitcher';
 
 const links: { href: any; label: string }[] = [
     { href: '/', label: 'Inicio' },
@@ -116,6 +117,9 @@ export function Navbar() {
                             Hablemos →
                         </a>
 
+                        {/* Selector de idioma */}
+                        <LocaleSwitcher />
+
                         {/* Hamburger */}
                         <button
                             onClick={handleOpen}
@@ -198,6 +202,10 @@ export function Navbar() {
                                                 </Link>
                                             </motion.div>
                                         ))}
+                                    </div>
+
+                                    <div className="pt-8 mt-8 border-t border-ca-border">
+                                        <LocaleSwitcher variant="panel" onSelect={handleClose} />
                                     </div>
                                 </div>
 

@@ -5,6 +5,12 @@ export const routing = defineRouting({
   locales: ['es-MX', 'en', 'es-419', 'es-ES', 'pt-BR'],
   defaultLocale: 'es-MX',
   localePrefix: 'as-needed', // No prefix for the default locale
+  // El dominio raiz siempre sirve es-MX. Sin esto, next-intl redirige la raiz segun la
+  // cookie NEXT_LOCALE o la cabecera Accept-Language, asi que una sola visita a /pt-BR
+  // dejaba al usuario atrapado en portugues sin manera de volver.
+  // El idioma se cambia de forma explicita con el LocaleSwitcher.
+  localeDetection: false,
+  localeCookie: false,
   pathnames: {
     '/': '/',
     '/nosotros': '/nosotros',
