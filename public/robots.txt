@@ -2,8 +2,8 @@ User-agent: *
 Allow: /
 Allow: /en/
 Allow: /es-419/
-Allow: /es-es/
-Allow: /pt-br/
+Allow: /es-ES/
+Allow: /pt-BR/
 
 Disallow: /api/
 

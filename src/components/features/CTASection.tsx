@@ -100,9 +100,10 @@ export function CTASection() {
                                 className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 drop-shadow-[0_12px_30px_rgba(0,207,255,0.35)]"
                             >
                                 <Image
-                                    src="/assets/cta.png"
+                                    src="/assets/cta.webp"
                                     alt="Cassie"
                                     fill
+                                    sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, 320px"
                                     className="object-contain"
                                     priority
                                 />

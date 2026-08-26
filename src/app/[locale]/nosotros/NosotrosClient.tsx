@@ -22,6 +22,7 @@ export default function AboutPage() {
                         src="/assets/nosotros.png"
                         alt="Pasión por la tecnología - Cassie"
                         fill
+                        sizes="(max-width: 768px) 256px, 320px"
                         className="object-contain"
                         priority
                     />

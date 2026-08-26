@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import MarketingPageClient from './MarketingClient';
 import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
 
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const schema = getServiceSchema('Marketing Digital y Gestión de Redes Sociales', locale);
   const breadcrumb = getBreadcrumbSchema('/marketing', locale, locale === 'en' ? 'Marketing' : locale === 'pt-BR' ? 'Marketing' : 'Marketing');
 

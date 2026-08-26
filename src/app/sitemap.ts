@@ -53,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // es-MX es el idioma por defecto sin prefijo
         url = `${base}${localizedPath === '/' ? '' : localizedPath}`;
       } else {
-        url = `${base}/${locale.toLowerCase()}${localizedPath === '/' ? '' : localizedPath}`;
+        url = `${base}/${locale}${localizedPath === '/' ? '' : localizedPath}`;
       }
 
       // Prioridad y frecuencia de actualización

@@ -71,9 +71,10 @@ export function Navbar() {
                     <Link href="/" className="flex items-center gap-3 group">
                         <div className="relative h-9 w-32 transition-transform group-hover:scale-105">
                             <Image
-                                src="/assets/logo.png"
+                                src="/assets/logo.webp"
                                 alt="CA Soluciones Digitales"
                                 fill
+                                sizes="128px"
                                 className="object-contain object-left"
                                 priority
                             />
@@ -147,9 +148,10 @@ export function Navbar() {
                              <div className="flex justify-between items-center mb-12">
                                 <Link href="/" onClick={handleClose} className="relative h-9 w-32">
                                     <Image
-                                        src="/assets/logo.png"
+                                        src="/assets/logo.webp"
                                         alt="CA Soluciones Digitales"
                                         fill
+                                        sizes="128px"
                                         className="object-contain object-left"
                                         priority
                                     />

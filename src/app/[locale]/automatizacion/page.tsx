@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import AutomationPageClient from './AutomatizacionClient';
 import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
 
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const schema = getServiceSchema('Automatización de Procesos e Integraciones IA', locale);
   const breadcrumb = getBreadcrumbSchema('/automatizacion', locale, locale === 'en' ? 'Automation & AI' : locale === 'pt-BR' ? 'Automação' : 'Automatización');
 

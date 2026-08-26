@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import InfraestructuraTIClient from './InfraestructuraTIClient';
 import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
 
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const schema = getServiceSchema('Servicios de Infraestructura de TI, Redes y Ciberseguridad', locale);
   const breadcrumb = getBreadcrumbSchema('/infraestructura-ti', locale, locale === 'en' ? 'IT Infrastructure' : locale === 'pt-BR' ? 'Infraestrutura TI' : 'Infraestructura TI');
 

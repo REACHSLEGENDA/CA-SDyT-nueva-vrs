@@ -35,8 +35,8 @@ This is a premium agency website built with Next.js 14+, Tailwind CSS (v4), and 
 ## Configuration
 
 ### Images
-- Place your logo at `public/assets/logo.png`.
-- Place your bot icon at `public/assets/bot.png`.
+- Place your logo at `public/assets/logo.webp` (the `.png` copy is kept only for the JSON-LD `logo` field).
+- Chatbot animation frames live at `public/assets/bot1..4.webp`; the chat avatar is `public/assets/chat.webp`.
 - (Optional) Update portfolio placeholder images in `src/app/portafolio/page.tsx`.
 
 ### Contact Form

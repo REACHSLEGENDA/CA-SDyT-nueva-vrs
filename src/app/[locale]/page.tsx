@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import { HomeClient } from '@/components/pages/HomeClient';
 import { BUSINESS_EMAIL, BUSINESS_NAME, BUSINESS_PHONE, BUSINESS_SOCIALS, BUSINESS_WHATSAPP, DEFAULT_SOCIAL_IMAGE, getLanguageAlternates, SITE_URL } from '@/lib/seoUtils';
 import { faqs } from '@/lib/faqData';
@@ -127,14 +128,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       openGraph: {
         type: 'website',
         locale: 'es_ES',
-        url: 'https://casolutecdigital.com/es-es',
+        url: 'https://casolutecdigital.com/es-ES',
         siteName: 'CA Soluciones Digitales',
         title: 'CA Soluciones Digitales | Agencia de Desarrollo Web y Apps desde México para España',
         description: 'Agencia digital mexicana con servicios para España. Desarrollo web con React y Next.js, apps móviles, sistemas a medida, CRM, automatización con IA y bots de WhatsApp. Servicio remoto, precios competitivos.',
         images: [socialImage]
       },
       alternates: {
-        canonical: 'https://casolutecdigital.com/es-es',
+        canonical: 'https://casolutecdigital.com/es-ES',
         languages,
       }
     };
@@ -156,14 +157,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       openGraph: {
         type: 'website',
         locale: 'pt_BR',
-        url: 'https://casolutecdigital.com/pt-br',
+        url: 'https://casolutecdigital.com/pt-BR',
         siteName: 'CA Soluções Digitais',
         title: 'CA Soluções Digitais | Desenvolvimento Web, Apps e Sistemas no Brasil',
         description: 'Agência digital mexicana atendendo clientes no Brasil. Desenvolvimento web com React e Next.js, apps móveis, sistemas personalizados, CRM, automação com IA e bots do WhatsApp. Trabalho remoto, preços competitivos.',
         images: [socialImage]
       },
       alternates: {
-        canonical: 'https://casolutecdigital.com/pt-br',
+        canonical: 'https://casolutecdigital.com/pt-BR',
         languages,
       }
     };
@@ -201,6 +202,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
 
   const websiteSchema = {
     '@context': 'https://schema.org',

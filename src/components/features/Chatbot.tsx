@@ -383,7 +383,7 @@ export function Chatbot() {
                         <div className="p-4 border-b border-white/5 bg-white/[0.02] flex justify-between items-center shrink-0">
                             <div className="flex items-center gap-3">
                                 <div className="relative w-10 h-10 rounded-full border border-ca-cyan/20 overflow-hidden shadow-[0_0_15px_rgba(0,207,255,0.15)]">
-                                    <Image src="/assets/chat.webp" alt="CA Bot" fill className="object-cover" />
+                                    <Image src="/assets/chat.webp" alt="CA Bot" fill sizes="40px" className="object-cover" />
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-white text-sm">Cassie</h3>
@@ -419,7 +419,7 @@ export function Chatbot() {
                                         className="flex items-start gap-3"
                                     >
                                         <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 mt-0.5 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-                                            <Image src="/assets/chat.webp" alt="" fill className="object-cover" />
+                                            <Image src="/assets/chat.webp" alt="" fill sizes="28px" className="object-cover" />
                                         </div>
                                         <div className="bg-white/[0.03] border border-white/5 px-4 py-3 rounded-2xl rounded-tl-none max-w-[85%] text-sm text-ca-text leading-relaxed shadow-sm">
                                             {stepId === 'start' && index > 0
@@ -434,7 +434,7 @@ export function Chatbot() {
                             {isTyping && (
                                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3">
                                     <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-                                        <Image src="/assets/chat.webp" alt="" fill className="object-cover" />
+                                        <Image src="/assets/chat.webp" alt="" fill sizes="28px" className="object-cover" />
                                     </div>
                                     <div className="bg-white/[0.03] border border-white/5 px-4 py-2 rounded-2xl rounded-tl-none flex items-center justify-center gap-1.5 shadow-sm text-ca-cyan">
                                         <ThinkingOrb state="composing" size={20} />

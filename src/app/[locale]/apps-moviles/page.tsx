@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import MobileAppsPageClient from './AppsMovilesClient';
 import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
 
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const schema = getServiceSchema('Desarrollo de Aplicaciones Móviles', locale);
   const breadcrumb = getBreadcrumbSchema('/apps-moviles', locale, locale === 'en' ? 'Mobile App Development' : locale === 'pt-BR' ? 'Aplicativos Móveis' : 'Apps Móviles');
 

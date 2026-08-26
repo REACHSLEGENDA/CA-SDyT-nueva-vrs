@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
@@ -69,6 +69,7 @@ const ICON_MAP: Record<string, { icon: React.ReactNode; glow: 'none' | 'cyan' | 
 export function HomeClient() {
     const videoRef = useRef<HTMLVideoElement>(null);
     const heroRef  = useRef<HTMLElement>(null);
+    const introRef = useRef<HTMLElement>(null);
     const hasRevealed = useRef(false);
     const t = useTranslations('Index');
 
@@ -80,11 +81,29 @@ export function HomeClient() {
     };
 
     useEffect(() => {
-        heroVideoStart();
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const connection = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+        const saveData = Boolean(connection?.saveData) || /(^|-)2g$/.test(connection?.effectiveType ?? '');
+
+        if (prefersReducedMotion || saveData) {
+            // El intro es puramente decorativo: lo ocultamos sin provocar un render extra
+            // y sin llegar a descargar el video.
+            introRef.current?.setAttribute('hidden', '');
+            reveal();
+        } else {
+            heroVideoStart();
+            const video = videoRef.current;
+            if (video) {
+                // La fuente se asigna despues de la hidratacion para que el intro no compita
+                // con el contenido critico durante la carga inicial de la pagina.
+                video.src = '/assets/hero-video.mp4';
+                video.play().catch(() => reveal());
+            }
+        }
+
         const onScroll = () => { if (window.scrollY > 60) reveal(); };
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const stats = t.raw('Hero.stats') as Array<{ to: number; prefix?: string; suffix?: string; label: string }>;
@@ -93,19 +112,19 @@ export function HomeClient() {
     return (
         <>
             {/* ─── VIDEO INTRO ─────────────────────────────────────── */}
-            <section className="-mt-20 relative h-screen overflow-hidden bg-black flex items-center justify-center">
+            <section ref={introRef} className="-mt-20 relative h-screen overflow-hidden bg-black flex items-center justify-center motion-reduce:hidden">
+                {/* src se asigna en el cliente (ver useEffect) para no bloquear el primer render */}
                 <video
                     ref={videoRef}
-                    autoPlay
                     muted
                     playsInline
+                    preload="none"
                     onEnded={reveal}
+                    onError={reveal}
                     className="absolute inset-0 w-full h-full object-contain md:object-cover"
                     style={{ objectPosition: '50% 20%' }}
                     aria-hidden="true"
-                >
-                    <source src="/assets/hero-video.mp4" type="video/mp4" />
-                </video>
+                />
 
                 <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-ca-dark to-transparent pointer-events-none" />
 

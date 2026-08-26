@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import SystemsPageClient from './SistemasClient';
 import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
 
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const schema = getServiceSchema('Desarrollo de Sistemas a Medida (CRM & ERP)', locale);
   const breadcrumb = getBreadcrumbSchema('/sistemas', locale, locale === 'en' ? 'Custom Systems' : locale === 'pt-BR' ? 'Sistemas sob Medida' : 'Sistemas a Medida');
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import AboutPageClient from './NosotrosClient';
 import { getPageMetadata, getAboutPageSchema } from '@/lib/seoUtils';
 
@@ -27,7 +28,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return getPageMetadata('/nosotros', locale, titles, descriptions);
 }
 
-export default async function Page() {
+export default async function Page({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const schema = getAboutPageSchema();
   return (
     <>

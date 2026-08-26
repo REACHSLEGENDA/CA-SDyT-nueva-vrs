@@ -36,9 +36,10 @@ export function Footer() {
                     <div className="md:col-span-1">
                         <div className="mb-5 relative w-48 h-24">
                             <Image
-                                src="/assets/footer-logo.png"
+                                src="/assets/footer-logo.webp"
                                 alt="CA Soluciones Digitales y Tecnológicas"
                                 fill
+                                sizes="192px"
                                 className="object-contain object-left"
                             />
                         </div>

@@ -39,7 +39,7 @@ export function getCanonicalUrl(route: string, locale: string): string {
 
   // Si es la home
   if (route === '/') {
-    return locale === routing.defaultLocale ? base : `${base}/${locale.toLowerCase()}`;
+    return locale === routing.defaultLocale ? base : `${base}/${locale}`;
   }
 
   // Si es el locale por defecto (es-MX), no lleva prefijo
@@ -47,7 +47,7 @@ export function getCanonicalUrl(route: string, locale: string): string {
     return `${base}${localizedPath}`;
   }
 
-  return `${base}/${locale.toLowerCase()}${localizedPath}`;
+  return `${base}/${locale}${localizedPath}`;
 }
 
 export function getLanguageAlternates(route: string): Record<string, string> {
