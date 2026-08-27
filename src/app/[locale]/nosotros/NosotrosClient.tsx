@@ -111,7 +111,7 @@ export default function AboutPage() {
             {/* 4. Values Section */}
             <Section className="py-24">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">Nuestros Pilares</h2>
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">{t('pillars')}</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">{t('whySub')}</p>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">

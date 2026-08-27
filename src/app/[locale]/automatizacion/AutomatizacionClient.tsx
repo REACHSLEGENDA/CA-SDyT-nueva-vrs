@@ -47,7 +47,7 @@ export default function AutomationPage() {
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-8 leading-tight">
                     {t('heroA')} <br />
-                    <span className="text-gradient decoration-pink-500">Integraciones IA</span>
+                    <span className="text-gradient decoration-pink-500">{t('heroB')}</span>
                 </h1>
 
                 <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">

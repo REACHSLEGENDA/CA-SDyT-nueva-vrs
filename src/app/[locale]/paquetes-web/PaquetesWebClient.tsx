@@ -36,8 +36,8 @@ export default function WebPackagesPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
                 >
-                    Paquetes Web &amp;{' '}
-                    <span className="text-ca-gradient">TI Empresarial</span>
+                    {t('h1a')}{' '}
+                    <span className="text-ca-gradient">{t('h1b')}</span>
                 </motion.h1>
 
                 <motion.p
@@ -263,7 +263,7 @@ export default function WebPackagesPage() {
             <Section className="py-20 border-t border-ca-border">
                 <SectionHeader
                     eyebrow="Transparencia total"
-                    title="Compara nuestros planes"
+                    title={t('compare')}
                     subtitle={t('clear')}
                 />
 
@@ -301,7 +301,7 @@ export default function WebPackagesPage() {
                     className="max-w-3xl mx-auto space-y-8"
                 >
                     <h2 className="font-display font-black text-4xl md:text-6xl text-ca-text leading-tight">
-                        ¿Listo para transformar{' '}
+                        {t('ctaA')}{' '}
                         <span className="text-ca-gradient">{t('ctaB')}</span>?
                     </h2>
                     <p className="text-ca-muted text-lg">

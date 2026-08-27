@@ -46,8 +46,8 @@ export default function SystemsPage() {
                 </motion.div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-8 leading-tight">
-                    Sistemas <br />
-                    <span className="text-gradient">a Medida</span>
+                    {t('h1a')} <br />
+                    <span className="text-gradient">{t('h1b')}</span>
                 </h1>
 
                 <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">

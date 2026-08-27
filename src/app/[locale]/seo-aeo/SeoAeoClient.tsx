@@ -45,7 +45,7 @@ export default function SeoAeoPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
                 >
-                    Que te encuentren{' '}
+                    {t('heroA')}{' '}
                     <span className="text-ca-gradient">{t('heroTail')}</span>
                 </motion.h1>
 

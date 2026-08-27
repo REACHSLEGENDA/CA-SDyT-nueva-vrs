@@ -67,6 +67,10 @@
           "desc": "Beyond digital: networks, Fortinet firewalls, Windows Server, Synology NAS, CCTV and on-site support for Mexico and LATAM clients."
         }
       ]
+    },
+    "Sections": {
+      "techNoLimits": "Technology without limits",
+      "techWeUse": "Technologies we use"
     }
   },
   "Nav": {
@@ -708,7 +712,9 @@
     "cloud": "Cloud deployment (AWS/Vercel)",
     "step3": "Development",
     "step4": "Launch",
-    "step4d": "Rigorous QA and cloud deployment."
+    "step4d": "Rigorous QA and cloud deployment.",
+    "h1a": "Web Platforms and",
+    "h1b": "Applications"
   },
   "MobileAppsPage": {
     "heroA": "Innovation in the",
@@ -753,7 +759,8 @@
     "ctaA": "Ready to master",
     "ctaB": "the mobile ecosystem",
     "ctaBody": "Book a free consultation and let us define the best path for your app together.",
-    "ctaButton": "Talk to a Consultant"
+    "ctaButton": "Talk to a Consultant",
+    "steps4": "Your App in 4 Steps"
   },
   "SystemsPage": {
     "heroTitle": "Enterprise-Grade Software",
@@ -805,7 +812,9 @@
     "ctaB": "system that works for you",
     "ctaBody": "Stop using generic tools that cap your growth. Let us design the tool your operation actually deserves.",
     "diag": "Project Assessment",
-    "ctaButton": "Talk to a Software Architect"
+    "ctaButton": "Talk to a Software Architect",
+    "h1a": "Custom",
+    "h1b": "Systems"
   },
   "AutomationPage": {
     "heroBadge": "Artificial Intelligence Working for Your Business",
@@ -860,7 +869,8 @@
     "ctaBody": "Stop spending time on tasks AI can do better and faster. Book your automation assessment today.",
     "ctaButton": "Talk to a Specialist",
     "ctaWhats": "Get a WhatsApp Bot Quote",
-    "wfTitle": "Advanced Workflows"
+    "wfTitle": "Advanced Workflows",
+    "heroB": "AI Integrations"
   },
   "SeoAeoPage": {
     "kicker": "Technical SEO and AEO",
@@ -906,7 +916,8 @@
     "ctaLink": "See all services",
     "heroBody": "SEO is still the foundation for appearing in search engines and AI experiences. We improve the technical, editorial and entity signals that help these systems find, understand and evaluate your business as a useful source.",
     "baseBody": "There is no button that gives you a universal position in an AI answer. We work on the technical foundation, the content, the entity and the references that increase your eligibility as a useful source.",
-    "ctaBody": "Let us test it together. Tell us your line of business and we will show you how we position you on Google and in the AI tools your customers use."
+    "ctaBody": "Let us test it together. Tell us your line of business and we will show you how we position you on Google and in the AI tools your customers use.",
+    "heroA": "Get found"
   },
   "MarketingPage": {
     "heroA": "Own the Social Networks",
@@ -951,7 +962,9 @@
     "s4": "Continuous Optimisation",
     "s4d": "What is not measured cannot improve. We adjust the strategy month by month based on data.",
     "ctaA": "Ready to scale on",
-    "ctaBody": "Stop posting for the sake of posting. Start a professional strategy today."
+    "ctaBody": "Stop posting for the sake of posting. Start a professional strategy today.",
+    "brandA": "Your brand deserves to be",
+    "brandB": "Unforgettable"
   },
   "ItInfraPage": {
     "netTag": "Never offline.",
@@ -1011,7 +1024,9 @@
     "ctaTitle": "Ready for infrastructure that does not fail?",
     "heroBody": "Networks, cybersecurity, CCTV, servers and technical support. We design and maintain your business technology infrastructure so you never stop. On-site work is available in Mexico, subject to coverage.",
     "planBody": "Every service above in a single monthly plan: network, firewall, server, CCTV, support and monitoring — one team for all of it.",
-    "ctaBody": "Get in touch and an IT specialist will review your current setup and propose the most efficient solution for your company."
+    "ctaBody": "Get in touch and an IT specialist will review your current setup and propose the most efficient solution for your company.",
+    "heroA": "Your company running",
+    "detailTitle": "Every service, in detail"
   },
   "AboutPage": {
     "imgAlt": "Passion for technology - Cassie",
@@ -1043,7 +1058,8 @@
     "ctaB": "your story",
     "ctaC": "with us?",
     "ctaButton": "Book a technical call",
-    "heroBody": "At CA Soluciones Digitales we turn technical complexity into operational simplicity. We do not just write code; we design the future of your business with world-class engineering."
+    "heroBody": "At CA Soluciones Digitales we turn technical complexity into operational simplicity. We do not just write code; we design the future of your business with world-class engineering.",
+    "pillars": "Our Pillars"
   },
   "ContactPage": {
     "badge": "Immediate Response",
@@ -1122,7 +1138,8 @@
     "h4": "4. Limitation of Liability",
     "p4": "In no event shall CA Soluciones Digitales be liable for indirect, incidental, special or consequential damages arising from the use or inability to use our services.",
     "p5": "We reserve the right to modify these terms at any time. Changes take effect immediately upon publication on the website.",
-    "p6": "These terms are governed by and construed in accordance with the laws of Mexico. Any dispute relating to these terms is subject to the exclusive jurisdiction of the competent courts."
+    "p6": "These terms are governed by and construed in accordance with the laws of Mexico. Any dispute relating to these terms is subject to the exclusive jurisdiction of the competent courts.",
+    "h2": "2. Services"
   },
   "PackagesPage": {
     "badge": "✦ Solutions for every stage",
@@ -1159,7 +1176,11 @@
     "p2Desc": "Mid-size website with SEO, automated chatbot, payment gateway and intermediate social media management. The most complete plan for growing businesses.",
     "p3Desc": "Premium website, AI WhatsApp bot, AEO to gain visibility in AI systems, and full automation.",
     "p4Desc": "Complete IT infrastructure: designed network, firewall, server or NAS, Google Workspace, PRTG monitoring and monthly support. Available in Mexico, subject to coverage.",
-    "ctaBody": "Quotes with no obligation. Tell us what you need and we will find the right plan for your business."
+    "ctaBody": "Quotes with no obligation. Tell us what you need and we will find the right plan for your business.",
+    "h1a": "Web & Enterprise",
+    "h1b": "IT Packages",
+    "compare": "Compare our plans",
+    "ctaA": "Ready to transform"
   },
   "PortfolioPage": {
     "heroTail": "speak for themselves.",
@@ -1200,6 +1221,7 @@
     "typeTop": "Top Project",
     "typeFull": "Full Development",
     "typeCollab": "Collaboration",
-    "typeWebApp": "Web App"
+    "typeWebApp": "Web App",
+    "h1a": "Projects that"
   }
 }

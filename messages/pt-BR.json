@@ -61,6 +61,10 @@
           "desc": "Não desaparecemos após a entrega. Acompanhamento e manutenção contínua."
         }
       ]
+    },
+    "Sections": {
+      "techNoLimits": "Tecnologia sem limites",
+      "techWeUse": "Tecnologias que usamos"
     }
   },
   "Nav": {
@@ -702,7 +706,9 @@
     "cloud": "Deploy em nuvem (AWS/Vercel)",
     "step3": "Desenvolvimento",
     "step4": "Lançamento",
-    "step4d": "QA rigoroso e deploy em nuvem."
+    "step4d": "QA rigoroso e deploy em nuvem.",
+    "h1a": "Plataformas e",
+    "h1b": "Aplicações Web"
   },
   "MobileAppsPage": {
     "heroA": "Inovação na",
@@ -747,7 +753,8 @@
     "ctaA": "Pronto para dominar",
     "ctaB": "o ecossistema móvel",
     "ctaBody": "Agende uma consultoria gratuita e vamos definir juntos o melhor caminho para seu app.",
-    "ctaButton": "Falar com um Consultor"
+    "ctaButton": "Falar com um Consultor",
+    "steps4": "Seu App em 4 Passos"
   },
   "SystemsPage": {
     "heroTitle": "Software de Nível Empresarial",
@@ -799,7 +806,9 @@
     "ctaB": "sistema que trabalha por você",
     "ctaBody": "Pare de usar ferramentas genéricas que limitam seu crescimento. Vamos desenhar a ferramenta que sua operação merece.",
     "diag": "Diagnóstico de Projeto",
-    "ctaButton": "Falar com um Arquiteto de Software"
+    "ctaButton": "Falar com um Arquiteto de Software",
+    "h1a": "Sistemas",
+    "h1b": "Sob Medida"
   },
   "AutomationPage": {
     "heroBadge": "Inteligência Artificial a Serviço do Seu Negócio",
@@ -854,7 +863,8 @@
     "ctaBody": "Pare de gastar tempo em tarefas que uma IA faz melhor e mais rápido. Agende hoje seu diagnóstico de automação.",
     "ctaButton": "Falar com um Especialista",
     "ctaWhats": "Orçar Bot de WhatsApp",
-    "wfTitle": "Workflows Avançados"
+    "wfTitle": "Workflows Avançados",
+    "heroB": "Integrações com IA"
   },
   "SeoAeoPage": {
     "kicker": "SEO Técnico e AEO",
@@ -900,7 +910,8 @@
     "ctaLink": "Ver todos os serviços",
     "heroBody": "O SEO continua sendo a base para aparecer em buscadores e experiências com IA. Melhoramos os sinais técnicos, editoriais e de entidade que ajudam esses sistemas a encontrar, compreender e avaliar seu negócio como uma fonte útil.",
     "baseBody": "Não existe um botão para ocupar uma posição universal em uma resposta de IA. Trabalhamos a base técnica, o conteúdo, a entidade e as referências que aumentam a elegibilidade do seu negócio como fonte útil.",
-    "ctaBody": "Vamos testar juntos. Conte seu segmento e mostramos como posicionamos você no Google e nas IAs que seus clientes usam."
+    "ctaBody": "Vamos testar juntos. Conte seu segmento e mostramos como posicionamos você no Google e nas IAs que seus clientes usam.",
+    "heroA": "Seja encontrado"
   },
   "MarketingPage": {
     "heroA": "Domine as Redes",
@@ -945,7 +956,9 @@
     "s4": "Otimização Contínua",
     "s4d": "O que não se mede não melhora. Ajustamos a estratégia mês a mês com base em dados.",
     "ctaA": "Pronto para escalar em",
-    "ctaBody": "Pare de postar por postar. Comece uma estratégia profissional hoje."
+    "ctaBody": "Pare de postar por postar. Comece uma estratégia profissional hoje.",
+    "brandA": "Sua marca merece ser",
+    "brandB": "Inesquecível"
   },
   "ItInfraPage": {
     "netTag": "Nunca sem conexão.",
@@ -1005,7 +1018,9 @@
     "ctaTitle": "Pronto para uma infraestrutura que não falha?",
     "heroBody": "Redes, cibersegurança, CFTV, servidores e suporte técnico. Projetamos e mantemos a infraestrutura tecnológica do seu negócio para você nunca parar. O trabalho presencial está disponível no México, sujeito a cobertura.",
     "planBody": "Todos os serviços acima em um único plano mensal: rede, firewall, servidor, CFTV, suporte e monitoramento — uma só equipe para tudo.",
-    "ctaBody": "Fale com a gente e um especialista de TI vai analisar sua situação atual e propor a solução mais eficiente para sua empresa."
+    "ctaBody": "Fale com a gente e um especialista de TI vai analisar sua situação atual e propor a solução mais eficiente para sua empresa.",
+    "heroA": "Sua empresa operando",
+    "detailTitle": "Cada serviço, em detalhe"
   },
   "AboutPage": {
     "imgAlt": "Paixão por tecnologia - Cassie",
@@ -1037,7 +1052,8 @@
     "ctaB": "sua história",
     "ctaC": "com a gente?",
     "ctaButton": "Agendar uma conversa técnica",
-    "heroBody": "Na CA Soluciones Digitales transformamos complexidade técnica em simplicidade operacional. Não apenas escrevemos código; desenhamos o futuro do seu negócio com engenharia de nível mundial."
+    "heroBody": "Na CA Soluciones Digitales transformamos complexidade técnica em simplicidade operacional. Não apenas escrevemos código; desenhamos o futuro do seu negócio com engenharia de nível mundial.",
+    "pillars": "Nossos Pilares"
   },
   "ContactPage": {
     "badge": "Atendimento Imediato",
@@ -1116,7 +1132,8 @@
     "h4": "4. Limitação de Responsabilidade",
     "p4": "Em nenhuma hipótese a CA Soluciones Digitales será responsável por danos indiretos, incidentais, especiais ou consequentes decorrentes do uso ou da impossibilidade de uso dos nossos serviços.",
     "p5": "Reservamo-nos o direito de modificar estes termos a qualquer momento. As alterações entram em vigor imediatamente após a publicação no site.",
-    "p6": "Estes termos são regidos e interpretados de acordo com as leis do México. Qualquer disputa relacionada a estes termos está sujeita à jurisdição exclusiva dos tribunais competentes."
+    "p6": "Estes termos são regidos e interpretados de acordo com as leis do México. Qualquer disputa relacionada a estes termos está sujeita à jurisdição exclusiva dos tribunais competentes.",
+    "h2": "2. Serviços"
   },
   "PackagesPage": {
     "badge": "✦ Soluções para cada etapa",
@@ -1153,7 +1170,11 @@
     "p2Desc": "Site intermediário com SEO, chatbot automático, gateway de pagamento e gestão de redes. O plano mais completo para negócios em crescimento.",
     "p3Desc": "Site premium, bot de WhatsApp com IA, AEO para ganhar visibilidade nas IAs e automações completas.",
     "p4Desc": "Infraestrutura de TI completa: rede projetada, firewall, servidor ou NAS, Google Workspace, monitoramento PRTG e suporte mensal. Disponível no México, sujeito a cobertura.",
-    "ctaBody": "Orçamento sem compromisso. Conte o que você precisa e encontramos o plano ideal para o seu negócio."
+    "ctaBody": "Orçamento sem compromisso. Conte o que você precisa e encontramos o plano ideal para o seu negócio.",
+    "h1a": "Pacotes Web e",
+    "h1b": "TI Empresarial",
+    "compare": "Compare nossos planos",
+    "ctaA": "Pronto para transformar"
   },
   "PortfolioPage": {
     "heroTail": "falam por si.",
@@ -1194,6 +1215,7 @@
     "typeTop": "Projeto Destaque",
     "typeFull": "Desenvolvimento Completo",
     "typeCollab": "Colaboração",
-    "typeWebApp": "App Web"
+    "typeWebApp": "App Web",
+    "h1a": "Projetos que"
   }
 }

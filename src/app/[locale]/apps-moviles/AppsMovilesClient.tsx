@@ -152,7 +152,7 @@ export default function MobileAppsPage() {
             {/* 4. PROCESS - Roadmap to the Stores */}
             <Section className="py-24 border-y border-white/5">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-center text-4xl font-display font-bold text-white mb-16">Tu App en 4 Pasos</h2>
+                    <h2 className="text-center text-4xl font-display font-bold text-white mb-16">{t('steps4')}</h2>
                     <div className="space-y-12">
                         <ProcessRow num="01" title={t('pUi')} text={t('pUiD')} icon={<Palette />} />
                         <ProcessRow num="02" title={t('pArch')} text={t('pArchD')} icon={<Code2 />} />

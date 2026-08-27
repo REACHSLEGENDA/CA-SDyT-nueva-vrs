@@ -44,8 +44,8 @@ export default function AppsWebPage() {
                 </motion.div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-8 leading-tight">
-                    Plataformas y <br />
-                    <span className="text-gradient">Aplicaciones Web</span>
+                    {t('h1a')} <br />
+                    <span className="text-gradient">{t('h1b')}</span>
                 </h1>
 
                 <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">

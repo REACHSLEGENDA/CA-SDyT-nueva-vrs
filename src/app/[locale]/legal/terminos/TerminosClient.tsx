@@ -17,7 +17,7 @@ export default function TermsPage() {
                         {t('p1')}
                     </p>
 
-                    <h2 className="text-2xl font-bold text-white mt-8 mb-4">2. Servicios</h2>
+                    <h2 className="text-2xl font-bold text-white mt-8 mb-4">{t('h2')}</h2>
                     <p className="mb-4">
                         {t('p2')}
                     </p>

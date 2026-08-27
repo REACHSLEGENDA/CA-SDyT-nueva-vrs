@@ -286,7 +286,7 @@ export function HomeClient() {
             <Section className="border-y border-ca-border bg-ca-surface/20">
                 <SectionHeader
                     eyebrow="Lo que hacemos"
-                    title="Tecnología sin límites"
+                    title={t('Sections.techNoLimits')}
                     subtitle="Del desarrollo web a la infraestructura crítica. Un único equipo para todas tus necesidades digitales."
                 />
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -338,7 +338,7 @@ export function HomeClient() {
             <Section>
                 <SectionHeader
                     eyebrow="Stack moderno"
-                    title="Tecnologías que usamos"
+                    title={t('Sections.techWeUse')}
                     subtitle="Las mismas herramientas que usan startups y empresas globales, ahora al servicio de tu negocio."
                 />
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">

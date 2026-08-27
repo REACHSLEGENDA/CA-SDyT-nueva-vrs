@@ -127,7 +127,7 @@ export default function InfraestructuraTIPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
                 >
-                    Tu empresa operando{' '}
+                    {t('heroA')}{' '}
                     <span className="text-ca-gradient">{t('heroTail')}</span>
                 </motion.h1>
 
@@ -235,7 +235,7 @@ export default function InfraestructuraTIPage() {
             <Section className="border-t border-ca-border">
                 <SectionHeader
                     eyebrow={t('includes')}
-                    title="Cada servicio, al detalle"
+                    title={t('detailTitle')}
                     subtitle={t('areas')}
                 />
 

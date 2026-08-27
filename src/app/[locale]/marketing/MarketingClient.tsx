@@ -149,7 +149,7 @@ export default function MarketingPage() {
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div>
                         <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8 leading-tight">
-                            Tu marca merece ser <br /> <span className="text-gradient from-purple-500 to-pink-500">Inolvidable</span>
+                            {t('brandA')} <br /> <span className="text-gradient from-purple-500 to-pink-500">{t('brandB')}</span>
                         </h2>
                         <div className="space-y-8">
                             <StepItem num="01" title={t('s1')} text={t('s1d')} />
