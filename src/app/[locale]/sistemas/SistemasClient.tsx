@@ -22,11 +22,13 @@ import {
     RefreshCw,
     Network
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { getTechLogo } from '@/components/ui/TechLogos';
 import Image from 'next/image';
 
 export default function SystemsPage() {
+    const t = useTranslations('SystemsPage');
     return (
         <div className="pt-20 min-h-screen">
 
@@ -40,7 +42,7 @@ export default function SystemsPage() {
                     className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-sm font-bold mb-8"
                 >
                     <Server size={16} className="fill-brand-cyan" />
-                    <span>Software de Grado Empresarial</span>
+                    <span>{t('heroTitle')}</span>
                 </motion.div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-8 leading-tight">
@@ -49,15 +51,15 @@ export default function SystemsPage() {
                 </h1>
 
                 <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">
-                    Tu negocio tiene reglas únicas, tu software también debería tenerlas. Construimos el núcleo tecnológico de tu empresa mediante sistemas robustos, seguros y totalmente adaptados a tus procesos operativos.
+                    {t('heroBody')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
                     <Link href="/contacto" className="w-full sm:w-auto">
-                        <Button size="lg" className="w-full px-12 h-16 text-lg">Solicitar Consultoría Técnica</Button>
+                        <Button size="lg" className="w-full px-12 h-16 text-lg">{t('heroCta')}</Button>
                     </Link>
                     <Link href="/nosotros" className="w-full sm:w-auto">
-                        <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">Nuestra Metodología</Button>
+                        <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">{t('methodology')}</Button>
                     </Link>
                 </div>
             </Section>
@@ -65,36 +67,36 @@ export default function SystemsPage() {
             {/* 2. CORE SOLUTIONS - 4 Pillar Grid */}
             <Section className="py-24 border-t border-white/5">
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Verticales de Especialización</h2>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">{t('verticalsTitle')}</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg text-balance">
-                        Soluciones diseñadas desde cero para eliminar los cuellos de botella de tu gestión diaria.
+                        {t('verticalsSub')}
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <SystemCard
                         icon={<Image src="/assets/crm.webp" alt="CRM" width={160} height={160} className="w-40 h-40 object-contain" />}
-                        title="CRM Estratégico"
-                        desc="Control total del ciclo de vida del cliente. Embudos de venta, seguimiento comercial y gestión de leads con alertas inteligentes."
-                        features={["Embudo Personalizado", "Historial de Interacciones", "Automatización de Email"]}
+                        title={t('crm')}
+                        desc={t('crmDesc')}
+                        features={[t('crm1'), t('crm2'), t('crm3')]}
                     />
                     <SystemCard
                         icon={<Image src="/assets/pos.webp" alt="POS" width={160} height={160} className="w-40 h-40 object-contain" />}
-                        title="POS / Punto de Venta"
-                        desc="Sistemas de venta rápida con control de inventarios, reportes de caja en vivo e integración de facturación electrónica."
-                        features={["Multi-sucursal", "Gestión de Stock", "Tickets y Facturación"]}
+                        title={t('pos')}
+                        desc={t('posDesc')}
+                        features={[t('pos3'), t('pos1'), t('pos2')]}
                     />
                     <SystemCard
                         icon={<Image src="/assets/erp.webp" alt="ERP" width={160} height={160} className="w-40 h-40 object-contain" />}
-                        title="ERP & Gestión Interna"
-                        desc="Administración integral de recursos: nómina, proveedores, logística y finanzas en una sola plataforma segura."
-                        features={["Contabilidad Básica", "Gestión de Proveedores", "Control de Activos"]}
+                        title={t('erp')}
+                        desc={t('erpDesc')}
+                        features={[t('erp1'), t('erp2'), t('erp3')]}
                     />
                     <SystemCard
                         icon={<Image src="/assets/datos.webp" alt="Datos" width={160} height={160} className="w-40 h-40 object-contain" />}
-                        title="Migración de Datos"
-                        desc="Modernizamos tus sistemas antiguos. Pasamos tu info de Excel o software legacy a bases de datos cloud modernas."
-                        features={["Limpieza de Datos", "Arquitectura en la Nube", "Cero Downtime"]}
+                        title={t('migration')}
+                        desc={t('migrationDesc')}
+                        features={[t('mig1'), t('cloudArch'), t('zeroDown')]}
                     />
                 </div>
             </Section>
@@ -104,27 +106,27 @@ export default function SystemsPage() {
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[150px] -z-10" />
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div className="space-y-10">
-                        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8">Ingeniería que <br /> <span className="text-brand-cyan">Escala tu Operación</span></h2>
+                        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8">{t('engTitleA')} <br /> <span className="text-brand-cyan">{t('engTitleB')}</span></h2>
                         <div className="grid sm:grid-cols-2 gap-8">
                             <BenefitItem
                                 icon={<Lock className="text-brand-cyan" />}
-                                title="Seguridad Centinela"
-                                text="Encriptación de datos, auditoría de accesos y cumplimiento de normativas de protección de información."
+                                title={t('sec')}
+                                text={t('secDesc')}
                             />
                             <BenefitItem
                                 icon={<Network className="text-brand-purple" />}
-                                title="Integración Total"
-                                text="Conectamos tu sistema con APIs de terceros, bancos, transportistas o cualquier software que ya utilices."
+                                title={t('integ')}
+                                text={t('integDesc')}
                             />
                             <BenefitItem
                                 icon={<RefreshCw className="text-green-400" />}
-                                title="Sincronización Cloud"
-                                text="Acceso desde cualquier lugar con actualizaciones en tiempo real y respaldos automáticos cada minuto."
+                                title={t('sync')}
+                                text={t('syncDesc')}
                             />
                             <BenefitItem
                                 icon={<BarChart3 className="text-yellow-400" />}
                                 title="Business Intelligence"
-                                text="Toma decisiones basadas en datos reales. Gráficas y tableros que te dicen la verdad de tu negocio."
+                                text={t('biDesc')}
                             />
                         </div>
                     </div>
@@ -136,12 +138,12 @@ export default function SystemsPage() {
                         className="p-1 rounded-[3rem] bg-gradient-to-br from-brand-cyan/30 via-white/5 to-transparent"
                     >
                         <div className="bg-brand-black p-12 rounded-[2.9rem] border border-white/5 space-y-8">
-                            <h3 className="text-2xl font-bold text-white mb-6">Fases de Ingeniería CA</h3>
+                            <h3 className="text-2xl font-bold text-white mb-6">{t('phases')}</h3>
                             <div className="space-y-6">
-                                <StepLine num="01" title="Modelado de Negocio" desc="Mapeamos tus procesos actuales y detectamos áreas de optimización automática." />
-                                <StepLine num="02" title="Diseño de Arquitectura" desc="Definimos la base de datos y la seguridad para soportar el crecimiento futuro." />
-                                <StepLine num="03" title="Desarrollo Iterativo" desc="Entregamos módulos funcionales cada 2 semanas para tu validación constante." />
-                                <StepLine num="04" title="Testing & Despliegue" desc="Pruebas de estrés y capacitación a tu equipo para un lanzamiento sin fricciones." />
+                                <StepLine num="01" title={t('ph1')} desc={t('ph1d')} />
+                                <StepLine num="02" title={t('ph2')} desc={t('ph2d')} />
+                                <StepLine num="03" title={t('ph3')} desc={t('ph3d')} />
+                                <StepLine num="04" title={t('ph4')} desc={t('ph4d')} />
                             </div>
                         </div>
                     </motion.div>
@@ -151,7 +153,7 @@ export default function SystemsPage() {
             {/* 4. TECH SPECS - Authority Block */}
             <Section className="py-24">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-display font-bold text-white">Nuestro Stack para Sistemas</h2>
+                    <h2 className="text-3xl font-display font-bold text-white">{t('stack')}</h2>
                 </div>
                 <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
                     <TechIcon name="Node.js" />
@@ -178,22 +180,22 @@ export default function SystemsPage() {
                     </div>
 
                     <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 relative z-10">
-                        Optimiza tu negocio con un <br />
-                        <span className="text-gradient">sistema que trabaje por ti</span>
+                        {t('ctaA')} <br />
+                        <span className="text-gradient">{t('ctaB')}</span>
                     </h2>
                     <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto relative z-10">
-                        Deja de usar herramientas genéricas que limitan tu crecimiento. Diseñemos la herramienta que tu operación realmente merece.
+                        {t('ctaBody')}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
                         <Link href="/contacto" className="w-full sm:w-auto">
                             <Button size="lg" className="w-full px-12 h-16 text-lg bg-brand-cyan hover:bg-brand-cyan/90 text-brand-black border-0 font-bold">
-                                Diagnóstico de Proyecto
+                                {t('diag')}
                             </Button>
                         </Link>
                         <a href="https://wa.me/525951145576" className="w-full sm:w-auto">
                             <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">
-                                Hablar con un Arquitecto de Software
+                                {t('ctaButton')}
                             </Button>
                         </a>
                     </div>

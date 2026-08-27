@@ -22,9 +22,11 @@ import {
     Rocket,
     ShieldCheck
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
 export default function MobileAppsPage() {
+    const t = useTranslations('MobileAppsPage');
     return (
         <div className="pt-20 min-h-screen">
 
@@ -42,17 +44,17 @@ export default function MobileAppsPage() {
                 </motion.div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-8 leading-tight">
-                    Innovación en la <br />
-                    <span className="text-gradient">Palma de tu Mano</span>
+                    {t('heroA')} <br />
+                    <span className="text-gradient">{t('heroB')}</span>
                 </h1>
 
                 <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">
-                    Desarrollamos aplicaciones móviles de alto rendimiento para iOS y Android. Desde apps corporativas hasta plataformas disruptivas, nos enfocamos en una UX impecable y un rendimiento que se siente instantáneo.
+                    {t('heroBody')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
                     <Link href="/contacto" className="w-full sm:w-auto">
-                        <Button size="lg" className="w-full px-12 h-16 text-lg">Inicia tu App Móvil</Button>
+                        <Button size="lg" className="w-full px-12 h-16 text-lg">{t('heroCta')}</Button>
                     </Link>
                     <div className="flex items-center justify-center gap-6 text-gray-500">
                         <div className="flex items-center gap-2">
@@ -77,27 +79,27 @@ export default function MobileAppsPage() {
                         className="space-y-8"
                     >
                         <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
-                            Arquitectura de <br /> <span className="text-brand-purple">Siguiente Generación</span>
+                            {t('archA')} <br /> <span className="text-brand-purple">{t('archB')}</span>
                         </h2>
                         <p className="text-xl text-gray-400 leading-relaxed">
-                            No comprometemos el rendimiento. Seleccionamos el stack tecnológico que mejor se adapte a tus objetivos de negocio y presupuesto.
+                            {t('archBody')}
                         </p>
 
                         <div className="space-y-6">
                             <TechCard
                                 icon={<Code2 className="text-brand-blue" />}
-                                title="Desarrollo Híbrido Senior (React Native)"
-                                text="Un solo código para iOS y Android con rendimiento nativo. Ideal para optimizar costos y tiempos de salida al mercado."
+                                title={t('hybrid')}
+                                text={t('hybridDesc')}
                             />
                             <TechCard
                                 icon={<Cpu className="text-brand-purple" />}
-                                title="Desarrollo Nativo"
-                                text="Experiencia total en Swift/Kotlin para aplicaciones que requieren un manejo extremo de hardware y sensores."
+                                title={t('native')}
+                                text={t('nativeDesc')}
                             />
                             <TechCard
                                 icon={<Globe className="text-brand-cyan" />}
-                                title="PWA (Progressive Web Apps)"
-                                text="Apps web que se instalan y funcionan offline. La forma más rápida de llegar a tus usuarios sin pasar por las tiendas."
+                                title={t('pwa')}
+                                text={t('pwaDesc')}
                             />
                         </div>
                     </motion.div>
@@ -109,14 +111,14 @@ export default function MobileAppsPage() {
                         className="bg-brand-black/40 p-10 rounded-[3rem] border border-white/10 backdrop-blur-md relative overflow-hidden"
                     >
                         <div className="absolute -top-20 -right-20 w-64 h-64 bg-brand-purple/20 rounded-full blur-[80px]" />
-                        <h3 className="text-2xl font-bold text-white mb-8">Funciones de Vanguardia</h3>
+                        <h3 className="text-2xl font-bold text-white mb-8">{t('featTitle')}</h3>
                         <div className="grid sm:grid-cols-2 gap-6">
-                            <FeatureItem icon={<Bell />} title="Push Notifications" text="Alertas inteligentes segmentadas." />
-                            <FeatureItem icon={<WifiOff />} title="Modo Offline" text="Funciona sin conexión a internet." />
-                            <FeatureItem icon={<Fingerprint />} title="Biometría" text="Acceso seguro con FaceID/Huella." />
-                            <FeatureItem icon={<Zap />} title="Real-time Data" text="Sincronización instantánea de datos." />
-                            <FeatureItem icon={<ShieldCheck />} title="Seguridad Robusta" text="Encriptación de datos sensibles." />
-                            <FeatureItem icon={<Layers />} title="Cloud Sync" text="Tu info en todos tus dispositivos." />
+                            <FeatureItem icon={<Bell />} title="Push Notifications" text={t('fPushD')} />
+                            <FeatureItem icon={<WifiOff />} title={t('fOffline')} text={t('fOfflineD')} />
+                            <FeatureItem icon={<Fingerprint />} title={t('fBio')} text={t('fBioD')} />
+                            <FeatureItem icon={<Zap />} title="Real-time Data" text={t('fSyncD')} />
+                            <FeatureItem icon={<ShieldCheck />} title={t('fSec')} text={t('fSecD')} />
+                            <FeatureItem icon={<Layers />} title="Cloud Sync" text={t('fCloudD')} />
                         </div>
                     </motion.div>
                 </div>
@@ -125,23 +127,23 @@ export default function MobileAppsPage() {
             {/* 3. CAPABILITIES GRID - What we Build */}
             <Section className="py-24 bg-white/[0.01]">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">¿Qué construimos para móvil?</h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">Soluciones personalizadas para cada industria y necesidad operativa.</p>
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">{t('buildTitle')}</h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto">{t('buildSub')}</p>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
                     <CapabilityCard
                         title="E-commerce Pro"
-                        desc="Tiendas móviles con carritos persistentes, pasarelas de pago integradas y seguimiento de pedidos en vivo."
+                        desc={t('ecomDesc')}
                         color="blue"
                     />
                     <CapabilityCard
-                        title="Delivery & Logística"
-                        desc="Gestión de flotas, geolocalización en tiempo real y comunicación directa entre usuarios y repartidores."
+                        title={t('delivery')}
+                        desc={t('deliveryDesc')}
                         color="purple"
                     />
                     <CapabilityCard
-                        title="Sistemas Internos"
-                        desc="Apps para que tu equipo gestione inventarios, reportes de campo o procesos desde cualquier lugar."
+                        title={t('internal')}
+                        desc={t('internalDesc')}
                         color="cyan"
                     />
                 </div>
@@ -152,10 +154,10 @@ export default function MobileAppsPage() {
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-center text-4xl font-display font-bold text-white mb-16">Tu App en 4 Pasos</h2>
                     <div className="space-y-12">
-                        <ProcessRow num="01" title="Diseño UI/UX Móvil" text="Creamos interfaces intuitivas adaptadas a los gestos y hábitos del usuario móvil." icon={<Palette />} />
-                        <ProcessRow num="02" title="Arquitectura y Desarrollo" text="Programamos con estándares de código limpio y escalable (Clean Architecture)." icon={<Code2 />} />
-                        <ProcessRow num="03" title="QA y Testing Riguroso" text="Pruebas en dispositivos reales de todas las gamas para garantizar fluidez total." icon={<CheckCircle2 />} />
-                        <ProcessRow num="04" title="Publicación y Lanzamiento" text="Gestionamos la subida a App Store y Play Store, cumpliendo todos los requisitos." icon={<Rocket />} />
+                        <ProcessRow num="01" title={t('pUi')} text={t('pUiD')} icon={<Palette />} />
+                        <ProcessRow num="02" title={t('pArch')} text={t('pArchD')} icon={<Code2 />} />
+                        <ProcessRow num="03" title={t('pQa')} text={t('pQaD')} icon={<CheckCircle2 />} />
+                        <ProcessRow num="04" title={t('pLaunch')} text={t('pLaunchD')} icon={<Rocket />} />
                     </div>
                 </div>
             </Section>
@@ -169,14 +171,14 @@ export default function MobileAppsPage() {
                     className="max-w-4xl mx-auto bg-gradient-to-br from-brand-purple/20 to-brand-blue/20 rounded-[3rem] p-12 md:p-24 border border-white/10 relative overflow-hidden group"
                 >
                     <div className="absolute inset-0 bg-brand-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 relative z-10">¿Listo para dominar <span className="text-gradient">el ecosistema móvil</span>?</h2>
-                    <p className="text-xl text-gray-400 mb-12 relative z-10">Agenda una consultoría gratuita y definamos juntos el mejor camino para tu aplicación.</p>
+                    <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 relative z-10">{t('ctaA')} <span className="text-gradient">{t('ctaB')}</span>?</h2>
+                    <p className="text-xl text-gray-400 mb-12 relative z-10">{t('ctaBody')}</p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
                         <Link href="/contacto" className="w-full sm:w-auto">
                             <Button size="lg" className="w-full px-12 h-16 text-lg">Empezar a Programar</Button>
                         </Link>
                         <a href="https://wa.me/525951145576" className="w-full sm:w-auto">
-                            <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">Hablar con un Consultor</Button>
+                            <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">{t('ctaButton')}</Button>
                         </a>
                     </div>
                 </motion.div>
@@ -211,6 +213,7 @@ function FeatureItem({ icon, title, text }: { icon: any, title: string, text: st
 }
 
 function CapabilityCard({ title, desc, color }: { title: string, desc: string, color: 'blue' | 'purple' | 'cyan' }) {
+    const t = useTranslations('MobileAppsPage');
     const borders = {
         blue: 'border-brand-blue/20 hover:border-brand-blue/50',
         purple: 'border-brand-purple/20 hover:border-brand-purple/50',
@@ -223,7 +226,7 @@ function CapabilityCard({ title, desc, color }: { title: string, desc: string, c
             <p className="text-gray-400 text-sm leading-relaxed mb-8">{desc}</p>
             <div className="mt-auto">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-600 group-hover:text-white transition-colors">
-                    Fase de diseño a código <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    {t('phase')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </div>
             </div>
         </Card>

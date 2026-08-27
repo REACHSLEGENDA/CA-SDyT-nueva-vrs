@@ -24,9 +24,11 @@ import {
     Database,
     LineChart
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
 export default function AutomationPage() {
+    const t = useTranslations('AutomationPage');
     return (
         <div className="pt-20 min-h-screen">
 
@@ -40,16 +42,16 @@ export default function AutomationPage() {
                     className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm font-bold mb-8"
                 >
                     <Sparkles size={16} className="fill-pink-400" />
-                    <span>Inteligencia Artificial al Servicio de tu Negocio</span>
+                    <span>{t('heroBadge')}</span>
                 </motion.div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-8 leading-tight">
-                    Automatización e <br />
+                    {t('heroA')} <br />
                     <span className="text-gradient decoration-pink-500">Integraciones IA</span>
                 </h1>
 
                 <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">
-                    Elimina las tareas repetitivas y deja que la IA trabaje por ti 24/7. Construimos ecosistemas digitales donde tus aplicaciones se comunican entre sí, optimizando tiempos de respuesta y escalando tu capacidad operativa sin aumentar los costos.
+                    {t('heroBody')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -60,7 +62,7 @@ export default function AutomationPage() {
                     </Link>
                     <a href="https://wa.me/525951145576" className="w-full sm:w-auto">
                         <Button size="lg" className="w-full px-12 h-16 text-lg bg-pink-600 hover:bg-pink-500 text-white border-0 shadow-[0_0_20px_rgba(236,72,153,0.3)]">
-                            Demo de Chatbot IA
+                            {t('heroCta')}
                         </Button>
                     </a>
                 </div>
@@ -69,32 +71,32 @@ export default function AutomationPage() {
             {/* 2. CORE CAPABILITIES - 3 Column Grid */}
             <Section className="py-24 border-t border-white/5">
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Eficiencia sin Límites</h2>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">{t('effTitle')}</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Conectamos lo desconectado y automatizamos lo manual con tecnología de punta.
+                        {t('effSub')}
                     </p>
                 </div>
 
                 <div className="grid lg:grid-cols-3 gap-8">
                     <AutoCard
                         icon={<Image src="/assets/ia.webp" alt="IA" width={160} height={160} className="w-40 h-40 object-contain" />}
-                        title="Agentes y Chatbots con IA"
-                        desc="No son simples bots de botones. Implementamos cerebros digitales con GPT-4 que entienden contexto, califican prospectos y cierran ventas en WhatsApp, Facebook y Web."
-                        features={["Integración con OpenAI / Claude", "Conexión a tu Base de Datos", "Traspaso a Humano Inteligente", "Multilenguaje y Multicanal"]}
+                        title={t('agents')}
+                        desc={t('agentsDesc')}
+                        features={[t('ag1'), t('ag2'), t('ag3'), t('ag4')]}
                         color="pink"
                     />
                     <AutoCard
                         icon={<Image src="/assets/workflow.webp" alt="Workflows" width={160} height={160} className="w-40 h-40 object-contain" />}
-                        title="Workflows Avanzados"
-                        desc="Conectamos tus herramientas favoritas (CRM, Slack, Google, ERP) usando Make.com y Zapier. Cuando ocurre 'A', tu sistema ejecuta 'B', 'C' y 'D' automáticamente."
-                        features={["Reducción de Errores Humanos", "Ahorro de +40h Semanales", "Sincronización de Leads", "Alertas en Tiempo Real"]}
+                        title={t('wfTitle')}
+                        desc={t('wfDesc')}
+                        features={[t('wf1'), t('wf2'), t('wf3'), t('wf4')]}
                         color="purple"
                     />
                     <AutoCard
                         icon={<Image src="/assets/api.webp" alt="API" width={160} height={160} className="w-40 h-40 object-contain" />}
-                        title="Integración de APIs"
-                        desc="Creamos puentes de comunicación entre sistemas que originalmente no pueden hablar entre sí. Desarrollo de middleware seguro para flujo de datos constante."
-                        features={["Webhooks Personalizados", "Seguridad End-to-End", "Documentación Técnica", "Escalabilidad Cloud"]}
+                        title={t('apis')}
+                        desc={t('apisDesc')}
+                        features={[t('api1'), t('api2'), t('api3'), t('api4')]}
                         color="blue"
                     />
                 </div>
@@ -113,32 +115,32 @@ export default function AutomationPage() {
                             <Cpu size={32} />
                         </div>
                         <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
-                            Cognición Artificial <br /> <span className="text-pink-500">en tu Operación</span>
+                            {t('cogA')} <br /> <span className="text-pink-500">{t('cogB')}</span>
                         </h2>
                         <p className="text-xl text-gray-400 leading-relaxed">
-                            No solo movemos datos de un lado a otro. Usamos IA para procesar información, tomar decisiones lógicas basadas en tus reglas de negocio y responder de forma humana.
+                            {t('cogBody')}
                         </p>
                         <div className="grid sm:grid-cols-2 gap-6 pb-4">
                             <div className="flex items-center gap-3 text-gray-300">
                                 <CheckCircle2 className="text-pink-500" size={20} />
-                                <span>IA de Texto (LLMs)</span>
+                                <span>{t('cog1')}</span>
                             </div>
                             <div className="flex items-center gap-3 text-gray-300">
                                 <CheckCircle2 className="text-pink-500" size={20} />
-                                <span>Visión por Computadora</span>
+                                <span>{t('cog2')}</span>
                             </div>
                             <div className="flex items-center gap-3 text-gray-300">
                                 <CheckCircle2 className="text-pink-500" size={20} />
-                                <span>Análisis de Sentimiento</span>
+                                <span>{t('cog3')}</span>
                             </div>
                             <div className="flex items-center gap-3 text-gray-300">
                                 <CheckCircle2 className="text-pink-500" size={20} />
-                                <span>Predicción de Ventas</span>
+                                <span>{t('cog4')}</span>
                             </div>
                         </div>
                         <Link href="/contacto">
                             <Button variant="outline" className="border-pink-500/30 text-pink-400 hover:bg-pink-500/10">
-                                Consultar Proyecto de IA
+                                {t('cogCta')}
                             </Button>
                         </Link>
                     </motion.div>
@@ -151,16 +153,16 @@ export default function AutomationPage() {
                                 <h3 className="text-2xl font-bold text-white">Impacto en el Negocio</h3>
                             </div>
                             <div className="space-y-8">
-                                <ImpactBar label="Disponibilidad 24/7" percentage="100%" />
-                                <ImpactBar label="Ahorro en Operación" percentage="65%" />
-                                <ImpactBar label="Velocidad de Respuesta" percentage="95%" />
-                                <ImpactBar label="Precisión de Datos" percentage="99%" />
+                                <ImpactBar label={t('m3')} percentage="100%" />
+                                <ImpactBar label={t('m1')} percentage="65%" />
+                                <ImpactBar label={t('m2')} percentage="95%" />
+                                <ImpactBar label={t('m4')} percentage="99%" />
                             </div>
                             <div className="mt-12 pt-8 border-t border-white/5 flex gap-4 items-center">
                                 <div className="p-3 bg-pink-500/10 rounded-full">
                                     <Clock className="text-pink-400" size={24} />
                                 </div>
-                                <p className="text-sm text-gray-400 leading-tight">Implementamos flujos en días, no en meses. Resultados visibles desde la primera semana.</p>
+                                <p className="text-sm text-gray-400 leading-tight">{t('speed')}</p>
                             </div>
                         </Card>
                     </div>
@@ -170,19 +172,19 @@ export default function AutomationPage() {
             {/* 4. COMPARISON - Manual vs Automated */}
             <Section className="py-24">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-display font-bold text-white">El Cambio es Drástico</h2>
+                    <h2 className="text-4xl font-display font-bold text-white">{t('changeTitle')}</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <Card className="p-10 border-red-500/20 bg-red-500/[0.02]">
                         <h4 className="text-xl font-bold text-red-500 mb-6 flex items-center gap-2">
-                            Sin Automatización
+                            {t('without')}
                         </h4>
                         <ul className="space-y-4">
-                            <CompItem type="bad" text="Tareas manuales repetitivas." />
-                            <CompItem type="bad" text="Errores humanos frecuentes." />
-                            <CompItem type="bad" text="Respuesta lenta al cliente (+4h)." />
-                            <CompItem type="bad" text="Altos costos operativos fijos." />
-                            <CompItem type="bad" text="Datos aislados en silos." />
+                            <CompItem type="bad" text={t('w1')} />
+                            <CompItem type="bad" text={t('w2')} />
+                            <CompItem type="bad" text={t('w3')} />
+                            <CompItem type="bad" text={t('w5')} />
+                            <CompItem type="bad" text={t('w4')} />
                         </ul>
                     </Card>
                     <Card className="p-10 border-green-500/20 bg-green-500/[0.02] transform md:scale-105 shadow-2xl">
@@ -190,11 +192,11 @@ export default function AutomationPage() {
                             Con CA Automatizacion
                         </h4>
                         <ul className="space-y-4">
-                            <CompItem type="good" text="Flujos digitales autónomos." />
-                            <CompItem type="good" text="Precisión técnica garantizada." />
-                            <CompItem type="good" text="Respuesta inmediata (Segundos)." />
-                            <CompItem type="good" text="Escalabilidad con costo marginal." />
-                            <CompItem type="good" text="Sincronización total en vivo." />
+                            <CompItem type="good" text={t('a1')} />
+                            <CompItem type="good" text={t('a2')} />
+                            <CompItem type="good" text={t('a3')} />
+                            <CompItem type="good" text={t('a5')} />
+                            <CompItem type="good" text={t('a4')} />
                         </ul>
                     </Card>
                 </div>
@@ -209,18 +211,18 @@ export default function AutomationPage() {
                     className="max-w-4xl mx-auto space-y-12"
                 >
                     <h2 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
-                        Pon tu negocio en <br />
+                        {t('ctaA')} <br />
                         <span className="text-gradient">Autopiloto Inteligente</span>
                     </h2>
                     <p className="text-xl text-gray-400">
-                        No pierdas más tiempo en tareas que una IA puede hacer mejor y más rápido. Agenda hoy tu diagnóstico de automatización.
+                        {t('ctaBody')}
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-6 pt-6">
                         <Link href="/contacto" className="w-full sm:w-auto">
-                            <Button size="lg" className="w-full px-12 h-16 text-lg">Hablar con un Especialista</Button>
+                            <Button size="lg" className="w-full px-12 h-16 text-lg">{t('ctaButton')}</Button>
                         </Link>
                         <a href="https://wa.me/525951145576" className="w-full sm:w-auto">
-                            <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">Cotizar Bot de WhatsApp</Button>
+                            <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">{t('ctaWhats')}</Button>
                         </a>
                     </div>
                 </motion.div>
