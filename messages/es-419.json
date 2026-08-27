@@ -415,5 +415,243 @@
     ],
     "primary": "Cotizar Proyecto",
     "whatsapp": "WhatsApp"
+  },
+  "ServicesPage": {
+    "categories": [
+      {
+        "label": "Desarrollo Digital",
+        "eyebrow": "Categoría 1",
+        "title": "Desarrollo Digital",
+        "subtitle": "Soluciones web, móviles y sistemas a medida con la mejor tecnología.",
+        "services": [
+          {
+            "title": "Desarrollo Web Premium",
+            "desc": "Páginas institucionales, landing pages de alta conversión y sistemas web completos con Next.js y React.",
+            "bullets": [
+              "Next.js App Router + SSR",
+              "Core Web Vitals 100/100",
+              "Panel CMS autoadministrable",
+              "Infraestructura Cloud segura"
+            ]
+          },
+          {
+            "title": "Aplicaciones Móviles",
+            "desc": "Apps nativas y multiplataforma para iOS y Android con Flutter y Kotlin.",
+            "bullets": [
+              "Flutter & Kotlin nativo",
+              "Sincronización en tiempo real",
+              "Push notifications",
+              "UX Mobile-First premium"
+            ]
+          },
+          {
+            "title": "Sistemas Empresariales a Medida",
+            "desc": "CRM, ERP, Puntos de Venta y herramientas de gestión que automatizan tu operación.",
+            "bullets": [
+              "Dashboards analíticos avanzados",
+              "Reportes PDF/Excel automáticos",
+              "Roles y permisos granulares",
+              "Seguridad de datos nivel bancario"
+            ]
+          },
+          {
+            "title": "Automatización e Integraciones IA",
+            "desc": "Bots para WhatsApp, flujos automáticos y conexión entre plataformas.",
+            "bullets": [
+              "Chatbots cognitivos (GPT-4)",
+              "Integración Make.com / Zapier",
+              "Automatización de WhatsApp",
+              "Análisis de datos con IA"
+            ]
+          },
+          {
+            "title": "UI/UX Design",
+            "desc": "Wireframes, prototipos interactivos y design systems que convierten visitantes en clientes.",
+            "bullets": [
+              "Wireframes de baja/alta fidelidad",
+              "Prototipos interactivos",
+              "Design system completo",
+              "Pruebas de usabilidad"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Marketing Digital",
+        "eyebrow": "Categoría 2",
+        "title": "Marketing y Presencia Digital",
+        "subtitle": "Estrategias para crecer tu marca, captar clientes y posicionarte en Google y en IA.",
+        "services": [
+          {
+            "title": "Gestión de Redes Sociales",
+            "desc": "Contenido estratégico y campañas pagadas en Meta, Google y LinkedIn con enfoque en ROI.",
+            "bullets": [
+              "Estrategia de contenido 360°",
+              "Facebook & Instagram Ads",
+              "LinkedIn Ads B2B",
+              "Diseño gráfico para redes"
+            ]
+          },
+          {
+            "title": "SEO Técnico y AEO",
+            "desc": "Posicionamiento en Google y optimización para respuestas de IA (ChatGPT, Gemini, Claude).",
+            "bullets": [
+              "SEO On-Page y técnico",
+              "AEO – Answer Engine Optimization",
+              "Posicionamiento en IA generativa",
+              "Auditoría de velocidad y Core Web Vitals"
+            ]
+          },
+          {
+            "title": "Google Business & Maps",
+            "desc": "Optimizamos y verificamos tu ficha en Google Maps para que te encuentren primero.",
+            "bullets": [
+              "Alta y verificación de perfil",
+              "Optimización de reseñas",
+              "Fotos y posts estratégicos",
+              "Seguimiento de posición local"
+            ]
+          },
+          {
+            "title": "Bot de WhatsApp con IA",
+            "desc": "Chatbot inteligente que atiende, vende y agenda por ti las 24 horas.",
+            "bullets": [
+              "Respuestas automáticas con GPT-4",
+              "Integración con tu catálogo",
+              "Captura de leads calificados",
+              "Gestión de citas y pedidos"
+            ]
+          },
+          {
+            "title": "Diseño de Marca e Identidad Visual",
+            "desc": "Logo, paleta, tipografía y brand manual para que tu marca hable antes de que abras la boca.",
+            "bullets": [
+              "Logotipo vectorial",
+              "Manual de identidad",
+              "Papelería corporativa",
+              "Templates redes sociales"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Infraestructura TI",
+        "eyebrow": "Categoría 3",
+        "title": "Infraestructura TI y Ciberseguridad",
+        "subtitle": "Redes, ciberseguridad, CCTV, servidores y soporte para que tu operación nunca se detenga.",
+        "services": [
+          {
+            "title": "Redes y Conectividad Profesional",
+            "desc": "Diseño, instalación y optimización de redes locales para que tu empresa nunca se quede sin conexión.",
+            "bullets": [
+              "Instalación de cableado estructurado UTP (tendido, ponchado y organización)",
+              "Configuración de routers y switches DrayTek y Extreme Networks",
+              "Segmentación de redes con VLANs para mayor seguridad y velocidad",
+              "Monitoreo en tiempo real con PRTG"
+            ]
+          },
+          {
+            "title": "Ciberseguridad y Protección de Datos",
+            "desc": "Protegemos la infraestructura digital de tu negocio contra amenazas y accesos no autorizados.",
+            "bullets": [
+              "Seguridad perimetral con firewalls Fortinet y políticas avanzadas",
+              "CyberOps: monitoreo de sistemas críticos e identificación de vulnerabilidades",
+              "Configuración de VPN para trabajo remoto seguro",
+              "Auditorías de seguridad y reportes de cumplimiento"
+            ]
+          },
+          {
+            "title": "Videovigilancia CCTV",
+            "desc": "Instalación, configuración y puesta en marcha de sistemas de vigilancia con monitoreo remoto.",
+            "bullets": [
+              "Instalación de cámaras IP y analógicas",
+              "Configuración de grabadores DVR/NVR",
+              "Acceso y monitoreo remoto desde cualquier dispositivo",
+              "Alertas y notificaciones inteligentes"
+            ]
+          },
+          {
+            "title": "Servidores y Nube Privada",
+            "desc": "Centralizamos la información de tu equipo y garantizamos respaldos automáticos y seguros.",
+            "bullets": [
+              "Windows Server 2025 con Active Directory y políticas de grupo",
+              "Servidores NAS Synology: nube privada local con respaldos automáticos",
+              "Migración y administración de Google Workspace",
+              "Virtualización y monitoreo de recursos"
+            ]
+          },
+          {
+            "title": "Soporte Técnico Integral",
+            "desc": "Mesa de ayuda presencial y remota para que tu operación tecnológica nunca se detenga.",
+            "bullets": [
+              "Resolución de problemas en Windows, Linux y Mac",
+              "Mantenimiento preventivo: diagnóstico de hardware, formateo, clonación",
+              "Instalación y configuración de impresoras en red (IP y Dominio)",
+              "Control de inventarios tecnológicos para empresas multisucursal"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Consultoría",
+        "eyebrow": "Categoría 4",
+        "title": "Consultoría y Estrategia Digital",
+        "subtitle": "Diagnóstico experto, roadmap claro y capacitación para que tu equipo aproveche la tecnología al máximo.",
+        "services": [
+          {
+            "title": "Auditoría Digital Completa",
+            "desc": "Analizamos tu web, SEO, velocidad, UX y seguridad para detectar oportunidades de mejora.",
+            "bullets": [
+              "Análisis de velocidad y rendimiento",
+              "Auditoría SEO técnica",
+              "Revisión de experiencia de usuario",
+              "Reporte con plan de acción"
+            ]
+          },
+          {
+            "title": "Estrategia de Presencia Digital",
+            "desc": "Roadmap personalizado con metas, métricas y acciones concretas para dominar tu mercado.",
+            "bullets": [
+              "Análisis de competencia",
+              "Definición de KPIs y objetivos",
+              "Roadmap trimestral",
+              "Seguimiento mensual de resultados"
+            ]
+          },
+          {
+            "title": "Integración de Plataformas",
+            "desc": "Conectamos tus herramientas (CRM, ERP, ecommerce, pagos) en un solo flujo de trabajo sin fricciones.",
+            "bullets": [
+              "Mapeo de flujos actuales",
+              "Selección de herramientas óptimas",
+              "Integración via APIs",
+              "Capacitación del equipo"
+            ]
+          },
+          {
+            "title": "Capacitación Tecnológica",
+            "desc": "Talleres prácticos para que tu equipo use la tecnología con eficiencia y sin depender de terceros.",
+            "bullets": [
+              "Cursos de herramientas digitales",
+              "Talleres de ciberseguridad básica",
+              "Capacitación en Google Workspace",
+              "Certificado de formación"
+            ]
+          }
+        ]
+      }
+    ],
+    "ui": {
+      "heroA": "Servicios que impulsan tu ",
+      "heroB": "Crecimiento Digital",
+      "heroSub": "Del desarrollo web a la infraestructura crítica: diseño, ingeniería, redes, seguridad y soporte. Un solo equipo para todo lo que necesitas.",
+      "request": "Solicitar",
+      "fullPage": "Ver página completa →",
+      "requestService": "Solicitar este servicio →",
+      "ctaTitle": "¿No encuentras lo que buscas?",
+      "ctaBody": "Si es digital o tecnológico, podemos construirlo. Cuéntanos tu idea y recibe una propuesta a medida.",
+      "ctaButton": "Háblanos de tu proyecto →",
+      "badgeNew": "✦ Nuevo"
+    }
   }
 }

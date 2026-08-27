@@ -421,5 +421,243 @@
     ],
     "primary": "Get a Quote",
     "whatsapp": "WhatsApp"
+  },
+  "ServicesPage": {
+    "categories": [
+      {
+        "label": "Digital Development",
+        "eyebrow": "Category 1",
+        "title": "Digital Development",
+        "subtitle": "Web, mobile and custom systems built on a modern stack.",
+        "services": [
+          {
+            "title": "Premium Web Development",
+            "desc": "Corporate sites, high-conversion landing pages and complete web systems with Next.js and React.",
+            "bullets": [
+              "Next.js App Router + SSR",
+              "Core Web Vitals 100/100",
+              "Self-manageable CMS panel",
+              "Secure cloud infrastructure"
+            ]
+          },
+          {
+            "title": "Mobile Applications",
+            "desc": "Native and cross-platform apps for iOS and Android with Flutter and Kotlin.",
+            "bullets": [
+              "Native Flutter & Kotlin",
+              "Real-time synchronisation",
+              "Push notifications",
+              "Premium mobile-first UX"
+            ]
+          },
+          {
+            "title": "Custom Business Systems",
+            "desc": "CRM, ERP, point of sale and management tools that automate your operation.",
+            "bullets": [
+              "Advanced analytics dashboards",
+              "Automated PDF/Excel reports",
+              "Granular roles and permissions",
+              "Bank-grade data security"
+            ]
+          },
+          {
+            "title": "Automation and AI Integrations",
+            "desc": "WhatsApp bots, automated workflows and connections between platforms.",
+            "bullets": [
+              "Cognitive chatbots (GPT-4)",
+              "Make.com / Zapier integration",
+              "WhatsApp automation",
+              "AI-assisted data analysis"
+            ]
+          },
+          {
+            "title": "UI/UX Design",
+            "desc": "Wireframes, interactive prototypes and design systems that turn visitors into customers.",
+            "bullets": [
+              "Low and high fidelity wireframes",
+              "Interactive prototypes",
+              "Complete design system",
+              "Usability testing"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Digital Marketing",
+        "eyebrow": "Category 2",
+        "title": "Marketing and Digital Presence",
+        "subtitle": "Strategies to grow your brand, win customers and rank on Google and in AI answers.",
+        "services": [
+          {
+            "title": "Social Media Management",
+            "desc": "Strategic content and paid campaigns on Meta, Google and LinkedIn with a focus on ROI.",
+            "bullets": [
+              "360° content strategy",
+              "Facebook & Instagram Ads",
+              "B2B LinkedIn Ads",
+              "Graphic design for social"
+            ]
+          },
+          {
+            "title": "Technical SEO and AEO",
+            "desc": "Google rankings plus optimisation for AI answers (ChatGPT, Gemini, Claude).",
+            "bullets": [
+              "On-page and technical SEO",
+              "AEO – Answer Engine Optimization",
+              "Visibility in generative AI",
+              "Speed and Core Web Vitals audit"
+            ]
+          },
+          {
+            "title": "Google Business & Maps",
+            "desc": "We optimise and verify your Google Maps listing so customers find you first.",
+            "bullets": [
+              "Profile setup and verification",
+              "Review optimisation",
+              "Strategic photos and posts",
+              "Local ranking tracking"
+            ]
+          },
+          {
+            "title": "AI WhatsApp Bot",
+            "desc": "A smart chatbot that answers, sells and books appointments for you around the clock.",
+            "bullets": [
+              "Automated replies with GPT-4",
+              "Integration with your catalogue",
+              "Qualified lead capture",
+              "Appointment and order handling"
+            ]
+          },
+          {
+            "title": "Brand and Visual Identity Design",
+            "desc": "Logo, palette, typography and brand manual so your brand speaks before you do.",
+            "bullets": [
+              "Vector logo",
+              "Identity manual",
+              "Corporate stationery",
+              "Social media templates"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "IT Infrastructure",
+        "eyebrow": "Category 3",
+        "title": "IT Infrastructure and Cybersecurity",
+        "subtitle": "Networks, cybersecurity, CCTV, servers and support. On-site work is available in Mexico, subject to coverage.",
+        "services": [
+          {
+            "title": "Professional Networking and Connectivity",
+            "desc": "Design, installation and optimisation of local networks so your company is never offline.",
+            "bullets": [
+              "Structured UTP cabling installation",
+              "DrayTek and Extreme Networks routers and switches",
+              "VLAN segmentation for security and speed",
+              "Real-time monitoring with PRTG"
+            ]
+          },
+          {
+            "title": "Cybersecurity and Data Protection",
+            "desc": "We protect your digital infrastructure against threats and unauthorised access.",
+            "bullets": [
+              "Perimeter security with Fortinet firewalls",
+              "CyberOps: critical system monitoring and vulnerability detection",
+              "VPN setup for secure remote work",
+              "Security audits and compliance reports"
+            ]
+          },
+          {
+            "title": "CCTV Video Surveillance",
+            "desc": "Installation, configuration and commissioning of surveillance systems with remote monitoring.",
+            "bullets": [
+              "IP and analogue camera installation",
+              "DVR/NVR recorder configuration",
+              "Remote access from any device",
+              "Smart alerts and notifications"
+            ]
+          },
+          {
+            "title": "Servers and Private Cloud",
+            "desc": "We centralise your team’s information and guarantee automatic, secure backups.",
+            "bullets": [
+              "Windows Server 2025 with Active Directory and group policy",
+              "Synology NAS: local private cloud with automatic backups",
+              "Google Workspace migration and administration",
+              "Virtualisation and resource monitoring"
+            ]
+          },
+          {
+            "title": "Full IT Support",
+            "desc": "On-site and remote help desk so your technology never stops your operation.",
+            "bullets": [
+              "Troubleshooting on Windows, Linux and Mac",
+              "Preventive maintenance: hardware diagnostics, imaging, cloning",
+              "Network printer installation and configuration",
+              "IT inventory control for multi-site companies"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Consulting",
+        "eyebrow": "Category 4",
+        "title": "Consulting and Digital Strategy",
+        "subtitle": "Expert diagnosis, a clear roadmap and training so your team gets the most out of technology.",
+        "services": [
+          {
+            "title": "Complete Digital Audit",
+            "desc": "We analyse your site, SEO, speed, UX and security to find opportunities to improve.",
+            "bullets": [
+              "Speed and performance analysis",
+              "Technical SEO audit",
+              "User experience review",
+              "Report with an action plan"
+            ]
+          },
+          {
+            "title": "Digital Presence Strategy",
+            "desc": "A tailored roadmap with goals, metrics and concrete actions to lead your market.",
+            "bullets": [
+              "Competitor analysis",
+              "KPI and objective definition",
+              "Quarterly roadmap",
+              "Monthly results tracking"
+            ]
+          },
+          {
+            "title": "Platform Integration",
+            "desc": "We connect your tools (CRM, ERP, e-commerce, payments) into one frictionless workflow.",
+            "bullets": [
+              "Mapping of current workflows",
+              "Selection of the right tools",
+              "Integration via APIs",
+              "Team training"
+            ]
+          },
+          {
+            "title": "Technology Training",
+            "desc": "Hands-on workshops so your team uses technology efficiently without depending on third parties.",
+            "bullets": [
+              "Digital tools courses",
+              "Basic cybersecurity workshops",
+              "Google Workspace training",
+              "Certificate of completion"
+            ]
+          }
+        ]
+      }
+    ],
+    "ui": {
+      "heroA": "Services that drive your ",
+      "heroB": "Digital Growth",
+      "heroSub": "From web development to critical infrastructure: design, engineering, networks, security and support. One team for everything you need.",
+      "request": "Request",
+      "fullPage": "See the full page →",
+      "requestService": "Request this service →",
+      "ctaTitle": "Not finding what you need?",
+      "ctaBody": "If it is digital or technical, we can build it. Tell us your idea and get a tailored proposal.",
+      "ctaButton": "Tell us about your project →",
+      "badgeNew": "✦ New"
+    }
   }
 }

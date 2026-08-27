@@ -415,5 +415,243 @@
     ],
     "primary": "Solicitar Orçamento",
     "whatsapp": "WhatsApp"
+  },
+  "ServicesPage": {
+    "categories": [
+      {
+        "label": "Desenvolvimento Digital",
+        "eyebrow": "Categoria 1",
+        "title": "Desenvolvimento Digital",
+        "subtitle": "Soluções web, móveis e sistemas sob medida com a melhor tecnologia.",
+        "services": [
+          {
+            "title": "Desenvolvimento Web Premium",
+            "desc": "Sites institucionais, landing pages de alta conversão e sistemas web completos com Next.js e React.",
+            "bullets": [
+              "Next.js App Router + SSR",
+              "Core Web Vitals 100/100",
+              "Painel CMS autoadministrável",
+              "Infraestrutura em nuvem segura"
+            ]
+          },
+          {
+            "title": "Aplicativos Móveis",
+            "desc": "Apps nativos e multiplataforma para iOS e Android com Flutter e Kotlin.",
+            "bullets": [
+              "Flutter e Kotlin nativo",
+              "Sincronização em tempo real",
+              "Push notifications",
+              "UX mobile-first premium"
+            ]
+          },
+          {
+            "title": "Sistemas Empresariais Sob Medida",
+            "desc": "CRM, ERP, PDV e ferramentas de gestão que automatizam sua operação.",
+            "bullets": [
+              "Dashboards analíticos avançados",
+              "Relatórios PDF/Excel automáticos",
+              "Perfis e permissões granulares",
+              "Segurança de dados de nível bancário"
+            ]
+          },
+          {
+            "title": "Automação e Integrações com IA",
+            "desc": "Bots para WhatsApp, fluxos automáticos e conexão entre plataformas.",
+            "bullets": [
+              "Chatbots cognitivos (GPT-4)",
+              "Integração Make.com / Zapier",
+              "Automação de WhatsApp",
+              "Análise de dados com IA"
+            ]
+          },
+          {
+            "title": "UI/UX Design",
+            "desc": "Wireframes, protótipos interativos e design systems que convertem visitantes em clientes.",
+            "bullets": [
+              "Wireframes de baixa e alta fidelidade",
+              "Protótipos interativos",
+              "Design system completo",
+              "Testes de usabilidade"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Marketing Digital",
+        "eyebrow": "Categoria 2",
+        "title": "Marketing e Presença Digital",
+        "subtitle": "Estratégias para crescer sua marca, captar clientes e se posicionar no Google e nas IAs.",
+        "services": [
+          {
+            "title": "Gestão de Redes Sociais",
+            "desc": "Conteúdo estratégico e campanhas pagas em Meta, Google e LinkedIn com foco em ROI.",
+            "bullets": [
+              "Estratégia de conteúdo 360°",
+              "Facebook e Instagram Ads",
+              "LinkedIn Ads B2B",
+              "Design gráfico para redes"
+            ]
+          },
+          {
+            "title": "SEO Técnico e AEO",
+            "desc": "Posicionamento no Google e otimização para respostas de IA (ChatGPT, Gemini, Claude).",
+            "bullets": [
+              "SEO on-page e técnico",
+              "AEO – Answer Engine Optimization",
+              "Visibilidade em IA generativa",
+              "Auditoria de velocidade e Core Web Vitals"
+            ]
+          },
+          {
+            "title": "Google Business e Maps",
+            "desc": "Otimizamos e verificamos seu perfil no Google Maps para que encontrem você primeiro.",
+            "bullets": [
+              "Criação e verificação do perfil",
+              "Otimização de avaliações",
+              "Fotos e posts estratégicos",
+              "Acompanhamento de posição local"
+            ]
+          },
+          {
+            "title": "Bot de WhatsApp com IA",
+            "desc": "Chatbot inteligente que atende, vende e agenda por você 24 horas por dia.",
+            "bullets": [
+              "Respostas automáticas com GPT-4",
+              "Integração com seu catálogo",
+              "Captura de leads qualificados",
+              "Gestão de agendamentos e pedidos"
+            ]
+          },
+          {
+            "title": "Design de Marca e Identidade Visual",
+            "desc": "Logo, paleta, tipografia e manual de marca para que sua marca fale por você.",
+            "bullets": [
+              "Logotipo vetorial",
+              "Manual de identidade",
+              "Papelaria corporativa",
+              "Templates para redes sociais"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Infraestrutura de TI",
+        "eyebrow": "Categoria 3",
+        "title": "Infraestrutura de TI e Cibersegurança",
+        "subtitle": "Redes, cibersegurança, CFTV, servidores e suporte. O trabalho presencial está disponível no México, sujeito a cobertura.",
+        "services": [
+          {
+            "title": "Redes e Conectividade Profissional",
+            "desc": "Projeto, instalação e otimização de redes locais para que sua empresa nunca fique sem conexão.",
+            "bullets": [
+              "Instalação de cabeamento estruturado UTP",
+              "Configuração de roteadores e switches DrayTek e Extreme Networks",
+              "Segmentação com VLANs para mais segurança e velocidade",
+              "Monitoramento em tempo real com PRTG"
+            ]
+          },
+          {
+            "title": "Cibersegurança e Proteção de Dados",
+            "desc": "Protegemos a infraestrutura digital do seu negócio contra ameaças e acessos não autorizados.",
+            "bullets": [
+              "Segurança de perímetro com firewalls Fortinet",
+              "CyberOps: monitoramento de sistemas críticos e detecção de vulnerabilidades",
+              "Configuração de VPN para trabalho remoto seguro",
+              "Auditorias de segurança e relatórios de conformidade"
+            ]
+          },
+          {
+            "title": "Videomonitoramento CFTV",
+            "desc": "Instalação, configuração e ativação de sistemas de vigilância com monitoramento remoto.",
+            "bullets": [
+              "Instalação de câmeras IP e analógicas",
+              "Configuração de gravadores DVR/NVR",
+              "Acesso remoto de qualquer dispositivo",
+              "Alertas e notificações inteligentes"
+            ]
+          },
+          {
+            "title": "Servidores e Nuvem Privada",
+            "desc": "Centralizamos a informação da sua equipe e garantimos backups automáticos e seguros.",
+            "bullets": [
+              "Windows Server 2025 com Active Directory e políticas de grupo",
+              "Servidores NAS Synology: nuvem privada local com backups automáticos",
+              "Migração e administração do Google Workspace",
+              "Virtualização e monitoramento de recursos"
+            ]
+          },
+          {
+            "title": "Suporte Técnico Completo",
+            "desc": "Help desk presencial e remoto para que sua operação tecnológica nunca pare.",
+            "bullets": [
+              "Resolução de problemas em Windows, Linux e Mac",
+              "Manutenção preventiva: diagnóstico de hardware, formatação, clonagem",
+              "Instalação e configuração de impressoras em rede",
+              "Controle de inventário de TI para empresas com várias filiais"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Consultoria",
+        "eyebrow": "Categoria 4",
+        "title": "Consultoria e Estratégia Digital",
+        "subtitle": "Diagnóstico especializado, roadmap claro e capacitação para que sua equipe aproveite a tecnologia ao máximo.",
+        "services": [
+          {
+            "title": "Auditoria Digital Completa",
+            "desc": "Analisamos seu site, SEO, velocidade, UX e segurança para detectar oportunidades de melhoria.",
+            "bullets": [
+              "Análise de velocidade e desempenho",
+              "Auditoria de SEO técnico",
+              "Revisão da experiência do usuário",
+              "Relatório com plano de ação"
+            ]
+          },
+          {
+            "title": "Estratégia de Presença Digital",
+            "desc": "Roadmap personalizado com metas, métricas e ações concretas para liderar seu mercado.",
+            "bullets": [
+              "Análise da concorrência",
+              "Definição de KPIs e objetivos",
+              "Roadmap trimestral",
+              "Acompanhamento mensal de resultados"
+            ]
+          },
+          {
+            "title": "Integração de Plataformas",
+            "desc": "Conectamos suas ferramentas (CRM, ERP, e-commerce, pagamentos) em um único fluxo sem atritos.",
+            "bullets": [
+              "Mapeamento dos fluxos atuais",
+              "Escolha das ferramentas ideais",
+              "Integração via APIs",
+              "Treinamento da equipe"
+            ]
+          },
+          {
+            "title": "Capacitação Tecnológica",
+            "desc": "Workshops práticos para que sua equipe use a tecnologia com eficiência e sem depender de terceiros.",
+            "bullets": [
+              "Cursos de ferramentas digitais",
+              "Workshops de cibersegurança básica",
+              "Treinamento em Google Workspace",
+              "Certificado de conclusão"
+            ]
+          }
+        ]
+      }
+    ],
+    "ui": {
+      "heroA": "Serviços que impulsionam seu ",
+      "heroB": "Crescimento Digital",
+      "heroSub": "Do desenvolvimento web à infraestrutura crítica: design, engenharia, redes, segurança e suporte. Uma única equipe para tudo o que você precisa.",
+      "request": "Solicitar",
+      "fullPage": "Ver página completa →",
+      "requestService": "Solicitar este serviço →",
+      "ctaTitle": "Não encontrou o que procura?",
+      "ctaBody": "Se é digital ou tecnológico, podemos construir. Conte sua ideia e receba uma proposta sob medida.",
+      "ctaButton": "Fale sobre seu projeto →",
+      "badgeNew": "✦ Novo"
+    }
   }
 }
