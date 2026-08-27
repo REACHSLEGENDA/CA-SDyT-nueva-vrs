@@ -12,6 +12,7 @@ import {
     Newspaper, Zap, Monitor, Star
 } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { portfolioItems } from '@/lib/portfolioData';
 
@@ -31,57 +32,61 @@ interface CaProduct {
     imageUrl?: string;
 }
 
-const CA_PRODUCTS: CaProduct[] = [
+// Usa t(), que solo existe dentro del componente: se envuelve en una funcion
+// que recibe el traductor. Iconos, gradientes e imagenes siguen aqui.
+type Traductor = ReturnType<typeof useTranslations>;
+
+const construirProductos = (t: Traductor): CaProduct[] => [
     {
         id: 'agencyos',
         title: 'AgencyOS',
         subtitle: 'Creative Studio',
-        tagline: 'CRM para Agencias Creativas',
-        desc: 'Sistema de gestión completo para estudios de marketing y producción creativa. Proyectos, clientes, campañas, solicitudes, horas trabajadas, facturación y comunicación en un solo lugar.',
+        tagline: t('agencyTag'),
+        desc: t('agencyDesc'),
         gradient: 'from-[#1a0a3a] via-[#12082e] to-[#0a1628]',
         borderColor: 'border-purple-500/30',
         glowColor: 'bg-purple-600/15',
         icon: <Briefcase size={28} className="text-purple-400" />,
-        features: ['Dashboard de producción semanal', 'Tablero Kanban por cliente', 'Próximas entregas y alertas', 'Campañas activas con presupuesto', 'Facturación integrada'],
+        features: [t('ag1'), t('ag2'), t('ag3'), t('ag4'), t('ag5')],
         imageUrl: '/assets/products/agencyos.webp',
     },
     {
         id: 'kovex-crm',
         title: 'KOVEX',
         subtitle: 'CRM v1.0',
-        tagline: 'CRM de Leads y Ventas',
-        desc: 'CRM enfocado en conversión: gestión de prospectos, embudo de ventas, automatizaciones de seguimiento por WhatsApp y email, y métricas de cierre en tiempo real.',
+        tagline: t('kovexTag'),
+        desc: t('kovexDesc'),
         gradient: 'from-[#1a0a1a] via-[#1a0022] to-[#0a0a1a]',
         borderColor: 'border-pink-500/30',
         glowColor: 'bg-pink-600/15',
         icon: <BarChart3 size={28} className="text-pink-400" />,
-        features: ['Embudo de ventas visual', 'Automatización de seguimiento', 'Contact Center integrado', 'Reglas de flujo personalizables', 'Revenue en tiempo real'],
+        features: [t('kx1'), t('kx2'), 'Contact Center integrado', t('kx3'), 'Revenue en tiempo real'],
         imageUrl: '/assets/products/kovex-crm.webp',
     },
     {
         id: 'dentaflow',
         title: 'DentaFlow',
-        subtitle: 'Gestión Clínica',
+        subtitle: t('dentaTag'),
         tagline: 'CRM Dental Integral',
-        desc: 'Sistema de gestión para clínicas dentales: agenda, historial clínico, inventario de materiales, cobros y alertas automáticas. Diseñado para que el dentista solo piense en sus pacientes.',
+        desc: t('dentaDesc'),
         gradient: 'from-[#021a14] via-[#01140f] to-[#010d0a]',
         borderColor: 'border-teal-500/30',
         glowColor: 'bg-teal-600/15',
         icon: <Users size={28} className="text-teal-400" />,
-        features: ['Agenda y citas del día', 'Historial clínico digital', 'Alertas de inventario bajo', 'Cobros y pagos pendientes', 'Confirmación por WhatsApp'],
+        features: [t('dt1'), t('dt2'), t('dt3'), 'Cobros y pagos pendientes', t('dt4')],
         imageUrl: '/assets/products/dentaflow.webp',
     },
     {
         id: 'abastoflow',
         title: 'AbastoFlow',
-        subtitle: 'Gestión de Abasto',
-        tagline: 'Control de Inventarios y Suministro',
-        desc: 'App web para empresas de logística y distribución. Control total de stock, pedidos y flujo de abasto. Dashboards en tiempo real para decisiones rápidas de compra y distribución.',
+        subtitle: t('abastoTag'),
+        tagline: t('abastoSub'),
+        desc: t('abastoDesc'),
         gradient: 'from-[#0a1a0a] via-[#071207] to-[#030d03]',
         borderColor: 'border-emerald-500/30',
         glowColor: 'bg-emerald-600/15',
         icon: <ShoppingBag size={28} className="text-emerald-400" />,
-        features: ['Control de stock en tiempo real', 'Gestión de pedidos y órdenes', 'Alertas de reabasto automáticas', 'Dashboard de movimientos', 'Multi-almacén'],
+        features: [t('ab1'), t('ab2'), t('ab3'), t('ab4'), t('ab5')],
         imageUrl: '/assets/abastoflow.webp',
     },
 ];
@@ -94,6 +99,16 @@ const TYPE_COLOR: Record<string, string> = {
 };
 
 export default function PortfolioPage() {
+    const t = useTranslations('PortfolioPage');
+    const CA_PRODUCTS = construirProductos(t);
+    // Los valores de `type` son identificadores en espanol dentro de los datos;
+    // aqui solo se traduce lo que ve el visitante.
+    const tipoTraducido = (tipo: string) => ({
+        'Proyecto Top': t('typeTop'),
+        'Desarrollo Completo': t('typeFull'),
+        'Colaboración': t('typeCollab'),
+        'App Web': t('typeWebApp'),
+    }[tipo] ?? tipo);
     const [hoveredId, setHoveredId] = useState<number | null>(null);
 
     return (
@@ -114,7 +129,7 @@ export default function PortfolioPage() {
                     transition={{ delay: 0.1 }}
                 >
                     Proyectos que{' '}
-                    <span className="text-ca-gradient">hablan por sí solos.</span>
+                    <span className="text-ca-gradient">{t('heroTail')}</span>
                 </motion.h1>
                 <motion.p
                     className="text-ca-muted text-xl max-w-3xl mx-auto leading-relaxed"
@@ -122,8 +137,7 @@ export default function PortfolioPage() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.25 }}
                 >
-                    De startups fintech a portales de entretenimiento y clínicas dentales.
-                    Aquí una muestra de lo que construimos para nuestros clientes — y para nosotros mismos.
+                    {t('heroBody')}
                 </motion.p>
             </Section>
 
@@ -131,8 +145,8 @@ export default function PortfolioPage() {
             <Section className="border-t border-ca-border pb-16">
                 <SectionHeader
                     eyebrow="Clientes y proyectos"
-                    title="Lo que hemos construido"
-                    subtitle="Sitios, apps y plataformas en producción."
+                    title={t('worksTitle')}
+                    subtitle={t('worksSub')}
                 />
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -162,7 +176,7 @@ export default function PortfolioPage() {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-ca-surface via-transparent to-transparent" />
                                     <span className={`absolute top-3 right-3 font-mono text-[10px] font-bold px-2.5 py-1 rounded-full bg-ca-dark/80 backdrop-blur-sm border border-ca-border ${TYPE_COLOR[item.type] ?? 'text-ca-muted'}`}>
-                                        {item.type}
+                                        {tipoTraducido(item.type)}
                                     </span>
                                 </div>
 
@@ -199,8 +213,8 @@ export default function PortfolioPage() {
             <Section className="border-t border-ca-border py-20">
                 <SectionHeader
                     eyebrow="Productos propios"
-                    title="Software que construimos para el mercado"
-                    subtitle="Sistemas a medida que desarrollamos internamente y ofrecemos para empresas que los necesitan."
+                    title={t('productsTitle')}
+                    subtitle={t('productsSub')}
                 />
 
                 <div className="grid md:grid-cols-3 gap-6">
@@ -293,17 +307,17 @@ export default function PortfolioPage() {
                 >
                     <Star size={36} className="text-ca-cyan mx-auto mb-5" />
                     <h2 className="font-display font-black text-4xl text-ca-text mb-4">
-                        ¿Tienes un proyecto en mente?
+                        {t('ctaTitle')}
                     </h2>
                     <p className="text-ca-muted mb-8">
-                        Si te gustó lo que construimos, imagina lo que podemos hacer para tu empresa.
+                        {t('ctaBody')}
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link
                             href="/contacto"
                             className="bg-ca-gradient text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-ca-cyan/20"
                         >
-                            Iniciar cotización →
+                            {t('ctaButton')}
                         </Link>
                         <a
                             href="https://wa.me/525951145576"

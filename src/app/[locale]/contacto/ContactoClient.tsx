@@ -1,12 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { ContactForm } from '@/components/features/ContactForm';
 import { Section } from '@/components/ui/Section';
 import { Mail, Phone, MapPin, MessageSquare, CheckCircle2, Zap, Clock, ShieldCheck } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 
 export default function ContactPage() {
+    const t = useTranslations('ContactPage');
     return (
         <div className="pt-20 min-h-screen relative overflow-hidden">
             {/* Ambient Background Glows */}
@@ -25,14 +27,14 @@ export default function ContactPage() {
                         >
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-blue text-sm font-bold">
                                 <Zap size={14} className="fill-brand-blue" />
-                                <span>Atención Inmediata</span>
+                                <span>{t('badge')}</span>
                             </div>
                             <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
-                                Hablemos de tu <br />
-                                <span className="text-gradient">Próximo Éxito</span>
+                                {t('heroA')} <br />
+                                <span className="text-gradient">{t('heroB')}</span>
                             </h1>
                             <p className="text-xl text-gray-400 leading-relaxed max-w-xl">
-                                Ya sea que tengas una idea clara o solo un boceto, estamos listos para escuchar, asesorarte y proponerte la mejor estrategia tecnológica para tu negocio.
+                                {t('heroBody')}
                             </p>
                         </motion.div>
 
@@ -40,14 +42,14 @@ export default function ContactPage() {
                             <ContactCard
                                 href="https://wa.me/525951145576"
                                 icon={<Phone size={24} />}
-                                title="Llámanos / WhatsApp"
+                                title={t('call')}
                                 value="+52 595 114 5576"
                                 color="blue"
                             />
                             <ContactCard
                                 href="mailto:contacto@casolutecdigital.com"
                                 icon={<Mail size={24} />}
-                                title="Envíanos un Correo"
+                                title={t('email')}
                                 value="contacto@casolutecdigital.com"
                                 color="purple"
                             />
@@ -55,11 +57,11 @@ export default function ContactPage() {
 
                         {/* Why contact us now? */}
                         <div className="pt-8 space-y-6">
-                            <h4 className="text-white font-bold text-lg">¿Qué esperar al contactarnos?</h4>
+                            <h4 className="text-white font-bold text-lg">{t('expectTitle')}</h4>
                             <div className="grid sm:grid-cols-2 gap-4">
-                                <FeatureItem icon={<Clock />} text="Respuesta en menos de 2h" />
-                                <FeatureItem icon={<CheckCircle2 />} text="Consultoría técnica inicial" />
-                                <FeatureItem icon={<Zap />} text="Diagnóstico de viabilidad" />
+                                <FeatureItem icon={<Clock />} text={t('e1')} />
+                                <FeatureItem icon={<CheckCircle2 />} text={t('e2')} />
+                                <FeatureItem icon={<Zap />} text={t('e3')} />
                                 <FeatureItem icon={<ShieldCheck />} text="Confidencialidad total" />
                             </div>
                         </div>
@@ -80,8 +82,8 @@ export default function ContactPage() {
                                 <MessageSquare size={120} className="text-brand-blue" />
                             </div>
                             <div className="relative z-10">
-                                <h2 className="text-3xl font-bold text-white mb-2">Cuéntanos tu proyecto</h2>
-                                <p className="text-gray-400 mb-10">Completa el formulario y un especialista técnico se pondrá en contacto contigo.</p>
+                                <h2 className="text-3xl font-bold text-white mb-2">{t('formTitle')}</h2>
+                                <p className="text-gray-400 mb-10">{t('formSub')}</p>
                                 <ContactForm />
                             </div>
                         </Card>
@@ -101,18 +103,18 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-3 gap-12 text-center items-center">
                     <div>
                         <MapPin className="mx-auto text-brand-cyan mb-4" size={32} />
-                        <h4 className="text-lg font-bold text-white">CDMX, México</h4>
-                        <p className="text-gray-500 text-sm">Oficina Central de Ingeniería</p>
+                        <h4 className="text-lg font-bold text-white">{t('city')}</h4>
+                        <p className="text-gray-500 text-sm">{t('office')}</p>
                     </div>
                     <div className="border-x border-white/5 px-6">
                         <Globe className="mx-auto text-brand-blue mb-4" size={32} />
                         <h4 className="text-lg font-bold text-white">Presencia Global</h4>
-                        <p className="text-gray-500 text-sm">Operamos 100% en remoto para el mundo</p>
+                        <p className="text-gray-500 text-sm">{t('remote')}</p>
                     </div>
                     <div>
                         <MessageSquare className="mx-auto text-brand-purple mb-4" size={32} />
                         <h4 className="text-lg font-bold text-white">Soporte Multilingüe</h4>
-                        <p className="text-gray-500 text-sm">Atención en Español e Inglés</p>
+                        <p className="text-gray-500 text-sm">{t('langs')}</p>
                     </div>
                 </div>
             </Section>

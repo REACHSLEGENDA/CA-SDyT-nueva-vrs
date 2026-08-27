@@ -25,9 +25,11 @@ import {
     MessageCircle,
     Mail
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
 export default function ClassesPage() {
+    const t = useTranslations('ClassesPage');
     return (
         <div className="pt-20 min-h-screen">
 
@@ -45,20 +47,20 @@ export default function ClassesPage() {
                 </motion.div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-8 leading-tight text-balance">
-                    Domina las herramientas <br />
-                    <span className="text-gradient">del Futuro Digital</span>
+                    {t('heroA')} <br />
+                    <span className="text-gradient">{t('heroB')}</span>
                 </h1>
 
                 <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">
-                    En CA Academy, no solo enseñamos teoría; forjamos habilidades reales. Ofrecemos capacitación personalizada diseñada para cerrar la brecha entre el conocimiento básico y la maestría tecnológica profesional.
+                    {t('heroBody')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
                     <Link href="/contacto" className="w-full sm:w-auto">
-                        <Button size="lg" className="w-full px-12 h-16 text-lg">Agendar Sesión de Diagnóstico</Button>
+                        <Button size="lg" className="w-full px-12 h-16 text-lg">{t('heroCta')}</Button>
                     </Link>
                     <Link href="/nosotros" className="w-full sm:w-auto">
-                        <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">Nuestra Metodología</Button>
+                        <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">{t('methodology')}</Button>
                     </Link>
                 </div>
             </Section>
@@ -66,9 +68,9 @@ export default function ClassesPage() {
             {/* 2. MENTORSHIP TRACKS - Specialized Blocks */}
             <Section className="py-24 border-t border-white/5">
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Programas de Formación</h2>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">{t('programs')}</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Elige tu camino. Desde lo fundamental hasta el desarrollo de software profesional.
+                        {t('programsSub')}
                     </p>
                 </div>
 
@@ -76,22 +78,22 @@ export default function ClassesPage() {
                     <ClassTrack
                         icon={<Image src="/assets/office.webp" alt="Office" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Productividad & Office"
-                        desc="Domina el entorno Windows y la suite de Office de forma profesional. Optimiza tu flujo de trabajo administrativo y personal."
-                        topics={["Excel Avanzado (Fórmulas/Tablas)", "Word & PowerPoint Profesional", "Gestión de Correo & Cloud", "Seguridad Digital Básica"]}
+                        desc={t('officeDesc')}
+                        topics={[t('off1'), "Word & PowerPoint Profesional", t('off2'), t('off3')]}
                         color="blue"
                     />
                     <ClassTrack
                         icon={<Image src="/assets/desarrollo.webp" alt="Desarrollo" width={160} height={160} className="w-40 h-40 object-contain" />}
-                        title="Desarrollo & Programación"
-                        desc="Aprende a construir el internet. Desde lógica de programación hasta frameworks modernos utilizados por la élite tecnológica."
-                        topics={["HTML5, CSS3 & JavaScript", "React & Next.js Frameworks", "Bases de Datos & SQL", "Despliegue de Aplicaciones"]}
+                        title={t('devTitle')}
+                        desc={t('devDesc')}
+                        topics={["HTML5, CSS3 & JavaScript", "React & Next.js Frameworks", t('dev1'), t('dev2')]}
                         color="purple"
                     />
                     <ClassTrack
                         icon={<Image src="/assets/marketing.webp" alt="Marketing" width={160} height={160} className="w-40 h-40 object-contain" />}
-                        title="Marketing & Gestión"
-                        desc="Habilidades digitales enfocadas en negocio. Aprende a gestionar tus canales y herramientas de venta de forma autónoma."
-                        topics={["Gestión de Redes Sociales", "Principios de Diseño Gráfico", "WhatsApp Business Pro", "Analytics & Reportes"]}
+                        title={t('mkTitle')}
+                        desc={t('mkDesc')}
+                        topics={[t('mk1'), t('mk2'), "WhatsApp Business Pro", "Analytics & Reportes"]}
                         color="cyan"
                     />
                 </div>
@@ -108,30 +110,30 @@ export default function ClassesPage() {
                         className="p-10 rounded-[3rem] bg-brand-black/40 border border-white/10 backdrop-blur-md relative group"
                     >
                         <div className="absolute -top-10 -left-10 w-24 h-24 bg-brand-blue/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <h3 className="text-3xl font-bold text-white mb-10">¿Por qué elegir nuestra mentoría?</h3>
+                        <h3 className="text-3xl font-bold text-white mb-10">{t('whyTitle')}</h3>
                         <div className="grid gap-8">
                             <MethodItem
                                 icon={<Target className="text-brand-blue" />}
-                                title="Plan de Estudios a Medida"
-                                text="No seguimos un manual genérico. Evaluamos tu nivel actual y creamos una ruta de aprendizaje basada en tus objetivos reales."
+                                title={t('w1')}
+                                text={t('w1d')}
                             />
                             <MethodItem
                                 icon={<Users className="text-brand-purple" />}
-                                title="Clases 1 a 1 de Alto Valor"
-                                text="Atención total. Sin distracciones. El instructor se enfoca exclusivamente en tu progreso y resuelve tus dudas al instante."
+                                title={t('w2')}
+                                text={t('w2d')}
                             />
                             <MethodItem
                                 icon={<Calendar className="text-brand-cyan" />}
                                 title="Flexibilidad Horaria Total"
-                                text="Entendemos que el tiempo es tu recurso más valioso. Adaptamos las sesiones a tus horarios de trabajo o estudio."
+                                text={t('w3d')}
                             />
                         </div>
                     </motion.div>
 
                     <div className="space-y-12">
-                        <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">Capacitación <br /> <span className="text-brand-blue">Humana & Técnica</span></h2>
+                        <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">{t('humanA')} <br /> <span className="text-brand-blue">{t('humanB')}</span></h2>
                         <p className="text-xl text-gray-400 leading-relaxed">
-                            Creemos en la democratización del conocimiento técnico. Nuestro objetivo es que dejes de ver la tecnología como un obstáculo y comiences a verla como tu mayor aliada profesional.
+                            {t('humanBody')}
                         </p>
                         <div className="grid grid-cols-2 gap-4">
                             <Card className="p-6 bg-white/5 border-white/10 text-center hover:bg-white/10 transition-colors">
@@ -153,10 +155,10 @@ export default function ClassesPage() {
             <Section className="py-24">
                 <div className="bg-brand-black/50 border border-white/10 rounded-[4rem] p-12 md:p-20 relative overflow-hidden">
                     <div className="grid lg:grid-cols-4 gap-12 text-center group">
-                        <StatBlock num="100%" title="Práctico" label="Enfoque en Proyectos Reales" />
-                        <StatBlock num="450+" title="Estudiantes" label="Capacitados con Éxito" />
-                        <StatBlock num="15+" title="Stacks" label="Tecnologías Cubiertas" />
-                        <StatBlock num="Elite" title="Mentoría" label="Consultores Seniors" />
+                        <StatBlock num="100%" title={t('practical')} label="Enfoque en Proyectos Reales" />
+                        <StatBlock num="450+" title="Estudiantes" label={t('statTrained')} />
+                        <StatBlock num="15+" title="Stacks" label={t('statTech')} />
+                        <StatBlock num="Elite" title={t('statMentor')} label="Consultores Seniors" />
                     </div>
                 </div>
             </Section>
@@ -173,11 +175,11 @@ export default function ClassesPage() {
                         <Users size={40} />
                     </div>
                     <h2 className="text-5xl md:text-8xl font-display font-bold text-white leading-tight">
-                        Invierte en tu <br />
+                        {t('ctaA')} <br />
                         <span className="text-gradient">Crecimiento Profesional</span>
                     </h2>
                     <p className="text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                        No importa tu nivel inicial. El único requisito es la curiosidad y las ganas de dominar el entorno digital.
+                        {t('ctaBody')}
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10">
                         <Link href="/contacto" className="w-full sm:w-auto">
