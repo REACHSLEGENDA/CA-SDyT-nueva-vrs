@@ -9,6 +9,7 @@ import {
     CheckCircle2, BarChart3, Zap, MessageSquare,
     Eye, Target, LineChart, Award
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { getTechLogo } from '@/components/ui/TechLogos';
 import { AeoFAQSection } from '@/components/features/AeoFAQSection';
@@ -23,6 +24,7 @@ const MOTORES_IA = [
 ];
 
 export default function SeoAeoPage() {
+    const t = useTranslations('SeoAeoPage');
     return (
         <div className="pt-20 min-h-screen">
 
@@ -44,7 +46,7 @@ export default function SeoAeoPage() {
                     transition={{ delay: 0.1 }}
                 >
                     Que te encuentren{' '}
-                    <span className="text-ca-gradient">en Google y en las IAs.</span>
+                    <span className="text-ca-gradient">{t('heroTail')}</span>
                 </motion.h1>
 
                 <motion.p
@@ -53,9 +55,7 @@ export default function SeoAeoPage() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.25 }}
                 >
-                    El SEO sigue siendo la base para aparecer en buscadores y experiencias con IA.
-                    Mejoramos las señales técnicas, editoriales y de entidad que ayudan a estos sistemas a
-                    encontrar, comprender y evaluar tu negocio como una fuente útil.
+                    {t('heroBody')}
                 </motion.p>
 
                 <motion.div
@@ -65,10 +65,10 @@ export default function SeoAeoPage() {
                     transition={{ delay: 0.4 }}
                 >
                     <Link
-                        href={{ pathname: '/contacto', query: { servicio: 'SEO Técnico y AEO' } }}
+                        href={{ pathname: '/contacto', query: { servicio: t('kicker') } }}
                         className="bg-ca-gradient text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-ca-cyan/20"
                     >
-                        Auditoría SEO gratuita →
+                        {t('heroCta')}
                     </Link>
                     <a
                         href="https://wa.me/525951145576"
@@ -107,8 +107,8 @@ export default function SeoAeoPage() {
             <Section className="border-t border-ca-border">
                 <SectionHeader
                     eyebrow="Nuestro enfoque"
-                    title="Tres frentes de visibilidad"
-                    subtitle="Atacamos tu posicionamiento desde Google hasta las IAs conversacionales."
+                    title={t('frontsTitle')}
+                    subtitle={t('frontsSub')}
                 />
 
                 <div className="grid md:grid-cols-3 gap-6">
@@ -116,40 +116,40 @@ export default function SeoAeoPage() {
                         {
                             icon: <Image src="/assets/seo.webp" alt="SEO" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'cyan' as const,
-                            title: 'SEO Técnico',
-                            desc: 'Optimizamos la estructura, velocidad, Core Web Vitals, schema markup y arquitectura de tu sitio para que Google lo entienda y posicione primero.',
+                            title: t('seoTitle'),
+                            desc: t('seoDesc'),
                             bullets: [
-                                'Auditoría técnica completa',
+                                t('seo1'),
                                 'Velocidad y Core Web Vitals',
                                 'Schema markup estructurado',
-                                'Optimización On-Page / Off-Page',
-                                'Link building estratégico',
+                                t('seo2'),
+                                t('seo3'),
                             ],
                         },
                         {
                             icon: <Image src="/assets/aeo.webp" alt="AEO" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'purple' as const,
-                            title: 'AEO — Visibilidad en búsquedas con IA',
-                            desc: 'Mejoramos la accesibilidad, claridad y respaldo de tu contenido para aumentar su elegibilidad como fuente en ChatGPT, Gemini, Claude, Perplexity y otras experiencias de búsqueda.',
+                            title: t('aeoTitle'),
+                            desc: t('aeoDesc'),
                             bullets: [
-                                'Contenido útil y respuestas directas',
-                                'Rastreo para buscadores y asistentes',
-                                'Datos de marca consistentes',
-                                'Schema válido y fuentes verificables',
-                                'Medición de menciones y conversiones',
+                                t('aeo1'),
+                                t('aeo2'),
+                                t('aeo3'),
+                                t('aeo4'),
+                                t('aeo5'),
                             ],
                         },
                         {
                             icon: <Image src="/assets/maps.webp" alt="Google Maps" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'none' as const,
                             title: 'Google Business & SEO Local',
-                            desc: 'Optimizamos y gestionamos tu ficha en Google Maps para que clientes locales te encuentren antes que a la competencia.',
+                            desc: t('mapsDesc'),
                             bullets: [
-                                'Alta y verificación de perfil',
-                                'Optimización de reseñas',
-                                'Posts y fotos estratégicas',
+                                t('maps1'),
+                                t('maps2'),
+                                t('maps3'),
                                 'Posicionamiento en Google Maps',
-                                'Seguimiento de posición local',
+                                t('maps4'),
                             ],
                         },
                     ].map((item, i) => (
@@ -188,21 +188,19 @@ export default function SeoAeoPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <span className="font-mono text-xs text-ca-cyan uppercase tracking-widest">El AEO empieza con buen SEO</span>
+                        <span className="font-mono text-xs text-ca-cyan uppercase tracking-widest">{t('baseTitle')}</span>
                         <h2 className="font-display font-black text-3xl md:text-4xl text-ca-text mt-3 mb-5 leading-tight">
-                            La IA cita fuentes que puede encontrar, entender y evaluar.
+                            {t('baseSub')}
                         </h2>
                         <p className="text-ca-muted leading-relaxed mb-6">
-                            No existe un botón para ocupar una posición universal en una respuesta de IA.
-                            Trabajamos la base técnica, el contenido, la entidad y las referencias que aumentan
-                            la elegibilidad de tu negocio como fuente útil.
+                            {t('baseBody')}
                         </p>
                         <div className="space-y-4">
                             {[
-                                { label: 'Rastreo e indexación', value: 'Base técnica', color: 'text-ca-cyan' },
+                                { label: t('p1'), value: t('p1s'), color: 'text-ca-cyan' },
                                 { label: 'Entidad y datos consistentes', value: 'Confianza', color: 'text-emerald-400' },
-                                { label: 'Respuestas útiles y verificables', value: 'Contenido', color: 'text-ca-purple' },
-                                { label: 'Medición en buscadores y asistentes', value: 'Mejora continua', color: 'text-ca-mid' },
+                                { label: t('p2s'), value: 'Contenido', color: 'text-ca-purple' },
+                                { label: t('p3s'), value: 'Mejora continua', color: 'text-ca-mid' },
                             ].map((item) => (
                                 <div key={item.label} className="flex items-center justify-between gap-4 py-3 border-b border-ca-border">
                                     <span className="text-ca-muted text-sm">{item.label}</span>
@@ -211,7 +209,7 @@ export default function SeoAeoPage() {
                             ))}
                         </div>
                         <p className="mt-5 text-xs text-ca-muted font-mono">
-                            La meta es mejorar visibilidad y conversiones con evidencia, no promesas artificiales.
+                            {t('goal')}
                         </p>
                     </motion.div>
 
@@ -223,14 +221,14 @@ export default function SeoAeoPage() {
                         <GlassCard glow="cyan" className="p-8">
                             <div className="flex items-center gap-3 mb-6">
                                 <BarChart3 size={22} className="text-ca-cyan" />
-                                <h3 className="font-bold text-ca-text">Qué optimizamos realmente</h3>
+                                <h3 className="font-bold text-ca-text">{t('whatTitle')}</h3>
                             </div>
                             <div className="space-y-5">
                                 {[
-                                    { title: 'Descubrimiento', desc: 'Robots, sitemap, indexación, canonicals y acceso a recursos.' },
-                                    { title: 'Comprensión', desc: 'Arquitectura, HTML semántico, enlazado y respuestas claras.' },
+                                    { title: 'Descubrimiento', desc: t('p1d') },
+                                    { title: t('p2'), desc: t('p2d') },
                                     { title: 'Confianza', desc: 'Entidad consistente, fuentes, experiencia y datos verificables.' },
-                                    { title: 'Medición', desc: 'Consultas, páginas, clics, conversiones, menciones y citas observables.' },
+                                    { title: t('p3'), desc: t('p3d') },
                                 ].map((item) => (
                                     <div key={item.title} className="flex items-start gap-3">
                                         <CheckCircle2 size={16} className="text-ca-cyan mt-1 shrink-0" />
@@ -242,7 +240,7 @@ export default function SeoAeoPage() {
                                 ))}
                             </div>
                             <p className="mt-6 text-xs text-ca-muted border-t border-ca-border pt-4">
-                                Ningún buscador o asistente garantiza una cita. Reportamos señales que sí se pueden observar y mejorar.
+                                {t('whatSub')}
                             </p>
                         </GlassCard>
                     </motion.div>
@@ -252,9 +250,9 @@ export default function SeoAeoPage() {
             {/* ─── PROCESO ─────────────────────────────────────────── */}
             <Section className="border-t border-ca-border">
                 <SectionHeader
-                    eyebrow="Cómo trabajamos"
-                    title="De auditoría a resultados"
-                    subtitle="Un proceso claro en 4 fases con métricas reales cada mes."
+                    eyebrow={t('howKicker')}
+                    title={t('howTitle')}
+                    subtitle={t('howSub')}
                 />
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -296,15 +294,14 @@ export default function SeoAeoPage() {
                 >
                     <Award size={40} className="text-ca-cyan mx-auto mb-5" />
                     <h2 className="font-display font-black text-4xl md:text-5xl text-ca-text mb-4 leading-tight">
-                        ¿Tu negocio aparece cuando la IA responde?
+                        {t('ctaTitle')}
                     </h2>
                     <p className="text-ca-muted text-lg mb-8">
-                        Hagamos la prueba juntos. Cuéntanos tu giro y te mostramos cómo te posicionamos
-                        en Google y en las IAs que usan tus clientes.
+                        {t('ctaBody')}
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link
-                            href={{ pathname: '/contacto', query: { servicio: 'SEO Técnico y AEO' } }}
+                            href={{ pathname: '/contacto', query: { servicio: t('kicker') } }}
                             className="bg-ca-gradient text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-ca-cyan/20"
                         >
                             Quiero posicionarme →
@@ -313,7 +310,7 @@ export default function SeoAeoPage() {
                             href="/servicios"
                             className="border border-ca-border text-ca-text px-8 py-3.5 rounded-xl hover:border-ca-cyan/40 hover:text-ca-cyan transition-all"
                         >
-                            Ver todos los servicios
+                            {t('ctaLink')}
                         </Link>
                     </div>
                 </motion.div>

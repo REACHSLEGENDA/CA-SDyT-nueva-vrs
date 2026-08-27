@@ -21,9 +21,11 @@ import {
     ArrowRight,
     CheckCircle2
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
 export default function MarketingPage() {
+    const t = useTranslations('MarketingPage');
     return (
         <div className="pt-20 min-h-screen">
 
@@ -43,23 +45,23 @@ export default function MarketingPage() {
                 </motion.div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-8 leading-tight">
-                    Domina las Redes <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500">Más Potentes</span>
+                    {t('heroA')} <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500">{t('heroB')}</span>
                 </h1>
 
                 <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12 text-balance">
-                    Nos especializamos exclusivamente en el ecosistema Meta (Facebook & Instagram). Creamos marcas que la gente ama y campañas de anuncios que convierten desconocidos en clientes leales.
+                    {t('heroBody')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
                     <Link href="/contacto" className="w-full sm:w-auto">
                         <Button size="lg" className="w-full px-12 h-16 text-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 border-0">
-                            Lanzar Campaña
+                            {t('heroCta')}
                         </Button>
                     </Link>
                     <Link href="/portafolio" className="w-full sm:w-auto">
                         <Button variant="outline" size="lg" className="w-full px-12 h-16 text-lg">
-                            Ver Casos de Éxito
+                            {t('heroCta2')}
                         </Button>
                     </Link>
                 </div>
@@ -68,37 +70,37 @@ export default function MarketingPage() {
             {/* 2. DUAL STRATEGY - Organic vs Paid */}
             <Section className="py-24 border-t border-white/5">
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Dos Motores de Crecimiento</h2>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">{t('enginesTitle')}</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg text-balance">
-                        Combinamos el branding estético con la precisión de los datos para un crecimiento sostenible.
+                        {t('enginesSub')}
                     </p>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12">
                     <StrategyCard
-                        title="Contenido Orgánico (Branding)"
-                        subtitle="Construcción de Comunidad & Lealtad"
-                        desc="Tu feed es tu carta de presentación. Diseñamos una identidad visual irresistible que transmite profesionalismo y conecta emocionalmente con tu audiencia."
+                        title={t('organic')}
+                        subtitle={t('organicSub')}
+                        desc={t('organicDesc')}
                         icon={<Instagram size={48} />}
                         color="pink"
                         features={[
-                            "Diseño de Feed Estético (Grid)",
-                            "Edición de Reels Virales",
-                            "Historias Interactivas Diarias",
-                            "Copywriting Persuasivo"
+                            t('o1'),
+                            t('o2'),
+                            t('o3'),
+                            t('o4')
                         ]}
                     />
                     <StrategyCard
-                        title="Tráfico Pago (Ads)"
-                        subtitle="Adquisición de Clientes & Ventas"
-                        desc="Dejamos de depender de la suerte. Implementamos embudos de venta con Facebook Ads para llegar exactamente a tu cliente ideal con el mensaje correcto."
+                        title={t('paid')}
+                        subtitle={t('paidSub')}
+                        desc={t('paidDesc')}
                         icon={<Target size={48} />}
                         color="blue"
                         features={[
-                            "Segmentación Avanzada",
-                            "Retargeting Estratégico",
-                            "Pruebas A/B de Creativos",
-                            "Optimización de Presupuesto"
+                            t('pa1'),
+                            t('pa2'),
+                            t('pa3'),
+                            t('pa4')
                         ]}
                     />
                 </div>
@@ -109,33 +111,33 @@ export default function MarketingPage() {
                 <div className="grid md:grid-cols-3 gap-8">
                     <PlatformFeature
                         icon={<Video />}
-                        title="Reels & Video Marketing"
-                        text="Aprovechamos el formato #1 de consumo actual. Videos cortos, dinámicos y editados profesionalmente para retener la atención."
+                        title={t('reels')}
+                        text={t('reelsDesc')}
                     />
                     <PlatformFeature
                         icon={<MessageCircle />}
-                        title="Gestión de Comunidad"
-                        text="No dejamos comentarios sin responder. Humanizamos tu marca interactuando genuinamente con tus seguidores."
+                        title={t('community')}
+                        text={t('communityDesc')}
                     />
                     <PlatformFeature
                         icon={<TrendingUp />}
-                        title="Viralidad Estratégica"
-                        text="Usamos audios en tendencia y formatos ganadores para maximizar el alcance orgánico de tu cuenta."
+                        title={t('viral')}
+                        text={t('viralDesc')}
                     />
                     <PlatformFeature
                         icon={<MousePointerClick />}
-                        title="Campañas de Mensajes"
-                        text="Anuncios Direct-to-Create. Llenamos tu bandeja de entrada de WhatsApp o DM con prospectos calificados."
+                        title={t('msgs')}
+                        text={t('msgsDesc')}
                     />
                     <PlatformFeature
                         icon={<Users />}
-                        title="Públicos Similares"
-                        text="Encontramos a miles de personas idénticas a tus mejores clientes usando la IA de Meta."
+                        title={t('lookalike')}
+                        text={t('lookalikeDesc')}
                     />
                     <PlatformFeature
                         icon={<BarChart3 />}
-                        title="Reportes Claros"
-                        text="Olvídate de métricas vanidosas. Te mostramos costos por resultado, conversión y retorno de inversión."
+                        title={t('reports')}
+                        text={t('reportsDesc')}
                     />
                 </div>
             </Section>
@@ -150,10 +152,10 @@ export default function MarketingPage() {
                             Tu marca merece ser <br /> <span className="text-gradient from-purple-500 to-pink-500">Inolvidable</span>
                         </h2>
                         <div className="space-y-8">
-                            <StepItem num="01" title="Auditoría Visual" text="Analizamos tu perfil actual y definimos una línea gráfica que te diferencie de la competencia." />
-                            <StepItem num="02" title="Plan de Contenidos" text="Creamos una parrilla mensual con pilares de contenido: Educativo, Entretenimiento y Venta." />
-                            <StepItem num="03" title="Ejecución & Ads" text="Publicamos religiosamente y activamos la pauta publicitaria para acelerar resultados." />
-                            <StepItem num="04" title="Optimización Continua" text="Lo que no se mide no se mejora. Ajustamos la estrategia mes a mes basándonos en datos." />
+                            <StepItem num="01" title={t('s1')} text={t('s1d')} />
+                            <StepItem num="02" title={t('s2')} text={t('s2d')} />
+                            <StepItem num="03" title={t('s3')} text={t('s3d')} />
+                            <StepItem num="04" title={t('s4')} text={t('s4d')} />
                         </div>
                     </div>
 
@@ -203,11 +205,11 @@ export default function MarketingPage() {
                     className="max-w-4xl mx-auto space-y-12"
                 >
                     <h2 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
-                        ¿Listo para escalar en <br />
+                        {t('ctaA')} <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Social Media?</span>
                     </h2>
                     <p className="text-xl text-gray-400">
-                        Deja de postear por postear. Comienza una estrategia profesional hoy mismo.
+                        {t('ctaBody')}
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-6 pt-6">
                         <Link href="/contacto" className="w-full sm:w-auto">

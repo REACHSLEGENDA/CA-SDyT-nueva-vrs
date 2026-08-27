@@ -11,22 +11,27 @@ import {
     AlertTriangle, Lock, Eye, MessageSquare,
     ArrowRight, Zap, Globe, Cpu
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
-const SERVICIOS_TI = [
+// El array usa t(), que solo existe dentro del componente: se envuelve en una
+// funcion que recibe el traductor. Los iconos y enlaces siguen aqui porque no se traducen.
+type Traductor = ReturnType<typeof useTranslations>;
+
+const construirServicios = (t: Traductor) => [
     {
         id: 'redes',
         icon: <Network size={32} className="text-ca-mid" />,
         glowColor: 'text-ca-mid',
         title: 'Redes y Conectividad',
-        tagline: 'Nunca sin conexión.',
-        desc: 'Diseñamos, instalamos y optimizamos redes locales profesionales para empresas de cualquier tamaño. Desde cableado estructurado hasta configuración de VLANs y monitoreo en tiempo real.',
+        tagline: t('netTag'),
+        desc: t('netDesc'),
         bullets: [
-            'Cableado estructurado UTP Cat6/Cat6A (tendido, ponchado y organización)',
+            t('net1'),
             'Routers y switches DrayTek y Extreme Networks',
-            'Segmentación con VLANs para seguridad y rendimiento',
-            'Monitoreo continuo con PRTG — detección de fallas antes de que afecten',
-            'Wi-Fi empresarial con cobertura garantizada',
+            t('net2'),
+            t('net3'),
+            t('net4'),
         ],
         link: { pathname: '/contacto' as const, query: { servicio: 'Redes y Conectividad Profesional' } },
     },
@@ -35,14 +40,14 @@ const SERVICIOS_TI = [
         icon: <Shield size={32} className="text-ca-success" />,
         glowColor: 'text-ca-success',
         title: 'Ciberseguridad',
-        tagline: 'Protegemos lo que más importa.',
-        desc: 'Seguridad perimetral con firewalls Fortinet y monitoreo de amenazas para que tu operación esté protegida las 24 horas contra ataques, accesos no autorizados y filtraciones de datos.',
+        tagline: t('secTag'),
+        desc: t('secDesc'),
         bullets: [
-            'Firewalls Fortinet configurados con políticas de seguridad avanzadas',
-            'CyberOps: monitoreo de sistemas críticos e identificación de vulnerabilidades',
-            'VPN segura para trabajo remoto sin comprometer la red corporativa',
-            'Auditorías de seguridad y reportes de cumplimiento',
-            'Respuesta a incidentes y recuperación',
+            t('sec1'),
+            t('sec2'),
+            t('sec3'),
+            t('sec4'),
+            t('sec5'),
         ],
         link: { pathname: '/contacto' as const, query: { servicio: 'Ciberseguridad' } },
     },
@@ -51,14 +56,14 @@ const SERVICIOS_TI = [
         icon: <Camera size={32} className="text-ca-purple" />,
         glowColor: 'text-ca-purple',
         title: 'Videovigilancia CCTV',
-        tagline: 'Siempre con ojo en tu negocio.',
-        desc: 'Instalación completa de sistemas de videovigilancia IP y analógica con acceso remoto desde tu teléfono o computadora, sin importar dónde estés.',
+        tagline: t('cctvTag'),
+        desc: t('cctvDesc'),
         bullets: [
-            'Cámaras IP y analógicas HD/4K para interior y exterior',
-            'Configuración de grabadores DVR/NVR con almacenamiento local o en nube',
-            'Acceso y monitoreo remoto desde cualquier dispositivo',
-            'Alertas de movimiento y notificaciones inteligentes',
-            'Integración con sistemas de control de acceso',
+            t('cctv1'),
+            t('cctv2'),
+            t('cctv3'),
+            t('cctv4'),
+            t('cctv5'),
         ],
         link: { pathname: '/contacto' as const, query: { servicio: 'Videovigilancia CCTV' } },
     },
@@ -67,14 +72,14 @@ const SERVICIOS_TI = [
         icon: <Server size={32} className="text-ca-cyan" />,
         glowColor: 'text-ca-cyan',
         title: 'Servidores y Nube Privada',
-        tagline: 'Tu información segura y centralizada.',
-        desc: 'Implementamos servidores físicos y virtuales, NAS Synology para respaldos automáticos y administramos Google Workspace para que tu equipo colabore sin fricciones.',
+        tagline: t('srvTag'),
+        desc: t('srvDesc'),
         bullets: [
-            'Windows Server 2025 con Active Directory y políticas de grupo',
-            'NAS Synology: nube privada local con respaldos automáticos y cifrados',
-            'Google Workspace: migración, usuarios, correos corporativos y permisos',
-            'Virtualización con Hyper-V o VMware',
-            'Monitoreo de recursos y alertas de capacidad',
+            t('srv1'),
+            t('srv2'),
+            t('srv3'),
+            t('srv4'),
+            t('srv5'),
         ],
         link: { pathname: '/contacto' as const, query: { servicio: 'Servidores y Nube Privada' } },
     },
@@ -82,21 +87,23 @@ const SERVICIOS_TI = [
         id: 'soporte',
         icon: <Headphones size={32} className="text-yellow-400" />,
         glowColor: 'text-yellow-400',
-        title: 'Soporte Técnico Integral',
-        tagline: 'Estamos cuando más nos necesitas.',
-        desc: 'Mesa de ayuda presencial y remota para mantener tu operación tecnológica sin interrupciones. Mantenimiento preventivo, correctivo y gestión de inventarios.',
+        title: t('supTitle'),
+        tagline: t('supTag'),
+        desc: t('supDesc'),
         bullets: [
-            'Resolución de problemas en Windows, Linux y Mac',
-            'Mantenimiento preventivo y correctivo de hardware (diagnóstico, formateo, clonación)',
-            'Instalación y configuración de impresoras en red (IP y Dominio)',
-            'Control y gestión de inventarios tecnológicos para multisucursales',
-            'Soporte remoto inmediato via herramientas de acceso seguro',
+            t('sup1'),
+            t('sup2'),
+            t('sup3'),
+            t('sup4'),
+            t('sup5'),
         ],
-        link: { pathname: '/contacto' as const, query: { servicio: 'Soporte Técnico Integral' } },
+        link: { pathname: '/contacto' as const, query: { servicio: t('supTitle') } },
     },
 ];
 
 export default function InfraestructuraTIPage() {
+    const t = useTranslations('ItInfraPage');
+    const SERVICIOS_TI = construirServicios(t);
     return (
         <div className="pt-20 min-h-screen">
 
@@ -121,7 +128,7 @@ export default function InfraestructuraTIPage() {
                     transition={{ delay: 0.1 }}
                 >
                     Tu empresa operando{' '}
-                    <span className="text-ca-gradient">sin interrupciones.</span>
+                    <span className="text-ca-gradient">{t('heroTail')}</span>
                 </motion.h1>
 
                 <motion.p
@@ -130,8 +137,7 @@ export default function InfraestructuraTIPage() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.25 }}
                 >
-                    Redes, ciberseguridad, CCTV, servidores y soporte técnico. Diseñamos y mantenemos
-                    la infraestructura tecnológica de tu negocio para que nunca pares.
+                    {t('heroBody')}
                 </motion.p>
 
                 <motion.div
@@ -144,7 +150,7 @@ export default function InfraestructuraTIPage() {
                         href={{ pathname: '/contacto', query: { servicio: 'Plan TI Empresarial' } }}
                         className="bg-ca-gradient text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-ca-cyan/20"
                     >
-                        Diagnóstico TI gratuito →
+                        {t('heroCta')}
                     </Link>
                     <a
                         href="https://wa.me/525951145576"
@@ -188,11 +194,11 @@ export default function InfraestructuraTIPage() {
                         </div>
                         <ul className="space-y-3">
                             {[
-                                'Red lenta que frena la productividad',
-                                'Datos sin respaldo = riesgo total',
+                                t('b1'),
+                                t('b2'),
                                 'Sin firewall, cualquiera puede entrar',
-                                'Soporte tardío: horas sin trabajar',
-                                'Sin CCTV, sin control de tu negocio',
+                                t('b3'),
+                                t('b4'),
                             ].map((item) => (
                                 <li key={item} className="flex items-center gap-3 text-sm text-ca-muted">
                                     <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
@@ -209,11 +215,11 @@ export default function InfraestructuraTIPage() {
                         </div>
                         <ul className="space-y-3">
                             {[
-                                'Red profesional diseñada para tu operación',
-                                'Respaldos automáticos cifrados en NAS',
+                                t('g1'),
+                                t('g2'),
                                 'Fortinet bloqueando amenazas 24/7',
                                 'Soporte remoto y presencial inmediato',
-                                'CCTV con acceso desde tu teléfono',
+                                t('g3'),
                             ].map((item) => (
                                 <li key={item} className="flex items-center gap-3 text-sm text-ca-text">
                                     <CheckCircle2 size={14} className="text-ca-success shrink-0" />
@@ -228,9 +234,9 @@ export default function InfraestructuraTIPage() {
             {/* ─── SERVICIOS DETALLADOS ─────────────────────────────── */}
             <Section className="border-t border-ca-border">
                 <SectionHeader
-                    eyebrow="Lo que incluye"
+                    eyebrow={t('includes')}
                     title="Cada servicio, al detalle"
-                    subtitle="5 áreas de especialización que conforman una infraestructura TI sólida."
+                    subtitle={t('areas')}
                 />
 
                 <div className="space-y-6">
@@ -286,8 +292,8 @@ export default function InfraestructuraTIPage() {
             <Section className="border-t border-ca-border">
                 <SectionHeader
                     eyebrow="Equipos y marcas"
-                    title="Tecnología de nivel empresarial"
-                    subtitle="Trabajamos con fabricantes líderes para garantizar durabilidad y soporte."
+                    title={t('vendorTitle')}
+                    subtitle={t('vendorSub')}
                 />
                 <div className="flex flex-wrap justify-center gap-4">
                     {[
@@ -323,17 +329,16 @@ export default function InfraestructuraTIPage() {
                                 Plan TI Empresarial
                             </h2>
                             <p className="text-ca-muted mb-6">
-                                Todos los servicios anteriores en un plan mensual único. Red, firewall,
-                                servidor, CCTV, soporte y monitoreo — un solo equipo para todo.
+                                {t('planBody')}
                             </p>
                             <ul className="space-y-2.5 mb-8">
                                 {[
-                                    'Red local diseñada e instalada',
+                                    t('pl1'),
                                     'Firewall Fortinet configurado',
                                     'Servidor o NAS implementado',
                                     'Google Workspace administrado',
                                     'Monitoreo PRTG 24/7',
-                                    'Soporte técnico mensual incluido',
+                                    t('pl2'),
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3 text-sm text-ca-text">
                                         <CheckCircle2 size={14} className="text-ca-cyan shrink-0" />
@@ -351,9 +356,9 @@ export default function InfraestructuraTIPage() {
 
                         <div className="space-y-4">
                             {[
-                                { icon: <Zap size={18} className="text-ca-cyan" />, title: 'Diagnóstico gratuito', desc: 'Evaluamos tu infraestructura actual sin costo.' },
-                                { icon: <Eye size={18} className="text-ca-mid" />, title: 'Sin contratos eternos', desc: 'Planes flexibles mes a mes adaptados a tu negocio.' },
-                                { icon: <Headphones size={18} className="text-yellow-400" />, title: 'Soporte presencial', desc: 'Técnicos que van a tu oficina cuando los necesitas.' },
+                                { icon: <Zap size={18} className="text-ca-cyan" />, title: t('freeDiag'), desc: t('freeDiagD') },
+                                { icon: <Eye size={18} className="text-ca-mid" />, title: 'Sin contratos eternos', desc: t('flex') },
+                                { icon: <Headphones size={18} className="text-yellow-400" />, title: 'Soporte presencial', desc: t('onsite') },
                                 { icon: <Lock size={18} className="text-ca-success" />, title: 'Confidencialidad total', desc: 'Tus datos y sistemas son completamente privados.' },
                             ].map((item) => (
                                 <div key={item.title} className="flex items-start gap-4 p-4 rounded-xl bg-ca-surface2 border border-ca-border">
@@ -380,11 +385,10 @@ export default function InfraestructuraTIPage() {
                     className="max-w-2xl mx-auto"
                 >
                     <h2 className="font-display font-black text-4xl text-ca-text mb-4">
-                        ¿Listo para una infraestructura que no falla?
+                        {t('ctaTitle')}
                     </h2>
                     <p className="text-ca-muted mb-8">
-                        Contáctanos y un especialista TI analizará tu situación actual y te propondrá
-                        la solución más eficiente para tu empresa.
+                        {t('ctaBody')}
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link
