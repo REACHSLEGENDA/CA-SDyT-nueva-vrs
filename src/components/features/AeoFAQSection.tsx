@@ -1,11 +1,15 @@
-import { Section } from '@/components/ui/Section';
-import { aeoFaqs } from '@/lib/aeoFaqData';
+'use client';
 
-const copy = {
-  eyebrow: 'Respuestas directas',
-  title: 'Preguntas frecuentes sobre SEO y AEO',
-  subtitle: 'Informaci\u00f3n clara, verificable y sin promesas de posicionamiento garantizado.',
-  sources: 'Fuentes t\u00e9cnicas de referencia',
+import { useLocale } from 'next-intl';
+import { Section } from '@/components/ui/Section';
+import { getAeoFaqs } from '@/lib/aeoFaqData';
+
+const COPY: Record<string, { eyebrow: string; title: string; subtitle: string; sources: string }> = {
+  'es-MX': { eyebrow: 'Respuestas directas', title: 'Preguntas frecuentes sobre SEO y AEO', subtitle: 'Informacion clara, verificable y sin promesas de posicionamiento garantizado.', sources: 'Fuentes tecnicas de referencia' },
+  'en': { eyebrow: 'Straight answers', title: 'SEO and AEO frequently asked questions', subtitle: 'Clear, verifiable information with no guaranteed-ranking promises.', sources: 'Technical reference sources' },
+  'es-419': { eyebrow: 'Respuestas directas', title: 'Preguntas frecuentes sobre SEO y AEO', subtitle: 'Informacion clara, verificable y sin promesas de posicionamiento garantizado.', sources: 'Fuentes tecnicas de referencia' },
+  'es-ES': { eyebrow: 'Respuestas directas', title: 'Preguntas frecuentes sobre SEO y AEO', subtitle: 'Informacion clara, verificable y sin promesas de posicionamiento garantizado.', sources: 'Fuentes tecnicas de referencia' },
+  'pt-BR': { eyebrow: 'Respostas diretas', title: 'Perguntas frequentes sobre SEO e AEO', subtitle: 'Informacao clara, verificavel e sem promessas de posicionamento garantido.', sources: 'Fontes tecnicas de referencia' },
 };
 const sources = [
   { label: 'Google: optimizaci\u00f3n para b\u00fasqueda con IA', href: 'https://developers.google.com/search/docs/fundamentals/ai-optimization-guide' },
@@ -15,6 +19,10 @@ const sources = [
 
 
 export function AeoFAQSection() {
+  const locale = useLocale();
+  const aeoFaqs = getAeoFaqs(locale);
+  const copy = COPY[locale] ?? COPY['es-MX'];
+
   return (
     <Section id="preguntas-aeo" className="border-t border-ca-border">
       <div className="max-w-3xl mx-auto text-center mb-12">

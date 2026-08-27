@@ -62,5 +62,274 @@
         }
       ]
     }
+  },
+  "Nav": {
+    "links": {
+      "home": "Início",
+      "about": "Sobre nós",
+      "services": "Serviços",
+      "packages": "Pacotes Web",
+      "marketing": "Marketing",
+      "webApps": "Apps Web",
+      "mobileApps": "Apps Móveis",
+      "automation": "Automação",
+      "systems": "Sistemas Sob Medida",
+      "classes": "Aulas de Informática",
+      "portfolio": "Portfólio",
+      "contact": "Contato"
+    },
+    "cta": "Vamos conversar →",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "navigationHeading": "Navegação",
+    "contactHeading": "Fale com a gente hoje",
+    "contactSubtitle": "Prontos para levar seu negócio ao próximo nível.",
+    "quoteCta": "Solicitar Orçamento →"
+  },
+  "Footer": {
+    "tagline": "Tecnologia que impulsiona o seu negócio. Desenvolvimento de software e sistemas sob medida para empresas no Brasil, de forma totalmente remota.",
+    "servicesHeading": "Serviços",
+    "companyHeading": "Empresa",
+    "contactHeading": "Contato",
+    "services": {
+      "web": "Desenvolvimento Web",
+      "mobile": "Apps Móveis",
+      "systems": "Sistemas Sob Medida",
+      "automation": "Automação com IA",
+      "infra": "Infraestrutura de TI",
+      "seo": "SEO & AEO"
+    },
+    "company": {
+      "about": "Sobre nós",
+      "portfolio": "Portfólio",
+      "packages": "Pacotes",
+      "classes": "Aulas de Informática",
+      "contact": "Contato"
+    },
+    "rights": "Todos os direitos reservados.",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "madeIn": "Feito no México 🇲🇽",
+    "cta": "Vamos conversar →"
+  },
+  "Cookies": {
+    "title": "Usamos cookies 🍪",
+    "body": "Utilizamos cookies essenciais e analíticos para melhorar sua experiência. Você pode aceitar todos ou apenas os necessários.",
+    "privacyLink": "Ver Política de Privacidade",
+    "essentialOnly": "Apenas essenciais",
+    "acceptAll": "Aceitar todos",
+    "close": "Fechar",
+    "ariaLabel": "Aviso de cookies"
+  },
+  "ContactForm": {
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Telefone (opcional)",
+    "service": "Serviço de interesse",
+    "message": "Mensagem",
+    "namePlaceholder": "Seu nome completo",
+    "emailPlaceholder": "voce@empresa.com",
+    "phonePlaceholder": "+55 11 ...",
+    "servicePlaceholder": "Selecione um serviço...",
+    "messagePlaceholder": "Conte mais sobre seu projeto ou necessidade...",
+    "submit": "Enviar mensagem →",
+    "sending": "Enviando...",
+    "processingTitle": "Processando solicitação...",
+    "processingBody": "Estabelecendo conexão segura e enviando seus dados para nossa equipe.",
+    "successTitle": "Mensagem enviada!",
+    "successBody": "Responderemos em menos de 2 horas por e-mail ou WhatsApp.",
+    "sendAnother": "Enviar outra mensagem",
+    "toastSuccess": "Mensagem enviada! Entraremos em contato em menos de 2 horas.",
+    "toastError": "Ocorreu um erro. Tente novamente ou fale conosco pelo WhatsApp.",
+    "groups": {
+      "dev": "Desenvolvimento Digital",
+      "marketing": "Marketing Digital",
+      "infra": "Infraestrutura de TI",
+      "packages": "Pacotes",
+      "other": "Outro"
+    },
+    "options": {
+      "Desarrollo Web": "Desenvolvimento Web",
+      "Aplicación Móvil": "Aplicativo Móvel",
+      "Sistema Empresarial a Medida": "Sistema Empresarial Sob Medida",
+      "Automatización e Integraciones IA": "Automação e Integrações com IA",
+      "UI/UX Design": "UI/UX Design",
+      "Gestión de Redes Sociales": "Gestão de Redes Sociais",
+      "SEO Técnico y AEO": "SEO Técnico e AEO",
+      "Google Business & Maps": "Google Business & Maps",
+      "Bot de WhatsApp con IA": "Bot de WhatsApp com IA",
+      "Diseño de Marca": "Design de Marca",
+      "Redes y Conectividad Profesional": "Redes e Conectividade",
+      "Ciberseguridad y Protección de Datos": "Cibersegurança e Proteção de Dados",
+      "Videovigilancia CCTV": "Videomonitoramento CCTV",
+      "Servidores y Nube Privada (NAS/Windows Server)": "Servidores e Nuvem Privada (NAS/Windows Server)",
+      "Soporte Técnico Integral": "Suporte Técnico Completo",
+      "Despegue Digital": "Decolagem Digital",
+      "Tráfico y Conversión": "Tráfego e Conversão",
+      "Ecosistema Premium IA": "Ecossistema Premium com IA",
+      "Plan TI Empresarial": "Plano de TI Empresarial",
+      "Consultoría": "Consultoria",
+      "Otro": "Outro"
+    },
+    "consent": "Concordo em compartilhar meus dados para que a CA Soluciones entre em contato sobre este serviço."
+  },
+  "Chatbot": {
+    "ui": {
+      "status": "On-line",
+      "restart": "Reiniciar",
+      "open": "Abrir assistente",
+      "close": "Fechar assistente",
+      "backToStart": "← Voltar ao início",
+      "priceNote": "💡 Todos os preços são sob orçamento personalizado",
+      "whatsapp": "WhatsApp agora",
+      "form": "Enviar formulário",
+      "servicePage": "Ver página do serviço",
+      "backGreeting": "Oi de novo! 🌸 Voltamos ao menu principal. Qual outra área quer explorar ou orçar hoje? Me conta!"
+    },
+    "steps": {
+      "start": {
+        "text": "Oi! Eu sou a Cassie, sua assistente digital na CA Soluciones y Tecnología. 🤖✨ Que alegria falar com você! Estou pronta para ajudar a montar o ecossistema tecnológico perfeito para o seu negócio. Por onde começamos? 💖",
+        "options": [
+          "📈 Fazer meu negócio ou vendas crescerem",
+          "⚙️ Resolver uma necessidade técnica ou de software",
+          "📚 Capacitação / aulas de informática",
+          "🏢 Conhecer mais sobre a CA Soluciones"
+        ]
+      },
+      "grow_options": {
+        "text": "Ótima escolha! ✨ Se você quer impulsionar as vendas e ter uma presença incrível na internet, temos as ferramentas certas. O que gostaria de potencializar hoje? 🚀",
+        "options": [
+          "🌐 Criar um site ou aplicativo móvel",
+          "🤖 Automação de processos com IA",
+          "📈 SEO e motores de resposta com IA (AEO)",
+          "📦 Ver pacotes de desenvolvimento web",
+          "← Voltar ao início"
+        ]
+      },
+      "tech_options": {
+        "text": "Entendido! ⚙️ Na parte técnica e de sistemas, cuidamos para que seu negócio funcione rápido, seguro e sem dor de cabeça. O que sua empresa precisa hoje? Conte comigo! 🌸",
+        "options": [
+          "⚙️ Um sistema sob medida (CRM, PDV, ERP)",
+          "🔒 Segurança de rede, servidores ou CFTV",
+          "💾 Migração de dados (Excel para nuvem)",
+          "← Voltar ao início"
+        ]
+      },
+      "classes_intro": {
+        "text": "Que legal! 📚 Adoramos ensinar. Oferecemos aulas personalizadas e bem dinâmicas para que você ou sua equipe dominem as melhores ferramentas. Em qual área querem se tornar especialistas? 💡",
+        "options": [
+          "💻 Pacote Office e informática básica",
+          "⚡ Desenvolvimento web e programação",
+          "🎨 Marketing digital e redes sociais",
+          "← Voltar ao início"
+        ]
+      },
+      "about_intro": {
+        "text": "Prontinho! 🏢 Somos uma agência digital com base no México e atendemos clientes nas Américas e na Europa. Somos especializados em sites bonitos, apps rápidos, automações com IA e suporte de TI seguro. O que quer explorar? ✨",
+        "options": [
+          "📂 Ver nosso portfólio de projetos",
+          "👥 Conhecer a gente e a equipe",
+          "← Voltar ao início"
+        ]
+      },
+      "web": {
+        "text": "Oba! 🌐 Desenvolvemos projetos rápidos e estáveis com Next.js, React e Flutter para mobile. Seus usuários vão amar! Que tipo de projeto você tem em mente? ✨",
+        "options": [
+          "Landing page ou site institucional",
+          "Loja virtual (e-commerce)",
+          "Aplicação web sob medida",
+          "Aplicativo móvel (Android e iOS)",
+          "← Voltar"
+        ]
+      },
+      "system": {
+        "text": "Adorei! ⚙️ Criamos sistemas do zero com Supabase e Node.js para você esquecer os processos lentos. Qual parte do seu negócio quer digitalizar? 🚀",
+        "options": [
+          "Funil de vendas e leads (CRM)",
+          "Ponto de venda e controle de estoque (PDV)",
+          "Gestão de recursos / folha de pagamento (ERP)",
+          "← Voltar"
+        ]
+      },
+      "system_migration": {
+        "text": "Adeus dor de cabeça! 💾 Levamos seus arquivos antigos ou planilhas cheias de dados para um banco de dados em nuvem seguro e organizado. Quanta informação precisa migrar? 🌟",
+        "options": [
+          "Pouca (planilhas de Excel ou Access)",
+          "Muita (sistemas legados ou ERP local)",
+          "← Voltar"
+        ]
+      },
+      "infra": {
+        "text": "Segurança em primeiro lugar! 🔒 Instalamos firewalls Fortinet de última geração, nuvens privadas Synology NAS e servidores blindados. Atenção: o trabalho presencial de infraestrutura está disponível no México, sujeito a cobertura. O que seu escritório precisa? ⚡",
+        "options": [
+          "Cibersegurança e proteção de rede (firewall)",
+          "Servidores locais ou nuvem privada (NAS)",
+          "CFTV / câmeras de videomonitoramento",
+          "← Voltar"
+        ]
+      },
+      "marketing": {
+        "text": "Que empolgante! 📈 Hoje não basta aparecer no Google: também colocamos você em destaque no ChatGPT, Gemini e Perplexity com SEO da era da IA. Qual área quer conquistar hoje? 💖",
+        "options": [
+          "Aparecer nas buscas do Google (SEO)",
+          "Respostas de IA (AEO: ChatGPT, Gemini)",
+          "Perfil no Google Maps e negócio local",
+          "← Voltar"
+        ]
+      },
+      "automation": {
+        "text": "Uhuu! 🤖 Automatizar seus fluxos (com n8n ou Make) reduz bastante o trabalho repetitivo. Parece mágica! Qual é a sua prioridade para ganhar tempo? ✨",
+        "options": [
+          "Bot de WhatsApp inteligente (GPT-4)",
+          "Conectar sistemas (CRM, planilhas, etc.)",
+          "Automatizar tarefas e fluxos repetitivos",
+          "← Voltar"
+        ]
+      },
+      "packages": {
+        "text": "Bem prático! 📦 Criamos pacotes prontos para você começar sem complicação. Qual deles quer conhecer? 🌟",
+        "options": [
+          "🚀 Plano Decolagem Digital (site institucional)",
+          "📊 Plano Tráfego e Conversão (SEO local e campanha)",
+          "✨ Ecossistema Premium (web + bot com IA + AEO)",
+          "← Voltar"
+        ]
+      },
+      "about_portfolio": {
+        "text": "Muito bom! 📂 Já criamos lojas virtuais incríveis, sites para marcas internacionais e automações bem bacanas. Você pode ver tudo no nosso portfólio. Vamos montar um orçamento para você? 💖",
+        "options": [
+          "Sim, quero orçamento!",
+          "← Voltar"
+        ]
+      },
+      "about_us_info": {
+        "text": "Amamos o que fazemos! 🥰 Na CA Soluciones gostamos de código limpo, escalável e robusto, sempre com honestidade e bom suporte técnico. Vamos conversar sobre sua ideia? 🚀",
+        "options": [
+          "Sim, vamos falar do projeto!",
+          "← Voltar"
+        ]
+      },
+      "final_web": {
+        "text": "Ótimo! ✨ Cada projeto é único, então orçamos sob medida para dar um preço justo, transparente e sem surpresas. Fale comigo, sem compromisso! 👇"
+      },
+      "final_system": {
+        "text": "Excelente! ⚙️ Os sistemas são orçados por módulo e pelo que você precisa gerenciar. Vamos marcar uma conversa e montamos uma proposta técnica gratuita e clara. 👇"
+      },
+      "final_infra": {
+        "text": "Ótimo! 🔒 Projetos de rede e infraestrutura dependem dos seus escritórios e equipamentos, e estão disponíveis no México sujeito a cobertura. Vamos conversar e montamos a proposta ideal. 👇"
+      },
+      "final_mkt": {
+        "text": "Adorei! 📈 Nossas estratégias de SEO se adaptam às suas metas e à concorrência. Vamos marcar uma consultoria gratuita e eu digo exatamente o que vai fazer você brilhar. 👇"
+      },
+      "final_auto": {
+        "text": "Oba! 🤖 Projetos de IA e automação dependem das ferramentas que você já usa. Conte seu caso e eu proponho a solução mais eficiente. 👇"
+      },
+      "final_classes": {
+        "text": "Ótimo! 💻 Damos aulas para todos os níveis, do básico à programação e ao marketing. Os preços variam conforme as horas e o plano. Pergunte tudo por aqui! 👇"
+      },
+      "final_pkg": {
+        "text": "Perfeito! 📦 Nossos pacotes têm uma base ótima e sempre ajustamos para você. Me pergunte qual encaixa melhor e eu te oriento! 👇"
+      }
+    }
   }
 }

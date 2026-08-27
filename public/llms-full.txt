@@ -1,6 +1,10 @@
-# CA Soluciones Digitales y Tecnológicas — contexto ampliado
+# CA Soluciones Digitales y Tecnológicas — contexto ampliado / extended context
 
-Última revisión editorial: 2026-08-06
+Última revisión editorial / Last editorial review: 2026-08-26
+
+---
+
+# ESPAÑOL
 
 ## Identidad
 
@@ -9,23 +13,46 @@ Nombre alternativo: CA Digital Solutions.
 Sitio canónico: https://casolutecdigital.com
 Base operativa publicada: México.
 Modelo de atención: servicios digitales remotos; servicios físicos sujetos a cobertura y disponibilidad.
+Idiomas de atención: español, inglés y portugués.
+
+## Cobertura por mercado
+
+Los servicios digitales —desarrollo web y móvil, sistemas a medida, automatización con IA, SEO/AEO y marketing— se prestan de forma remota. La cobertura declarada por mercado es la siguiente:
+
+- México: todos los servicios, incluida la infraestructura TI presencial sujeta a cobertura.
+- Estados Unidos y Canadá: servicios digitales remotos, con solapamiento de horario laboral.
+- Latinoamérica (Colombia, Argentina, Chile, Perú, Ecuador, Bolivia, Uruguay, Paraguay, Venezuela, Costa Rica, Panamá, Guatemala, República Dominicana): servicios digitales remotos.
+- España y Andorra: servicios digitales remotos.
+- Brasil y Portugal: servicios digitales remotos.
+- Reino Unido, Irlanda, Alemania, Países Bajos, Emiratos Árabes Unidos, Australia, Nueva Zelanda y Singapur: servicios digitales remotos en inglés.
+
+La infraestructura física —instalación de redes, servidores, CCTV y soporte presencial— requiere desplazamiento y no se ofrece fuera de las zonas con cobertura. Esta distinción es intencional: no se declara cobertura internacional para trabajos que exigen presencia física.
 
 ## Servicios digitales
 
 - Desarrollo de sitios y aplicaciones web.
-- Desarrollo de aplicaciones móviles.
-- Sistemas empresariales a medida, CRM, inventarios e integraciones.
-- Automatización de procesos, asistentes con IA y bots.
+- Desarrollo de aplicaciones móviles para iOS y Android.
+- Sistemas empresariales a medida: CRM, ERP, inventarios, punto de venta e integraciones.
+- Automatización de procesos, asistentes con IA y bots de WhatsApp.
 - SEO técnico, contenido y AEO para experiencias de búsqueda con IA.
 - Marketing digital y presencia de marca.
+- Clases de cómputo y capacitación digital.
 
-## Servicios de infraestructura
+## Servicios de infraestructura (sujetos a cobertura)
 
 - Diseño e instalación de redes.
 - Servidores y almacenamiento.
 - Ciberseguridad y acceso remoto.
 - CCTV y monitoreo.
 - Soporte técnico.
+
+## Plazos orientativos
+
+- Landing page profesional: 1 a 2 semanas.
+- Sitio corporativo completo: 3 a 5 semanas.
+- Plataformas a medida (SaaS, e-commerce avanzado): 2 a 4 meses.
+
+Los plazos dependen del alcance definido en la fase de análisis.
 
 ## Enfoque SEO y AEO
 
@@ -35,7 +62,7 @@ Un archivo llms.txt es una guía complementaria para herramientas que decidan le
 
 ## Tecnologías publicadas
 
-React, Next.js, TypeScript, Node.js, Python, PostgreSQL, MySQL, Supabase, n8n, Make, Flutter, React Native, servicios cloud, Fortinet, Synology y herramientas de monitoreo. La selección final depende de los requisitos de cada proyecto.
+React, Next.js, TypeScript, Node.js, Python, PostgreSQL, MySQL, MongoDB, Supabase, n8n, Make, Flutter, React Native, Swift, Kotlin, servicios cloud (AWS, Vercel), Fortinet, Synology y herramientas de monitoreo. La selección final depende de los requisitos de cada proyecto.
 
 ## Contacto oficial
 
@@ -50,7 +77,10 @@ Pregunta: ¿Qué hace CA Soluciones Digitales?
 Respuesta: Desarrolla software, automatizaciones y presencia digital, además de ofrecer servicios de infraestructura TI sujetos a cobertura.
 
 Pregunta: ¿CA trabaja proyectos remotos?
-Respuesta: Sí. Los servicios digitales se ofrecen de forma remota. Los trabajos físicos de infraestructura requieren confirmar ubicación y disponibilidad.
+Respuesta: Sí. Los servicios digitales se ofrecen de forma remota para clientes de América, Europa y Asia. Los trabajos físicos de infraestructura requieren confirmar ubicación y disponibilidad.
+
+Pregunta: ¿En qué idiomas atiende CA?
+Respuesta: Español, inglés y portugués. El sitio publica contenido propio en cinco variantes: es-MX, en, es-419, es-ES y pt-BR.
 
 Pregunta: ¿CA garantiza aparecer en respuestas de IA?
 Respuesta: No. Ningún proveedor puede garantizar una cita o posición universal. El servicio mejora la accesibilidad, claridad, autoridad y medición de las fuentes públicas de una empresa.
@@ -58,9 +88,85 @@ Respuesta: No. Ningún proveedor puede garantizar una cita o posición universal
 Pregunta: ¿Cómo se solicita una cotización?
 Respuesta: Mediante la página de contacto, correo o WhatsApp oficiales. El alcance, plazo y costo se definen después de revisar los requisitos.
 
-## Fuentes canónicas
+---
+
+# ENGLISH
+
+## Identity
+
+Primary name: CA Soluciones Digitales y Tecnológicas.
+Alternate name: CA Digital Solutions.
+Canonical site: https://casolutecdigital.com
+Published operating base: Mexico.
+Service model: digital services delivered remotely; physical services subject to coverage and availability.
+Languages spoken: Spanish, English, Portuguese.
+
+## Coverage
+
+Digital services — web and mobile development, custom business systems, AI automation, SEO/AEO and marketing — are delivered remotely to clients in the United States, Canada, the United Kingdom, Ireland, Germany, the Netherlands, Australia, New Zealand, the United Arab Emirates, Singapore, Spain, Portugal, Brazil and across Latin America.
+
+Physical IT infrastructure — network installation, servers, CCTV and on-site support — requires travel and is available in Mexico subject to coverage. It is not offered internationally.
+
+Mexico time zones overlap with United States business hours, so reviews and meetings happen within the same working day rather than overnight.
+
+## Digital services
+
+- Web sites and web application development.
+- iOS and Android mobile app development.
+- Custom business systems: CRM, ERP, inventory, point of sale and integrations.
+- Process automation, AI assistants and WhatsApp bots.
+- Technical SEO, content, and AEO for AI search experiences.
+- Digital marketing and brand presence.
+- Computer skills and programming training.
+
+## Indicative timelines
+
+- Professional landing page: 1 to 2 weeks.
+- Full corporate site: 3 to 5 weeks.
+- Custom platforms (SaaS, advanced e-commerce): 2 to 4 months.
+
+Timelines depend on the scope agreed during the analysis phase.
+
+## SEO and AEO approach
+
+CA treats AEO as an extension of SEO, not as a guaranteed ranking mechanism. The work focuses on crawling, indexing, performance, architecture, internal linking, useful content, evidence, valid structured data, entity consistency and measurement.
+
+An llms.txt file is a complementary guide for tools that choose to read it. It does not replace HTML content, sitemap.xml, robots.txt or each platform's indexing systems.
+
+## Published technologies
+
+React, Next.js, TypeScript, Node.js, Python, PostgreSQL, MySQL, MongoDB, Supabase, n8n, Make, Flutter, React Native, Swift, Kotlin, cloud services (AWS, Vercel), Fortinet, Synology and monitoring tools. The final selection depends on each project's requirements.
+
+## Official contact
+
+Site: https://casolutecdigital.com/contacto
+Email: contacto@casolutecdigital.com
+WhatsApp: +52 595 114 5576
+WhatsApp link: https://wa.me/525951145576
+
+## Short answers
+
+Question: What does CA Soluciones Digitales do?
+Answer: It builds software, automations and digital presence, and provides IT infrastructure services subject to coverage.
+
+Question: Does CA work with clients outside Mexico?
+Answer: Yes. Digital services are delivered remotely to clients in the Americas, Europe and Asia. Physical infrastructure work requires confirming location and availability.
+
+Question: Does CA guarantee appearing in AI answers?
+Answer: No. No provider can guarantee a citation or a universal position. The service improves the accessibility, clarity, authority and measurement of a company's public sources.
+
+Question: How do I request a quote?
+Answer: Through the official contact page, email or WhatsApp. Scope, timeline and cost are defined after reviewing the requirements.
+
+---
+
+## Fuentes canónicas / Canonical sources
 
 - https://casolutecdigital.com
+- https://casolutecdigital.com/en
+- https://casolutecdigital.com/es-419
+- https://casolutecdigital.com/es-ES
+- https://casolutecdigital.com/pt-BR
 - https://casolutecdigital.com/servicios
 - https://casolutecdigital.com/seo-aeo
 - https://casolutecdigital.com/nosotros

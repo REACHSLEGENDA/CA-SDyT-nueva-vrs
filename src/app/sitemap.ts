@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
+import { CONTENT_LAST_REVIEWED } from '@/lib/seoUtils';
+import { getLanguageAlternates } from '@/lib/seoUtils';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://casolutecdigital.com';
@@ -69,10 +71,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency = 'monthly';
       }
 
+      // `alternates.languages` publica el hreflang tambien en el sitemap, no solo en
+      // el <head>. Es la forma que Google recomienda para sitios multiidioma y ayuda a
+      // que descubra las 5 versiones de cada pagina aunque solo rastree una.
+      // Se excluye x-default: Next lo emitiria como un hreflang mas, y en el sitemap
+      // duplicaria la URL del locale por defecto.
+      const alternates = getLanguageAlternates(route);
+      const languages = Object.fromEntries(
+        Object.entries(alternates).filter(([hreflang]) => hreflang !== 'x-default')
+      );
+
       sitemapEntries.push({
         url,
+        lastModified: new Date(CONTENT_LAST_REVIEWED),
         changeFrequency,
-        priority
+        priority,
+        alternates: { languages }
       });
     });
   });

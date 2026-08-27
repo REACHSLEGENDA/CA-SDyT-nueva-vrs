@@ -74,21 +74,21 @@ export default function ClassesPage() {
 
                 <div className="grid lg:grid-cols-3 gap-8">
                     <ClassTrack
-                        icon={<Image src="/assets/office.png" alt="Office" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/office.webp" alt="Office" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Productividad & Office"
                         desc="Domina el entorno Windows y la suite de Office de forma profesional. Optimiza tu flujo de trabajo administrativo y personal."
                         topics={["Excel Avanzado (Fórmulas/Tablas)", "Word & PowerPoint Profesional", "Gestión de Correo & Cloud", "Seguridad Digital Básica"]}
                         color="blue"
                     />
                     <ClassTrack
-                        icon={<Image src="/assets/desarrollo.png" alt="Desarrollo" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/desarrollo.webp" alt="Desarrollo" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Desarrollo & Programación"
                         desc="Aprende a construir el internet. Desde lógica de programación hasta frameworks modernos utilizados por la élite tecnológica."
                         topics={["HTML5, CSS3 & JavaScript", "React & Next.js Frameworks", "Bases de Datos & SQL", "Despliegue de Aplicaciones"]}
                         color="purple"
                     />
                     <ClassTrack
-                        icon={<Image src="/assets/marketing.png" alt="Marketing" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/marketing.webp" alt="Marketing" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Marketing & Gestión"
                         desc="Habilidades digitales enfocadas en negocio. Aprende a gestionar tus canales y herramientas de venta de forma autónoma."
                         topics={["Gestión de Redes Sociales", "Principios de Diseño Gráfico", "WhatsApp Business Pro", "Analytics & Reportes"]}

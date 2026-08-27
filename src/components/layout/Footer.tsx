@@ -1,25 +1,30 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { Facebook, Instagram, Mail, MessageCircle } from 'lucide-react';
 
-const serviceLinks: { href: any; label: string }[] = [
-    { href: '/apps-web', label: 'Desarrollo Web' },
-    { href: '/apps-moviles', label: 'Apps Móviles' },
-    { href: '/sistemas', label: 'Sistemas a Medida' },
-    { href: '/automatizacion', label: 'Automatización IA' },
-    { href: '/infraestructura-ti', label: 'Infraestructura TI' },
-    { href: '/seo-aeo', label: 'SEO & AEO' },
+const serviceLinks: { href: any; key: string }[] = [
+    { href: '/apps-web', key: 'web' },
+    { href: '/apps-moviles', key: 'mobile' },
+    { href: '/sistemas', key: 'systems' },
+    { href: '/automatizacion', key: 'automation' },
+    { href: '/infraestructura-ti', key: 'infra' },
+    { href: '/seo-aeo', key: 'seo' },
 ];
 
-const companyLinks: { href: any; label: string }[] = [
-    { href: '/nosotros', label: 'Nosotros' },
-    { href: '/portafolio', label: 'Portafolio' },
-    { href: '/paquetes-web', label: 'Paquetes' },
-    { href: '/clases', label: 'Clases de Cómputo' },
-    { href: '/contacto', label: 'Contacto' },
+const companyLinks: { href: any; key: string }[] = [
+    { href: '/nosotros', key: 'about' },
+    { href: '/portafolio', key: 'portfolio' },
+    { href: '/paquetes-web', key: 'packages' },
+    { href: '/clases', key: 'classes' },
+    { href: '/contacto', key: 'contact' },
 ];
 
 export function Footer() {
+    const t = useTranslations('Footer');
+
     return (
         <footer className="relative bg-ca-surface border-t border-ca-border pt-16 pb-8 overflow-hidden">
             {/* Separador gradiente superior */}
@@ -44,8 +49,7 @@ export function Footer() {
                             />
                         </div>
                         <p className="text-ca-muted text-sm leading-relaxed mb-6 max-w-xs">
-                            Tecnología que impulsa tu negocio. Desarrollo digital, infraestructura TI y
-                            ciberseguridad para empresas que quieren crecer.
+                            {t('tagline')}
                         </p>
                         <div className="flex gap-3">
                             <SocialBtn
@@ -72,16 +76,16 @@ export function Footer() {
                     {/* Servicios */}
                     <div>
                         <h4 className="font-mono text-xs text-ca-cyan uppercase tracking-widest mb-5">
-                            Servicios
+                            {t('servicesHeading')}
                         </h4>
                         <ul className="space-y-2.5">
                             {serviceLinks.map((link) => (
-                                <li key={link.label}>
+                                <li key={link.key}>
                                     <Link
                                         href={link.href}
                                         className="text-ca-muted text-sm hover:text-ca-text transition-colors"
                                     >
-                                        {link.label}
+                                        {t(`services.${link.key}`)}
                                     </Link>
                                 </li>
                             ))}
@@ -91,16 +95,16 @@ export function Footer() {
                     {/* Empresa */}
                     <div>
                         <h4 className="font-mono text-xs text-ca-cyan uppercase tracking-widest mb-5">
-                            Empresa
+                            {t('companyHeading')}
                         </h4>
                         <ul className="space-y-2.5">
                             {companyLinks.map((link) => (
-                                <li key={link.label}>
+                                <li key={link.key}>
                                     <Link
                                         href={link.href}
                                         className="text-ca-muted text-sm hover:text-ca-text transition-colors"
                                     >
-                                        {link.label}
+                                        {t(`company.${link.key}`)}
                                     </Link>
                                 </li>
                             ))}
@@ -110,7 +114,7 @@ export function Footer() {
                     {/* Contacto */}
                     <div>
                         <h4 className="font-mono text-xs text-ca-cyan uppercase tracking-widest mb-5">
-                            Contacto
+                            {t('contactHeading')}
                         </h4>
                         <ul className="space-y-3">
                             <li>
@@ -144,7 +148,7 @@ export function Footer() {
                             rel="noopener noreferrer"
                             className="mt-6 inline-flex items-center gap-2 bg-ca-gradient text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-ca-cyan/15"
                         >
-                            Hablemos →
+                            {t('cta')}
                         </a>
                     </div>
                 </div>
@@ -152,17 +156,16 @@ export function Footer() {
                 {/* Bottom bar */}
                 <div className="border-t border-ca-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-ca-muted">
                     <p>
-                        © {new Date().getFullYear()} CA | Soluciones Digitales y Tecnológicas.
-                        Todos los derechos reservados.
+                        © {new Date().getFullYear()} CA | Soluciones Digitales y Tecnológicas. {t('rights')}
                     </p>
                     <div className="flex items-center gap-6">
                         <Link href="/legal/privacidad" className="hover:text-ca-text transition-colors">
-                            Privacidad
+                            {t('privacy')}
                         </Link>
                         <Link href="/legal/terminos" className="hover:text-ca-text transition-colors">
-                            Términos
+                            {t('terms')}
                         </Link>
-                        <span className="text-ca-muted/60">Hecho en México 🇲🇽</span>
+                        <span className="text-ca-muted/60">{t('madeIn')}</span>
                     </div>
                 </div>
             </div>

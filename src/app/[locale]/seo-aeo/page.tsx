@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
+import { SCHEMA_LANGUAGE, isAppLocale } from '@/lib/locales';
 import SeoAeoPageClient from './SeoAeoClient';
-import { getPageMetadata, getServiceSchema, getBreadcrumbSchema } from '@/lib/seoUtils';
-import { aeoFaqs } from '@/lib/aeoFaqData';
+import { getPageMetadata, getServiceSchema, getBreadcrumbSchema, getCanonicalUrl } from '@/lib/seoUtils';
+import { getAeoFaqs } from '@/lib/aeoFaqData';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -38,9 +39,12 @@ export default async function Page({ params }: Props) {
     descriptions[locale as keyof typeof descriptions] || descriptions['es-MX']
   );
   const breadcrumb = getBreadcrumbSchema('/seo-aeo', locale, 'SEO & AEO');
+  const aeoFaqs = getAeoFaqs(locale);
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${getCanonicalUrl('/seo-aeo', locale)}#faq`,
+    'inLanguage': isAppLocale(locale) ? SCHEMA_LANGUAGE[locale] : locale,
     'mainEntity': aeoFaqs.map((faq) => ({
       '@type': 'Question',
       'name': faq.question,

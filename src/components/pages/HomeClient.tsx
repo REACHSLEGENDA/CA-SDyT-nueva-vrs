@@ -291,12 +291,12 @@ export function HomeClient() {
                 />
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     {[
-                        { imgSrc: '/assets/web-app.png', label: 'Web & Apps' },
-                        { imgSrc: '/assets/ia.png', label: 'IA & Bots' },
-                        { imgSrc: '/assets/redes.png', label: 'Redes TI' },
-                        { imgSrc: '/assets/ciber.png', label: 'Ciberseguridad' },
-                        { imgSrc: '/assets/cctv.png', label: 'CCTV' },
-                        { imgSrc: '/assets/it.png', label: 'Soporte TI' },
+                        { imgSrc: '/assets/web-app.webp', label: 'Web & Apps' },
+                        { imgSrc: '/assets/ia.webp', label: 'IA & Bots' },
+                        { imgSrc: '/assets/redes.webp', label: 'Redes TI' },
+                        { imgSrc: '/assets/ciber.webp', label: 'Ciberseguridad' },
+                        { imgSrc: '/assets/cctv.webp', label: 'CCTV' },
+                        { imgSrc: '/assets/it.webp', label: 'Soporte TI' },
                     ].map((item, i) => (
                         <motion.div
                             key={item.label}

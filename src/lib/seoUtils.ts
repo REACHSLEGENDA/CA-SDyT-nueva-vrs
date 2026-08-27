@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
+import { AppLocale, DEFAULT_LOCALE, SCHEMA_LANGUAGE, isAppLocale } from './locales';
 
 export const SITE_URL = 'https://casolutecdigital.com';
 export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/assets/home.png`;
@@ -215,34 +216,138 @@ export function getPageMetadata(
   };
 }
 
+
+/**
+ * Fecha de última revisión editorial del contenido de servicios.
+ * Alimenta `dateModified`, una señal de frescura que los motores de respuesta
+ * ponderan al decidir qué fuente citar. Actualízala cuando cambien los servicios.
+ */
+export const CONTENT_LAST_REVIEWED = '2026-08-26';
+
+/** Nombre de cada servicio en el idioma de la página. */
+const SERVICE_NAMES: Record<string, Record<AppLocale, string>> = {
+  '/servicios': {
+    'es-MX': 'Desarrollo de Software y Servicios TI',
+    'en': 'Software Development and IT Services',
+    'es-419': 'Desarrollo de Software y Servicios TI',
+    'es-ES': 'Desarrollo de Software y Servicios TI',
+    'pt-BR': 'Desenvolvimento de Software e Serviços de TI',
+  },
+  '/apps-web': {
+    'es-MX': 'Desarrollo Web Premium',
+    'en': 'Custom Web Application Development',
+    'es-419': 'Desarrollo Web a Medida',
+    'es-ES': 'Desarrollo Web a Medida',
+    'pt-BR': 'Desenvolvimento Web Sob Medida',
+  },
+  '/apps-moviles': {
+    'es-MX': 'Desarrollo de Aplicaciones Móviles',
+    'en': 'Mobile App Development for iOS and Android',
+    'es-419': 'Desarrollo de Aplicaciones Móviles',
+    'es-ES': 'Desarrollo de Aplicaciones Móviles',
+    'pt-BR': 'Desenvolvimento de Aplicativos Móveis',
+  },
+  '/sistemas': {
+    'es-MX': 'Desarrollo de Sistemas a Medida (CRM & ERP)',
+    'en': 'Custom CRM and ERP Development',
+    'es-419': 'Desarrollo de Sistemas a Medida (CRM y ERP)',
+    'es-ES': 'Desarrollo de Sistemas a Medida (CRM y ERP)',
+    'pt-BR': 'Desenvolvimento de Sistemas Sob Medida (CRM e ERP)',
+  },
+  '/automatizacion': {
+    'es-MX': 'Automatización de Procesos e Integraciones IA',
+    'en': 'Business Process Automation and AI Integration',
+    'es-419': 'Automatización de Procesos e Integraciones con IA',
+    'es-ES': 'Automatización de Procesos e Integraciones con IA',
+    'pt-BR': 'Automação de Processos e Integrações com IA',
+  },
+  '/seo-aeo': {
+    'es-MX': 'Optimización de Motores de Búsqueda y de Respuesta (SEO & AEO)',
+    'en': 'Search and Answer Engine Optimization (SEO & AEO)',
+    'es-419': 'Optimización de Motores de Búsqueda y de Respuesta (SEO y AEO)',
+    'es-ES': 'Optimización de Motores de Búsqueda y de Respuesta (SEO y AEO)',
+    'pt-BR': 'Otimização para Motores de Busca e de Resposta (SEO e AEO)',
+  },
+  '/marketing': {
+    'es-MX': 'Marketing Digital y Gestión de Redes Sociales',
+    'en': 'Digital Marketing and Social Media Management',
+    'es-419': 'Marketing Digital y Gestión de Redes Sociales',
+    'es-ES': 'Marketing Digital y Gestión de Redes Sociales',
+    'pt-BR': 'Marketing Digital e Gestão de Redes Sociais',
+  },
+  '/paquetes-web': {
+    'es-MX': 'Paquetes de Diseño y Desarrollo Web',
+    'en': 'Web Design and Development Packages',
+    'es-419': 'Paquetes de Diseño y Desarrollo Web',
+    'es-ES': 'Paquetes de Diseño y Desarrollo Web',
+    'pt-BR': 'Pacotes de Design e Desenvolvimento Web',
+  },
+  '/infraestructura-ti': {
+    'es-MX': 'Servicios de Infraestructura de TI, Redes y Ciberseguridad',
+    'en': 'IT Infrastructure, Networking and Cybersecurity Services',
+    'es-419': 'Servicios de Infraestructura TI, Redes y Ciberseguridad',
+    'es-ES': 'Servicios de Infraestructura TI, Redes y Ciberseguridad',
+    'pt-BR': 'Serviços de Infraestrutura de TI, Redes e Cibersegurança',
+  },
+  '/clases': {
+    'es-MX': 'Clases de Cómputo y Capacitación Digital',
+    'en': 'Computer Skills and Programming Training',
+    'es-419': 'Clases de Informática y Capacitación Digital',
+    'es-ES': 'Clases de Informática y Formación Digital',
+    'pt-BR': 'Aulas de Informática e Capacitação Digital',
+  },
+};
+
+/**
+ * Cobertura por locale para los servicios que se prestan de forma remota.
+ * Es el conjunto de mercados donde la empresa se ofrece activamente, no una
+ * promesa de presencia física.
+ */
+const REMOTE_COVERAGE: Record<AppLocale, string[]> = {
+  'es-MX': ['Mexico', 'United States'],
+  'en': ['United States', 'Canada', 'United Kingdom', 'Ireland', 'Australia', 'New Zealand', 'Germany', 'Netherlands', 'United Arab Emirates', 'Singapore'],
+  'es-419': ['Colombia', 'Argentina', 'Chile', 'Peru', 'Ecuador', 'Bolivia', 'Uruguay', 'Paraguay', 'Venezuela', 'Costa Rica', 'Panama', 'Guatemala', 'Dominican Republic'],
+  'es-ES': ['Spain', 'Andorra'],
+  'pt-BR': ['Brazil', 'Portugal'],
+};
+
+/**
+ * Rutas cuyo servicio requiere presencia física y por tanto NO puede declararse
+ * con cobertura internacional: redes, servidores y CCTV dependen de desplazamiento.
+ * Declarar lo contrario sería una afirmación falsa en los datos estructurados.
+ */
+const ONSITE_ONLY_ROUTES = new Set(['/infraestructura-ti']);
+
 export function getServiceSchema(
   serviceType: string,
   locale: string,
   route = '/servicios',
   description?: string
 ) {
-  const countries = {
-    'es-MX': ['Mexico'],
-    'en': ['United States', 'Canada', 'United Kingdom', 'Germany', 'France', 'India', 'United Arab Emirates'],
-    'es-419': ['Colombia', 'Argentina', 'Chile', 'Peru', 'Venezuela', 'Ecuador', 'Bolivia', 'Uruguay', 'Paraguay'],
-    'es-ES': ['Spain'],
-    'pt-BR': ['Brazil']
-  };
+  const appLocale: AppLocale = isAppLocale(locale) ? locale : DEFAULT_LOCALE;
 
-  const areaServed = (countries[locale as keyof typeof countries] || countries['es-MX']).map(country => ({
+  // La infraestructura física sólo se presta donde hay cobertura; el resto es remoto.
+  const countries = ONSITE_ONLY_ROUTES.has(route)
+    ? ['Mexico']
+    : REMOTE_COVERAGE[appLocale];
+
+  const areaServed = countries.map(country => ({
     '@type': 'Country',
     'name': country
   }));
   const serviceUrl = getCanonicalUrl(route, locale);
+  const localizedName = SERVICE_NAMES[route]?.[appLocale] ?? serviceType;
 
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    'name': serviceType,
-    'serviceType': serviceType,
+    'name': localizedName,
+    'serviceType': localizedName,
     '@id': `${serviceUrl}#service`,
     'url': serviceUrl,
+    'inLanguage': SCHEMA_LANGUAGE[appLocale],
+    'dateModified': CONTENT_LAST_REVIEWED,
     ...(description ? { 'description': description } : {}),
     'provider': {
       '@type': 'LocalBusiness',

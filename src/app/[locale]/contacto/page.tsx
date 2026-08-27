@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ContactPageClient from './ContactoClient';
-import { getPageMetadata } from '@/lib/seoUtils';
+import { getPageMetadata, getCanonicalUrl, BUSINESS_EMAIL, BUSINESS_NAME, BUSINESS_PHONE, BUSINESS_WHATSAPP, SITE_URL } from '@/lib/seoUtils';
+import { SCHEMA_LANGUAGE, isAppLocale } from '@/lib/locales';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -32,5 +33,45 @@ export default async function Page({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ContactPageClient />;
+  const pageUrl = getCanonicalUrl('/contacto', locale);
+
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${pageUrl}#contact`,
+    'url': pageUrl,
+    'name': titles[locale as keyof typeof titles] ?? titles['es-MX'],
+    'description': descriptions[locale as keyof typeof descriptions] ?? descriptions['es-MX'],
+    'inLanguage': isAppLocale(locale) ? SCHEMA_LANGUAGE[locale] : locale,
+    'isPartOf': { '@id': `${SITE_URL}/#website` },
+    'mainEntity': {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      'name': BUSINESS_NAME,
+      'url': SITE_URL,
+      'email': BUSINESS_EMAIL,
+      'telephone': BUSINESS_PHONE,
+      'contactPoint': [
+        {
+          '@type': 'ContactPoint',
+          'contactType': 'sales',
+          'telephone': BUSINESS_PHONE,
+          'email': BUSINESS_EMAIL,
+          'url': BUSINESS_WHATSAPP,
+          'availableLanguage': ['Spanish', 'English', 'Portuguese'],
+          'areaServed': ['MX', 'US', 'CA', 'ES', 'BR', 'CO', 'AR', 'CL', 'PE'],
+        },
+      ],
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+      <ContactPageClient />
+    </>
+  );
 }

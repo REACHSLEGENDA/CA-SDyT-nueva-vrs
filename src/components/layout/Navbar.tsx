@@ -5,22 +5,23 @@ import { Link, usePathname } from '@/i18n/routing';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight, Phone, Mail } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { LocaleSwitcher } from './LocaleSwitcher';
 
-const links: { href: any; label: string }[] = [
-    { href: '/', label: 'Inicio' },
-    { href: '/nosotros', label: 'Nosotros' },
-    { href: '/servicios', label: 'Servicios' },
-    { href: '/paquetes-web', label: 'Paquetes Web' },
-    { href: '/marketing', label: 'Marketing' },
-    { href: '/apps-web', label: 'Apps Web' },
-    { href: '/apps-moviles', label: 'Apps Móviles' },
-    { href: '/automatizacion', label: 'Automatización' },
-    { href: '/sistemas', label: 'Sistemas a Medida' },
-    { href: '/clases', label: 'Clases de Cómputo' },
-    { href: '/portafolio', label: 'Portafolio' },
-    { href: '/contacto', label: 'Contacto' },
+const links: { href: any; key: string }[] = [
+    { href: '/', key: 'home' },
+    { href: '/nosotros', key: 'about' },
+    { href: '/servicios', key: 'services' },
+    { href: '/paquetes-web', key: 'packages' },
+    { href: '/marketing', key: 'marketing' },
+    { href: '/apps-web', key: 'webApps' },
+    { href: '/apps-moviles', key: 'mobileApps' },
+    { href: '/automatizacion', key: 'automation' },
+    { href: '/sistemas', key: 'systems' },
+    { href: '/clases', key: 'classes' },
+    { href: '/portafolio', key: 'portfolio' },
+    { href: '/contacto', key: 'contact' },
 ];
 
 export function Navbar() {
@@ -28,6 +29,7 @@ export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [videoEnded, setVideoEnded] = useState(false);
     const pathname = usePathname();
+    const t = useTranslations('Nav');
 
     // isHeroPlaying es consistente entre SSR y cliente: pathname viene de Next.js
     const isHeroPlaying = pathname === '/' && !videoEnded;
@@ -88,19 +90,19 @@ export function Navbar() {
                             href="/servicios"
                             className="text-sm font-medium text-ca-muted hover:text-ca-text transition-colors"
                         >
-                            Servicios
+                            {t('links.services')}
                         </Link>
                         <Link
                             href="/portafolio"
                             className="text-sm font-medium text-ca-muted hover:text-ca-text transition-colors"
                         >
-                            Portafolio
+                            {t('links.portfolio')}
                         </Link>
                         <Link
                             href="/contacto"
                             className="text-sm font-medium text-ca-muted hover:text-ca-text transition-colors"
                         >
-                            Contacto
+                            {t('links.contact')}
                         </Link>
                     </div>
 
@@ -114,7 +116,7 @@ export function Navbar() {
                             className="hidden md:inline-flex items-center gap-2 bg-ca-gradient text-white font-semibold px-5 py-2.5 rounded-xl
                                        hover:opacity-90 hover:scale-105 transition-all duration-200 text-sm shadow-lg shadow-ca-cyan/20"
                         >
-                            Hablemos →
+                            {t('cta')}
                         </a>
 
                         {/* Selector de idioma */}
@@ -124,7 +126,7 @@ export function Navbar() {
                         <button
                             onClick={handleOpen}
                             data-sound="toggle"
-                            aria-label="Abrir menú"
+                            aria-label={t('openMenu')}
                             className="w-10 h-10 flex items-center justify-center rounded-xl bg-ca-surface/80 hover:bg-ca-surface border border-ca-border transition-colors text-ca-text"
                         >
                             <Menu size={20} />
@@ -163,7 +165,7 @@ export function Navbar() {
                                 <button
                                     onClick={handleClose}
                                     data-sound="toggle"
-                                    aria-label="Cerrar menú"
+                                    aria-label={t('closeMenu')}
                                     className="w-10 h-10 flex items-center justify-center rounded-xl bg-ca-surface border border-ca-border hover:border-ca-cyan/30 transition-colors text-ca-text"
                                 >
                                     <X size={20} />
@@ -174,12 +176,12 @@ export function Navbar() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-8 flex-1 content-start md:content-center">
                                 <div className="space-y-3">
                                     <p className="text-xs font-mono text-ca-cyan uppercase tracking-widest mb-5">
-                                        Navegación
+                                        {t('navigationHeading')}
                                     </p>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         {links.map((link, idx) => (
                                             <motion.div
-                                                key={link.href}
+                                                key={link.key}
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: 0.05 + idx * 0.04 }}
@@ -194,7 +196,7 @@ export function Navbar() {
                                                             : 'border-ca-border hover:border-ca-cyan/30 hover:bg-ca-surface text-ca-muted hover:text-ca-text'
                                                     )}
                                                 >
-                                                    <span className="text-sm font-medium">{link.label}</span>
+                                                    <span className="text-sm font-medium">{t(`links.${link.key}`)}</span>
                                                     <ChevronRight
                                                         size={14}
                                                         className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all"
@@ -204,19 +206,16 @@ export function Navbar() {
                                         ))}
                                     </div>
 
-                                    <div className="pt-8 mt-8 border-t border-ca-border">
-                                        <LocaleSwitcher variant="panel" onSelect={handleClose} />
-                                    </div>
                                 </div>
 
                                 {/* Contact Panel */}
                                 <div className="hidden md:flex flex-col justify-center border-l border-ca-border pl-12 space-y-8">
                                     <div>
                                         <h3 className="text-2xl font-display font-bold text-ca-text mb-2">
-                                            Contáctanos hoy
+                                            {t('contactHeading')}
                                         </h3>
                                         <p className="text-ca-muted mb-6 text-sm">
-                                            Listos para llevar tu negocio al siguiente nivel.
+                                            {t('contactSubtitle')}
                                         </p>
                                         <div className="space-y-3">
                                             <a
@@ -246,7 +245,7 @@ export function Navbar() {
                                             onClick={() => setIsOpen(false)}
                                             className="block w-full text-center bg-ca-gradient text-white font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity"
                                         >
-                                            Solicitar Cotización →
+                                            {t('quoteCta')}
                                         </a>
                                     </div>
                                 </div>

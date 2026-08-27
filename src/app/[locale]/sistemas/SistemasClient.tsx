@@ -73,25 +73,25 @@ export default function SystemsPage() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <SystemCard
-                        icon={<Image src="/assets/crm.png" alt="CRM" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/crm.webp" alt="CRM" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="CRM Estratégico"
                         desc="Control total del ciclo de vida del cliente. Embudos de venta, seguimiento comercial y gestión de leads con alertas inteligentes."
                         features={["Embudo Personalizado", "Historial de Interacciones", "Automatización de Email"]}
                     />
                     <SystemCard
-                        icon={<Image src="/assets/pos.png" alt="POS" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/pos.webp" alt="POS" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="POS / Punto de Venta"
                         desc="Sistemas de venta rápida con control de inventarios, reportes de caja en vivo e integración de facturación electrónica."
                         features={["Multi-sucursal", "Gestión de Stock", "Tickets y Facturación"]}
                     />
                     <SystemCard
-                        icon={<Image src="/assets/erp.png" alt="ERP" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/erp.webp" alt="ERP" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="ERP & Gestión Interna"
                         desc="Administración integral de recursos: nómina, proveedores, logística y finanzas en una sola plataforma segura."
                         features={["Contabilidad Básica", "Gestión de Proveedores", "Control de Activos"]}
                     />
                     <SystemCard
-                        icon={<Image src="/assets/datos.png" alt="Datos" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/datos.webp" alt="Datos" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Migración de Datos"
                         desc="Modernizamos tus sistemas antiguos. Pasamos tu info de Excel o software legacy a bases de datos cloud modernas."
                         features={["Limpieza de Datos", "Arquitectura en la Nube", "Cero Downtime"]}

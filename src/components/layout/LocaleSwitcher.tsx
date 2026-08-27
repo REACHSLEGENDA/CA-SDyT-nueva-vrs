@@ -21,13 +21,7 @@ const LOCALE_LABELS: Record<string, { short: string; label: string }> = {
     'pt-BR': { short: 'BR', label: 'Português (Brasil)' },
 };
 
-interface Props {
-    /** `bar` = pill compacta del navbar. `panel` = lista abierta del menú móvil. */
-    variant?: 'bar' | 'panel';
-    onSelect?: () => void;
-}
-
-export function LocaleSwitcher({ variant = 'bar', onSelect }: Props) {
+export function LocaleSwitcher() {
     const activeLocale = useLocale();
     const pathname = usePathname();
     const params = useParams();
@@ -57,7 +51,6 @@ export function LocaleSwitcher({ variant = 'bar', onSelect }: Props) {
 
     const change = (nextLocale: string) => {
         setIsOpen(false);
-        onSelect?.();
         if (nextLocale === activeLocale) return;
 
         startTransition(() => {
@@ -71,41 +64,6 @@ export function LocaleSwitcher({ variant = 'bar', onSelect }: Props) {
             );
         });
     };
-
-    // Menú móvil: lista siempre visible, sin desplegable.
-    if (variant === 'panel') {
-        return (
-            <div className="space-y-3">
-                <p className="text-xs font-mono text-ca-cyan uppercase tracking-widest mb-5">
-                    Idioma / Language
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" role="listbox" aria-label="Seleccionar idioma">
-                    {routing.locales.map((locale) => {
-                        const isActive = locale === activeLocale;
-                        return (
-                            <button
-                                key={locale}
-                                type="button"
-                                role="option"
-                                aria-selected={isActive}
-                                lang={locale}
-                                onClick={() => change(locale)}
-                                className={cn(
-                                    'flex items-center justify-between p-3.5 rounded-xl border transition-all text-left',
-                                    isActive
-                                        ? 'border-ca-cyan/40 bg-ca-cyan/5 text-ca-cyan'
-                                        : 'border-ca-border hover:border-ca-cyan/30 hover:bg-ca-surface text-ca-muted hover:text-ca-text'
-                                )}
-                            >
-                                <span className="text-sm font-medium">{LOCALE_LABELS[locale].label}</span>
-                                {isActive && <Check size={14} className="shrink-0" />}
-                            </button>
-                        );
-                    })}
-                </div>
-            </div>
-        );
-    }
 
     return (
         <div ref={containerRef} className="relative">

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const schema = getServiceSchema('Paquetes de Diseño y Desarrollo Web', locale);
+  const schema = getServiceSchema('Paquetes de Diseño y Desarrollo Web', locale, '/paquetes-web');
   const breadcrumb = getBreadcrumbSchema('/paquetes-web', locale, locale === 'en' ? 'Web Packages' : locale === 'pt-BR' ? 'Pacotes Web' : 'Paquetes Web');
 
   return (

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const schema = getServiceSchema('Desarrollo de Aplicaciones Móviles', locale);
+  const schema = getServiceSchema('Desarrollo de Aplicaciones Móviles', locale, '/apps-moviles');
   const breadcrumb = getBreadcrumbSchema('/apps-moviles', locale, locale === 'en' ? 'Mobile App Development' : locale === 'pt-BR' ? 'Aplicativos Móveis' : 'Apps Móviles');
 
   return (

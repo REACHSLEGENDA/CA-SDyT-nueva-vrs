@@ -77,21 +77,21 @@ export default function AutomationPage() {
 
                 <div className="grid lg:grid-cols-3 gap-8">
                     <AutoCard
-                        icon={<Image src="/assets/ia.png" alt="IA" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/ia.webp" alt="IA" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Agentes y Chatbots con IA"
                         desc="No son simples bots de botones. Implementamos cerebros digitales con GPT-4 que entienden contexto, califican prospectos y cierran ventas en WhatsApp, Facebook y Web."
                         features={["Integración con OpenAI / Claude", "Conexión a tu Base de Datos", "Traspaso a Humano Inteligente", "Multilenguaje y Multicanal"]}
                         color="pink"
                     />
                     <AutoCard
-                        icon={<Image src="/assets/workflow.png" alt="Workflows" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/workflow.webp" alt="Workflows" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Workflows Avanzados"
                         desc="Conectamos tus herramientas favoritas (CRM, Slack, Google, ERP) usando Make.com y Zapier. Cuando ocurre 'A', tu sistema ejecuta 'B', 'C' y 'D' automáticamente."
                         features={["Reducción de Errores Humanos", "Ahorro de +40h Semanales", "Sincronización de Leads", "Alertas en Tiempo Real"]}
                         color="purple"
                     />
                     <AutoCard
-                        icon={<Image src="/assets/api.png" alt="API" width={160} height={160} className="w-40 h-40 object-contain" />}
+                        icon={<Image src="/assets/api.webp" alt="API" width={160} height={160} className="w-40 h-40 object-contain" />}
                         title="Integración de APIs"
                         desc="Creamos puentes de comunicación entre sistemas que originalmente no pueden hablar entre sí. Desarrollo de middleware seguro para flujo de datos constante."
                         features={["Webhooks Personalizados", "Seguridad End-to-End", "Documentación Técnica", "Escalabilidad Cloud"]}

@@ -13,163 +13,10 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
+import { portfolioItems } from '@/lib/portfolioData';
 
 // ─── Proyectos de clientes ─────────────────────────────────────
-interface Project {
-    id: number;
-    title: string;
-    url: string;
-    imageUrl: string;
-    type: string;
-    client: string;
-    stack: string;
-    description: string;
-}
 
-const portfolioItems: Project[] = [
-    {
-        id: 1,
-        title: 'APEN',
-        url: 'https://apen.mx/',
-        imageUrl: '/assets/apen-preview.png',
-        type: 'Proyecto Top',
-        client: 'Energía & Proyectos',
-        stack: 'Desarrollo, Marketing, AEO y presencia digital desde 0',
-        description: 'Sitio corporativo de alta gama para empresa administradora de proyectos energéticos. Diseño industrial premium con video background.',
-    },
-    {
-        id: 20,
-        title: 'CNADOT - CENATRA',
-        url: 'https://cnadot.healthcareexp.com/',
-        imageUrl: '/assets/cnadot.png',
-        type: 'Proyecto Top',
-        client: 'Sector Salud (Gobierno)',
-        stack: 'Web, Registro & Simulación',
-        description: 'Plataforma oficial para el Curso Nacional Avanzado de Donación de Órganos y Tejidos (CENATRA). Sistema de pre-registro para programa multidisciplinario con modelo mexicano.',
-    },
-    {
-        id: 3,
-        title: 'Healthcare Training Experience',
-        url: 'https://healthcareexp.com/',
-        imageUrl: '/assets/healthcare-preview.png',
-        type: 'Proyecto Top',
-        client: 'Salud & Capacitación',
-        stack: 'Web y plataforma de portal de alumnos y certificados y pasarelas',
-        description: 'Plataforma de capacitación y entrenamiento para profesionales del sector salud. Experiencia de aprendizaje digital especializada.',
-    },
-    {
-        id: 9,
-        title: 'Trestle Media',
-        url: 'https://trestle-media.com/',
-        imageUrl: '/assets/trestle.png',
-        type: 'Desarrollo Completo',
-        client: 'Agencia de Medios',
-        stack: 'Agencia Web + Animaciones',
-        description: 'Plataforma dinámica para agencia de medios y publicidad. Diseño audaz con interacciones fluidas que reflejan su enfoque innovador.',
-    },
-    {
-        id: 10,
-        title: 'C-Consultores',
-        url: 'https://c-consultores.com/',
-        imageUrl: '/assets/cc.png',
-        type: 'Desarrollo Completo',
-        client: 'Consultoría Empresarial',
-        stack: 'Web Corporativa B2B',
-        description: 'Sitio corporativo profesional para firma de consultoría. Estructura orientada a servicios empresariales, contables y financieros de alto nivel.',
-    },
-    {
-        id: 11,
-        title: 'Psicología Trasplante',
-        url: 'https://psicologiatrasplante.com/',
-        imageUrl: '/assets/psico.png',
-        type: 'Desarrollo Completo',
-        client: 'Salud y Bienestar',
-        stack: 'Web Informativa',
-        description: 'Portal especializado en apoyo psicológico para pacientes de trasplante. Interfaz cálida, accesible y enfocada en brindar contención profesional.',
-    },
-    {
-        id: 12,
-        title: 'Avart Estudio',
-        url: 'https://avartestudio.com/',
-        imageUrl: '/assets/art.png',
-        type: 'Desarrollo Completo',
-        client: 'Estudio de Arquitectura',
-        stack: 'Portafolio Web',
-        description: 'Portafolio digital inmersivo para estudio creativo. Experiencia visual de alto impacto que destaca la vanguardia de sus proyectos.',
-    },
-    {
-        id: 13,
-        title: 'Bioin Natural Dental',
-        url: 'https://bioin-natural-dental.com/',
-        imageUrl: '/assets/bio.png',
-        type: 'Desarrollo Completo',
-        client: 'Clínica Odontológica',
-        stack: 'Web Corporativa + SEO',
-        description: 'Sitio web para clínica especializada en odontología natural y biológica. Diseño moderno con enfoque en la salud integral y estética dental.',
-    },
-    {
-        id: 2,
-        title: 'GIKINX',
-        url: 'https://gikinx.mx/',
-        imageUrl: '/assets/gikinx-preview.png',
-        type: 'Desarrollo Completo',
-        client: 'Media & Entretenimiento',
-        stack: 'Portal de noticias + CMS',
-        description: 'Portal de noticias gaming, anime y esports. Categorías por scroll infinito, diseño dark con acento naranja y ticker de categorías.',
-    },
-    {
-        id: 4,
-        title: 'Kiper',
-        url: 'https://kiper.app/',
-        imageUrl: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/fa65e77a159d8b7f1b52b0bbb577ca3fb95792cd/Captura%20de%20pantalla%202026-01-28%20171424.png',
-        type: 'Colaboración',
-        client: 'Software CRM',
-        stack: 'Participación en Desarrollo & Optimización',
-        description: 'Participamos en módulos clave de este CRM inmobiliario líder en el mercado.',
-    },
-    {
-        id: 5,
-        title: 'FX Latam Pro',
-        url: 'https://www.fxlatampro.site/',
-        imageUrl: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/Captura%20de%20pantalla%202026-01-28%20172653.png',
-        type: 'Desarrollo Completo',
-        client: 'Educación Financiera',
-        stack: 'Web Platform & LMS',
-        description: 'Academia de trading online con gestión de usuarios, cursos y señales en tiempo real.',
-    },
-    {
-        id: 6,
-        title: 'Emuna',
-        url: 'https://www.emuna.mx/',
-        imageUrl: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/Captura%20de%20pantalla%202026-01-28%20172306.png',
-        type: 'Colaboración',
-        client: 'E-commerce & Retail',
-        stack: 'Shopify / Custom Code',
-        description: 'Colaboración en el desarrollo frontend y optimización de conversión para esta marca de joyería.',
-    },
-    {
-        id: 7,
-        title: 'Brokers Calificados',
-        url: 'https://brokerscalificados.net',
-        imageUrl: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/Captura%20de%20pantalla%202025-08-16%20194913.png',
-        type: 'Desarrollo Completo',
-        client: 'Directorio Inmobiliario',
-        stack: 'Next.js, SEO Avanzado',
-        description: 'Portal especializado para conectar usuarios con brokers certificados en todo México.',
-    },
-    {
-        id: 8,
-        title: 'Hotel BINDANI',
-        url: 'https://hotelbindani.com/',
-        imageUrl: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/Captura%20de%20pantalla%202026-01-28%20173045.png',
-        type: 'Desarrollo Completo',
-        client: 'Hospitalidad & Turismo',
-        stack: 'Web, Booking Engine & Redes Sociales',
-        description: 'Diseño web elegante y gestión de estrategia digital para posicionamiento de hotel boutique.',
-    },
-];
-
-// ─── Productos CA propios ──────────────────────────────────────
 interface CaProduct {
     id: string;
     title: string;
@@ -196,7 +43,7 @@ const CA_PRODUCTS: CaProduct[] = [
         glowColor: 'bg-purple-600/15',
         icon: <Briefcase size={28} className="text-purple-400" />,
         features: ['Dashboard de producción semanal', 'Tablero Kanban por cliente', 'Próximas entregas y alertas', 'Campañas activas con presupuesto', 'Facturación integrada'],
-        imageUrl: '/assets/products/agencyos.png',
+        imageUrl: '/assets/products/agencyos.webp',
     },
     {
         id: 'kovex-crm',
@@ -209,7 +56,7 @@ const CA_PRODUCTS: CaProduct[] = [
         glowColor: 'bg-pink-600/15',
         icon: <BarChart3 size={28} className="text-pink-400" />,
         features: ['Embudo de ventas visual', 'Automatización de seguimiento', 'Contact Center integrado', 'Reglas de flujo personalizables', 'Revenue en tiempo real'],
-        imageUrl: '/assets/products/kovex-crm.png',
+        imageUrl: '/assets/products/kovex-crm.webp',
     },
     {
         id: 'dentaflow',
@@ -222,7 +69,7 @@ const CA_PRODUCTS: CaProduct[] = [
         glowColor: 'bg-teal-600/15',
         icon: <Users size={28} className="text-teal-400" />,
         features: ['Agenda y citas del día', 'Historial clínico digital', 'Alertas de inventario bajo', 'Cobros y pagos pendientes', 'Confirmación por WhatsApp'],
-        imageUrl: '/assets/products/dentaflow.png',
+        imageUrl: '/assets/products/dentaflow.webp',
     },
     {
         id: 'abastoflow',
@@ -235,7 +82,7 @@ const CA_PRODUCTS: CaProduct[] = [
         glowColor: 'bg-emerald-600/15',
         icon: <ShoppingBag size={28} className="text-emerald-400" />,
         features: ['Control de stock en tiempo real', 'Gestión de pedidos y órdenes', 'Alertas de reabasto automáticas', 'Dashboard de movimientos', 'Multi-almacén'],
-        imageUrl: 'https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/abas.png',
+        imageUrl: '/assets/abastoflow.webp',
     },
 ];
 

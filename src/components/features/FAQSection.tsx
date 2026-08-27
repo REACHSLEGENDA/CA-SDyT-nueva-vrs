@@ -5,10 +5,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-import { faqs, FAQItem } from '@/lib/faqData';
+import { useLocale } from 'next-intl';
+import { getFaqs, FAQItem } from '@/lib/faqData';
+
+const COPY: Record<string, { eyebrow: string; title: string; subtitle: string }> = {
+    'es-MX': { eyebrow: 'Resolviendo dudas', title: 'Preguntas Frecuentes', subtitle: 'Resolvemos las dudas mas comunes antes de comenzar tu proyecto.' },
+    'en': { eyebrow: 'Common questions', title: 'Frequently Asked Questions', subtitle: 'The answers most clients need before starting a project with a remote team.' },
+    'es-419': { eyebrow: 'Resolviendo dudas', title: 'Preguntas Frecuentes', subtitle: 'Lo que suelen preguntarnos las empresas de la region antes de empezar.' },
+    'es-ES': { eyebrow: 'Resolviendo dudas', title: 'Preguntas Frecuentes', subtitle: 'Lo que necesitas saber antes de empezar tu proyecto con un equipo remoto.' },
+    'pt-BR': { eyebrow: 'Duvidas comuns', title: 'Perguntas Frequentes', subtitle: 'O que as empresas costumam perguntar antes de iniciar um projeto.' },
+};
 
 export function FAQSection() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const locale = useLocale();
+    const faqs = getFaqs(locale);
+    const copy = COPY[locale] ?? COPY['es-MX'];
 
     return (
         <section className="py-24 relative overflow-hidden bg-transparent">
@@ -26,7 +38,7 @@ export function FAQSection() {
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-brand-purple text-sm font-medium mb-6"
                     >
                         <HelpCircle size={16} />
-                        <span>Resolviendo dudas</span>
+                        <span>{copy.eyebrow}</span>
                     </motion.div>
 
                     <motion.h2
@@ -35,7 +47,7 @@ export function FAQSection() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-display font-bold text-white mb-6"
                     >
-                        Preguntas Frecuentes
+                        {copy.title}
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -44,7 +56,7 @@ export function FAQSection() {
                         transition={{ delay: 0.1 }}
                         className="text-gray-400 text-lg"
                     >
-                        Resolvemos las dudas más comunes antes de comenzar tu proyecto.
+                        {copy.subtitle}
                     </motion.p>
                 </div>
 

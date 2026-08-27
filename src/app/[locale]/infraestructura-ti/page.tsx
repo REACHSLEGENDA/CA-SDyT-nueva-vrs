@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const schema = getServiceSchema('Servicios de Infraestructura de TI, Redes y Ciberseguridad', locale);
+  const schema = getServiceSchema('Servicios de Infraestructura de TI, Redes y Ciberseguridad', locale, '/infraestructura-ti');
   const breadcrumb = getBreadcrumbSchema('/infraestructura-ti', locale, locale === 'en' ? 'IT Infrastructure' : locale === 'pt-BR' ? 'Infraestrutura TI' : 'Infraestructura TI');
 
   return (

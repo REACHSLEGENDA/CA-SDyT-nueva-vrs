@@ -2,13 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Cookie, X, ShieldCheck } from 'lucide-react';
 
 const STORAGE_KEY = 'ca-cookie-consent';
 
 export function CookieBanner() {
     const [visible, setVisible] = useState(false);
+    const t = useTranslations('Cookies');
 
     useEffect(() => {
         if (!localStorage.getItem(STORAGE_KEY)) {
@@ -33,7 +35,7 @@ export function CookieBanner() {
                     transition={{ type: 'spring', damping: 22, stiffness: 200 }}
                     className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[90] w-[calc(100vw-2rem)] max-w-2xl"
                     role="dialog"
-                    aria-label="Aviso de cookies"
+                    aria-label={t('ariaLabel')}
                 >
                     <div className="bg-ca-surface/95 backdrop-blur-xl border border-ca-border rounded-2xl shadow-2xl shadow-black/50 p-5 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
 
@@ -45,12 +47,12 @@ export function CookieBanner() {
                         {/* Text */}
                         <div className="flex-1 min-w-0">
                             <p className="text-ca-text text-sm font-semibold mb-1">
-                                Usamos cookies 🍪
+                                {t('title')}
                             </p>
                             <p className="text-ca-muted text-xs leading-relaxed">
-                                Utilizamos cookies esenciales y analíticas para mejorar tu experiencia. Puedes aceptar todas o solo las necesarias.{' '}
+                                {t('body')}{' '}
                                 <Link href="/legal/privacidad" className="text-ca-cyan hover:underline">
-                                    Ver Aviso de Privacidad
+                                    {t('privacyLink')}
                                 </Link>
                             </p>
                         </div>
@@ -61,18 +63,18 @@ export function CookieBanner() {
                                 onClick={() => accept('essential')}
                                 className="flex-1 sm:flex-none px-4 py-2 rounded-xl border border-ca-border text-ca-muted hover:text-ca-text hover:border-ca-cyan/30 transition-colors text-xs font-medium whitespace-nowrap"
                             >
-                                Solo esenciales
+                                {t('essentialOnly')}
                             </button>
                             <button
                                 onClick={() => accept('all')}
                                 className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl bg-ca-gradient text-white text-xs font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-ca-cyan/20 whitespace-nowrap"
                             >
                                 <ShieldCheck size={13} />
-                                Aceptar todas
+                                {t('acceptAll')}
                             </button>
                             <button
                                 onClick={() => accept('essential')}
-                                aria-label="Cerrar"
+                                aria-label={t('close')}
                                 className="w-8 h-8 flex items-center justify-center rounded-lg border border-ca-border text-ca-muted hover:text-ca-text hover:border-ca-cyan/30 transition-colors shrink-0"
                             >
                                 <X size={14} />

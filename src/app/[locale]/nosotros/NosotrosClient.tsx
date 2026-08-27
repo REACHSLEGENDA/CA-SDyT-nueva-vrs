@@ -19,7 +19,7 @@ export default function AboutPage() {
                     className="relative w-64 h-64 md:w-80 md:h-80 mb-4 drop-shadow-[0_8px_24px_rgba(139,92,246,0.2)]"
                 >
                     <Image
-                        src="/assets/nosotros.png"
+                        src="/assets/nosotros.webp"
                         alt="Pasión por la tecnología - Cassie"
                         fill
                         sizes="(max-width: 768px) 256px, 320px"
@@ -50,7 +50,7 @@ export default function AboutPage() {
                         <div className="absolute -inset-4 bg-gradient-to-r from-brand-blue/20 to-brand-purple/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
                             <Image
-                                src="https://raw.githubusercontent.com/REACHSLEGENDA/Imagenes/refs/heads/main/sobre-nosotros.png"
+                                src="/assets/sobre-nosotros.webp"
                                 alt="Sobre Nosotros - CA Soluciones"
                                 width={600}
                                 height={400}

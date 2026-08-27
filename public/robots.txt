@@ -7,29 +7,82 @@ Allow: /pt-BR/
 
 Disallow: /api/
 
-# IA crawlers — full access for AEO
+# ── Rastreadores de IA: acceso completo para AEO ──────────────────────
+# Se permiten de forma explícita aunque "User-agent: *" ya lo cubra: varios de
+# estos bots ignoran las reglas comodín y solo obedecen a su propio nombre.
+
+# OpenAI — búsqueda en ChatGPT, entrenamiento y navegación en vivo
 User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+# Google — Gemini y AI Overviews
 User-agent: Google-Extended
 Allow: /
 
-User-agent: PerplexityBot
+# Anthropic — Claude
+User-agent: ClaudeBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: Bytespider
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence y Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
 Allow: /
 
 User-agent: FacebookBot
+Allow: /
+
+# Microsoft Copilot
+User-agent: Bingbot
+Allow: /
+
+# Otros rastreadores usados como fuente por modelos de lenguaje
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Bytespider
 Allow: /
 
 Sitemap: https://casolutecdigital.com/sitemap.xml

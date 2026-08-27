@@ -5,38 +5,42 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useSearchParams } from 'next/navigation';
 import { Loader2, CheckCircle2 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useTranslations } from 'next-intl';
 import { ThinkingOrb } from 'thinking-orbs';
 import { playSound } from '@/lib/sound';
 
+// El `value` de cada opcion se manda a Formspree tal cual y se mantiene en espanol,
+// para que el equipo lea siempre la misma etiqueta sin importar el idioma del visitante.
+// Solo se traduce lo que ve la persona.
 const SERVICE_OPTIONS = [
-    { group: 'Desarrollo Digital', options: [
+    { group: 'dev', options: [
         'Desarrollo Web',
         'Aplicación Móvil',
         'Sistema Empresarial a Medida',
         'Automatización e Integraciones IA',
         'UI/UX Design',
     ]},
-    { group: 'Marketing Digital', options: [
+    { group: 'marketing', options: [
         'Gestión de Redes Sociales',
         'SEO Técnico y AEO',
         'Google Business & Maps',
         'Bot de WhatsApp con IA',
         'Diseño de Marca',
     ]},
-    { group: 'Infraestructura TI', options: [
+    { group: 'infra', options: [
         'Redes y Conectividad Profesional',
         'Ciberseguridad y Protección de Datos',
         'Videovigilancia CCTV',
         'Servidores y Nube Privada (NAS/Windows Server)',
         'Soporte Técnico Integral',
     ]},
-    { group: 'Paquetes', options: [
+    { group: 'packages', options: [
         'Despegue Digital',
         'Tráfico y Conversión',
         'Ecosistema Premium IA',
         'Plan TI Empresarial',
     ]},
-    { group: 'Otro', options: ['Consultoría', 'Otro'] },
+    { group: 'other', options: ['Consultoría', 'Otro'] },
 ];
 
 const INPUT_CLASS =
@@ -49,16 +53,17 @@ function ContactFormInner() {
     const [isSimulatedSending, setIsSimulatedSending] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
     const searchParams = useSearchParams();
+    const t = useTranslations('ContactForm');
     const preSelected = searchParams?.get('servicio') ?? '';
 
     useEffect(() => {
         if (state.succeeded && !isSimulatedSending) {
             setShowSuccess(true);
             playSound('success');
-            toast.success('¡Mensaje enviado! Te contactamos en menos de 2 horas.');
+            toast.success(t('toastSuccess'));
         }
         if (state.errors && Object.keys(state.errors).length > 0) {
-            toast.error('Hubo un error. Intenta de nuevo o escríbenos por WhatsApp.');
+            toast.error(t('toastError'));
             setIsSimulatedSending(false);
         }
     }, [state.succeeded, state.errors, isSimulatedSending]);
@@ -76,9 +81,9 @@ function ContactFormInner() {
         return (
             <div className="p-10 bg-ca-dark/40 border border-ca-cyan/20 rounded-2xl text-center flex flex-col items-center justify-center min-h-[350px] shadow-[0_0_30px_rgba(0,207,255,0.05)]">
                 <ThinkingOrb state="searching" size={64} className="mb-6 opacity-90" />
-                <h3 className="text-xl font-bold text-ca-text mb-2 font-display">Procesando solicitud...</h3>
+                <h3 className="text-xl font-bold text-ca-text mb-2 font-display">{t('processingTitle')}</h3>
                 <p className="text-ca-muted text-sm max-w-[250px]">
-                    Estableciendo conexión segura y enviando tus datos a nuestro equipo.
+                    {t('processingBody')}
                 </p>
             </div>
         );
@@ -88,15 +93,15 @@ function ContactFormInner() {
         return (
             <div className="p-8 bg-ca-success/5 border border-ca-success/20 rounded-2xl text-center min-h-[350px] flex flex-col items-center justify-center">
                 <CheckCircle2 size={44} className="text-ca-success mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-ca-text mb-2">¡Mensaje enviado!</h3>
+                <h3 className="text-2xl font-bold text-ca-text mb-2">{t('successTitle')}</h3>
                 <p className="text-ca-muted text-sm max-w-[280px]">
-                    Te responderemos en menos de 2 horas a tu correo o WhatsApp.
+                    {t('successBody')}
                 </p>
                 <button
                     onClick={() => window.location.reload()}
                     className="mt-6 px-6 py-2.5 bg-ca-success/10 rounded-full text-ca-success text-sm font-semibold hover:bg-ca-success/20 transition-colors"
                 >
-                    Enviar otro mensaje
+                    {t('sendAnother')}
                 </button>
             </div>
         );
@@ -107,7 +112,7 @@ function ContactFormInner() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
                     <label htmlFor="name" className="text-xs font-medium text-ca-muted uppercase tracking-wider">
-                        Nombre *
+                        {t('name')} *
                     </label>
                     <input
                         id="name"
@@ -115,13 +120,13 @@ function ContactFormInner() {
                         type="text"
                         required
                         className={INPUT_CLASS}
-                        placeholder="Tu nombre completo"
+                        placeholder={t('namePlaceholder')}
                     />
                     <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-400 text-xs" />
                 </div>
                 <div className="space-y-1.5">
                     <label htmlFor="email" className="text-xs font-medium text-ca-muted uppercase tracking-wider">
-                        Email *
+                        {t('email')} *
                     </label>
                     <input
                         id="email"
@@ -129,7 +134,7 @@ function ContactFormInner() {
                         type="email"
                         required
                         className={INPUT_CLASS}
-                        placeholder="tucorreo@empresa.com"
+                        placeholder={t('emailPlaceholder')}
                     />
                     <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-xs" />
                 </div>
@@ -137,20 +142,20 @@ function ContactFormInner() {
 
             <div className="space-y-1.5">
                 <label htmlFor="phone" className="text-xs font-medium text-ca-muted uppercase tracking-wider">
-                    Teléfono (opcional)
+                    {t('phone')}
                 </label>
                 <input
                     id="phone"
                     name="phone"
                     type="tel"
                     className={INPUT_CLASS}
-                    placeholder="+52 55 ..."
+                    placeholder={t('phonePlaceholder')}
                 />
             </div>
 
             <div className="space-y-1.5">
                 <label htmlFor="service" className="text-xs font-medium text-ca-muted uppercase tracking-wider">
-                    Servicio de interés
+                    {t('service')}
                 </label>
                 <div className="relative">
                     <select
@@ -160,12 +165,12 @@ function ContactFormInner() {
                         className={`${INPUT_CLASS} appearance-none cursor-pointer`}
                         style={{ background: 'var(--color-ca-surface)' }}
                     >
-                        <option value="">Selecciona un servicio...</option>
+                        <option value="">{t('servicePlaceholder')}</option>
                         {SERVICE_OPTIONS.map((group) => (
-                            <optgroup key={group.group} label={`── ${group.group}`}>
+                            <optgroup key={group.group} label={`── ${t(`groups.${group.group}`)}`}>
                                 {group.options.map((opt) => (
                                     <option key={opt} value={opt}>
-                                        {opt}
+                                        {t(`options.${opt}`)}
                                     </option>
                                 ))}
                             </optgroup>
@@ -181,7 +186,7 @@ function ContactFormInner() {
 
             <div className="space-y-1.5">
                 <label htmlFor="message" className="text-xs font-medium text-ca-muted uppercase tracking-wider">
-                    Mensaje *
+                    {t('message')} *
                 </label>
                 <textarea
                     id="message"
@@ -189,7 +194,7 @@ function ContactFormInner() {
                     rows={4}
                     required
                     className={`${INPUT_CLASS} resize-none`}
-                    placeholder="Cuéntanos más sobre tu proyecto o necesidad..."
+                    placeholder={t('messagePlaceholder')}
                 />
                 <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-xs" />
             </div>
@@ -202,7 +207,7 @@ function ContactFormInner() {
                     className="w-4 h-4 mt-0.5 rounded border-ca-border bg-ca-surface accent-ca-cyan cursor-pointer"
                 />
                 <label htmlFor="terms" className="text-xs text-ca-muted cursor-pointer select-none leading-relaxed">
-                    Acepto compartir mis datos para que CA Soluciones me contacte respecto a este servicio.
+                    {t('consent')}
                 </label>
             </div>
 
@@ -215,9 +220,9 @@ function ContactFormInner() {
                            flex items-center justify-center gap-2"
             >
                 {isSimulatedSending || state.submitting ? (
-                    <><ThinkingOrb state="searching" size={20} /> Enviando...</>
+                    <><ThinkingOrb state="searching" size={20} /> {t('sending')}</>
                 ) : (
-                    'Enviar mensaje →'
+                    t('submit')
                 )}
             </button>
         </form>

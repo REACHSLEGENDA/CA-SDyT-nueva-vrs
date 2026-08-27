@@ -1,8 +1,22 @@
 # CA Soluciones Digitales y Tecnológicas
 
-> Agencia mexicana de desarrollo de software, automatización, SEO/AEO e infraestructura TI. Los servicios digitales se prestan de forma remota; los servicios físicos dependen de cobertura y disponibilidad.
+> Agencia mexicana de desarrollo de software, automatización, SEO/AEO e infraestructura TI. Los servicios digitales se prestan de forma remota para clientes de América, Europa y Asia; los servicios físicos de infraestructura dependen de cobertura y disponibilidad.
+
+> Mexico-based software agency: custom web and mobile development, business systems, AI automation, SEO/AEO and IT infrastructure. Digital services are delivered remotely worldwide; physical infrastructure work depends on coverage and is primarily available in Mexico.
 
 Este archivo es una guía curada para asistentes y agentes que decidan leer la propuesta llms.txt. La información canónica y actualizada siempre es la publicada en las páginas enlazadas.
+
+This file is a curated guide for assistants and agents that choose to read the llms.txt proposal. The canonical, up-to-date information is always what is published on the linked pages.
+
+## Idiomas disponibles / Available languages
+
+El sitio publica cada página en cinco idiomas, con contenido propio por mercado (no traducción automática). La raíz del dominio sirve siempre español de México.
+
+- [Español (México)](https://casolutecdigital.com): mercado principal, incluye servicios de infraestructura TI presencial.
+- [English](https://casolutecdigital.com/en): international entry point for the United States, Canada, the United Kingdom, Ireland, Australia, New Zealand, Germany, the Netherlands, the United Arab Emirates and Singapore. Remote digital services only.
+- [Español (Latinoamérica)](https://casolutecdigital.com/es-419): Colombia, Argentina, Chile, Perú, Ecuador, Bolivia, Uruguay, Paraguay, Venezuela, Costa Rica, Panamá, Guatemala y República Dominicana. Solo servicios digitales remotos.
+- [Español (España)](https://casolutecdigital.com/es-ES): España y Andorra. Solo servicios digitales remotos.
+- [Português (Brasil)](https://casolutecdigital.com/pt-BR): Brasil y Portugal. Apenas serviços digitais remotos.
 
 ## Páginas principales
 
@@ -27,23 +41,21 @@ Este archivo es una guía curada para asistentes y agentes que decidan leer la p
 
 ## Infraestructura TI
 
-- [Infraestructura TI](https://casolutecdigital.com/infraestructura-ti): Redes, servidores, ciberseguridad, CCTV y soporte técnico.
+- [Infraestructura TI](https://casolutecdigital.com/infraestructura-ti): Redes, servidores, ciberseguridad, CCTV y soporte técnico. Requiere presencia física; disponible en México sujeto a cobertura.
+
+## Formación
+
+- [Clases de cómputo](https://casolutecdigital.com/clases): Capacitación en informática y programación, en línea o presencial.
 
 ## Entidad y contacto
 
 - [Contacto oficial](https://casolutecdigital.com/contacto): CA Soluciones Digitales y Tecnológicas; correo contacto@casolutecdigital.com; WhatsApp +52 595 114 5576.
+- Idiomas de atención / Languages spoken: español, English, português.
 - [Política de privacidad](https://casolutecdigital.com/legal/privacidad): Tratamiento de datos y canales de contacto.
 - [Términos y condiciones](https://casolutecdigital.com/legal/terminos): Condiciones generales de los servicios.
 
 ## Recursos técnicos
 
-- [Sitemap](https://casolutecdigital.com/sitemap.xml): URLs públicas destinadas a indexación.
+- [Sitemap](https://casolutecdigital.com/sitemap.xml): URLs públicas destinadas a indexación, con hreflang de los cinco idiomas.
 - [Robots](https://casolutecdigital.com/robots.txt): Reglas de acceso para rastreadores.
-- [Contexto ampliado](https://casolutecdigital.com/llms-full.txt): Resumen factual ampliado para herramientas compatibles.
-
-## Optional
-
-- [Sitio en inglés](https://casolutecdigital.com/en): Punto de entrada localizado para visitantes internacionales.
-- [Sitio para Latinoamérica](https://casolutecdigital.com/es-419): Punto de entrada regional en español.
-- [Sitio para España](https://casolutecdigital.com/es-es): Punto de entrada regional en español.
-- [Sitio para Brasil](https://casolutecdigital.com/pt-br): Punto de entrada localizado para Brasil.
+- [Contexto ampliado](https://casolutecdigital.com/llms-full.txt): Resumen factual ampliado, en español e inglés, para herramientas compatibles.

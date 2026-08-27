@@ -1,12 +1,27 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
+import { SCHEMA_LANGUAGE, isAppLocale } from '@/lib/locales';
 import { HomeClient } from '@/components/pages/HomeClient';
-import { BUSINESS_EMAIL, BUSINESS_NAME, BUSINESS_PHONE, BUSINESS_SOCIALS, BUSINESS_WHATSAPP, DEFAULT_SOCIAL_IMAGE, getLanguageAlternates, SITE_URL } from '@/lib/seoUtils';
-import { faqs } from '@/lib/faqData';
+import { BUSINESS_EMAIL, BUSINESS_NAME, CONTENT_LAST_REVIEWED, BUSINESS_PHONE, BUSINESS_SOCIALS, BUSINESS_WHATSAPP, DEFAULT_SOCIAL_IMAGE, getCanonicalUrl, getLanguageAlternates, SITE_URL } from '@/lib/seoUtils';
+import { getFaqs } from '@/lib/faqData';
 
 interface Props {
   params: Promise<{ locale: string }>;
 }
+
+/**
+ * Descripcion de la entidad por idioma. Es uno de los campos que los motores de
+ * respuesta citan al presentar la empresa, asi que cada mercado recibe el encuadre
+ * que le corresponde. Donde no hay cobertura fisica se dice de forma explicita que
+ * el servicio es remoto, para no afirmar de mas.
+ */
+const BUSINESS_DESCRIPTIONS: Record<string, string> = {
+  'es-MX': 'Agencia mexicana de desarrollo de software, automatizacion con IA, SEO/AEO e infraestructura TI. Servicios digitales remotos en todo Mexico; los servicios de infraestructura fisica estan sujetos a cobertura.',
+  'en': 'Mexico-based software agency building custom web applications, mobile apps, CRM systems and AI automation for companies in the United States, Canada, the United Kingdom and Europe. English-speaking team working remotely with business-hours overlap across the Americas.',
+  'es-419': 'Agencia de desarrollo de software, automatizacion con IA y SEO/AEO para empresas de Latinoamerica. Servicios digitales 100% remotos en Colombia, Chile, Argentina, Peru y el resto de la region.',
+  'es-ES': 'Agencia de desarrollo de software a medida, aplicaciones moviles, automatizacion con IA y SEO/AEO para empresas en Espana. Servicios digitales prestados de forma remota.',
+  'pt-BR': 'Agencia de desenvolvimento de software sob medida, aplicativos moveis, automacao com IA e SEO/AEO para empresas no Brasil. Servicos digitais prestados remotamente.',
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -211,7 +226,8 @@ export default async function Page({ params }: Props) {
     'url': SITE_URL,
     'name': locale === 'en' ? 'CA Digital Solutions' : 'CA Soluciones Digitales',
     'alternateName': locale === 'en' ? 'CA Soluciones Digitales' : 'CA Digital Solutions',
-    'inLanguage': locale
+    'inLanguage': isAppLocale(locale) ? SCHEMA_LANGUAGE[locale] : locale,
+    'publisher': { '@id': `${SITE_URL}/#organization` }
   };
 
   const schema = {
@@ -225,9 +241,9 @@ export default async function Page({ params }: Props) {
     'image': DEFAULT_SOCIAL_IMAGE,
     'telephone': BUSINESS_PHONE,
     'email': BUSINESS_EMAIL,
-    'description': locale === 'en'
-      ? 'Mexican software, automation, SEO and IT services agency.'
-      : 'Agencia mexicana de software, automatizaci\u00f3n, SEO e infraestructura TI.',
+    'description': BUSINESS_DESCRIPTIONS[locale] ?? BUSINESS_DESCRIPTIONS['es-MX'],
+    'inLanguage': isAppLocale(locale) ? SCHEMA_LANGUAGE[locale] : locale,
+    'dateModified': CONTENT_LAST_REVIEWED,
     'contactPoint': {
       '@type': 'ContactPoint',
       'telephone': BUSINESS_PHONE,
@@ -275,9 +291,12 @@ export default async function Page({ params }: Props) {
     }
   };
 
+  const faqs = getFaqs(locale);
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${getCanonicalUrl('/', locale)}#faq`,
+    'inLanguage': isAppLocale(locale) ? SCHEMA_LANGUAGE[locale] : locale,
     'mainEntity': faqs.map(faq => ({
       '@type': 'Question',
       'name': faq.question,

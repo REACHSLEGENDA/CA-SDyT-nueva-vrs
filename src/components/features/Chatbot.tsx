@@ -6,6 +6,7 @@ import { MessageSquare, X, RefreshCw, ChevronRight, Phone, Mail } from 'lucide-r
 import Image from 'next/image';
 import { Link, usePathname } from '@/i18n/routing';
 import { ThinkingOrb } from 'thinking-orbs';
+import { useTranslations } from 'next-intl';
 
 type StepId =
     | 'start'
@@ -241,6 +242,14 @@ export function Chatbot() {
     const [frame, setFrame] = useState(1);
     const [isHovered, setIsHovered] = useState(false);
     const pathname = usePathname();
+    const t = useTranslations('Chatbot.ui');
+    const tSteps = useTranslations('Chatbot.steps');
+
+    // El arbol vive en el codigo (ids, saltos y enlaces); el texto viene de messages/*.json.
+    const optionLabels = (stepId: string): string[] => {
+        const raw = tSteps.raw(`${stepId}.options`);
+        return Array.isArray(raw) ? raw : [];
+    };
 
     const isHeroPlaying = pathname === '/' && !videoEnded;
 
@@ -314,7 +323,7 @@ export function Chatbot() {
                     }
                 }}
                 onMouseLeave={() => setIsHovered(false)}
-                aria-label="Abrir asistente"
+                aria-label={t('open')}
                 className={`fixed z-40 transition-all duration-300 hover:scale-110 flex items-center justify-center ${
                     isHeroPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
                 } ${
@@ -392,13 +401,13 @@ export function Chatbot() {
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ca-cyan opacity-75"></span>
                                             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-ca-cyan"></span>
                                         </span>
-                                        En línea
+                                        {t('status')}
                                     </span>
                                 </div>
                             </div>
                             <button
                                 onClick={restart}
-                                title="Reiniciar"
+                                title={t('restart')}
                                 className="p-2 hover:bg-white/5 rounded-lg text-ca-muted hover:text-ca-cyan transition-colors"
                             >
                                 <RefreshCw size={14} />
@@ -423,8 +432,8 @@ export function Chatbot() {
                                         </div>
                                         <div className="bg-white/[0.03] border border-white/5 px-4 py-3 rounded-2xl rounded-tl-none max-w-[85%] text-sm text-ca-text leading-relaxed shadow-sm">
                                             {stepId === 'start' && index > 0
-                                                ? '¡Holi de nuevo! 🌸 ¡Ya estamos de vuelta en el menú principal! ¿Qué otra área mágica te gustaría curiosear o cotizar hoy? ¡Dime!'
-                                                : step.text
+                                                ? t('backGreeting')
+                                                : tSteps(`${stepId}.text`)
                                             }
                                         </div>
                                     </motion.div>
@@ -449,7 +458,7 @@ export function Chatbot() {
                                 <div className="space-y-2.5">
                                     {/* Pricing note */}
                                     <p className="text-[10px] text-ca-muted text-center mb-3 font-mono tracking-wider">
-                                        💡 Todos los precios son bajo cotización personalizada
+                                        {t('priceNote')}
                                     </p>
                                     <a
                                         href="https://wa.me/525951145576"
@@ -458,7 +467,7 @@ export function Chatbot() {
                                         className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 hover:bg-[#25D366]/20 hover:border-[#25D366]/30 transition-all text-sm font-bold shadow-sm"
                                     >
                                         <MessageSquare size={16} />
-                                        WhatsApp ahora
+                                        {t('whatsapp')}
                                     </a>
                                     <Link
                                         href="/contacto"
@@ -466,7 +475,7 @@ export function Chatbot() {
                                         className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-ca-cyan/10 text-ca-cyan border border-ca-cyan/20 hover:bg-ca-cyan/20 hover:border-ca-cyan/30 transition-all text-sm font-bold shadow-sm"
                                     >
                                         <Mail size={15} />
-                                        Enviar formulario
+                                        {t('form')}
                                     </Link>
                                     {currentStep.serviceHref && (
                                         <Link
@@ -474,14 +483,14 @@ export function Chatbot() {
                                             onClick={() => setIsOpen(false)}
                                             className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border border-white/5 text-ca-muted hover:text-ca-text hover:border-ca-cyan/20 hover:bg-white/[0.02] transition-all text-xs"
                                         >
-                                            Ver página del servicio <ChevronRight size={12} className="translate-y-[0.5px]" />
+                                            {t('servicePage')} <ChevronRight size={12} className="translate-y-[0.5px]" />
                                         </Link>
                                     )}
                                     <button
                                         onClick={restart}
                                         className="w-full text-center text-ca-muted/60 hover:text-ca-muted text-xs pt-1 transition-colors"
                                     >
-                                        ← Volver al inicio
+                                        {t('backToStart')}
                                     </button>
                                 </div>
                             ) : (
@@ -493,7 +502,7 @@ export function Chatbot() {
                                                 onClick={() => handleOption(opt.next)}
                                                 className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white/[0.01] border border-white/5 text-ca-text text-xs font-semibold hover:border-ca-cyan/30 hover:text-ca-cyan hover:bg-ca-cyan/[0.03] transition-all text-left shadow-sm group"
                                             >
-                                                <span>{opt.label}</span>
+                                                <span>{optionLabels(currentStepId)[i] ?? opt.label}</span>
                                                 <ChevronRight size={13} className="text-ca-muted group-hover:text-ca-cyan group-hover:translate-x-0.5 transition-all shrink-0" />
                                             </button>
                                         ))}

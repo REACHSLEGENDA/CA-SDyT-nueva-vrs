@@ -68,5 +68,274 @@
         }
       ]
     }
+  },
+  "Nav": {
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "packages": "Web Packages",
+      "marketing": "Marketing",
+      "webApps": "Web Apps",
+      "mobileApps": "Mobile Apps",
+      "automation": "Automation",
+      "systems": "Custom Systems",
+      "classes": "Computer Classes",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "cta": "Let's talk →",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "navigationHeading": "Navigation",
+    "contactHeading": "Get in touch today",
+    "contactSubtitle": "Ready to take your business to the next level.",
+    "quoteCta": "Request a Quote →"
+  },
+  "Footer": {
+    "tagline": "Technology that moves your business forward. Software development, IT infrastructure and cybersecurity for companies that want to grow.",
+    "servicesHeading": "Services",
+    "companyHeading": "Company",
+    "contactHeading": "Contact",
+    "services": {
+      "web": "Web Development",
+      "mobile": "Mobile Apps",
+      "systems": "Custom Systems",
+      "automation": "AI Automation",
+      "infra": "IT Infrastructure",
+      "seo": "SEO & AEO"
+    },
+    "company": {
+      "about": "About",
+      "portfolio": "Portfolio",
+      "packages": "Packages",
+      "classes": "Computer Classes",
+      "contact": "Contact"
+    },
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "madeIn": "Made in Mexico 🇲🇽",
+    "cta": "Let's talk →"
+  },
+  "Cookies": {
+    "title": "We use cookies 🍪",
+    "body": "We use essential and analytics cookies to improve your experience. You can accept all of them or only the necessary ones.",
+    "privacyLink": "Read our Privacy Policy",
+    "essentialOnly": "Essential only",
+    "acceptAll": "Accept all",
+    "close": "Close",
+    "ariaLabel": "Cookie notice"
+  },
+  "ContactForm": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "service": "Service of interest",
+    "message": "Message",
+    "namePlaceholder": "Your full name",
+    "emailPlaceholder": "you@company.com",
+    "phonePlaceholder": "+1 555 ...",
+    "servicePlaceholder": "Select a service...",
+    "messagePlaceholder": "Tell us more about your project or requirements...",
+    "submit": "Send message →",
+    "sending": "Sending...",
+    "processingTitle": "Processing your request...",
+    "processingBody": "Opening a secure connection and sending your details to our team.",
+    "successTitle": "Message sent!",
+    "successBody": "We will reply within 2 hours by email or WhatsApp.",
+    "sendAnother": "Send another message",
+    "toastSuccess": "Message sent! We will get back to you within 2 hours.",
+    "toastError": "Something went wrong. Please try again or reach us on WhatsApp.",
+    "groups": {
+      "dev": "Digital Development",
+      "marketing": "Digital Marketing",
+      "infra": "IT Infrastructure",
+      "packages": "Packages",
+      "other": "Other"
+    },
+    "options": {
+      "Desarrollo Web": "Web Development",
+      "Aplicación Móvil": "Mobile App",
+      "Sistema Empresarial a Medida": "Custom Business System",
+      "Automatización e Integraciones IA": "Automation & AI Integrations",
+      "UI/UX Design": "UI/UX Design",
+      "Gestión de Redes Sociales": "Social Media Management",
+      "SEO Técnico y AEO": "Technical SEO & AEO",
+      "Google Business & Maps": "Google Business & Maps",
+      "Bot de WhatsApp con IA": "AI WhatsApp Bot",
+      "Diseño de Marca": "Brand Design",
+      "Redes y Conectividad Profesional": "Networking & Connectivity",
+      "Ciberseguridad y Protección de Datos": "Cybersecurity & Data Protection",
+      "Videovigilancia CCTV": "CCTV Surveillance",
+      "Servidores y Nube Privada (NAS/Windows Server)": "Servers & Private Cloud (NAS/Windows Server)",
+      "Soporte Técnico Integral": "Full IT Support",
+      "Despegue Digital": "Digital Launch",
+      "Tráfico y Conversión": "Traffic & Conversion",
+      "Ecosistema Premium IA": "Premium AI Ecosystem",
+      "Plan TI Empresarial": "Enterprise IT Plan",
+      "Consultoría": "Consulting",
+      "Otro": "Other"
+    },
+    "consent": "I agree to share my details so that CA Soluciones can contact me about this service."
+  },
+  "Chatbot": {
+    "ui": {
+      "status": "Online",
+      "restart": "Restart",
+      "open": "Open assistant",
+      "close": "Close assistant",
+      "backToStart": "← Back to start",
+      "priceNote": "💡 All prices are based on a personalised quote",
+      "whatsapp": "WhatsApp now",
+      "form": "Send the form",
+      "servicePage": "See the service page",
+      "backGreeting": "Hi again! 🌸 We're back at the main menu. Which other area would you like to explore or get a quote for? Tell me!"
+    },
+    "steps": {
+      "start": {
+        "text": "Hi there! I'm Cassie, your digital assistant at CA Soluciones y Tecnología. 🤖✨ So happy to meet you! I'm ready to help you design the perfect tech setup for your business. Where should we start? 💖",
+        "options": [
+          "📈 Grow my business or sales",
+          "⚙️ Solve a technical or software need",
+          "📚 Training / computer classes",
+          "🏢 Learn more about CA Soluciones"
+        ]
+      },
+      "grow_options": {
+        "text": "Awesome choice! ✨ If you want to boost your sales and build a great presence online, we have exactly the right tools. What would you like to strengthen today? 🚀",
+        "options": [
+          "🌐 Build a website or mobile app",
+          "🤖 AI process automation",
+          "📈 SEO and AI answer engines (AEO)",
+          "📦 See web development packages",
+          "← Back to start"
+        ]
+      },
+      "tech_options": {
+        "text": "Got it! ⚙️ On the technical side, we make sure your business runs fast, secure and headache-free. What does your company need today? Count on me! 🌸",
+        "options": [
+          "⚙️ A custom system (CRM, POS, ERP)",
+          "🔒 Network security, servers or CCTV",
+          "💾 Data migration (Excel to cloud)",
+          "← Back to start"
+        ]
+      },
+      "classes_intro": {
+        "text": "Love this! 📚 We enjoy teaching. We offer personalised, hands-on classes so you or your team can master the best tools. Which area would you like to get really good at? 💡",
+        "options": [
+          "💻 Office software and computer basics",
+          "⚡ Web development and programming",
+          "🎨 Digital marketing and social media",
+          "← Back to start"
+        ]
+      },
+      "about_intro": {
+        "text": "Here we go! 🏢 We're a digital agency based in Mexico working with clients across the Americas and Europe. We specialise in beautiful websites, fast apps, AI automation and solid IT support. What would you like to explore? ✨",
+        "options": [
+          "📂 See our project portfolio",
+          "👥 Learn about us and the team",
+          "← Back to start"
+        ]
+      },
+      "web": {
+        "text": "Yay! 🌐 We build fast, stable projects with Next.js, React and Flutter for mobile. Your users are going to love it! What kind of project do you have in mind? ✨",
+        "options": [
+          "Landing page or corporate site",
+          "Online store (e-commerce)",
+          "Custom web application",
+          "Mobile app (Android & iOS)",
+          "← Back"
+        ]
+      },
+      "system": {
+        "text": "Love it! ⚙️ We build powerful systems from scratch with Supabase and Node.js so you can forget about slow processes. Which part of your business do you want to digitise? 🚀",
+        "options": [
+          "Sales pipeline and leads (CRM)",
+          "Point of sale and stock control (POS)",
+          "Resource management / payroll (ERP)",
+          "← Back"
+        ]
+      },
+      "system_migration": {
+        "text": "Goodbye headaches! 💾 We move your old files or data-heavy spreadsheets into a secure, well-organised cloud database. How much data do you need to migrate? 🌟",
+        "options": [
+          "Small (Excel or Access tables)",
+          "Large (legacy systems or on-prem ERP)",
+          "← Back"
+        ]
+      },
+      "infra": {
+        "text": "Security first! 🔒 We install and configure latest-generation Fortinet firewalls, Synology NAS private clouds and hardened servers. Heads up: on-site infrastructure work is available in Mexico, subject to coverage. What does your office need? ⚡",
+        "options": [
+          "Cybersecurity and network protection (firewall)",
+          "On-premise servers or private cloud (NAS)",
+          "CCTV / video surveillance cameras",
+          "← Back"
+        ]
+      },
+      "marketing": {
+        "text": "Exciting! 📈 Showing up on Google is no longer enough — we also help you stand out in ChatGPT, Gemini and Perplexity with AI-era SEO. Which area would you like to win today? 💖",
+        "options": [
+          "Show up in Google search (SEO)",
+          "AI answers (AEO: ChatGPT, Gemini)",
+          "Google Maps and local business listing",
+          "← Back"
+        ]
+      },
+      "automation": {
+        "text": "Woohoo! 🤖 Automating your workflows (with n8n or Make) can cut repetitive work dramatically. It feels like magic! What is your priority for freeing up time? ✨",
+        "options": [
+          "Smart WhatsApp bot (GPT-4)",
+          "Connect systems (CRM, spreadsheets, etc.)",
+          "Automate repetitive tasks and workflows",
+          "← Back"
+        ]
+      },
+      "packages": {
+        "text": "Nice and practical! 📦 We design turnkey packages so you can launch without complications. Which one would you like to look at? 🌟",
+        "options": [
+          "🚀 Digital Launch plan (corporate website)",
+          "📊 Traffic & Conversion plan (local SEO and campaign)",
+          "✨ Premium Ecosystem (web + AI bot + AEO)",
+          "← Back"
+        ]
+      },
+      "about_portfolio": {
+        "text": "So good! 📂 We've built lovely online stores, websites for international brands and some really neat automations. You can browse it all in our portfolio. Shall we put a quote together for you? 💖",
+        "options": [
+          "Yes, quote it now!",
+          "← Back"
+        ]
+      },
+      "about_us_info": {
+        "text": "We love what we do! 🥰 At CA Soluciones we're all about clean, scalable, robust code — always with honesty and great technical support. Shall we talk about your idea? 🚀",
+        "options": [
+          "Yes, let’s talk about the project!",
+          "← Back"
+        ]
+      },
+      "final_web": {
+        "text": "Great! ✨ Every project is different, so we quote to your scope and give you a fair, transparent price with no surprises. Reach out, no strings attached! 👇"
+      },
+      "final_system": {
+        "text": "Excellent! ⚙️ Systems are quoted by module and by what you need to manage. Let's set up a call and we'll put together a free, clear technical proposal. 👇"
+      },
+      "final_infra": {
+        "text": "Great! 🔒 Network and infrastructure projects depend on your offices and equipment, and are available in Mexico subject to coverage. Let's talk and we'll shape the right proposal. 👇"
+      },
+      "final_mkt": {
+        "text": "Love it! 📈 Our SEO strategies adapt to your goals and your competition. Let's book a free consultation and I'll tell you exactly what will make you shine. 👇"
+      },
+      "final_auto": {
+        "text": "Yay! 🤖 AI and automation projects depend on the tools you already use. Tell me your case and I'll propose the most efficient solution. 👇"
+      },
+      "final_classes": {
+        "text": "Great! 💻 We teach every level, from the basics to programming and marketing. Pricing depends on your hours and plan. Ask me anything here! 👇"
+      },
+      "final_pkg": {
+        "text": "Perfect! 📦 Our packages have a great baseline, and we always tailor them to you. Ask me which one fits best and I'll walk you through it! 👇"
+      }
+    }
   }
 }

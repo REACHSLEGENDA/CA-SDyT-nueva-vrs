@@ -114,7 +114,7 @@ export default function SeoAeoPage() {
                 <div className="grid md:grid-cols-3 gap-6">
                     {[
                         {
-                            icon: <Image src="/assets/seo.png" alt="SEO" width={160} height={160} className="w-40 h-40 object-contain" />,
+                            icon: <Image src="/assets/seo.webp" alt="SEO" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'cyan' as const,
                             title: 'SEO Técnico',
                             desc: 'Optimizamos la estructura, velocidad, Core Web Vitals, schema markup y arquitectura de tu sitio para que Google lo entienda y posicione primero.',
@@ -127,7 +127,7 @@ export default function SeoAeoPage() {
                             ],
                         },
                         {
-                            icon: <Image src="/assets/aeo.png" alt="AEO" width={160} height={160} className="w-40 h-40 object-contain" />,
+                            icon: <Image src="/assets/aeo.webp" alt="AEO" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'purple' as const,
                             title: 'AEO — Visibilidad en búsquedas con IA',
                             desc: 'Mejoramos la accesibilidad, claridad y respaldo de tu contenido para aumentar su elegibilidad como fuente en ChatGPT, Gemini, Claude, Perplexity y otras experiencias de búsqueda.',
@@ -140,7 +140,7 @@ export default function SeoAeoPage() {
                             ],
                         },
                         {
-                            icon: <Image src="/assets/maps.png" alt="Google Maps" width={160} height={160} className="w-40 h-40 object-contain" />,
+                            icon: <Image src="/assets/maps.webp" alt="Google Maps" width={160} height={160} className="w-40 h-40 object-contain" />,
                             glow: 'none' as const,
                             title: 'Google Business & SEO Local',
                             desc: 'Optimizamos y gestionamos tu ficha en Google Maps para que clientes locales te encuentren antes que a la competencia.',

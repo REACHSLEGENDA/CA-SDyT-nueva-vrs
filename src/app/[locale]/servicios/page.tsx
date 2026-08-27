@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const schema = getServiceSchema('Desarrollo de Software y Servicios TI', locale);
+  const schema = getServiceSchema('Desarrollo de Software y Servicios TI', locale, '/servicios');
 
   return (
     <>

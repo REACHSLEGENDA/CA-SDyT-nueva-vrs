@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClassesPageClient from './ClasesClient';
-import { getPageMetadata } from '@/lib/seoUtils';
+import { getPageMetadata, getCanonicalUrl, getServiceSchema, BUSINESS_NAME, SITE_URL } from '@/lib/seoUtils';
+import { SCHEMA_LANGUAGE, isAppLocale } from '@/lib/locales';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -32,5 +33,41 @@ export default async function Page({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ClassesPageClient />;
+  const pageUrl = getCanonicalUrl('/clases', locale);
+  const serviceSchema = getServiceSchema('Clases de Cómputo y Capacitación Digital', locale, '/clases');
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    '@id': `${pageUrl}#course`,
+    'url': pageUrl,
+    'name': titles[locale as keyof typeof titles] ?? titles['es-MX'],
+    'description': descriptions[locale as keyof typeof descriptions] ?? descriptions['es-MX'],
+    'inLanguage': isAppLocale(locale) ? SCHEMA_LANGUAGE[locale] : locale,
+    'provider': {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      'name': BUSINESS_NAME,
+      'url': SITE_URL,
+    },
+    'hasCourseInstance': {
+      '@type': 'CourseInstance',
+      'courseMode': ['online', 'onsite'],
+      'courseWorkload': 'PT2H',
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
+      <ClassesPageClient />
+    </>
+  );
 }
