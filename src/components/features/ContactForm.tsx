@@ -50,34 +50,30 @@ const INPUT_CLASS =
 
 function ContactFormInner() {
     const [state, handleSubmit] = useForm('mpwlzjjo');
-    const [isSimulatedSending, setIsSimulatedSending] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
     const searchParams = useSearchParams();
     const t = useTranslations('ContactForm');
     const preSelected = searchParams?.get('servicio') ?? '';
 
     useEffect(() => {
-        if (state.succeeded && !isSimulatedSending) {
+        if (state.succeeded) {
             setShowSuccess(true);
             playSound('success');
             toast.success(t('toastSuccess'));
         }
         if (state.errors && Object.keys(state.errors).length > 0) {
             toast.error(t('toastError'));
-            setIsSimulatedSending(false);
         }
-    }, [state.succeeded, state.errors, isSimulatedSending]);
+    }, [state.succeeded, state.errors, t]);
 
     const handleCustomSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setIsSimulatedSending(true);
-        setTimeout(() => {
-            setIsSimulatedSending(false);
-        }, 5000);
+        // Antes habia un setTimeout de 5 s que retenia la pantalla de "enviando"
+        // aunque Formspree ya hubiera respondido. Era friccion pura en el punto de
+        // conversion: ahora el estado lo marca la peticion real (state.submitting).
         handleSubmit(e);
     };
 
-    if (isSimulatedSending || state.submitting) {
+    if (state.submitting) {
         return (
             <div className="p-10 bg-ca-dark/40 border border-ca-cyan/20 rounded-2xl text-center flex flex-col items-center justify-center min-h-[350px] shadow-[0_0_30px_rgba(0,207,255,0.05)]">
                 <ThinkingOrb state="searching" size={64} className="mb-6 opacity-90" />
@@ -219,7 +215,7 @@ function ContactFormInner() {
                            shadow-lg shadow-ca-cyan/20 disabled:opacity-60 disabled:pointer-events-none
                            flex items-center justify-center gap-2"
             >
-                {isSimulatedSending || state.submitting ? (
+                {state.submitting ? (
                     <><ThinkingOrb state="searching" size={20} /> {t('sending')}</>
                 ) : (
                     t('submit')

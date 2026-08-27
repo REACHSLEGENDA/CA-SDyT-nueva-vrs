@@ -84,7 +84,9 @@
     "navigationHeading": "Navegación",
     "contactHeading": "Contáctanos hoy",
     "contactSubtitle": "Listos para llevar tu negocio al siguiente nivel.",
-    "quoteCta": "Solicitar Cotización →"
+    "quoteCta": "Solicitar Cotización →",
+    "soundOn": "Activar sonidos de la interfaz",
+    "soundOff": "Silenciar sonidos de la interfaz"
   },
   "Footer": {
     "tagline": "Tecnología que impulsa tu negocio. Desarrollo digital y sistemas a medida para empresas de toda Latinoamérica.",
@@ -331,5 +333,87 @@
         "text": "¡Perfecto! 📦 Nuestros paquetes tienen bases geniales, pero siempre los ajustamos para ti. ¡Pregúntame cuál te conviene más y te asesoro con todo gusto! 👇"
       }
     }
+  },
+  "Process": {
+    "eyebrow": "Metodología Probada",
+    "titleA": "De Idea a ",
+    "titleB": "Producto Escalable",
+    "subtitle": "Un proceso de ingeniería estructurado que elimina la incertidumbre y garantiza resultados de nivel empresarial.",
+    "steps": [
+      {
+        "title": "Descubrimiento y Análisis",
+        "description": "No escribimos una sola línea de código sin entender tu negocio. Realizamos sesiones profundas para definir tus objetivos comerciales, requerimientos técnicos y el alcance exacto del proyecto. Convertimos tus ideas abstractas en un plan de acción concreto.",
+        "bullets": [
+          "Auditoría de requerimientos",
+          "Definición de user personas",
+          "Análisis de competencia",
+          "Roadmap estratégico"
+        ]
+      },
+      {
+        "title": "Planeación y Arquitectura",
+        "description": "Diseñamos la estructura lógica y técnica de tu sistema. Seleccionamos el stack tecnológico ideal (Next.js, Node, Python, etc.) para garantizar escalabilidad y rendimiento futuro. Nada se deja al azar.",
+        "bullets": [
+          "Diagramas de arquitectura",
+          "Diseño de base de datos",
+          "Selección de infraestructura (AWS/Vercel)",
+          "Plan de sprints"
+        ]
+      },
+      {
+        "title": "Diseño UI/UX Premium",
+        "description": "Creamos la identidad visual de tu producto. Diseñamos interfaces intuitivas, modernas y alineadas a tu marca que no solo se ven bien, sino que convierten visitantes en clientes. Validamos cada pantalla contigo antes de programar.",
+        "bullets": [
+          "Wireframes de baja fidelidad",
+          "Prototipos interactivos",
+          "Sistema de diseño",
+          "Microinteracciones y animaciones"
+        ]
+      },
+      {
+        "title": "Desarrollo Full-Stack",
+        "description": "Aquí ocurre la magia. Nuestros ingenieros construyen tu software siguiendo estándares internacionales. Código limpio, seguro y optimizado desde el núcleo. Integramos APIs, pasarelas de pago y lógica de negocio compleja.",
+        "bullets": [
+          "Frontend React/Next.js de alto rendimiento",
+          "Backend robusto y seguro",
+          "Integración de APIs y servicios de terceros",
+          "Control de versiones (Git)"
+        ]
+      },
+      {
+        "title": "Pruebas y QA Riguroso",
+        "description": "La calidad no es negociable. Sometemos el software a pruebas de estrés, seguridad y usabilidad para eliminar errores antes del lanzamiento. Aseguramos que funcione bien en todos los dispositivos y navegadores.",
+        "bullets": [
+          "Testing funcional y de regresión",
+          "Pruebas de rendimiento (Lighthouse)",
+          "Auditoría de seguridad básica",
+          "Optimización SEO técnica"
+        ]
+      },
+      {
+        "title": "Lanzamiento y Soporte Evolutivo",
+        "description": "Desplegamos tu proyecto en producción sin interrupciones. Pero no terminamos ahí: monitoreamos el rendimiento y te acompañamos para realizar mejoras continuas y escalar tu sistema conforme tu negocio crece.",
+        "bullets": [
+          "Despliegue en producción (CI/CD)",
+          "Capacitación a tu equipo",
+          "Monitorización continua",
+          "Soporte post-lanzamiento"
+        ]
+      }
+    ]
+  },
+  "Cta": {
+    "eyebrow": "Potencia tu negocio hoy",
+    "titleA": "¿Listo para llevar tu negocio al ",
+    "titleB": "siguiente nivel",
+    "titleC": "?",
+    "body": "Creamos soluciones digitales rápidas, seguras y escalables. Cuéntanos tu idea y te enviamos una cotización clara sin compromiso.",
+    "perks": [
+      "Desarrollo Profesional",
+      "Soporte Real",
+      "Tecnología Moderna"
+    ],
+    "primary": "Cotizar Proyecto",
+    "whatsapp": "WhatsApp"
   }
 }

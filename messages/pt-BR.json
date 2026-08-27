@@ -84,7 +84,9 @@
     "navigationHeading": "Navegação",
     "contactHeading": "Fale com a gente hoje",
     "contactSubtitle": "Prontos para levar seu negócio ao próximo nível.",
-    "quoteCta": "Solicitar Orçamento →"
+    "quoteCta": "Solicitar Orçamento →",
+    "soundOn": "Ativar sons da interface",
+    "soundOff": "Silenciar sons da interface"
   },
   "Footer": {
     "tagline": "Tecnologia que impulsiona o seu negócio. Desenvolvimento de software e sistemas sob medida para empresas no Brasil, de forma totalmente remota.",
@@ -331,5 +333,87 @@
         "text": "Perfeito! 📦 Nossos pacotes têm uma base ótima e sempre ajustamos para você. Me pergunte qual encaixa melhor e eu te oriento! 👇"
       }
     }
+  },
+  "Process": {
+    "eyebrow": "Metodologia Comprovada",
+    "titleA": "Da Ideia ao ",
+    "titleB": "Produto Escalável",
+    "subtitle": "Um processo de engenharia estruturado que elimina a incerteza e garante resultados de nível empresarial.",
+    "steps": [
+      {
+        "title": "Descoberta e Análise",
+        "description": "Não escrevemos uma linha de código sem entender o seu negócio. Fazemos sessões aprofundadas para definir objetivos comerciais, requisitos técnicos e o escopo exato do projeto, transformando ideias abstratas em um plano concreto.",
+        "bullets": [
+          "Auditoria de requisitos",
+          "Definição de personas",
+          "Análise da concorrência",
+          "Roadmap estratégico"
+        ]
+      },
+      {
+        "title": "Planejamento e Arquitetura",
+        "description": "Desenhamos a estrutura lógica e técnica do seu sistema e escolhemos a stack ideal (Next.js, Node, Python e outras) para garantir escalabilidade e desempenho futuro. Nada fica ao acaso.",
+        "bullets": [
+          "Diagramas de arquitetura",
+          "Modelagem de banco de dados",
+          "Escolha de infraestrutura (AWS/Vercel)",
+          "Plano de sprints"
+        ]
+      },
+      {
+        "title": "Design UI/UX Premium",
+        "description": "Criamos a identidade visual do seu produto: interfaces intuitivas, modernas e alinhadas à sua marca, que além de bonitas convertem visitantes em clientes. Cada tela é validada com você antes de programar.",
+        "bullets": [
+          "Wireframes de baixa fidelidade",
+          "Protótipos interativos",
+          "Design system",
+          "Microinterações e animações"
+        ]
+      },
+      {
+        "title": "Desenvolvimento Full-Stack",
+        "description": "É aqui que tudo acontece. Nossos engenheiros constroem seu software seguindo padrões internacionais: código limpo, seguro e otimizado. Integramos APIs, meios de pagamento e regras de negócio complexas.",
+        "bullets": [
+          "Frontend React/Next.js de alta performance",
+          "Backend robusto e seguro",
+          "Integração de APIs e serviços de terceiros",
+          "Controle de versão (Git)"
+        ]
+      },
+      {
+        "title": "Testes e QA Rigoroso",
+        "description": "Qualidade não se negocia. Submetemos o software a testes de estresse, segurança e usabilidade para eliminar erros antes do lançamento, garantindo funcionamento em todos os dispositivos e navegadores.",
+        "bullets": [
+          "Testes funcionais e de regressão",
+          "Testes de desempenho (Lighthouse)",
+          "Auditoria básica de segurança",
+          "Otimização técnica de SEO"
+        ]
+      },
+      {
+        "title": "Lançamento e Suporte Contínuo",
+        "description": "Publicamos seu projeto em produção sem interrupções. E não paramos por aí: monitoramos o desempenho e acompanhamos você em melhorias contínuas conforme o negócio cresce.",
+        "bullets": [
+          "Deploy em produção (CI/CD)",
+          "Treinamento da sua equipe",
+          "Monitoramento contínuo",
+          "Suporte pós-lançamento"
+        ]
+      }
+    ]
+  },
+  "Cta": {
+    "eyebrow": "Impulsione seu negócio hoje",
+    "titleA": "Pronto para levar seu negócio ao ",
+    "titleB": "próximo nível",
+    "titleC": "?",
+    "body": "Criamos soluções digitais rápidas, seguras e escaláveis. Conte sua ideia e enviamos um orçamento claro, sem compromisso.",
+    "perks": [
+      "Desenvolvimento Profissional",
+      "Suporte de Verdade",
+      "Tecnologia Moderna"
+    ],
+    "primary": "Solicitar Orçamento",
+    "whatsapp": "WhatsApp"
   }
 }

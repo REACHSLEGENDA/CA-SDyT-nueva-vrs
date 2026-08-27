@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/Button';
@@ -7,6 +8,9 @@ import { ChevronRight, MessageCircle, Mail, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 
 export function CTASection() {
+    const t = useTranslations('Cta');
+    const perks = t.raw('perks') as string[];
+
     return (
         <section className="py-20 md:py-32 relative overflow-hidden bg-transparent">
 
@@ -38,41 +42,37 @@ export function CTASection() {
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/20 border border-brand-purple/30 text-brand-purple font-bold text-sm">
                                 <Sparkles size={16} className="fill-brand-purple" />
-                                <span>Potencia tu negocio hoy</span>
+                                <span>{t('eyebrow')}</span>
                             </div>
 
                             <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
-                                ¿Listo para llevar tu negocio al <span className="text-gradient">siguiente nivel</span>?
+                                {t('titleA')}<span className="text-gradient">{t('titleB')}</span>{t('titleC')}
                             </h2>
 
                             <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                                Creamos soluciones digitales rápidas, seguras y escalables. Cuéntanos tu idea y te enviamos una cotización clara sin compromiso.
+                                {t('body')}
                             </p>
 
                             <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center lg:justify-start text-sm text-gray-400">
-                                <div className="flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-brand-purple" /> Desarrollo Profesional
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-brand-purple" /> Soporte Real
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-brand-purple" /> Tecnología Moderna
-                                </div>
+                                {perks.map((perk) => (
+                                    <div key={perk} className="flex items-center gap-2">
+                                        <span className="w-2 h-2 rounded-full bg-brand-purple" /> {perk}
+                                    </div>
+                                ))}
                             </div>
 
                             {/* Actions (Buttons) */}
                             <div className="flex flex-col sm:flex-row gap-4 items-center pt-4 justify-center lg:justify-start w-full">
                                 <Link href="/contacto" className="w-full sm:w-auto">
                                     <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-brand-purple to-brand-blue hover:scale-105 shadow-[0_0_40px_rgba(139,92,246,0.3)] border-0 text-md py-6 px-8">
-                                        Cotizar Proyecto <ChevronRight className="ml-1" size={18} />
+                                        {t('primary')} <ChevronRight className="ml-1" size={18} />
                                     </Button>
                                 </Link>
 
                                 <div className="flex gap-3 w-full sm:w-auto">
                                     <a href="https://wa.me/525951145576" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
                                         <Button variant="outline" size="lg" className="w-full justify-center bg-white/5 border-white/10 hover:bg-brand-purple/20 hover:border-brand-purple/50 hover:text-brand-purple text-sm py-5 px-4">
-                                            <MessageCircle className="mr-1.5" size={16} /> WhatsApp
+                                            <MessageCircle className="mr-1.5" size={16} /> {t('whatsapp')}
                                         </Button>
                                     </a>
                                     <a href="mailto:contacto@casolutecdigital.com" className="w-full sm:w-auto">

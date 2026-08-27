@@ -3,8 +3,12 @@ import { Inter, Syne } from "next/font/google";
 import "@/app/globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Chatbot } from "@/components/features/Chatbot";
+import dynamic from "next/dynamic";
 import { CookieBanner } from "@/components/features/CookieBanner";
+
+// El chatbot no es contenido indexable y arrastra framer-motion y thinking-orbs.
+// Diferirlo lo saca del bundle inicial de todas las paginas.
+const Chatbot = dynamic(() => import("@/components/features/Chatbot").then((m) => m.Chatbot));
 import { DynamicBackground } from "@/components/layout/DynamicBackground";
 import { Toaster } from "react-hot-toast";
 import { SoundListener } from "@/components/features/SoundListener";

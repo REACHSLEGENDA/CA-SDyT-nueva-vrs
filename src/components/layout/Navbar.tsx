@@ -8,6 +8,7 @@ import { Menu, X, ChevronRight, Phone, Mail } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { LocaleSwitcher } from './LocaleSwitcher';
+import { SoundToggle } from './SoundToggle';
 
 const links: { href: any; key: string }[] = [
     { href: '/', key: 'home' },
@@ -119,7 +120,8 @@ export function Navbar() {
                             {t('cta')}
                         </a>
 
-                        {/* Selector de idioma */}
+                        {/* Sonido e idioma */}
+                        <SoundToggle />
                         <LocaleSwitcher />
 
                         {/* Hamburger */}

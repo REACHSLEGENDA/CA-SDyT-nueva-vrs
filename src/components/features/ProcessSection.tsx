@@ -2,60 +2,27 @@
 
 import { motion } from 'framer-motion';
 import { Search, Layout, AppWindow, Code2, TestTube2, Rocket, CheckCircle2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 
-const steps = [
-    {
-        number: '01',
-        title: 'Descubrimiento y Análisis',
-        description: 'No escribimos una sola línea de código sin entender tu negocio. Realizamos sesiones profundas para definir tus objetivos comerciales, requerimientos técnicos y el alcance exacto del proyecto. Convertimos tus ideas abstractas en un plan de acción concreto.',
-        icon: <Search className="w-8 h-8 text-brand-blue" />,
-        bullets: ['Auditoría de requerimientos', 'Definición de User Personas', 'Análisis de competencia', 'Roadmap estratégico'],
-        align: 'left'
-    },
-    {
-        number: '02',
-        title: 'Planeación y Arquitectura',
-        description: 'Diseñamos la estructura lógica y técnica de tu sistema. Seleccionamos el stack tecnológico ideal (Next.js, Node, Python, etc.) para garantizar escalabilidad y rendimiento futuro. Nada se deja al azar.',
-        icon: <Layout className="w-8 h-8 text-brand-purple" />,
-        bullets: ['Diagramas de arquitectura', 'Diseño de base de datos', 'Selección de infraestructura (AWS/Vercel)', 'Plan de sprints'],
-        align: 'right'
-    },
-    {
-        number: '03',
-        title: 'Diseño UI/UX Premium',
-        description: 'Creamos la identidad visual de tu producto. Diseñamos interfaces intuitivas, modernas y alineadas a tu marca que no solo se ven bien, sino que convierten visitantes en clientes. Validamos cada pantalla contigo antes de programar.',
-        icon: <AppWindow className="w-8 h-8 text-pink-400" />,
-        bullets: ['Wireframes de baja fidelidad', 'Prototipos interactivos', 'Sistema de diseño (Design System)', 'Micronteracciones y animaciones'],
-        align: 'left'
-    },
-    {
-        number: '04',
-        title: 'Desarrollo Full-Stack',
-        description: 'Aquí ocurre la magia. Nuestros ingenieros senior construyen tu software siguiendo estándares internacionales. Código limpio, seguro y optimizado desde el núcleo. Integramos APIs, pasarelas de pago y lógica de negocio compleja.',
-        icon: <Code2 className="w-8 h-8 text-brand-cyan" />,
-        bullets: ['Frontend React/Next.js de alto rendimiento', 'Backend robusto y seguro', 'Integración de APIs y servicios terceros', 'Control de versiones (Git)'],
-        align: 'right'
-    },
-    {
-        number: '05',
-        title: 'Pruebas y QA Riguroso',
-        description: 'La calidad no es negociable. Sometemos el software a pruebas de estrés, seguridad y usabilidad para eliminar bugs antes del lanzamiento. Aseguramos que funcione perfecto en todos los dispositivos y navegadores.',
-        icon: <TestTube2 className="w-8 h-8 text-green-400" />,
-        bullets: ['Testing funcional y de regresión', 'Pruebas de rendimiento (Lighthouse)', 'Auditoría de seguridad básica', 'Optimización SEO técnica'],
-        align: 'left'
-    },
-    {
-        number: '06',
-        title: 'Lanzamiento y Soporte Evolutivo',
-        description: 'Desplegamos tu proyecto en producción con cero downtime. Pero no terminamos ahí: monitoreamos el rendimiento en tiempo real y te acompañamos para realizar mejoras continuas y escalar tu sistema conforme tu negocio crece.',
-        icon: <Rocket className="w-8 h-8 text-orange-400" />,
-        bullets: ['Despliegue en producción (CI/CD)', 'Capacitación a tu equipo', 'Monitorización 24/7', 'Soporte post-lanzamiento'],
-        align: 'right'
-    }
+// Solo lo que no se traduce: icono, numero y alineacion. El texto vive en messages/*.json.
+const stepVisuals = [
+    { number: '01', icon: <Search className="w-8 h-8 text-brand-blue" />, align: 'left' },
+    { number: '02', icon: <Layout className="w-8 h-8 text-brand-purple" />, align: 'right' },
+    { number: '03', icon: <AppWindow className="w-8 h-8 text-pink-400" />, align: 'left' },
+    { number: '04', icon: <Code2 className="w-8 h-8 text-brand-cyan" />, align: 'right' },
+    { number: '05', icon: <TestTube2 className="w-8 h-8 text-green-400" />, align: 'left' },
+    { number: '06', icon: <Rocket className="w-8 h-8 text-orange-400" />, align: 'right' },
 ];
 
+interface ProcessStepCopy { title: string; description: string; bullets: string[] }
+
+
 export function ProcessSection() {
+    const t = useTranslations('Process');
+    const copy = t.raw('steps') as ProcessStepCopy[];
+    const steps = stepVisuals.map((v, i) => ({ ...v, ...copy[i] }));
+
     return (
         <section className="relative py-32 bg-transparent overflow-hidden">
             {/* Background Decorative Elements */}
@@ -72,7 +39,7 @@ export function ProcessSection() {
                         viewport={{ once: true }}
                         className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-brand-blue text-sm font-medium mb-6"
                     >
-                        Metodología Probada
+                        {t('eyebrow')}
                     </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -81,7 +48,7 @@ export function ProcessSection() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6"
                     >
-                        De Idea a <span className="text-gradient">Producto Escalar</span>
+                        {t('titleA')}<span className="text-gradient">{t('titleB')}</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -90,7 +57,7 @@ export function ProcessSection() {
                         transition={{ delay: 0.2 }}
                         className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
                     >
-                        Un proceso de ingeniería estructurado que elimina la incertidumbre y garantiza resultados de nivel empresarial.
+                        {t('subtitle')}
                     </motion.p>
                 </div>
 

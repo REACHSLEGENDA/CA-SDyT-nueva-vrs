@@ -90,7 +90,9 @@
     "navigationHeading": "Navigation",
     "contactHeading": "Get in touch today",
     "contactSubtitle": "Ready to take your business to the next level.",
-    "quoteCta": "Request a Quote →"
+    "quoteCta": "Request a Quote →",
+    "soundOn": "Turn interface sounds on",
+    "soundOff": "Mute interface sounds"
   },
   "Footer": {
     "tagline": "Technology that moves your business forward. Software development, IT infrastructure and cybersecurity for companies that want to grow.",
@@ -337,5 +339,87 @@
         "text": "Perfect! 📦 Our packages have a great baseline, and we always tailor them to you. Ask me which one fits best and I'll walk you through it! 👇"
       }
     }
+  },
+  "Process": {
+    "eyebrow": "Proven Methodology",
+    "titleA": "From Idea to ",
+    "titleB": "Scalable Product",
+    "subtitle": "A structured engineering process that removes uncertainty and delivers enterprise-grade results.",
+    "steps": [
+      {
+        "title": "Discovery and Analysis",
+        "description": "We do not write a single line of code before understanding your business. We run in-depth sessions to define your commercial goals, technical requirements and the exact scope of the project, turning abstract ideas into a concrete plan.",
+        "bullets": [
+          "Requirements audit",
+          "User persona definition",
+          "Competitor analysis",
+          "Strategic roadmap"
+        ]
+      },
+      {
+        "title": "Planning and Architecture",
+        "description": "We design the logical and technical structure of your system, and select the right stack (Next.js, Node, Python and others) to guarantee scalability and future performance. Nothing is left to chance.",
+        "bullets": [
+          "Architecture diagrams",
+          "Database design",
+          "Infrastructure selection (AWS/Vercel)",
+          "Sprint plan"
+        ]
+      },
+      {
+        "title": "Premium UI/UX Design",
+        "description": "We create the visual identity of your product: intuitive, modern interfaces aligned with your brand that not only look good but turn visitors into customers. Every screen is validated with you before we start coding.",
+        "bullets": [
+          "Low-fidelity wireframes",
+          "Interactive prototypes",
+          "Design system",
+          "Micro-interactions and animation"
+        ]
+      },
+      {
+        "title": "Full-Stack Development",
+        "description": "This is where it comes together. Our engineers build your software to international standards: clean, secure, optimised code. We integrate APIs, payment gateways and complex business logic.",
+        "bullets": [
+          "High-performance React/Next.js frontend",
+          "Robust, secure backend",
+          "API and third-party integrations",
+          "Version control (Git)"
+        ]
+      },
+      {
+        "title": "Testing and Rigorous QA",
+        "description": "Quality is not negotiable. We put the software through stress, security and usability testing to remove bugs before launch, and make sure it works properly across devices and browsers.",
+        "bullets": [
+          "Functional and regression testing",
+          "Performance testing (Lighthouse)",
+          "Baseline security audit",
+          "Technical SEO optimisation"
+        ]
+      },
+      {
+        "title": "Launch and Ongoing Support",
+        "description": "We deploy your project to production without downtime. And we do not stop there: we monitor performance and stay with you for continuous improvements as your business grows.",
+        "bullets": [
+          "Production deployment (CI/CD)",
+          "Training for your team",
+          "Continuous monitoring",
+          "Post-launch support"
+        ]
+      }
+    ]
+  },
+  "Cta": {
+    "eyebrow": "Grow your business today",
+    "titleA": "Ready to take your business to the ",
+    "titleB": "next level",
+    "titleC": "?",
+    "body": "We build fast, secure and scalable digital solutions. Tell us your idea and we will send you a clear quote, no strings attached.",
+    "perks": [
+      "Professional Development",
+      "Real Support",
+      "Modern Technology"
+    ],
+    "primary": "Get a Quote",
+    "whatsapp": "WhatsApp"
   }
 }

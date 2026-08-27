@@ -2,6 +2,10 @@
 
 import { play } from 'cuelume';
 
+/** Clave de localStorage y evento con los que SoundToggle y SoundListener se coordinan. */
+export const SOUND_STORAGE_KEY = 'ca:sounds-enabled';
+export const SOUND_CHANGE_EVENT = 'ca:sounds-changed';
+
 // Parche global seguro para aumentar el volumen de cuelume al interceptar la ganancia (GainNode)
 if (typeof window !== 'undefined') {
     try {
