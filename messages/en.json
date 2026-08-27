@@ -94,9 +94,7 @@
     "navigationHeading": "Navigation",
     "contactHeading": "Get in touch today",
     "contactSubtitle": "Ready to take your business to the next level.",
-    "quoteCta": "Request a Quote →",
-    "soundOn": "Turn interface sounds on",
-    "soundOff": "Mute interface sounds"
+    "quoteCta": "Request a Quote →"
   },
   "Footer": {
     "tagline": "Technology that moves your business forward. Software development, IT infrastructure and cybersecurity for companies that want to grow.",
@@ -659,7 +657,7 @@
       "fullPage": "See the full page →",
       "requestService": "Request this service →",
       "ctaTitle": "Not finding what you need?",
-      "ctaBody": "If it is digital or technical, we can build it. Tell us your idea and get a tailored proposal.",
+      "ctaBody": "If it is digital or technical, we can build it. Tell us your idea and get a tailored proposal, no strings attached.",
       "ctaButton": "Tell us about your project →",
       "badgeNew": "✦ New"
     }

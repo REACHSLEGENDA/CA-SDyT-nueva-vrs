@@ -88,9 +88,7 @@
     "navigationHeading": "Navegação",
     "contactHeading": "Fale com a gente hoje",
     "contactSubtitle": "Prontos para levar seu negócio ao próximo nível.",
-    "quoteCta": "Solicitar Orçamento →",
-    "soundOn": "Ativar sons da interface",
-    "soundOff": "Silenciar sons da interface"
+    "quoteCta": "Solicitar Orçamento →"
   },
   "Footer": {
     "tagline": "Tecnologia que impulsiona o seu negócio. Desenvolvimento de software e sistemas sob medida para empresas no Brasil, de forma totalmente remota.",
@@ -653,7 +651,7 @@
       "fullPage": "Ver página completa →",
       "requestService": "Solicitar este serviço →",
       "ctaTitle": "Não encontrou o que procura?",
-      "ctaBody": "Se é digital ou tecnológico, podemos construir. Conte sua ideia e receba uma proposta sob medida.",
+      "ctaBody": "Se é digital ou tecnológico, podemos construir. Conte sua ideia e receba uma proposta sob medida, sem compromisso.",
       "ctaButton": "Fale sobre seu projeto →",
       "badgeNew": "✦ Novo"
     }

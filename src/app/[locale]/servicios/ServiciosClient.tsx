@@ -263,7 +263,8 @@ export default function ServicesPage() {
             </Section>
 
             {/* CTA */}
-            <Section className="py-20 bg-ca-surface/30 rounded-[2rem] border border-ca-border mx-4 mb-8">
+            <Section className="py-20 mb-8">
+                <div className="bg-ca-surface/30 rounded-[2rem] border border-ca-border px-8 py-12 md:px-12">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                     <div className="max-w-2xl">
                         <h2 className="font-display font-black text-3xl md:text-4xl text-ca-text mb-3">
@@ -271,7 +272,6 @@ export default function ServicesPage() {
                         </h2>
                         <p className="text-ca-muted">
                             {t('ui.ctaBody')}
-                            una propuesta sin compromiso.
                         </p>
                     </div>
                     <Link
@@ -280,6 +280,7 @@ export default function ServicesPage() {
                     >
                         {t('ui.ctaButton')}
                     </Link>
+                </div>
                 </div>
             </Section>
         </div>

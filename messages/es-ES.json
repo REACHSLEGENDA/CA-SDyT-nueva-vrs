@@ -88,9 +88,7 @@
     "navigationHeading": "Navegación",
     "contactHeading": "Contacta hoy",
     "contactSubtitle": "Listos para llevar tu negocio al siguiente nivel.",
-    "quoteCta": "Solicitar Presupuesto →",
-    "soundOn": "Activar sonidos de la interfaz",
-    "soundOff": "Silenciar sonidos de la interfaz"
+    "quoteCta": "Solicitar Presupuesto →"
   },
   "Footer": {
     "tagline": "Tecnología que impulsa tu negocio. Desarrollo de software y sistemas a medida para empresas en España, de forma totalmente remota.",
@@ -653,7 +651,7 @@
       "fullPage": "Ver página completa →",
       "requestService": "Solicitar este servicio →",
       "ctaTitle": "¿No encuentras lo que buscas?",
-      "ctaBody": "Si es digital o tecnológico, podemos construirlo. Cuéntanos tu idea y recibe una propuesta a medida.",
+      "ctaBody": "Si es digital o tecnológico, podemos construirlo. Cuéntanos tu idea y recibe una propuesta a medida, sin compromiso.",
       "ctaButton": "Háblanos de tu proyecto →",
       "badgeNew": "✦ Nuevo"
     }

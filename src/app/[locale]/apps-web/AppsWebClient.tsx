@@ -1,27 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import {
-    LayoutDashboard,
-    Globe,
-    Layers,
-    Zap,
-    ShieldCheck,
-    Cpu,
-    ArrowRight,
-    CheckCircle2,
-    BarChart3,
-    MousePointer2,
-    Smartphone,
-    Rocket,
-    Code2,
-    Database,
-    Cloud,
-    Search
-} from 'lucide-react';
+import { Zap, ArrowRight, CheckCircle2, Code2, Database, Cloud } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
@@ -73,21 +57,21 @@ export default function AppsWebPage() {
 
                 <div className="grid lg:grid-cols-3 gap-8">
                     <AppCapability
-                        icon={<LayoutDashboard size={40} />}
+                        img="/assets/dashboards.webp"
                         title={t('capDash')}
                         desc={t('dashDesc')}
                         features={[t('dash1'), t('dash4'), t('dash2'), t('dash3')]}
                         color="blue"
                     />
                     <AppCapability
-                        icon={<Layers size={40} />}
+                        img="/assets/saas.webp"
                         title={t('capSaas')}
                         desc={t('saasDesc')}
                         features={[t('saas1'), t('saas2'), t('saas3'), t('saas4')]}
                         color="purple"
                     />
                     <AppCapability
-                        icon={<Smartphone size={40} />}
+                        img="/assets/pwa.webp"
                         title={t('capPwa')}
                         desc={t('pwaDesc')}
                         features={[t('pwa4'), t('pwa1'), t('pwa2'), t('pwa3')]}
@@ -179,7 +163,7 @@ export default function AppsWebPage() {
 }
 
 // Child Components
-function AppCapability({ icon, title, desc, features, color }: { icon: any, title: string, desc: string, features: string[], color: 'blue' | 'purple' | 'cyan' }) {
+function AppCapability({ img, title, desc, features, color }: { img: string, title: string, desc: string, features: string[], color: 'blue' | 'purple' | 'cyan' }) {
     const accent = {
         blue: 'text-brand-blue bg-brand-blue/10 border-brand-blue/20',
         purple: 'text-brand-purple bg-brand-purple/10 border-brand-purple/20',
@@ -188,8 +172,8 @@ function AppCapability({ icon, title, desc, features, color }: { icon: any, titl
 
     return (
         <Card className="p-10 flex flex-col h-full hover:bg-white/5 transition-all duration-500 group">
-            <div className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 mb-8 ${accent[color]} group-hover:scale-110 transition-transform`}>
-                {icon}
+            <div className="w-28 h-28 mb-6 group-hover:scale-110 transition-transform">
+                <Image src={img} alt="" width={112} height={112} className="w-28 h-28 object-contain" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-gradient transition-all">{title}</h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-10 overflow-hidden">{desc}</p>
