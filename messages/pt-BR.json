@@ -188,11 +188,11 @@
       "whatsapp": "WhatsApp agora",
       "form": "Enviar formulário",
       "servicePage": "Ver página do serviço",
-      "backGreeting": "Oi de novo! 🌸 Voltamos ao menu principal. Qual outra área quer explorar ou orçar hoje? Me conta!"
+      "backGreeting": "Voltamos ao menu principal. Sobre qual outro serviço você gostaria de informações ou um orçamento?"
     },
     "steps": {
       "start": {
-        "text": "Oi! Eu sou a Cassie, sua assistente digital na CA Soluciones y Tecnología. 🤖✨ Que alegria falar com você! Estou pronta para ajudar a montar o ecossistema tecnológico perfeito para o seu negócio. Por onde começamos? 💖",
+        "text": "Olá, sou Cassie, assistente virtual da CA Soluciones Digitales y Tecnológicas. Posso ajudar você a encontrar a solução tecnológica certa para o seu negócio. Como podemos ajudar?",
         "options": [
           "📈 Fazer meu negócio ou vendas crescerem",
           "⚙️ Resolver uma necessidade técnica ou de software",
@@ -201,7 +201,7 @@
         ]
       },
       "grow_options": {
-        "text": "Ótima escolha! ✨ Se você quer impulsionar as vendas e ter uma presença incrível na internet, temos as ferramentas certas. O que gostaria de potencializar hoje? 🚀",
+        "text": "Com prazer. Temos várias soluções para aumentar suas vendas e fortalecer sua presença digital. O que lhe interessa?",
         "options": [
           "🌐 Criar um site ou aplicativo móvel",
           "🤖 Automação de processos com IA",
@@ -211,7 +211,7 @@
         ]
       },
       "tech_options": {
-        "text": "Entendido! ⚙️ Na parte técnica e de sistemas, cuidamos para que seu negócio funcione rápido, seguro e sem dor de cabeça. O que sua empresa precisa hoje? Conte comigo! 🌸",
+        "text": "Entendido. Em sistemas e infraestrutura, garantimos que sua operação seja rápida, segura e confiável. Do que sua empresa precisa?",
         "options": [
           "⚙️ Um sistema sob medida (CRM, PDV, ERP)",
           "🔒 Segurança de rede, servidores ou CFTV",
@@ -220,7 +220,7 @@
         ]
       },
       "classes_intro": {
-        "text": "Que legal! 📚 Adoramos ensinar. Oferecemos aulas personalizadas e bem dinâmicas para que você ou sua equipe dominem as melhores ferramentas. Em qual área querem se tornar especialistas? 💡",
+        "text": "Oferecemos aulas personalizadas para que você ou sua equipe dominem as ferramentas do dia a dia. Qual área lhe interessa?",
         "options": [
           "💻 Pacote Office e informática básica",
           "⚡ Desenvolvimento web e programação",
@@ -229,7 +229,7 @@
         ]
       },
       "about_intro": {
-        "text": "Prontinho! 🏢 Somos uma agência digital com base no México e atendemos clientes nas Américas e na Europa. Somos especializados em sites bonitos, apps rápidos, automações com IA e suporte de TI seguro. O que quer explorar? ✨",
+        "text": "Somos uma agência digital com base no México e atendemos clientes nas Américas e na Europa. Somos especializados em sites, aplicativos, automação com IA e suporte de TI. O que gostaria de conhecer?",
         "options": [
           "📂 Ver nosso portfólio de projetos",
           "👥 Conhecer a gente e a equipe",
@@ -237,7 +237,7 @@
         ]
       },
       "web": {
-        "text": "Oba! 🌐 Desenvolvemos projetos rápidos e estáveis com Next.js, React e Flutter para mobile. Seus usuários vão amar! Que tipo de projeto você tem em mente? ✨",
+        "text": "Desenvolvemos sites e aplicações web com Next.js e React, e aplicativos móveis com Flutter. Que tipo de projeto você tem em mente?",
         "options": [
           "Landing page ou site institucional",
           "Loja virtual (e-commerce)",
@@ -247,7 +247,7 @@
         ]
       },
       "system": {
-        "text": "Adorei! ⚙️ Criamos sistemas do zero com Supabase e Node.js para você esquecer os processos lentos. Qual parte do seu negócio quer digitalizar? 🚀",
+        "text": "Desenvolvemos sistemas sob medida com Supabase e Node.js para digitalizar e agilizar seus processos. Qual área do seu negócio você quer sistematizar?",
         "options": [
           "Funil de vendas e leads (CRM)",
           "Ponto de venda e controle de estoque (PDV)",
@@ -256,7 +256,7 @@
         ]
       },
       "system_migration": {
-        "text": "Adeus dor de cabeça! 💾 Levamos seus arquivos antigos ou planilhas cheias de dados para um banco de dados em nuvem seguro e organizado. Quanta informação precisa migrar? 🌟",
+        "text": "Migramos seus arquivos, planilhas ou sistemas legados para um banco de dados em nuvem, seguro e organizado. Qual o volume de informações a migrar?",
         "options": [
           "Pouca (planilhas de Excel ou Access)",
           "Muita (sistemas legados ou ERP local)",
@@ -264,7 +264,7 @@
         ]
       },
       "infra": {
-        "text": "Segurança em primeiro lugar! 🔒 Instalamos firewalls Fortinet de última geração, nuvens privadas Synology NAS e servidores blindados. Atenção: o trabalho presencial de infraestrutura está disponível no México, sujeito a cobertura. O que seu escritório precisa? ⚡",
+        "text": "Instalamos e configuramos firewalls Fortinet, armazenamento privado com Synology NAS e servidores. Observação: o trabalho presencial de infraestrutura está disponível no México, sujeito a cobertura. Do que seu escritório precisa?",
         "options": [
           "Cibersegurança e proteção de rede (firewall)",
           "Servidores locais ou nuvem privada (NAS)",
@@ -273,7 +273,7 @@
         ]
       },
       "marketing": {
-        "text": "Que empolgante! 📈 Hoje não basta aparecer no Google: também colocamos você em destaque no ChatGPT, Gemini e Perplexity com SEO da era da IA. Qual área quer conquistar hoje? 💖",
+        "text": "Além de posicionar você no Google, trabalhamos para que seu negócio apareça nas respostas do ChatGPT, Gemini e Perplexity (AEO). Qual área lhe interessa?",
         "options": [
           "Aparecer nas buscas do Google (SEO)",
           "Respostas de IA (AEO: ChatGPT, Gemini)",
@@ -282,7 +282,7 @@
         ]
       },
       "automation": {
-        "text": "Uhuu! 🤖 Automatizar seus fluxos (com n8n ou Make) reduz bastante o trabalho repetitivo. Parece mágica! Qual é a sua prioridade para ganhar tempo? ✨",
+        "text": "Automatizamos fluxos de trabalho com n8n ou Make para reduzir tarefas repetitivas e manuais. O que você gostaria de automatizar primeiro?",
         "options": [
           "Bot de WhatsApp inteligente (GPT-4)",
           "Conectar sistemas (CRM, planilhas, etc.)",
@@ -291,7 +291,7 @@
         ]
       },
       "packages": {
-        "text": "Bem prático! 📦 Criamos pacotes prontos para você começar sem complicação. Qual deles quer conhecer? 🌟",
+        "text": "Oferecemos pacotes prontos para você começar de forma rápida e organizada. Qual deles gostaria de conhecer?",
         "options": [
           "🚀 Plano Decolagem Digital (site institucional)",
           "📊 Plano Tráfego e Conversão (SEO local e campanha)",
@@ -300,39 +300,39 @@
         ]
       },
       "about_portfolio": {
-        "text": "Muito bom! 📂 Já criamos lojas virtuais incríveis, sites para marcas internacionais e automações bem bacanas. Você pode ver tudo no nosso portfólio. Vamos montar um orçamento para você? 💖",
+        "text": "Já desenvolvemos lojas virtuais, sites para marcas internacionais e automações sob medida. Você pode ver os projetos no nosso portfólio. Preparamos um orçamento para você?",
         "options": [
-          "Sim, quero orçamento!",
+          "Sim, solicitar orçamento",
           "← Voltar"
         ]
       },
       "about_us_info": {
-        "text": "Amamos o que fazemos! 🥰 Na CA Soluciones gostamos de código limpo, escalável e robusto, sempre com honestidade e bom suporte técnico. Vamos conversar sobre sua ideia? 🚀",
+        "text": "Na CA Soluciones desenvolvemos código limpo, escalável e robusto, com comunicação transparente e suporte técnico contínuo. Gostaria de nos contar sua ideia?",
         "options": [
-          "Sim, vamos falar do projeto!",
+          "Sim, vamos falar do projeto",
           "← Voltar"
         ]
       },
       "final_web": {
-        "text": "Ótimo! ✨ Cada projeto é único, então orçamos sob medida para dar um preço justo, transparente e sem surpresas. Fale comigo, sem compromisso! 👇"
+        "text": "Cada projeto é diferente, por isso orçamos conforme suas necessidades, com preço claro e sem custos ocultos. Fale conosco, sem compromisso."
       },
       "final_system": {
-        "text": "Excelente! ⚙️ Os sistemas são orçados por módulo e pelo que você precisa gerenciar. Vamos marcar uma conversa e montamos uma proposta técnica gratuita e clara. 👇"
+        "text": "Os sistemas são orçados conforme os módulos e processos de que você precisa. Agende uma conversa e enviamos uma proposta técnica sem custo."
       },
       "final_infra": {
-        "text": "Ótimo! 🔒 Projetos de rede e infraestrutura dependem dos seus escritórios e equipamentos, e estão disponíveis no México sujeito a cobertura. Vamos conversar e montamos a proposta ideal. 👇"
+        "text": "Projetos de rede e infraestrutura dependem das suas instalações e equipamentos, e estão disponíveis no México sujeitos a cobertura. Fale conosco e preparamos uma proposta sob medida."
       },
       "final_mkt": {
-        "text": "Adorei! 📈 Nossas estratégias de SEO se adaptam às suas metas e à concorrência. Vamos marcar uma consultoria gratuita e eu digo exatamente o que vai fazer você brilhar. 👇"
+        "text": "Nossas estratégias de SEO se adaptam aos seus objetivos e à concorrência. Agende uma consultoria gratuita e indicamos por onde começar."
       },
       "final_auto": {
-        "text": "Oba! 🤖 Projetos de IA e automação dependem das ferramentas que você já usa. Conte seu caso e eu proponho a solução mais eficiente. 👇"
+        "text": "Projetos de IA e automação dependem das ferramentas que você já usa. Conte-nos seu caso e propomos a solução mais eficiente."
       },
       "final_classes": {
-        "text": "Ótimo! 💻 Damos aulas para todos os níveis, do básico à programação e ao marketing. Os preços variam conforme as horas e o plano. Pergunte tudo por aqui! 👇"
+        "text": "Damos aulas para todos os níveis, do básico à programação e ao marketing. O preço depende das horas e do plano. Fale conosco para mais detalhes."
       },
       "final_pkg": {
-        "text": "Perfeito! 📦 Nossos pacotes têm uma base ótima e sempre ajustamos para você. Me pergunte qual encaixa melhor e eu te oriento! 👇"
+        "text": "Nossos pacotes são um ponto de partida e sempre os ajustamos ao seu negócio. Fale conosco e ajudamos você a escolher o mais adequado."
       }
     }
   },

@@ -194,11 +194,11 @@
       "whatsapp": "WhatsApp now",
       "form": "Send the form",
       "servicePage": "See the service page",
-      "backGreeting": "Hi again! 🌸 We're back at the main menu. Which other area would you like to explore or get a quote for? Tell me!"
+      "backGreeting": "We're back at the main menu. Which other service would you like information or a quote for?"
     },
     "steps": {
       "start": {
-        "text": "Hi there! I'm Cassie, your digital assistant at CA Soluciones y Tecnología. 🤖✨ So happy to meet you! I'm ready to help you design the perfect tech setup for your business. Where should we start? 💖",
+        "text": "Hello, I'm Cassie, the virtual assistant for CA Soluciones Digitales y Tecnológicas. I can help you find the right technology solution for your business. How can we help?",
         "options": [
           "📈 Grow my business or sales",
           "⚙️ Solve a technical or software need",
@@ -207,7 +207,7 @@
         ]
       },
       "grow_options": {
-        "text": "Awesome choice! ✨ If you want to boost your sales and build a great presence online, we have exactly the right tools. What would you like to strengthen today? 🚀",
+        "text": "Happy to help. We offer several solutions to grow your sales and strengthen your online presence. What are you interested in?",
         "options": [
           "🌐 Build a website or mobile app",
           "🤖 AI process automation",
@@ -217,7 +217,7 @@
         ]
       },
       "tech_options": {
-        "text": "Got it! ⚙️ On the technical side, we make sure your business runs fast, secure and headache-free. What does your company need today? Count on me! 🌸",
+        "text": "Understood. On the systems and infrastructure side, we make sure your operations are fast, secure and reliable. What does your company need?",
         "options": [
           "⚙️ A custom system (CRM, POS, ERP)",
           "🔒 Network security, servers or CCTV",
@@ -226,7 +226,7 @@
         ]
       },
       "classes_intro": {
-        "text": "Love this! 📚 We enjoy teaching. We offer personalised, hands-on classes so you or your team can master the best tools. Which area would you like to get really good at? 💡",
+        "text": "We offer personalised classes so you or your team can master the tools you use every day. Which area are you interested in?",
         "options": [
           "💻 Office software and computer basics",
           "⚡ Web development and programming",
@@ -235,7 +235,7 @@
         ]
       },
       "about_intro": {
-        "text": "Here we go! 🏢 We're a digital agency based in Mexico working with clients across the Americas and Europe. We specialise in beautiful websites, fast apps, AI automation and solid IT support. What would you like to explore? ✨",
+        "text": "We're a digital agency based in Mexico working with clients across the Americas and Europe. We specialise in websites, apps, AI automation and IT support. What would you like to know?",
         "options": [
           "📂 See our project portfolio",
           "👥 Learn about us and the team",
@@ -243,7 +243,7 @@
         ]
       },
       "web": {
-        "text": "Yay! 🌐 We build fast, stable projects with Next.js, React and Flutter for mobile. Your users are going to love it! What kind of project do you have in mind? ✨",
+        "text": "We build websites and web applications with Next.js and React, and mobile apps with Flutter. What kind of project do you have in mind?",
         "options": [
           "Landing page or corporate site",
           "Online store (e-commerce)",
@@ -253,7 +253,7 @@
         ]
       },
       "system": {
-        "text": "Love it! ⚙️ We build powerful systems from scratch with Supabase and Node.js so you can forget about slow processes. Which part of your business do you want to digitise? 🚀",
+        "text": "We build custom systems with Supabase and Node.js to digitise and streamline your processes. Which area of your business would you like to systematise?",
         "options": [
           "Sales pipeline and leads (CRM)",
           "Point of sale and stock control (POS)",
@@ -262,7 +262,7 @@
         ]
       },
       "system_migration": {
-        "text": "Goodbye headaches! 💾 We move your old files or data-heavy spreadsheets into a secure, well-organised cloud database. How much data do you need to migrate? 🌟",
+        "text": "We migrate your files, spreadsheets or legacy systems to a secure, well-organised cloud database. How much data do you need to migrate?",
         "options": [
           "Small (Excel or Access tables)",
           "Large (legacy systems or on-prem ERP)",
@@ -270,7 +270,7 @@
         ]
       },
       "infra": {
-        "text": "Security first! 🔒 We install and configure latest-generation Fortinet firewalls, Synology NAS private clouds and hardened servers. Heads up: on-site infrastructure work is available in Mexico, subject to coverage. What does your office need? ⚡",
+        "text": "We install and configure Fortinet firewalls, Synology NAS private storage and servers. Please note that on-site infrastructure work is available in Mexico, subject to coverage. What does your office need?",
         "options": [
           "Cybersecurity and network protection (firewall)",
           "On-premise servers or private cloud (NAS)",
@@ -279,7 +279,7 @@
         ]
       },
       "marketing": {
-        "text": "Exciting! 📈 Showing up on Google is no longer enough — we also help you stand out in ChatGPT, Gemini and Perplexity with AI-era SEO. Which area would you like to win today? 💖",
+        "text": "Beyond ranking on Google, we help your business appear in answers from ChatGPT, Gemini and Perplexity (AEO). Which area are you interested in?",
         "options": [
           "Show up in Google search (SEO)",
           "AI answers (AEO: ChatGPT, Gemini)",
@@ -288,7 +288,7 @@
         ]
       },
       "automation": {
-        "text": "Woohoo! 🤖 Automating your workflows (with n8n or Make) can cut repetitive work dramatically. It feels like magic! What is your priority for freeing up time? ✨",
+        "text": "We automate workflows with n8n or Make to reduce repetitive, manual work. What would you like to automate first?",
         "options": [
           "Smart WhatsApp bot (GPT-4)",
           "Connect systems (CRM, spreadsheets, etc.)",
@@ -297,7 +297,7 @@
         ]
       },
       "packages": {
-        "text": "Nice and practical! 📦 We design turnkey packages so you can launch without complications. Which one would you like to look at? 🌟",
+        "text": "We offer turnkey packages to help you get started quickly and in an organised way. Which one would you like to review?",
         "options": [
           "🚀 Digital Launch plan (corporate website)",
           "📊 Traffic & Conversion plan (local SEO and campaign)",
@@ -306,39 +306,39 @@
         ]
       },
       "about_portfolio": {
-        "text": "So good! 📂 We've built lovely online stores, websites for international brands and some really neat automations. You can browse it all in our portfolio. Shall we put a quote together for you? 💖",
+        "text": "We've built online stores, websites for international brands and custom automations. You can browse the projects in our portfolio. Shall we prepare a quote for you?",
         "options": [
-          "Yes, quote it now!",
+          "Yes, request a quote",
           "← Back"
         ]
       },
       "about_us_info": {
-        "text": "We love what we do! 🥰 At CA Soluciones we're all about clean, scalable, robust code — always with honesty and great technical support. Shall we talk about your idea? 🚀",
+        "text": "At CA Soluciones we write clean, scalable, robust code, with transparent communication and ongoing technical support. Would you like to tell us about your idea?",
         "options": [
-          "Yes, let’s talk about the project!",
+          "Yes, let's discuss the project",
           "← Back"
         ]
       },
       "final_web": {
-        "text": "Great! ✨ Every project is different, so we quote to your scope and give you a fair, transparent price with no surprises. Reach out, no strings attached! 👇"
+        "text": "Every project is different, so we quote based on your needs, with a clear price and no hidden costs. Get in touch, no obligation."
       },
       "final_system": {
-        "text": "Excellent! ⚙️ Systems are quoted by module and by what you need to manage. Let's set up a call and we'll put together a free, clear technical proposal. 👇"
+        "text": "Systems are quoted based on the modules and processes you need. Book a call and we will send you a technical proposal at no cost."
       },
       "final_infra": {
-        "text": "Great! 🔒 Network and infrastructure projects depend on your offices and equipment, and are available in Mexico subject to coverage. Let's talk and we'll shape the right proposal. 👇"
+        "text": "Network and infrastructure projects depend on your premises and equipment, and are available in Mexico subject to coverage. Contact us and we will prepare a tailored proposal."
       },
       "final_mkt": {
-        "text": "Love it! 📈 Our SEO strategies adapt to your goals and your competition. Let's book a free consultation and I'll tell you exactly what will make you shine. 👇"
+        "text": "Our SEO strategies adapt to your goals and your competition. Book a free consultation and we will tell you where to start."
       },
       "final_auto": {
-        "text": "Yay! 🤖 AI and automation projects depend on the tools you already use. Tell me your case and I'll propose the most efficient solution. 👇"
+        "text": "AI and automation projects depend on the tools you already use. Tell us about your case and we will propose the most efficient solution."
       },
       "final_classes": {
-        "text": "Great! 💻 We teach every level, from the basics to programming and marketing. Pricing depends on your hours and plan. Ask me anything here! 👇"
+        "text": "We teach all levels, from the basics to programming and marketing. Pricing depends on hours and plan. Contact us for details."
       },
       "final_pkg": {
-        "text": "Perfect! 📦 Our packages have a great baseline, and we always tailor them to you. Ask me which one fits best and I'll walk you through it! 👇"
+        "text": "Our packages are a starting point and we always tailor them to your business. Contact us and we will help you choose the best fit."
       }
     }
   },

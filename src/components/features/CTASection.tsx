@@ -91,7 +91,7 @@ export function CTASection() {
                             viewport={{ once: true }}
                             className="relative flex justify-center items-center lg:justify-end"
                         >
-                            {/* Radial Glow behind Cassie */}
+                            {/* Radial Glow behind the manta */}
                             <div className="absolute w-64 h-64 rounded-full bg-ca-cyan/20 blur-[60px] pointer-events-none" />
                             
                             <motion.div
@@ -100,8 +100,8 @@ export function CTASection() {
                                 className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 drop-shadow-[0_12px_30px_rgba(0,207,255,0.35)]"
                             >
                                 <Image
-                                    src="/assets/cta.webp"
-                                    alt="Cassie"
+                                    src="/assets/cta-manta.webp"
+                                    alt="Mantarraya, mascota de CA Soluciones Digitales"
                                     fill
                                     sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, 320px"
                                     className="object-contain"

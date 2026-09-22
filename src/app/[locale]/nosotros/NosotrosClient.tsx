@@ -159,7 +159,21 @@ export default function AboutPage() {
                             />
                         </div>
                     </div>
-                    <div className="bg-brand-black/50 p-12 rounded-[2rem] border border-white/10 backdrop-blur-sm">
+                    <div className="relative mt-16 lg:mt-0 bg-brand-black/50 p-12 rounded-[2rem] border border-white/10 backdrop-blur-sm">
+                        {/* Mascota decorativa: flota sobre la esquina superior de la tarjeta */}
+                        <motion.div
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute -top-20 right-4 md:-top-24 md:right-8 w-36 h-24 md:w-48 md:h-32 pointer-events-none drop-shadow-[0_12px_30px_rgba(0,207,255,0.35)]"
+                        >
+                            <Image
+                                src="/assets/cta-manta.webp"
+                                alt=""
+                                fill
+                                sizes="(max-width: 768px) 144px, 192px"
+                                className="object-contain"
+                            />
+                        </motion.div>
                         <h3 className="text-2xl font-bold text-white mb-6">Nuestra Cultura</h3>
                         <p className="text-gray-400 leading-relaxed mb-6">
                             {t('team1')}

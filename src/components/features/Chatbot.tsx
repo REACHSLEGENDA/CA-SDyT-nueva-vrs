@@ -23,7 +23,6 @@ interface Option {
 
 interface Step {
     id: StepId;
-    text: string;
     options?: Option[];
     final?: boolean;
     serviceHref?: string;
@@ -32,7 +31,6 @@ interface Step {
 const steps: Record<string, Step> = {
     start: {
         id: 'start',
-        text: '¡Holi! Soy Cassie, tu asistente digital en CA Soluciones y Tecnología. 🤖✨ ¡Estoy súper feliz de saludarte! Estoy listísima para ayudarte a diseñar el ecosistema tecnológico perfecto para tu negocio. ¿Con qué empezamos hoy? ¡Dime! 💖',
         options: [
             { label: '📈 Hacer crecer mi negocio o ventas', next: 'grow_options' },
             { label: '⚙️ Resolver una necesidad técnica o de software', next: 'tech_options' },
@@ -43,7 +41,6 @@ const steps: Record<string, Step> = {
 
     grow_options: {
         id: 'grow_options',
-        text: '¡Súper duper! Excelente decisión ✨ Si lo que quieres es hacer explotar tus ventas y tener una presencia increíble en internet, ¡tenemos las herramientas perfectas! ¿Qué te gustaría potenciar hoy? 🚀',
         options: [
             { label: '🌐 Crear un Sitio Web o App Móvil', next: 'web' },
             { label: '🤖 Automatización de Procesos con IA', next: 'automation' },
@@ -55,7 +52,6 @@ const steps: Record<string, Step> = {
 
     tech_options: {
         id: 'tech_options',
-        text: '¡Entendido al 100%! ⚙️ En la parte técnica y de sistemas, nos encargamos de que tu negocio funcione súper rápido, seguro y sin ningún dolor de cabeza. ¿Qué es lo que necesita tu empresa hoy? ¡Cuenta conmigo! 🌸',
         options: [
             { label: '⚙️ Un Sistema a medida (CRM, POS, ERP)', next: 'system' },
             { label: '🔒 Seguridad de Red, Servidores o CCTV', next: 'infra' },
@@ -66,7 +62,6 @@ const steps: Record<string, Step> = {
 
     classes_intro: {
         id: 'classes_intro',
-        text: '¡Ay, qué emoción! 📚 Amamos aprender y capacitar. Ofrecemos clases personalizadas súper dinámicas para que tú o tu equipo dominen las mejores herramientas. ¿En qué área les gustaría volverse unos expertos? 💡',
         options: [
             { label: '💻 Ofimática y Computación Básica', next: 'final_classes' },
             { label: '⚡ Desarrollo Web y Programación', next: 'final_classes' },
@@ -77,7 +72,6 @@ const steps: Record<string, Step> = {
 
     about_intro: {
         id: 'about_intro',
-        text: '¡Tachán! 🏢 Somos una agencia digital con base en México y creamos magia para toda Latinoamérica. Nos súper especializamos en webs hermosas, apps veloces, automatizaciones con IA y soporte TI súper seguro. ¿Qué te gustaría curiosear? ✨',
         options: [
             { label: '📂 Ver nuestro Portafolio de proyectos', next: 'about_portfolio' },
             { label: '👥 Conocer sobre nosotros y el equipo', next: 'about_us_info' },
@@ -87,7 +81,6 @@ const steps: Record<string, Step> = {
 
     web: {
         id: 'web',
-        text: '¡Yey! 🌐 Desarrollamos proyectos súper estables y rápidos con Next.js, React y Flutter para apps móviles. ¡Tus usuarios lo van a amar! ¿Qué tipo de proyecto tienes en mente? ✨',
         options: [
             { label: 'Landing page o Sitio corporativo', next: 'final_web' },
             { label: 'Tienda en línea (E-commerce)', next: 'final_web' },
@@ -100,7 +93,6 @@ const steps: Record<string, Step> = {
 
     system: {
         id: 'system',
-        text: '¡Me encanta! ⚙️ Creamos sistemas desde cero súper potentes con Supabase y Node.js para que te olvides de los procesos lentos. ¿Qué parte de tu negocio quieres digitalizar y automatizar? 🚀',
         options: [
             { label: 'Embudo de ventas y prospectos (CRM)', next: 'final_system' },
             { label: 'Punto de venta y control de stock (POS)', next: 'final_system' },
@@ -112,7 +104,6 @@ const steps: Record<string, Step> = {
 
     system_migration: {
         id: 'system_migration',
-        text: '¡Adiós a los dolores de cabeza! 💾 Pasamos tus archivos antiguos o Excel llenos de datos a una base de datos en la nube súper segura y ordenada. ¿Qué tanta información tienes que migrar? 🌟',
         options: [
             { label: 'Bajo (Tablas de Excel o Access)', next: 'final_system' },
             { label: 'Alto (Sistemas antiguos o ERP local)', next: 'final_system' },
@@ -123,7 +114,6 @@ const steps: Record<string, Step> = {
 
     infra: {
         id: 'infra',
-        text: '¡La seguridad es primero! 🔒 Instalamos y configuramos firewalls Fortinet de última generación, nubes privadas Synology NAS y servidores blindados. ¿Qué necesita tu oficina o negocio? ⚡',
         options: [
             { label: 'Ciberseguridad y protección de red (Firewall)', next: 'final_infra' },
             { label: 'Servidores locales o Nube privada (NAS)', next: 'final_infra' },
@@ -135,7 +125,6 @@ const steps: Record<string, Step> = {
 
     marketing: {
         id: 'marketing',
-        text: '¡Qué emocionante! 📈 Hoy no basta con aparecer en Google, ¡también te hacemos destacar en ChatGPT, Gemini y Perplexity con SEO de Inteligencia Artificial! ¿Qué área te gustaría conquistar hoy? 💖',
         options: [
             { label: 'Aparecer en búsquedas de Google (SEO)', next: 'final_mkt' },
             { label: 'Respuestas de IA (AEO: ChatGPT, Gemini)', next: 'final_mkt' },
@@ -147,7 +136,6 @@ const steps: Record<string, Step> = {
 
     automation: {
         id: 'automation',
-        text: '¡Woohoo! 🤖 Automatizar tus flujos (con n8n o Make) reduce hasta un 80% las tareas repetitivas y lentas. ¡Es como magia! ¿Cuál es tu prioridad para liberar tiempo? ✨',
         options: [
             { label: 'Bot de WhatsApp inteligente (GPT-4)', next: 'final_auto' },
             { label: 'Conectar sistemas (CRM, Hojas de cálculo, etc.)', next: 'final_auto' },
@@ -159,7 +147,6 @@ const steps: Record<string, Step> = {
 
     packages: {
         id: 'packages',
-        text: '¡Súper práctico! 📦 Diseñamos paquetes llave en mano perfectos para arrancar con todo y sin complicaciones. ¿Cuál te llama más la atención revisar? 🌟',
         options: [
             { label: '🚀 Plan Despegue Digital (Sitio web corporativo)', next: 'final_pkg' },
             { label: '📊 Plan Tráfico y Conversión (SEO local y campaña)', next: 'final_pkg' },
@@ -171,7 +158,6 @@ const steps: Record<string, Step> = {
 
     about_portfolio: {
         id: 'about_portfolio',
-        text: '¡Súper genial! 📂 Hemos creado tiendas en línea increíbles, webs para marcas internacionales y automatizaciones mágicas. Puedes chismosear todo en nuestro Portafolio. ¿Hacemos una cotización para ti? 💖',
         options: [
             { label: '¡Sí, cotizar ahora!', next: 'final_web' },
             { label: '← Volver', next: 'about_intro' },
@@ -181,7 +167,6 @@ const steps: Record<string, Step> = {
 
     about_us_info: {
         id: 'about_us_info',
-        text: '¡Amamos lo que hacemos! 🥰 En CA Soluciones nos fascina crear código súper limpio, escalable y robusto. Siempre con honestidad y el mejor soporte técnico. ¿Platicamos de tu idea? 🚀',
         options: [
             { label: '¡Sí, platicar del proyecto!', next: 'final_web' },
             { label: '← Volver', next: 'about_intro' },
@@ -192,43 +177,36 @@ const steps: Record<string, Step> = {
     // ─── Finales con texto contextual ────────────────────────────────────
     final_web: {
         id: 'final_web',
-        text: '¡Súper! ✨ Cada proyecto es único, así que cotizamos a tu medida para darte un precio justo, transparente y sin sorpresas. ¡Contáctame sin compromisos! 👇',
         final: true,
         serviceHref: '/apps-web',
     },
     final_system: {
         id: 'final_system',
-        text: '¡Excelente! ⚙️ Los sistemas se cotizan según los módulos y lo que necesites gestionar. Agendemos una plática y te armamos una propuesta técnica gratis y súper clara. 👇',
         final: true,
         serviceHref: '/sistemas',
     },
     final_infra: {
         id: 'final_infra',
-        text: '¡Súper! 🔒 Los proyectos de red e infraestructura dependen de tus oficinas y equipos. ¡Hablemos y te armamos una propuesta ideal a tu medida! 👇',
         final: true,
         serviceHref: '/infraestructura-ti',
     },
     final_mkt: {
         id: 'final_mkt',
-        text: '¡Me encanta! 📈 Nuestras estrategias de SEO se adaptan a tus metas y competencia. ¡Agendemos una consultoría gratuita y te digo justo lo que te hará brillar! 👇',
         final: true,
         serviceHref: '/seo-aeo',
     },
     final_auto: {
         id: 'final_auto',
-        text: '¡Yey! 🤖 Los proyectos de IA y automatización dependen de los programas que uses. Cuéntame tu caso y te propongo la solución más mágica y eficiente. 👇',
         final: true,
         serviceHref: '/automatizacion',
     },
     final_classes: {
         id: 'final_classes',
-        text: '¡Súper! 💻 Damos clases para todos los niveles, desde lo básico hasta programación y marketing. Los precios varían según tus horas y plan. ¡Pregúntame todo aquí! 👇',
         final: true,
         serviceHref: '/clases',
     },
     final_pkg: {
         id: 'final_pkg',
-        text: '¡Perfecto! 📦 Nuestros paquetes tienen bases geniales, pero siempre los ajustamos para ti. ¡Pregúntame cuál te conviene más y te asesoro con todo gusto! 👇',
         final: true,
         serviceHref: '/paquetes-web',
     },
