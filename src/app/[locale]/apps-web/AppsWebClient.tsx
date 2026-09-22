@@ -123,7 +123,7 @@ export default function AppsWebPage({ catalog }: { catalog?: React.ReactNode }) 
                             ))}
                         </div>
                         <div className="mt-10 pt-8 border-t border-white/5">
-                            <p className="text-sm text-gray-500 italic">t('quote')</p>
+                            <p className="text-sm text-gray-500 italic">{t('quote')}</p>
                         </div>
                     </div>
                 </div>

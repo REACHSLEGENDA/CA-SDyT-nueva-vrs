@@ -98,17 +98,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Catálogo y CA Explica (fase 1: es-MX y en). El hreflang solo enlaza las dos
   // versiones que existen; anunciar las otras tres apuntaría a páginas 404.
   const catalogEntry = (
-    urls: Record<CatalogLocale, string>,
+    urls: Record<CatalogLocale, string | null>,
     lastModified: string,
     priority: number,
-  ) =>
-    CATALOG_LOCALES.map((locale) => ({
-      url: urls[locale],
+  ) => {
+    // Solo los idiomas en los que existe la página (hay guías solo para México).
+    const published = CATALOG_LOCALES.filter((locale) => urls[locale]);
+    const languages = Object.fromEntries(published.map((locale) => [locale, urls[locale]!]));
+    return published.map((locale) => ({
+      url: urls[locale]!,
       lastModified: new Date(lastModified),
       changeFrequency: 'monthly' as const,
       priority,
-      alternates: { languages: { 'es-MX': urls['es-MX'], en: urls.en } },
+      alternates: { languages },
     }));
+  };
 
   const byLocale = <T,>(build: (locale: CatalogLocale) => T) =>
     Object.fromEntries(CATALOG_LOCALES.map((locale) => [locale, build(locale)])) as Record<CatalogLocale, T>;

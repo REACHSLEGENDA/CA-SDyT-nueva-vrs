@@ -1,26 +1,46 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { categories } from '@/lib/catalog/categories';
-import { products } from '@/lib/catalog/products';
+import { getProduct, products } from '@/lib/catalog/products';
 import { UI, formatFrom } from '@/lib/catalog/ui';
 import { productParams } from '@/lib/catalog/urls';
 import { CURRENCY_BY_LOCALE, type CatalogLocale, type CategoryId } from '@/lib/catalog/types';
 import { ProductIcon } from './ProductIcon';
 
 /**
+ * Fichas que muestra cada página de servicio. No es solo su categoría: varias
+ * categorías tienen una o dos fichas y la cuadrícula se veía vacía, así que cada
+ * página enlaza también las fichas afines a su tema (mínimo tres).
+ */
+const LANDING_PRODUCTS: Partial<Record<CategoryId, string[]>> = {
+    web: ['pagina-web', 'sistema-web-a-medida', 'plataforma-saas'],
+    sistemas: ['sistema-web-a-medida', 'crm', 'plataforma-saas', 'sistema-de-inventarios', 'sistema-de-ventas', 'integraciones-api'],
+    apps: ['app-movil', 'plataforma-saas', 'integraciones-api'],
+    marketing: ['gestion-de-redes-sociales', 'diseno-de-marca', 'seo-local-google-maps'],
+    'seo-aeo': ['seo-web', 'aeo-optimizacion-ia', 'seo-local-google-maps'],
+    automatizacion: ['bot-de-whatsapp', 'agenda-automatica', 'integraciones-api', 'pasarelas-de-pago', 'inteligencia-artificial-integrada', 'crm'],
+    paquetes: ['paquetes-360', 'pagina-web', 'gestion-de-redes-sociales'],
+};
+
+/**
  * Cuadrícula de fichas de producto con su precio "desde".
  *
  * Es un componente de servidor: las páginas lo pasan como prop (`catalog`) a su
  * componente cliente, así el contenido del catálogo no entra en el bundle JS.
- * Sin `category` muestra todo el catálogo agrupado; con `category`, solo esa.
+ * Sin `category` muestra todo el catálogo agrupado; con `category`, las fichas
+ * de LANDING_PRODUCTS para esa página.
  */
 export function CatalogGrid({ locale, category }: { locale: CatalogLocale; category?: CategoryId }) {
     const ui = UI[locale];
     const currency = CURRENCY_BY_LOCALE[locale];
-    const groups = categories
-        .filter((item) => !category || item.id === category)
-        .map((item) => ({ category: item, items: products.filter((product) => product.category === item.id) }))
-        .filter((group) => group.items.length > 0);
+    const groups = category
+        ? [{
+            category: categories.find((item) => item.id === category)!,
+            items: (LANDING_PRODUCTS[category] ?? []).map(getProduct).filter((product) => product !== undefined),
+        }]
+        : categories
+            .map((item) => ({ category: item, items: products.filter((product) => product.category === item.id) }))
+            .filter((group) => group.items.length > 0);
 
     return (
         <section id="catalogo" className="container relative mx-auto scroll-mt-28 px-4 py-20 sm:px-6 lg:px-8">

@@ -44,6 +44,8 @@ export type CategoryId =
     | 'marketing'
     | 'seo-aeo'
     | 'automatizacion'
+    | 'infraestructura'
+    | 'clases'
     | 'paquetes';
 
 export type Category = {
@@ -51,7 +53,9 @@ export type Category = {
     slug: Localized<string>;
     name: Localized<string>;
     /** Página de servicio existente que actúa como "landing" de la categoría. */
-    landing: '/apps-web' | '/sistemas' | '/apps-moviles' | '/marketing' | '/seo-aeo' | '/automatizacion' | '/paquetes-web';
+    landing:
+        | '/apps-web' | '/sistemas' | '/apps-moviles' | '/marketing' | '/seo-aeo'
+        | '/automatizacion' | '/infraestructura-ti' | '/clases' | '/paquetes-web';
 };
 
 /** Cómo se cobra el precio "desde" que se muestra en público. */
@@ -93,7 +97,7 @@ export type ProductContent = {
     /** Párrafo del hero. */
     intro: string;
     /** Frase de Nova, la anfitriona. */
-    novaLine: string;
+    hostLine: string;
     includes: string[];
     inputs: string[];
     deliverables: string[];
@@ -138,7 +142,7 @@ export type GuideContent = {
     description: string;
     keywords: string[];
     badge: string;
-    novaLine: string;
+    hostLine: string;
     /** Respuesta directa de 40–60 palabras: el fragmento que un motor puede citar. */
     quickAnswer: string;
     keyFacts: Array<{ label: string; value: string }>;
@@ -149,12 +153,20 @@ export type GuideContent = {
     finalCta: string;
 };
 
+/**
+ * es-MX es obligatorio; en es opcional porque hay temas solo de México (CFDI,
+ * aviso de privacidad) que no tienen sentido para el público internacional.
+ */
 export type Guide = {
     id: string;
-    slug: Localized<string>;
+    category: CategoryId;
+    slug: { 'es-MX': string; en?: string };
     datePublished: string;
     dateModified: string;
-    content: Localized<GuideContent>;
+    content: { 'es-MX': GuideContent; en?: GuideContent };
     relatedProducts: string[];
     relatedGuides: string[];
 };
+
+/** Vista de una guía en un idioma concreto; null si no está publicada en él. */
+export type LocalizedGuide = { guide: Guide; slug: string; content: GuideContent };

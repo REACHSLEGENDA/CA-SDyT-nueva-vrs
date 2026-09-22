@@ -1,9 +1,9 @@
 import { BUSINESS_NAME, DEFAULT_SOCIAL_IMAGE, REMOTE_COVERAGE, SITE_URL, getCanonicalUrl } from '@/lib/seoUtils';
 import { getCategory } from './categories';
-import { guides } from './guides';
+import { guidesFor } from './guides';
 import { UI, formatFrom } from './ui';
 import { guideUrl, guidesIndexUrl, productUrl, servicesUrl } from './urls';
-import { CURRENCY_BY_LOCALE, type CatalogLocale, type Faq, type Guide, type Product } from './types';
+import { CURRENCY_BY_LOCALE, type CatalogLocale, type Faq, type LocalizedGuide, type Product } from './types';
 
 /**
  * JSON-LD del catálogo y de CA Explica.
@@ -83,10 +83,9 @@ export function productSchema(product: Product, locale: CatalogLocale) {
     };
 }
 
-export function guideSchema(guide: Guide, locale: CatalogLocale) {
+export function guideSchema({ guide, content: c }: LocalizedGuide, locale: CatalogLocale) {
     const ui = UI[locale];
-    const c = guide.content[locale];
-    const url = guideUrl(guide, locale);
+    const url = guideUrl(guide, locale)!;
 
     return {
         '@context': 'https://schema.org',
@@ -132,9 +131,9 @@ export function guidesIndexSchema(locale: CatalogLocale) {
                 url,
                 inLanguage: locale,
                 publisher: ORGANIZATION_REF,
-                hasPart: guides.map((guide) => ({
+                hasPart: guidesFor(locale).map(({ guide, content }) => ({
                     '@type': 'Article',
-                    headline: guide.content[locale].title,
+                    headline: content.title,
                     url: guideUrl(guide, locale),
                 })),
             },

@@ -79,10 +79,12 @@ export const UI = {
         sourcesNote: 'Fuentes consultadas en la fecha de actualización. Esta guía es informativa y no sustituye asesoría legal o fiscal.',
         updated: 'Actualizado',
         readGuide: 'Leer guía',
+        guidesByTopic: 'Guías por tema',
+        seeServices: 'Ver servicios',
         viewProduct: 'Ver ficha y precios',
         catalogTitle: 'Catálogo de servicios',
         catalogSubtitle: 'Cada servicio con lo que incluye, lo que necesitamos para empezar y su precio de referencia.',
-        novaSays: 'Nova',
+        hostName: 'Nova',
     },
     'en': {
         home: 'Home',
@@ -153,10 +155,12 @@ export const UI = {
         sourcesNote: 'Sources checked on the update date. This guide is informational and is not legal or tax advice.',
         updated: 'Updated',
         readGuide: 'Read guide',
+        guidesByTopic: 'Guides by topic',
+        seeServices: 'See services',
         viewProduct: 'See details and pricing',
         catalogTitle: 'Service catalog',
         catalogSubtitle: 'Every service with what it includes, what we need to start and its reference price.',
-        novaSays: 'Nova',
+        hostName: 'Nova',
     },
 } as const;
 

@@ -79,7 +79,7 @@ export const products: Product[] = [
                 seoTitle: 'Página web profesional para tu negocio | Precios desde $4,500 MXN',
                 description: 'Diseño y desarrollo de páginas web rápidas y responsivas para negocios en México. Paquetes de 3, 7 y 14+ secciones, desde $4,500 MXN.',
                 intro: 'Diseñamos y programamos sitios web rápidos, seguros y fáciles de encontrar en Google. Elige el tamaño que necesita tu negocio hoy y crece después sin rehacer el sitio.',
-                novaLine: 'Una buena web no es la más cara: es la que responde lo que tu cliente busca en los primeros segundos.',
+                hostLine: 'Una buena web no es la más cara: es la que responde lo que tu cliente busca en los primeros segundos.',
                 includes: [
                     'Diseño responsivo para celular, tablet y computadora',
                     'Estructura y metadatos preparados para buscadores',
@@ -111,7 +111,7 @@ export const products: Product[] = [
                 seoTitle: 'Professional business website | Pricing from $280 USD',
                 description: 'Fast, responsive business websites designed and built by a nearshore team in Mexico. 3, 7 and 14+ page packages, from $280 USD.',
                 intro: 'We design and build fast, secure websites that are easy to find on Google. Pick the size your business needs today and grow later without rebuilding.',
-                novaLine: 'A good website is not the most expensive one: it is the one that answers what your customer is looking for in the first few seconds.',
+                hostLine: 'A good website is not the most expensive one: it is the one that answers what your customer is looking for in the first few seconds.',
                 includes: [
                     'Responsive design for phone, tablet and desktop',
                     'Search-ready structure and metadata',
@@ -139,7 +139,7 @@ export const products: Product[] = [
                 keywords: ['website cost for small business', 'nearshore web design', 'business website pricing', 'professional website development'],
             },
         },
-        relatedGuides: ['cuanto-cuesta-una-pagina-web'],
+        relatedGuides: ['cuanto-cuesta-una-pagina-web', 'como-crear-una-pagina-web', 'aviso-de-privacidad-pagina-web'],
         relatedProducts: ['seo-web', 'paquetes-360', 'sistema-web-a-medida'],
     },
 
@@ -178,7 +178,7 @@ export const products: Product[] = [
                 seoTitle: 'Sistema web a medida para empresas | Desde $12,000 MXN',
                 description: 'Desarrollamos sistemas web a medida: paneles, bases de datos, roles de usuario, APIs y automatizaciones. Proyectos desde $12,000 MXN.',
                 intro: 'Cuando las hojas de cálculo ya no alcanzan, un sistema propio ordena tu operación: un panel para tu equipo, datos centralizados y procesos que no dependen de copiar y pegar.',
-                novaLine: 'Antes de programar, dibujamos tu proceso real. El sistema debe parecerse a cómo trabajas, no al revés.',
+                hostLine: 'Antes de programar, dibujamos tu proceso real. El sistema debe parecerse a cómo trabajas, no al revés.',
                 includes: [
                     'Análisis del proceso que se va a digitalizar',
                     'Panel web con acceso por usuario',
@@ -210,7 +210,7 @@ export const products: Product[] = [
                 seoTitle: 'Custom web systems for businesses | From $750 USD',
                 description: 'Custom web systems: admin panels, databases, user roles, APIs and automations, built by a nearshore team in Mexico. From $750 USD.',
                 intro: 'When spreadsheets stop scaling, a system of your own brings order to operations: one panel for your team, centralized data and processes that no longer depend on copy and paste.',
-                novaLine: 'Before we write code, we map your real process. The system should fit how you work, not the other way around.',
+                hostLine: 'Before we write code, we map your real process. The system should fit how you work, not the other way around.',
                 includes: [
                     'Analysis of the process to be digitized',
                     'Web panel with per-user access',
@@ -238,7 +238,7 @@ export const products: Product[] = [
                 keywords: ['custom web system development', 'nearshore custom software', 'admin panel development', 'business software cost'],
             },
         },
-        relatedGuides: ['que-es-un-crm'],
+        relatedGuides: ['que-es-un-erp', 'que-es-un-crm'],
         relatedProducts: ['crm', 'sistema-de-inventarios', 'integraciones-api'],
     },
     {
@@ -270,7 +270,7 @@ export const products: Product[] = [
                 seoTitle: 'CRM a medida para tu negocio | Desde $18,000 MXN',
                 description: 'CRM a medida para gestionar clientes, leads, embudos de venta y tareas, sin pagar licencias por usuario. Desde $18,000 MXN.',
                 intro: 'Un CRM propio concentra a tus clientes, cotizaciones y seguimientos en un solo lugar, con los campos y etapas que usa tu equipo de ventas, sin licencias mensuales por usuario.',
-                novaLine: 'El mejor CRM es el que tu equipo sí usa. Por eso lo diseñamos con sus etapas de venta, no con las de un manual genérico.',
+                hostLine: 'El mejor CRM es el que tu equipo sí usa. Por eso lo diseñamos con sus etapas de venta, no con las de un manual genérico.',
                 includes: [
                     'Ficha de cada cliente con historial',
                     'Etapas de venta configuradas a tu proceso',
@@ -301,7 +301,7 @@ export const products: Product[] = [
                 seoTitle: 'Custom CRM for your business | From $1,120 USD',
                 description: 'Custom CRM to manage customers, leads, sales pipelines and tasks without per-user licenses. Built nearshore in Mexico, from $1,120 USD.',
                 intro: 'A CRM of your own keeps customers, quotes and follow-ups in one place, with the fields and stages your sales team actually uses and no monthly per-seat licenses.',
-                novaLine: 'The best CRM is the one your team actually uses. That is why we design it around your sales stages, not a generic manual.',
+                hostLine: 'The best CRM is the one your team actually uses. That is why we design it around your sales stages, not a generic manual.',
                 includes: [
                     'Customer records with full history',
                     'Sales stages configured to your process',
@@ -328,7 +328,7 @@ export const products: Product[] = [
                 keywords: ['custom CRM development', 'nearshore CRM developers', 'CRM without per-user licenses', 'small business CRM cost'],
             },
         },
-        relatedGuides: ['que-es-un-crm'],
+        relatedGuides: ['que-es-un-crm', 'que-es-un-erp'],
         relatedProducts: ['sistema-web-a-medida', 'bot-de-whatsapp', 'integraciones-api'],
     },
     {
@@ -343,7 +343,7 @@ export const products: Product[] = [
                 seoTitle: 'Desarrollo de plataforma SaaS con suscripciones | Desde $45,000 MXN',
                 description: 'Desarrollo de plataformas SaaS en la nube con cuentas de usuario y cobro por suscripción. Proyectos desde $45,000 MXN.',
                 intro: 'Convierte tu idea o tu servicio en un software que vendes por suscripción: cuentas de clientes, planes, cobro recurrente y un panel para administrarlo todo en la nube.',
-                novaLine: 'Un SaaS se valida con clientes pagando, no con funciones. Empezamos por lo mínimo que alguien pagaría y crecemos desde ahí.',
+                hostLine: 'Un SaaS se valida con clientes pagando, no con funciones. Empezamos por lo mínimo que alguien pagaría y crecemos desde ahí.',
                 includes: [
                     'Registro e inicio de sesión de clientes',
                     'Planes y cobro por suscripción',
@@ -373,7 +373,7 @@ export const products: Product[] = [
                 seoTitle: 'SaaS platform development with subscriptions | From $2,800 USD',
                 description: 'Cloud SaaS platforms with user accounts and subscription billing, built by a nearshore team in Mexico. From $2,800 USD.',
                 intro: 'Turn your idea or service into software you sell by subscription: customer accounts, plans, recurring billing and a cloud admin panel to run it all.',
-                novaLine: 'A SaaS is validated by paying customers, not by features. We start with the smallest thing someone would pay for and grow from there.',
+                hostLine: 'A SaaS is validated by paying customers, not by features. We start with the smallest thing someone would pay for and grow from there.',
                 includes: [
                     'Customer sign-up and login',
                     'Plans and subscription billing',
@@ -399,7 +399,7 @@ export const products: Product[] = [
                 keywords: ['SaaS development nearshore', 'build a subscription platform', 'custom SaaS development cost', 'MVP SaaS developers'],
             },
         },
-        relatedGuides: [],
+        relatedGuides: ['que-es-un-saas', 'como-cobrar-en-linea'],
         relatedProducts: ['sistema-web-a-medida', 'pasarelas-de-pago', 'app-movil'],
     },
     {
@@ -414,7 +414,7 @@ export const products: Product[] = [
                 seoTitle: 'Sistema de inventarios a medida | Desde $18,000 MXN',
                 description: 'Sistema de inventarios a medida: entradas, salidas, existencias por almacén y alertas de stock. Desde $18,000 MXN.',
                 intro: 'Controla entradas, salidas y existencias en tiempo real, con los productos, almacenes y reglas de tu negocio. Sin conteos a mano ni hojas de cálculo desactualizadas.',
-                novaLine: 'Un inventario confiable empieza con un solo lugar donde se registra cada movimiento.',
+                hostLine: 'Un inventario confiable empieza con un solo lugar donde se registra cada movimiento.',
                 includes: [
                     'Catálogo de productos y almacenes',
                     'Registro de entradas y salidas',
@@ -444,7 +444,7 @@ export const products: Product[] = [
                 seoTitle: 'Custom inventory management system | From $1,120 USD',
                 description: 'Custom inventory system: stock in and out, levels per warehouse and low-stock alerts. Built nearshore in Mexico, from $1,120 USD.',
                 intro: 'Track stock in, stock out and levels in real time, with your products, warehouses and business rules. No manual counts or outdated spreadsheets.',
-                novaLine: 'Reliable inventory starts with a single place where every movement is recorded.',
+                hostLine: 'Reliable inventory starts with a single place where every movement is recorded.',
                 includes: [
                     'Product and warehouse catalog',
                     'Stock-in and stock-out records',
@@ -470,7 +470,7 @@ export const products: Product[] = [
                 keywords: ['custom inventory system', 'inventory management software development', 'warehouse tracking web app', 'nearshore inventory software'],
             },
         },
-        relatedGuides: [],
+        relatedGuides: ['que-es-un-erp'],
         relatedProducts: ['sistema-de-ventas', 'sistema-web-a-medida', 'integraciones-api'],
     },
     {
@@ -485,7 +485,7 @@ export const products: Product[] = [
                 seoTitle: 'Sistema de ventas y punto de venta a medida | Desde $22,000 MXN',
                 description: 'Sistema de ventas y punto de venta a medida: registro de ventas, cortes de caja, clientes y reportes. Desde $22,000 MXN.',
                 intro: 'Registra cada venta, cierra caja sin descuadres y consulta qué se vende, cuándo y quién lo vende, con un sistema hecho para la forma en que cobra tu negocio.',
-                novaLine: 'Si al final del día tienes que cuadrar a mano, tu sistema de ventas todavía no está trabajando para ti.',
+                hostLine: 'Si al final del día tienes que cuadrar a mano, tu sistema de ventas todavía no está trabajando para ti.',
                 includes: [
                     'Registro de ventas y tickets',
                     'Cortes de caja por usuario',
@@ -514,7 +514,7 @@ export const products: Product[] = [
                 seoTitle: 'Custom sales and POS system | From $1,375 USD',
                 description: 'Custom sales and point-of-sale system: sales records, cash-register closings, customers and reports. Built nearshore, from $1,375 USD.',
                 intro: 'Record every sale, close the register without discrepancies and see what sells, when and by whom, with a system built around how your business charges.',
-                novaLine: 'If you still reconcile by hand at the end of the day, your sales system is not working for you yet.',
+                hostLine: 'If you still reconcile by hand at the end of the day, your sales system is not working for you yet.',
                 includes: [
                     'Sales and receipt records',
                     'Per-user register closings',
@@ -539,7 +539,7 @@ export const products: Product[] = [
                 keywords: ['custom POS system', 'sales management software development', 'web point of sale', 'nearshore POS developers'],
             },
         },
-        relatedGuides: [],
+        relatedGuides: ['factura-electronica-cfdi-4-0', 'que-es-un-erp'],
         relatedProducts: ['sistema-de-inventarios', 'pasarelas-de-pago', 'crm'],
     },
 
@@ -578,7 +578,7 @@ export const products: Product[] = [
                 seoTitle: 'Desarrollo de app móvil Android y iOS | Desde $20,000 MXN',
                 description: 'Desarrollo de apps móviles para Android y iOS: informativas, con login, comerciales y empresariales. Desde $20,000 MXN.',
                 intro: 'Lleva tu negocio al celular de tus clientes o de tu equipo con una app para Android y iOS, desde una app informativa hasta una app empresarial conectada a tus sistemas.',
-                novaLine: 'Antes de pensar en la tienda de apps, piensa en la tarea que tu usuario quiere resolver en dos toques.',
+                hostLine: 'Antes de pensar en la tienda de apps, piensa en la tarea que tu usuario quiere resolver en dos toques.',
                 includes: [
                     'Diseño de interfaz para Android y iOS',
                     'Desarrollo multiplataforma',
@@ -608,7 +608,7 @@ export const products: Product[] = [
                 seoTitle: 'Android and iOS mobile app development | From $1,250 USD',
                 description: 'Android and iOS app development: informational, login-based, commerce and enterprise apps, built nearshore in Mexico. From $1,250 USD.',
                 intro: 'Put your business on your customers’ or team’s phones with an Android and iOS app, from a simple informational app to an enterprise app connected to your systems.',
-                novaLine: 'Before thinking about the app store, think about the task your user wants done in two taps.',
+                hostLine: 'Before thinking about the app store, think about the task your user wants done in two taps.',
                 includes: [
                     'Interface design for Android and iOS',
                     'Cross-platform development',
@@ -634,7 +634,7 @@ export const products: Product[] = [
                 keywords: ['mobile app development cost', 'nearshore app developers', 'build Android and iOS app', 'business app pricing'],
             },
         },
-        relatedGuides: [],
+        relatedGuides: ['cuanto-cuesta-hacer-una-app'],
         relatedProducts: ['plataforma-saas', 'sistema-web-a-medida', 'pasarelas-de-pago'],
     },
 
@@ -677,7 +677,7 @@ export const products: Product[] = [
                 seoTitle: 'Gestión de redes sociales para negocios | Desde $3,500 MXN al mes',
                 description: 'Gestión de redes sociales con diseño, copywriting, reels y campañas en Meta Ads. Planes mensuales desde $3,500 MXN.',
                 intro: 'Mantén tus redes activas con contenido diseñado para tu marca y, en los planes superiores, campañas en Meta Ads y embudos que convierten seguidores en clientes.',
-                novaLine: 'Publicar diario no sirve si nadie sabe qué hacer después de ver tu post. Cada pieza debe llevar a un siguiente paso.',
+                hostLine: 'Publicar diario no sirve si nadie sabe qué hacer después de ver tu post. Cada pieza debe llevar a un siguiente paso.',
                 includes: [
                     'Calendario mensual de contenido',
                     'Diseño gráfico y redacción de cada pieza',
@@ -706,7 +706,7 @@ export const products: Product[] = [
                 seoTitle: 'Social media management for businesses | From $220 USD per month',
                 description: 'Social media management with design, copywriting, reels and Meta Ads campaigns. Monthly plans from $220 USD.',
                 intro: 'Keep your social accounts active with content designed for your brand and, on higher plans, Meta Ads campaigns and funnels that turn followers into customers.',
-                novaLine: 'Posting every day is useless if nobody knows what to do after seeing your post. Every piece should lead to a next step.',
+                hostLine: 'Posting every day is useless if nobody knows what to do after seeing your post. Every piece should lead to a next step.',
                 includes: [
                     'Monthly content calendar',
                     'Graphic design and copy for every piece',
@@ -731,7 +731,7 @@ export const products: Product[] = [
                 keywords: ['social media management pricing', 'outsourced community manager', 'Instagram and Facebook management', 'social media agency Latin America'],
             },
         },
-        relatedGuides: [],
+        relatedGuides: ['cuanto-cuesta-gestion-de-redes-sociales'],
         relatedProducts: ['diseno-de-marca', 'seo-local-google-maps', 'paquetes-360'],
     },
     {
@@ -758,7 +758,7 @@ export const products: Product[] = [
                 seoTitle: 'Diseño de logotipo e identidad de marca | Desde $2,500 MXN',
                 description: 'Diseño de logotipo e identidad de marca: paleta de colores, tipografías y manual de uso. Desde $2,500 MXN según alcance.',
                 intro: 'Una marca coherente hace que tu negocio se vea confiable en todos lados: en tu web, tus redes, tu empaque y tu fachada. Diseñamos desde el logotipo hasta el manual de marca.',
-                novaLine: 'Un logo no tiene que explicarlo todo. Tiene que ser reconocible en un vistazo, en grande y en chiquito.',
+                hostLine: 'Un logo no tiene que explicarlo todo. Tiene que ser reconocible en un vistazo, en grande y en chiquito.',
                 includes: [
                     'Propuestas de logotipo',
                     'Rondas de ajustes acordadas',
@@ -787,7 +787,7 @@ export const products: Product[] = [
                 seoTitle: 'Logo and brand identity design | From $160 USD',
                 description: 'Logo and brand identity design: color palette, typography and brand guidelines. From $160 USD depending on scope.',
                 intro: 'A consistent brand makes your business look trustworthy everywhere: your website, social media, packaging and storefront. We design everything from the logo to the brand guidelines.',
-                novaLine: 'A logo does not have to explain everything. It has to be recognizable at a glance, large or tiny.',
+                hostLine: 'A logo does not have to explain everything. It has to be recognizable at a glance, large or tiny.',
                 includes: [
                     'Logo proposals',
                     'Agreed rounds of revisions',
@@ -812,7 +812,7 @@ export const products: Product[] = [
                 keywords: ['logo design pricing', 'brand identity design', 'affordable branding agency', 'brand guidelines design'],
             },
         },
-        relatedGuides: [],
+        relatedGuides: ['cuanto-cuesta-un-logotipo'],
         relatedProducts: ['pagina-web', 'gestion-de-redes-sociales', 'paquetes-360'],
     },
 
@@ -841,7 +841,7 @@ export const products: Product[] = [
                 seoTitle: 'SEO local y Google Maps para negocios | Desde $2,000 MXN',
                 description: 'Optimización de tu perfil de Google Business y SEO local para aparecer en Google Maps cuando te buscan cerca. Desde $2,000 MXN.',
                 intro: 'Cuando alguien busca "cerca de mí", Google muestra primero el mapa. Optimizamos tu perfil de Google Business para que tu negocio aparezca con información completa, fotos y reseñas.',
-                novaLine: 'Para un negocio con local, el perfil de Google suele ser la primera página que ve un cliente, antes que tu sitio web.',
+                hostLine: 'Para un negocio con local, el perfil de Google suele ser la primera página que ve un cliente, antes que tu sitio web.',
                 includes: [
                     'Revisión y optimización del perfil de Google Business',
                     'Categorías, servicios, horarios y fotos',
@@ -870,7 +870,7 @@ export const products: Product[] = [
                 seoTitle: 'Local SEO and Google Maps for businesses | From $125 USD',
                 description: 'Google Business Profile optimization and local SEO to show up on Google Maps when people search nearby. From $125 USD.',
                 intro: 'When someone searches "near me", Google shows the map first. We optimize your Google Business Profile so your business appears with complete information, photos and reviews.',
-                novaLine: 'For a business with a physical location, the Google profile is often the first page a customer sees, before your website.',
+                hostLine: 'For a business with a physical location, the Google profile is often the first page a customer sees, before your website.',
                 includes: [
                     'Google Business Profile review and optimization',
                     'Categories, services, hours and photos',
@@ -895,7 +895,7 @@ export const products: Product[] = [
                 keywords: ['Google Business Profile optimization', 'local SEO services', 'rank on Google Maps', 'local SEO pricing'],
             },
         },
-        relatedGuides: ['que-es-aeo'],
+        relatedGuides: ['como-aparecer-en-google-maps', 'que-es-seo'],
         relatedProducts: ['seo-web', 'aeo-optimizacion-ia', 'gestion-de-redes-sociales'],
     },
     {
@@ -927,7 +927,7 @@ export const products: Product[] = [
                 seoTitle: 'SEO profesional para sitios web | Desde $3,000 MXN',
                 description: 'SEO técnico y de contenido para que tu sitio aparezca en Google: auditoría, correcciones, seguimiento mensual y analítica. Desde $3,000 MXN.',
                 intro: 'Revisamos tu sitio como lo ve Google: velocidad, estructura, contenido y datos estructurados. Corregimos lo que frena tu visibilidad y medimos el avance cada mes.',
-                novaLine: 'El SEO no es un truco: es hacer que tu sitio responda mejor que los demás lo que la gente busca.',
+                hostLine: 'El SEO no es un truco: es hacer que tu sitio responda mejor que los demás lo que la gente busca.',
                 includes: [
                     'Auditoría técnica y de contenido',
                     'Investigación de palabras clave',
@@ -957,7 +957,7 @@ export const products: Product[] = [
                 seoTitle: 'Professional website SEO | From $190 USD',
                 description: 'Technical and content SEO so your site shows up on Google: audit, fixes, monthly tracking and analytics. From $190 USD.',
                 intro: 'We review your site the way Google sees it: speed, structure, content and structured data. We fix what holds back your visibility and measure progress every month.',
-                novaLine: 'SEO is not a trick: it is making your site answer what people search for better than everyone else.',
+                hostLine: 'SEO is not a trick: it is making your site answer what people search for better than everyone else.',
                 includes: [
                     'Technical and content audit',
                     'Keyword research',
@@ -983,7 +983,7 @@ export const products: Product[] = [
                 keywords: ['website SEO pricing', 'technical SEO audit', 'SEO agency for small business', 'nearshore SEO services'],
             },
         },
-        relatedGuides: ['que-es-aeo', 'cuanto-cuesta-una-pagina-web'],
+        relatedGuides: ['que-es-seo', 'google-no-indexa-mi-pagina', 'que-es-aeo'],
         relatedProducts: ['aeo-optimizacion-ia', 'seo-local-google-maps', 'pagina-web'],
     },
     {
@@ -1010,7 +1010,7 @@ export const products: Product[] = [
                 seoTitle: 'AEO: aparece en ChatGPT, Gemini y Claude | Desde $2,000 MXN',
                 description: 'AEO para que asistentes de IA como ChatGPT, Gemini y Claude encuentren y citen tu negocio. Configuración desde $2,000 MXN.',
                 intro: 'Cada vez más clientes preguntan a un asistente de IA antes de buscar en Google. Preparamos tu sitio para que esos asistentes puedan leerlo, entenderlo y citarlo como fuente.',
-                novaLine: 'Una IA cita lo que puede verificar. Respuestas claras, datos consistentes y fuentes visibles valen más que cualquier truco.',
+                hostLine: 'Una IA cita lo que puede verificar. Respuestas claras, datos consistentes y fuentes visibles valen más que cualquier truco.',
                 includes: [
                     'Revisión de acceso de rastreadores de IA en robots.txt',
                     'Respuestas directas y preguntas frecuentes citables',
@@ -1041,7 +1041,7 @@ export const products: Product[] = [
                 seoTitle: 'AEO: get found in ChatGPT, Gemini and Claude | From $125 USD',
                 description: 'Answer engine optimization so AI assistants like ChatGPT, Gemini and Claude can find and cite your business. Setup from $125 USD.',
                 intro: 'More and more customers ask an AI assistant before searching Google. We prepare your site so those assistants can read it, understand it and cite it as a source.',
-                novaLine: 'An AI cites what it can verify. Clear answers, consistent data and visible sources beat any trick.',
+                hostLine: 'An AI cites what it can verify. Clear answers, consistent data and visible sources beat any trick.',
                 includes: [
                     'Review of AI crawler access in robots.txt',
                     'Direct answers and citable FAQs',
@@ -1068,7 +1068,7 @@ export const products: Product[] = [
                 keywords: ['answer engine optimization services', 'get cited by ChatGPT', 'AI search optimization', 'AEO agency'],
             },
         },
-        relatedGuides: ['que-es-aeo'],
+        relatedGuides: ['que-es-aeo', 'que-es-seo'],
         relatedProducts: ['seo-web', 'seo-local-google-maps', 'pagina-web'],
     },
 
@@ -1097,7 +1097,7 @@ export const products: Product[] = [
                 seoTitle: 'Bot de WhatsApp para negocios | Desde $2,500 MXN',
                 description: 'Bots de WhatsApp para atender clientes 24/7: menús, preguntas frecuentes, captura de datos y asistentes con IA. Desde $2,500 MXN.',
                 intro: 'Responde al instante las preguntas de siempre, toma datos de interesados y pasa a una persona solo cuando hace falta. Desde bots con menús hasta asistentes con inteligencia artificial.',
-                novaLine: 'Un buen bot no finge ser humano: resuelve rápido lo repetitivo y te entrega al cliente listo para cerrar.',
+                hostLine: 'Un buen bot no finge ser humano: resuelve rápido lo repetitivo y te entrega al cliente listo para cerrar.',
                 includes: [
                     'Diseño de los flujos de conversación',
                     'Respuestas a preguntas frecuentes',
@@ -1128,7 +1128,7 @@ export const products: Product[] = [
                 seoTitle: 'WhatsApp bot for business | From $160 USD',
                 description: 'WhatsApp bots that serve customers 24/7: menus, FAQs, lead capture and AI assistants. Built nearshore in Mexico, from $160 USD.',
                 intro: 'Answer the usual questions instantly, capture leads and hand over to a person only when needed. From menu-based bots to AI-powered assistants.',
-                novaLine: 'A good bot does not pretend to be human: it handles the repetitive part fast and hands you a customer ready to close.',
+                hostLine: 'A good bot does not pretend to be human: it handles the repetitive part fast and hands you a customer ready to close.',
                 includes: [
                     'Conversation flow design',
                     'Answers to frequent questions',
@@ -1170,7 +1170,7 @@ export const products: Product[] = [
                 seoTitle: 'Agenda automática de citas en línea | Desde $2,000 MXN',
                 description: 'Sistema de agenda automática: tus clientes reservan en línea, reciben confirmación y recordatorios. Desde $2,000 MXN.',
                 intro: 'Deja de coordinar citas por mensaje. Tus clientes eligen horario disponible, reciben su confirmación y un recordatorio, y tú ves tu agenda ordenada en un solo lugar.',
-                novaLine: 'Cada cita confirmada por mensaje a mano es tiempo que no estás atendiendo a nadie.',
+                hostLine: 'Cada cita confirmada por mensaje a mano es tiempo que no estás atendiendo a nadie.',
                 includes: [
                     'Página o enlace de reservación',
                     'Horarios y servicios configurables',
@@ -1199,7 +1199,7 @@ export const products: Product[] = [
                 seoTitle: 'Automated online booking system | From $125 USD',
                 description: 'Automated booking: customers book online and get confirmations and reminders. Built nearshore in Mexico, from $125 USD.',
                 intro: 'Stop coordinating appointments by message. Customers pick an available time, get a confirmation and a reminder, and you see a tidy schedule in one place.',
-                novaLine: 'Every appointment confirmed by hand is time you are not serving anyone.',
+                hostLine: 'Every appointment confirmed by hand is time you are not serving anyone.',
                 includes: [
                     'Booking page or link',
                     'Configurable hours and services',
@@ -1251,7 +1251,7 @@ export const products: Product[] = [
                 seoTitle: 'Integración de pasarelas de pago Stripe y PayPal | Desde $3,000 MXN',
                 description: 'Integramos Stripe, PayPal y otras pasarelas en tu sitio web, tienda o sistema para cobrar en línea. Desde $3,000 MXN.',
                 intro: 'Cobra en línea desde tu sitio, tu tienda o tu sistema con la pasarela que prefieras: pagos únicos, suscripciones o varios métodos de pago.',
-                novaLine: 'Mientras más pasos tenga pagar, más clientes se quedan en el camino.',
+                hostLine: 'Mientras más pasos tenga pagar, más clientes se quedan en el camino.',
                 includes: [
                     'Configuración de la pasarela elegida',
                     'Integración en tu sitio o sistema',
@@ -1280,7 +1280,7 @@ export const products: Product[] = [
                 seoTitle: 'Stripe and PayPal payment gateway integration | From $190 USD',
                 description: 'We integrate Stripe, PayPal and other gateways into your website, store or system to accept online payments. From $190 USD.',
                 intro: 'Accept online payments on your site, store or system with the gateway you prefer: one-time payments, subscriptions or multiple payment methods.',
-                novaLine: 'The more steps it takes to pay, the more customers drop off along the way.',
+                hostLine: 'The more steps it takes to pay, the more customers drop off along the way.',
                 includes: [
                     'Setup of the chosen gateway',
                     'Integration into your site or system',
@@ -1305,7 +1305,7 @@ export const products: Product[] = [
                 keywords: ['Stripe integration service', 'payment gateway integration', 'accept payments online website', 'PayPal integration developer'],
             },
         },
-        relatedGuides: [],
+        relatedGuides: ['como-cobrar-en-linea', 'que-es-un-saas'],
         relatedProducts: ['pagina-web', 'plataforma-saas', 'sistema-de-ventas'],
     },
     {
@@ -1332,7 +1332,7 @@ export const products: Product[] = [
                 seoTitle: 'Integraciones entre sistemas y APIs | Desde $1,500 MXN',
                 description: 'Conectamos tus herramientas por API: sitio web, CRM, hojas de cálculo, Mailchimp y más, para que los datos fluyan solos. Desde $1,500 MXN.',
                 intro: 'Si copias datos de una herramienta a otra, esa tarea se puede automatizar. Conectamos tu sitio, tu CRM, tus hojas de cálculo o tu email marketing para que la información viaje sola.',
-                novaLine: 'Cada vez que alguien copia y pega entre dos sistemas, hay una integración esperando.',
+                hostLine: 'Cada vez que alguien copia y pega entre dos sistemas, hay una integración esperando.',
                 includes: [
                     'Análisis de las herramientas a conectar',
                     'Desarrollo de la integración por API',
@@ -1360,7 +1360,7 @@ export const products: Product[] = [
                 seoTitle: 'System integrations and APIs | From $95 USD',
                 description: 'We connect your tools via API: website, CRM, spreadsheets, Mailchimp and more, so data flows on its own. From $95 USD.',
                 intro: 'If you copy data from one tool to another, that task can be automated. We connect your website, CRM, spreadsheets or email marketing so information moves on its own.',
-                novaLine: 'Every time someone copies and pastes between two systems, there is an integration waiting to be built.',
+                hostLine: 'Every time someone copies and pastes between two systems, there is an integration waiting to be built.',
                 includes: [
                     'Analysis of the tools to connect',
                     'API integration development',
@@ -1384,7 +1384,7 @@ export const products: Product[] = [
                 keywords: ['API integration services', 'connect CRM to website', 'Mailchimp integration', 'n8n Make automation'],
             },
         },
-        relatedGuides: ['que-es-un-crm'],
+        relatedGuides: ['automatizar-procesos-n8n-make', 'que-es-un-crm'],
         relatedProducts: ['crm', 'inteligencia-artificial-integrada', 'bot-de-whatsapp'],
     },
     {
@@ -1399,7 +1399,7 @@ export const products: Product[] = [
                 seoTitle: 'Integración de inteligencia artificial en tu negocio | Desde $10,000 MXN',
                 description: 'Integramos IA en tus procesos: clasificación de mensajes, resúmenes, asistentes internos y análisis de documentos. Desde $10,000 MXN.',
                 intro: 'La IA rinde cuando resuelve una tarea concreta de tu operación: clasificar solicitudes, resumir documentos, redactar respuestas o consultar tu información interna.',
-                novaLine: 'Empieza por una tarea medible. Si la IA no ahorra tiempo o errores en algo concreto, todavía no es el momento.',
+                hostLine: 'Empieza por una tarea medible. Si la IA no ahorra tiempo o errores en algo concreto, todavía no es el momento.',
                 includes: [
                     'Identificación del caso de uso',
                     'Integración de un modelo de IA en tu sistema o flujo',
@@ -1428,7 +1428,7 @@ export const products: Product[] = [
                 seoTitle: 'AI integration for your business | From $625 USD',
                 description: 'We integrate AI into your processes: message classification, summaries, internal assistants and document analysis. From $625 USD.',
                 intro: 'AI pays off when it solves a specific task in your operations: classifying requests, summarizing documents, drafting replies or querying your internal information.',
-                novaLine: 'Start with one measurable task. If AI does not save time or errors on something concrete, it is not the right moment yet.',
+                hostLine: 'Start with one measurable task. If AI does not save time or errors on something concrete, it is not the right moment yet.',
                 includes: [
                     'Use-case identification',
                     'Integration of an AI model into your system or workflow',
@@ -1453,7 +1453,7 @@ export const products: Product[] = [
                 keywords: ['AI integration services', 'AI for small business', 'AI automation nearshore', 'internal AI assistant development'],
             },
         },
-        relatedGuides: ['que-es-aeo'],
+        relatedGuides: ['inteligencia-artificial-para-empresas', 'automatizar-procesos-n8n-make'],
         relatedProducts: ['bot-de-whatsapp', 'integraciones-api', 'sistema-web-a-medida'],
     },
 
@@ -1496,7 +1496,7 @@ export const products: Product[] = [
                 seoTitle: 'Paquetes 360 de presencia digital | Desde $9,900 MXN',
                 description: 'Paquetes integrales con página web, redes sociales, Google Maps, chatbot, SEO y AEO para lanzar o crecer tu negocio. Desde $9,900 MXN.',
                 intro: 'Todo lo que un negocio necesita para arrancar o crecer en internet, en un solo paquete: sitio web, redes, Google Maps y, en los paquetes superiores, chatbot, pagos, SEO y AEO.',
-                novaLine: 'Un paquete tiene sentido cuando cada pieza empuja a la siguiente: la red lleva a la web, la web al WhatsApp y el WhatsApp a la venta.',
+                hostLine: 'Un paquete tiene sentido cuando cada pieza empuja a la siguiente: la red lleva a la web, la web al WhatsApp y el WhatsApp a la venta.',
                 includes: [
                     'Servicios combinados según el paquete',
                     'Un solo equipo coordinando todo',
@@ -1524,7 +1524,7 @@ export const products: Product[] = [
                 seoTitle: '360 digital presence bundles | From $620 USD',
                 description: 'All-in-one bundles with website, social media, Google Maps, chatbot, SEO and AEO to launch or grow your business. From $620 USD.',
                 intro: 'Everything a business needs to launch or grow online, in one bundle: website, social media, Google Maps and, in higher bundles, chatbot, payments, SEO and AEO.',
-                novaLine: 'A bundle makes sense when every piece pushes the next: social leads to the website, the website to WhatsApp, and WhatsApp to the sale.',
+                hostLine: 'A bundle makes sense when every piece pushes the next: social leads to the website, the website to WhatsApp, and WhatsApp to the sale.',
                 includes: [
                     'Combined services depending on the bundle',
                     'One team coordinating everything',

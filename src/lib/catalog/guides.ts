@@ -1,4 +1,6 @@
-import type { CatalogLocale, Guide } from './types';
+import { moreGuides } from './guides-more';
+import { serviceGuides } from './guides-services';
+import type { CatalogLocale, Guide, LocalizedGuide } from './types';
 
 /**
  * CA Explica — guías de respuesta directa (fase 1: es-MX y en).
@@ -14,9 +16,10 @@ import type { CatalogLocale, Guide } from './types';
  * Fuentes externas verificadas el 22 de septiembre de 2026.
  */
 
-export const guides: Guide[] = [
+const baseGuides: Guide[] = [
     {
         id: 'cuanto-cuesta-una-pagina-web',
+        category: 'web',
         slug: { 'es-MX': 'cuanto-cuesta-una-pagina-web', 'en': 'how-much-does-a-website-cost' },
         datePublished: '2026-09-22',
         dateModified: '2026-09-22',
@@ -29,7 +32,7 @@ export const guides: Guide[] = [
                 description: 'Qué determina el precio de una página web en México en 2026, qué costos van aparte y cómo evaluar una cotización. Sitios desde $4,500 MXN.',
                 keywords: ['cuánto cuesta una página web en México', 'precio de una página web 2026', 'costo de diseño web', 'página web para negocio precio'],
                 badge: 'Precios 2026',
-                novaLine: 'Dos cotizaciones con el mismo precio pueden incluir cosas muy distintas. Compara alcances, no solo números.',
+                hostLine: 'Dos cotizaciones con el mismo precio pueden incluir cosas muy distintas. Compara alcances, no solo números.',
                 quickAnswer: 'En CA, una página web profesional empieza en $4,500 MXN por un sitio de 3 secciones. El precio sube según el número de secciones, el diseño a la medida y funciones como pagos o integraciones. Hosting, dominio y licencias se pagan aparte, igual que el mantenimiento mensual, que es opcional.',
                 keyFacts: [
                     { label: 'Precio de entrada en CA', value: 'Desde $4,500 MXN por un sitio de 3 secciones' },
@@ -107,7 +110,7 @@ export const guides: Guide[] = [
                 description: 'What drives the price of a professional website in 2026, which costs are separate and how to evaluate a quote. Websites from $280 USD.',
                 keywords: ['how much does a website cost', 'website price 2026', 'small business website cost', 'web design pricing'],
                 badge: '2026 pricing',
-                novaLine: 'Two quotes with the same price can include very different things. Compare scope, not just numbers.',
+                hostLine: 'Two quotes with the same price can include very different things. Compare scope, not just numbers.',
                 quickAnswer: 'At CA, a professional website starts at $280 USD for a 3-page site. The price goes up with the number of pages, custom design and features such as payments or integrations. Hosting, domain and licenses are paid separately, as is monthly maintenance, which is optional.',
                 keyFacts: [
                     { label: 'CA entry price', value: 'From $280 USD for a 3-page site' },
@@ -183,6 +186,7 @@ export const guides: Guide[] = [
     },
     {
         id: 'que-es-un-crm',
+        category: 'sistemas',
         slug: { 'es-MX': 'que-es-un-crm', 'en': 'what-is-a-crm' },
         datePublished: '2026-09-22',
         dateModified: '2026-09-22',
@@ -195,7 +199,7 @@ export const guides: Guide[] = [
                 description: 'Qué es un CRM, para qué sirve, cuándo lo necesita tu negocio y qué conviene más: uno de suscripción o uno a medida. Incluye obligaciones de la LFPDPPP.',
                 keywords: ['qué es un CRM', 'para qué sirve un CRM', 'CRM para pymes', 'CRM a medida o de suscripción'],
                 badge: 'Guía básica',
-                novaLine: 'Si tu seguimiento de clientes vive en la memoria de alguien o en chats sueltos, ya tienes un CRM: solo que es frágil.',
+                hostLine: 'Si tu seguimiento de clientes vive en la memoria de alguien o en chats sueltos, ya tienes un CRM: solo que es frágil.',
                 quickAnswer: 'Un CRM (Customer Relationship Management) es un sistema que concentra la información de tus clientes y prospectos: datos de contacto, historial, cotizaciones y seguimientos. Sirve para que ninguna oportunidad de venta se pierda y para que el equipo sepa en qué etapa está cada cliente. Lo necesitas cuando Excel o WhatsApp ya no alcanzan.',
                 keyFacts: [
                     { label: 'Qué es', value: 'Un sistema para gestionar la relación con clientes y prospectos' },
@@ -264,7 +268,7 @@ export const guides: Guide[] = [
                 description: 'What a CRM is, what it does, when your business needs one and whether subscription or custom CRM is the better fit.',
                 keywords: ['what is a CRM', 'what does a CRM do', 'CRM for small business', 'custom vs subscription CRM'],
                 badge: 'Basics',
-                novaLine: 'If customer follow-up lives in someone’s memory or scattered chats, you already have a CRM: just a fragile one.',
+                hostLine: 'If customer follow-up lives in someone’s memory or scattered chats, you already have a CRM: just a fragile one.',
                 quickAnswer: 'A CRM (Customer Relationship Management) is a system that keeps all your customer and prospect information in one place: contact details, history, quotes and follow-ups. It makes sure no sales opportunity slips through and that your team knows what stage each customer is at. You need one when spreadsheets or chat apps stop being enough.',
                 keyFacts: [
                     { label: 'What it is', value: 'A system to manage relationships with customers and prospects' },
@@ -330,6 +334,7 @@ export const guides: Guide[] = [
     },
     {
         id: 'que-es-aeo',
+        category: 'seo-aeo',
         slug: { 'es-MX': 'que-es-aeo', 'en': 'what-is-aeo' },
         datePublished: '2026-09-22',
         dateModified: '2026-09-22',
@@ -342,7 +347,7 @@ export const guides: Guide[] = [
                 description: 'Qué es AEO (optimización para motores de respuesta), en qué se diferencia del SEO y qué necesita tu sitio para que asistentes de IA lo encuentren y citen.',
                 keywords: ['qué es AEO', 'cómo aparecer en ChatGPT', 'optimización para motores de respuesta', 'AEO vs SEO'],
                 badge: 'IA y buscadores',
-                novaLine: 'Una IA no te cita por repetir palabras clave. Te cita cuando tu respuesta es clara, verificable y fácil de encontrar.',
+                hostLine: 'Una IA no te cita por repetir palabras clave. Te cita cuando tu respuesta es clara, verificable y fácil de encontrar.',
                 quickAnswer: 'AEO (Answer Engine Optimization) es preparar el contenido de tu sitio para que buscadores y asistentes de IA, como ChatGPT, Gemini o Claude, lo encuentren, lo entiendan y lo usen como fuente. No sustituye al SEO: se apoya en él y pone el foco en respuestas claras, datos verificables y acceso de los rastreadores.',
                 keyFacts: [
                     { label: 'Qué optimiza', value: 'Que tu contenido pueda ser encontrado, entendido y citado por asistentes de IA' },
@@ -407,7 +412,7 @@ export const guides: Guide[] = [
                 description: 'What AEO (answer engine optimization) is, how it differs from SEO and what your site needs so AI assistants can find and cite it.',
                 keywords: ['what is AEO', 'how to show up in ChatGPT', 'answer engine optimization', 'AEO vs SEO'],
                 badge: 'AI and search',
-                novaLine: 'An AI does not cite you for repeating keywords. It cites you when your answer is clear, verifiable and easy to find.',
+                hostLine: 'An AI does not cite you for repeating keywords. It cites you when your answer is clear, verifiable and easy to find.',
                 quickAnswer: 'AEO (Answer Engine Optimization) means preparing your site’s content so search engines and AI assistants such as ChatGPT, Gemini or Claude can find it, understand it and use it as a source. It does not replace SEO: it builds on it and focuses on clear answers, verifiable facts and crawler access.',
                 keyFacts: [
                     { label: 'What it optimizes', value: 'Your content being found, understood and cited by AI assistants' },
@@ -470,6 +475,7 @@ export const guides: Guide[] = [
     },
     {
         id: 'bot-de-whatsapp-para-negocios',
+        category: 'automatizacion',
         slug: { 'es-MX': 'bot-de-whatsapp-para-negocios', 'en': 'whatsapp-bot-for-business' },
         datePublished: '2026-09-22',
         dateModified: '2026-09-22',
@@ -482,7 +488,7 @@ export const guides: Guide[] = [
                 description: 'Cómo funciona un bot de WhatsApp para negocios, cuánto cobra Meta por mensaje desde 2025 y cuándo conviene un bot con menús o un asistente con IA.',
                 keywords: ['bot de WhatsApp para negocio', 'automatizar WhatsApp Business', 'cuánto cobra WhatsApp Business API', 'chatbot de WhatsApp con IA'],
                 badge: 'Automatización',
-                novaLine: 'Automatiza lo que respondes diez veces al día. Lo que requiere criterio, déjalo a tu equipo.',
+                hostLine: 'Automatiza lo que respondes diez veces al día. Lo que requiere criterio, déjalo a tu equipo.',
                 quickAnswer: 'Un bot de WhatsApp responde solo a tus clientes: da información, toma datos, agenda y pasa la conversación a una persona cuando hace falta. A escala se usa la plataforma de WhatsApp Business de Meta, que desde el 1 de julio de 2025 cobra por mensaje de plantilla; los demás mensajes, dentro de la ventana de atención, son gratis.',
                 keyFacts: [
                     { label: 'Modelo de cobro de Meta', value: 'Por mensaje de plantilla, desde el 1 de julio de 2025' },
@@ -545,7 +551,7 @@ export const guides: Guide[] = [
                 description: 'How a WhatsApp business bot works, how Meta charges per message since 2025, and when a menu bot or an AI assistant is the better choice.',
                 keywords: ['WhatsApp bot for business', 'automate WhatsApp Business', 'WhatsApp Business API pricing', 'AI WhatsApp chatbot'],
                 badge: 'Automation',
-                novaLine: 'Automate what you answer ten times a day. Leave what needs judgment to your team.',
+                hostLine: 'Automate what you answer ten times a day. Leave what needs judgment to your team.',
                 quickAnswer: 'A WhatsApp bot answers your customers automatically: it shares information, captures details, books appointments and hands the conversation to a person when needed. To automate at scale you use Meta’s WhatsApp Business Platform, which since July 1, 2025 charges per template message; non-template messages within the customer service window are free.',
                 keyFacts: [
                     { label: 'Meta’s pricing model', value: 'Per template message, since July 1, 2025' },
@@ -606,10 +612,29 @@ export const guides: Guide[] = [
     },
 ];
 
+export const guides: Guide[] = [...baseGuides, ...moreGuides, ...serviceGuides];
+
 export function getGuide(id: string): Guide | undefined {
     return guides.find((guide) => guide.id === id);
 }
 
-export function getGuideBySlug(locale: CatalogLocale, slug: string): Guide | undefined {
-    return guides.find((guide) => guide.slug[locale] === slug);
+export function guideIn(guide: Guide, locale: CatalogLocale): LocalizedGuide | null {
+    const slug = guide.slug[locale];
+    const content = guide.content[locale];
+    return slug && content ? { guide, slug, content } : null;
+}
+
+/** Guías publicadas en un idioma, en el orden del arreglo. */
+export function guidesFor(locale: CatalogLocale): LocalizedGuide[] {
+    return guides.map((guide) => guideIn(guide, locale)).filter((item) => item !== null);
+}
+
+export function getGuideBySlug(locale: CatalogLocale, slug: string): LocalizedGuide | null {
+    const guide = guides.find((item) => item.slug[locale] === slug);
+    return guide ? guideIn(guide, locale) : null;
+}
+
+/** Idiomas en los que existe la guía (para hreflang y sitemap). */
+export function guideLocales(guide: Guide): CatalogLocale[] {
+    return (['es-MX', 'en'] as const).filter((locale) => guideIn(guide, locale) !== null);
 }

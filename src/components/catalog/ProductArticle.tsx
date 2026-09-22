@@ -1,12 +1,12 @@
 import { ArrowRight, BookOpen, CalendarClock, Check, ChevronRight, CircleDollarSign, ClipboardList, FileCheck2, Info, MapPin, MessageCircle, Receipt } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { getCategory } from '@/lib/catalog/categories';
-import { getGuide } from '@/lib/catalog/guides';
+import { getGuide, guideIn } from '@/lib/catalog/guides';
 import { getProduct } from '@/lib/catalog/products';
 import { UI, billingLabel, formatFrom } from '@/lib/catalog/ui';
 import { productParams } from '@/lib/catalog/urls';
 import { CURRENCY_BY_LOCALE, type CatalogLocale, type Product } from '@/lib/catalog/types';
-import { NovaBubble } from './NovaBubble';
+import { HostBubble } from './HostBubble';
 import { PricingGate } from './PricingGate';
 import { ProductIcon } from './ProductIcon';
 
@@ -45,7 +45,12 @@ export function ProductArticle({ product, locale }: { product: Product; locale: 
     const fromLabel = formatFrom(product.from.amount[currency], currency, product.from.billing, locale);
     const contactHref = { pathname: '/contacto' as const, query: { servicio: CONTACT_SERVICE[product.id] ?? 'Consultoría' } };
     const whatsappHref = `${WHATSAPP}?text=${encodeURIComponent(ui.gateWhatsappMessage(c.name))}`;
-    const guides = product.relatedGuides.map(getGuide).filter((guide) => guide !== undefined);
+    const guides = product.relatedGuides
+        .map((id) => {
+            const guide = getGuide(id);
+            return guide ? guideIn(guide, locale) : null;
+        })
+        .filter((item) => item !== null);
     const related = product.relatedProducts.map(getProduct).filter((item) => item !== undefined);
 
     const nav = [
@@ -127,7 +132,7 @@ export function ProductArticle({ product, locale }: { product: Product; locale: 
                         </div>
 
                         <aside className="rounded-3xl border border-ca-border bg-ca-surface/70 p-6 backdrop-blur-md shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
-                            <NovaBubble text={c.novaLine} label={ui.novaSays} />
+                            <HostBubble text={c.hostLine} label={ui.hostName} />
                             <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-ca-cyan">{ui.quickFacts}</p>
                             <dl className="mt-3 divide-y divide-white/5 text-sm">
                                 <Fact icon={<CircleDollarSign size={16} />} label={ui.startingPrice} value={fromLabel} />
@@ -239,14 +244,14 @@ export function ProductArticle({ product, locale }: { product: Product; locale: 
                             <section>
                                 <SectionTitle icon={<BookOpen size={18} />}>{ui.relatedGuides}</SectionTitle>
                                 <div className="grid gap-4 sm:grid-cols-2">
-                                    {guides.map((guide) => (
+                                    {guides.map((item) => (
                                         <Link
-                                            key={guide.id}
-                                            href={{ pathname: '/guias/[slug]', params: { slug: guide.slug[locale] } }}
+                                            key={item.guide.id}
+                                            href={{ pathname: '/guias/[slug]', params: { slug: item.slug } }}
                                             className="group rounded-2xl border border-ca-border bg-ca-surface/50 p-5 transition-colors hover:border-ca-cyan/30"
                                         >
                                             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ca-cyan">{ui.guides}</p>
-                                            <p className="mt-2 font-display font-bold text-ca-text">{guide.content[locale].title}</p>
+                                            <p className="mt-2 font-display font-bold text-ca-text">{item.content.title}</p>
                                             <p className="mt-3 inline-flex items-center gap-1 text-xs text-ca-muted group-hover:text-ca-cyan">
                                                 {ui.readGuide} <ArrowRight size={13} aria-hidden />
                                             </p>

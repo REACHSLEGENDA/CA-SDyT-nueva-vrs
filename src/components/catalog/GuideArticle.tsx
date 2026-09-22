@@ -1,11 +1,12 @@
 import { ArrowRight, BookOpenCheck, ChevronRight, ExternalLink, Link2, ListChecks, Zap } from 'lucide-react';
 import { Link } from '@/i18n/routing';
-import { getGuide } from '@/lib/catalog/guides';
+import { getCategory } from '@/lib/catalog/categories';
+import { getGuide, guideIn } from '@/lib/catalog/guides';
 import { getProduct } from '@/lib/catalog/products';
 import { UI, formatFrom } from '@/lib/catalog/ui';
 import { productParams } from '@/lib/catalog/urls';
-import { CURRENCY_BY_LOCALE, type CatalogLocale, type Guide } from '@/lib/catalog/types';
-import { NovaBubble } from './NovaBubble';
+import { CURRENCY_BY_LOCALE, type CatalogLocale, type LocalizedGuide } from '@/lib/catalog/types';
+import { HostBubble } from './HostBubble';
 import { ProductIcon } from './ProductIcon';
 
 function formatDate(date: string, locale: CatalogLocale) {
@@ -17,20 +18,33 @@ function formatDate(date: string, locale: CatalogLocale) {
     }).format(new Date(`${date}T00:00:00Z`));
 }
 
-export function GuideArticle({ guide, locale }: { guide: Guide; locale: CatalogLocale }) {
+export function GuideArticle({ entry, locale }: { entry: LocalizedGuide; locale: CatalogLocale }) {
     const ui = UI[locale];
-    const c = guide.content[locale];
+    const { guide, content: c } = entry;
     const currency = CURRENCY_BY_LOCALE[locale];
     const products = guide.relatedProducts.map(getProduct).filter((item) => item !== undefined);
     const mainProduct = products[0];
-    const relatedGuides = guide.relatedGuides.map(getGuide).filter((item) => item !== undefined);
+    // Sin ficha de producto (infraestructura, clases) la llamada a la acción lleva
+    // a la página del servicio.
+    const category = getCategory(guide.category);
+    const ctaHref = mainProduct
+        ? { pathname: '/servicios/[categoria]/[slug]' as const, params: productParams(mainProduct, locale) }
+        : category.landing;
+    const ctaLabel = mainProduct ? ui.viewProduct : ui.seeServices;
+    // Solo las guías relacionadas que existen en este idioma.
+    const relatedGuides = guide.relatedGuides
+        .map((id) => {
+            const related = getGuide(id);
+            return related ? guideIn(related, locale) : null;
+        })
+        .filter((item) => item !== null);
 
     const toc = [
         { id: 'respuesta-rapida', label: ui.quickAnswer },
         { id: 'datos-clave', label: ui.keyFacts },
         ...c.sections.map((section) => ({ id: section.id, label: section.title })),
         { id: 'preguntas', label: ui.faqs },
-        { id: 'fuentes', label: ui.sources },
+        ...(c.sources.length > 0 ? [{ id: 'fuentes', label: ui.sources }] : []),
     ];
 
     return (
@@ -56,7 +70,7 @@ export function GuideArticle({ guide, locale }: { guide: Guide; locale: CatalogL
                             </span>
                         </div>
                         <h1 className="font-display text-4xl font-black leading-[1.08] text-ca-text md:text-6xl">{c.title}</h1>
-                        <NovaBubble text={c.novaLine} label={ui.novaSays} className="mt-8 max-w-2xl" />
+                        <HostBubble text={c.hostLine} label={ui.hostName} className="mt-8 max-w-2xl" />
                     </div>
                 </div>
             </header>
@@ -136,14 +150,14 @@ export function GuideArticle({ guide, locale }: { guide: Guide; locale: CatalogL
                                 )}
 
                                 {/* CTA intermedio, a mitad de la guía */}
-                                {index === 1 && mainProduct && (
+                                {index === 1 && (
                                     <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-ca-purple/25 bg-ca-purple/[0.06] p-5 sm:flex-row sm:items-center sm:justify-between">
                                         <p className="font-semibold text-ca-text">{c.midCta}</p>
                                         <Link
-                                            href={{ pathname: '/servicios/[categoria]/[slug]', params: productParams(mainProduct, locale) }}
+                                            href={ctaHref}
                                             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple px-5 py-2.5 text-sm font-semibold text-white"
                                         >
-                                            {ui.viewProduct}
+                                            {ctaLabel}
                                             <ArrowRight size={16} aria-hidden />
                                         </Link>
                                     </div>
@@ -202,12 +216,12 @@ export function GuideArticle({ guide, locale }: { guide: Guide; locale: CatalogL
                                 </h2>
                                 <ul className="space-y-2">
                                     {relatedGuides.map((item) => (
-                                        <li key={item.id}>
+                                        <li key={item.guide.id}>
                                             <Link
-                                                href={{ pathname: '/guias/[slug]', params: { slug: item.slug[locale] } }}
+                                                href={{ pathname: '/guias/[slug]', params: { slug: item.slug } }}
                                                 className="inline-flex items-center gap-2 text-ca-cyan hover:underline"
                                             >
-                                                {item.content[locale].title}
+                                                {item.content.title}
                                                 <ArrowRight size={14} aria-hidden />
                                             </Link>
                                         </li>
@@ -217,6 +231,7 @@ export function GuideArticle({ guide, locale }: { guide: Guide; locale: CatalogL
                         )}
 
                         {/* Fuentes */}
+                        {c.sources.length > 0 && (
                         <section id="fuentes" className="scroll-mt-28 mt-12 border-t border-ca-border/60 pt-10">
                             <h2 className="mb-4 font-display text-xl font-bold text-ca-text">{ui.sources}</h2>
                             <ul className="space-y-2">
@@ -236,19 +251,20 @@ export function GuideArticle({ guide, locale }: { guide: Guide; locale: CatalogL
                             </ul>
                             <p className="mt-4 text-xs text-ca-muted/70">{ui.sourcesNote}</p>
                         </section>
+                        )}
 
                         {/* CTA final */}
-                        {mainProduct && (
+                        {(
                             <section className="relative mt-14 overflow-hidden rounded-3xl border border-ca-border bg-ca-surface p-8 md:p-10">
                                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-ca-cyan/10 via-transparent to-ca-purple/15" />
                                 <div className="relative">
                                     <h2 className="font-display text-2xl font-black text-ca-text md:text-3xl">{c.finalCta}</h2>
                                     <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                                         <Link
-                                            href={{ pathname: '/servicios/[categoria]/[slug]', params: productParams(mainProduct, locale) }}
+                                            href={ctaHref}
                                             className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple px-6 py-3 font-semibold text-white"
                                         >
-                                            {ui.viewProduct}
+                                            {ctaLabel}
                                             <ArrowRight size={17} aria-hidden />
                                         </Link>
                                         <Link

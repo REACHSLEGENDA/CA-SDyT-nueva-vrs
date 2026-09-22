@@ -18,8 +18,10 @@ export function productUrl(product: Product, locale: CatalogLocale): string {
     return `${SITE_URL}${LOCALE_PREFIX[locale]}/${SERVICES_SEGMENT[locale]}/${categoria}/${slug}`;
 }
 
-export function guideUrl(guide: Guide, locale: CatalogLocale): string {
-    return `${SITE_URL}${LOCALE_PREFIX[locale]}/${GUIDES_SEGMENT[locale]}/${guide.slug[locale]}`;
+/** URL de la guía en ese idioma; null si la guía no existe en él. */
+export function guideUrl(guide: Guide, locale: CatalogLocale): string | null {
+    const slug = guide.slug[locale];
+    return slug ? `${SITE_URL}${LOCALE_PREFIX[locale]}/${GUIDES_SEGMENT[locale]}/${slug}` : null;
 }
 
 export function guidesIndexUrl(locale: CatalogLocale): string {
@@ -30,7 +32,10 @@ export function servicesUrl(locale: CatalogLocale): string {
     return `${SITE_URL}${LOCALE_PREFIX[locale]}/${SERVICES_SEGMENT[locale]}`;
 }
 
-/** hreflang entre las dos versiones publicadas. x-default apunta a es-MX. */
-export function catalogAlternates(urls: Record<CatalogLocale, string>) {
-    return { 'es-MX': urls['es-MX'], 'en': urls['en'], 'x-default': urls['es-MX'] };
+/** hreflang solo entre las versiones publicadas. x-default apunta a es-MX. */
+export function catalogAlternates(urls: CatalogUrls) {
+    return { 'es-MX': urls['es-MX'], ...(urls.en ? { en: urls.en } : {}), 'x-default': urls['es-MX'] };
 }
+
+/** es-MX siempre existe; en puede faltar (guías solo para México). */
+export type CatalogUrls = { 'es-MX': string; en?: string | null };

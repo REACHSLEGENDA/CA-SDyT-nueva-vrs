@@ -104,9 +104,10 @@ Inspirado en "Energy Explica" y el catálogo de servicios de APEN. Fase 1: solo 
 | 18 fichas de producto | `/servicios/[categoria]/[slug]` · `/en/services/[category]/[slug]` | Una ficha por intención de búsqueda, no por nivel. Datos en `src/lib/catalog/products.ts` |
 | Precio "desde" público | Hero, catálogo, JSON-LD `Offer` y llms.txt | Del manual interno de cotizaciones (sept. 2026) |
 | Tabla completa por nivel | `/api/precios`, tras registro | `pricing.server.ts` usa `server-only`; los importes no están en el HTML ni en el JS del cliente. El lead se reenvía a Formspree desde el servidor |
-| CA Explica (4 guías) | `/guias` · `/en/guides` | Respuesta rápida de 40–60 palabras, datos clave, fuentes verificadas, FAQs. Datos en `src/lib/catalog/guides.ts` |
-| Nova | Anfitriona de guías y chatbot | Sustituye a Cassie |
+| CA Explica (22 guías, 16 en inglés) | `/guias` · `/en/guides` | Agrupadas por las mismas categorías del catálogo. Respuesta rápida de 40–60 palabras, datos clave, fuentes verificadas, FAQs. Las guías solo de México (aviso de privacidad, CFDI 4.0, infraestructura, clases) no tienen versión en inglés ni hreflang. Datos en `src/lib/catalog/guides*.ts` |
+| Nova (mantarraya) | Anfitriona oficial de guías y fichas (`HostBubble`), CTA y /nosotros | Cassie se queda solo en el chatbot, como personaje informal |
 
+- **Variante Markdown para agentes:** inicio, `/servicios`, fichas y guías responden en `text/markdown` con el sufijo `.md` o con `Accept: text/markdown` (`src/proxy.ts` → `/api/md`, contenido en `src/lib/catalog/markdown.ts`). Solo precios "desde". El resto de páginas sigue en HTML aunque se pida Markdown. Instrucciones en `/agent-instructions.md`.
 - **hreflang:** estas páginas solo enlazan es-MX ↔ en. es-419, es-ES y pt-BR responden 404 hasta que tengan textos propios.
 - **Next 16:** si `generateStaticParams` devuelve `[]` para algún `[locale]`, Next descarta todas las rutas del segmento. Por eso los idiomas no publicados reciben un parámetro de relleno (`UNPUBLISHED_LOCALE_PARAMS`) que resuelve a 404.
 - **Coherencia de datos:** los plazos de la FAQ de inicio y de `llms-full.txt` se alinearon con el manual (web 2–3 / 3–5 semanas; sistemas 4–10; apps y automatizaciones 4–12).
@@ -124,6 +125,5 @@ Inspirado en "Energy Explica" y el catálogo de servicios de APEN. Fase 1: solo 
   es de las señales que más mueven la aguja en AEO.
 - **30 errores de ESLint preexistentes** (`no-explicit-any`, `no-unescaped-entities`).
 - **Catálogo fase 2:** fichas y guías en es-419, es-ES y pt-BR con textos propios; fichas de infraestructura TI y clases (el manual no trae precios de esas líneas).
-- **Variante Markdown para agentes** (como APEN: `Accept: text/markdown` / sufijo `.md`) y `agent-instructions.md`.
 - `home.png` y `logo.png` se conservan en PNG a propósito: son el `og:image` y el logo
   del JSON-LD, y WebP no es fiable en las previews de enlace de las redes.

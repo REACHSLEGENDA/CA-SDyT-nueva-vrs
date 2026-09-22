@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { DEFAULT_SOCIAL_IMAGE, SITE_URL } from '@/lib/seoUtils';
-import { catalogAlternates } from './urls';
+import { catalogAlternates, type CatalogUrls } from './urls';
 import type { CatalogLocale } from './types';
 
 const OG_LOCALE: Record<CatalogLocale, string> = { 'es-MX': 'es_MX', 'en': 'en_US' };
@@ -25,24 +25,27 @@ export function catalogMetadata({
     title: string;
     description: string;
     keywords?: string[];
-    urls: Record<CatalogLocale, string>;
+    urls: CatalogUrls;
     type?: 'website' | 'article';
     publishedTime?: string;
     modifiedTime?: string;
 }): Metadata {
-    const url = urls[locale];
+    const url = urls[locale]!;
     const other: CatalogLocale = locale === 'en' ? 'es-MX' : 'en';
+    const hasOther = Boolean(urls[other]);
+    // Variante Markdown para agentes (servida por el proxy con el sufijo .md).
+    const markdownUrl = `${url}.md`;
     return {
         metadataBase: new URL(SITE_URL),
         title,
         description,
         keywords,
-        alternates: { canonical: url, languages: catalogAlternates(urls) },
+        alternates: { canonical: url, languages: catalogAlternates(urls), types: { 'text/markdown': markdownUrl } },
         robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' } },
         openGraph: {
             type,
             locale: OG_LOCALE[locale],
-            alternateLocale: [OG_LOCALE[other]],
+            alternateLocale: hasOther ? [OG_LOCALE[other]] : [],
             url,
             siteName: 'CA Soluciones Digitales',
             title,

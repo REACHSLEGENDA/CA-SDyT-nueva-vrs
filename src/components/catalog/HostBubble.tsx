@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
-/** Nova, la mantarraya anfitriona de CA Explica y del catálogo. */
-export function NovaBubble({ text, label = 'Nova', className }: { text: string; label?: string; className?: string }) {
+/**
+ * Nova, la mantarraya: anfitriona oficial de CA Explica y del catálogo.
+ * Cassie se queda solo en el chatbot, como personaje informal.
+ */
+export function HostBubble({ text, label = 'Nova', className }: { text: string; label?: string; className?: string }) {
     return (
         <figure className={cn('flex items-start gap-3', className)}>
             <div className="relative w-12 h-12 shrink-0 rounded-full bg-ca-surface2 border border-ca-cyan/25 shadow-[0_0_18px_rgba(0,207,255,0.18)]">

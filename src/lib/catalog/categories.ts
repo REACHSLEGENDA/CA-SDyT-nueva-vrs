@@ -37,6 +37,19 @@ export const categories: Category[] = [
         name: { 'es-MX': 'Automatización e IA', 'en': 'Automation and AI' },
         landing: '/automatizacion',
     },
+    // Sin fichas de producto (el manual no trae precios de estas líneas); agrupan guías.
+    {
+        id: 'infraestructura',
+        slug: { 'es-MX': 'infraestructura', 'en': 'it-infrastructure' },
+        name: { 'es-MX': 'Infraestructura TI', 'en': 'IT infrastructure' },
+        landing: '/infraestructura-ti',
+    },
+    {
+        id: 'clases',
+        slug: { 'es-MX': 'clases', 'en': 'training' },
+        name: { 'es-MX': 'Clases y capacitación', 'en': 'Training' },
+        landing: '/clases',
+    },
     {
         id: 'paquetes',
         slug: { 'es-MX': 'paquetes', 'en': 'packages' },

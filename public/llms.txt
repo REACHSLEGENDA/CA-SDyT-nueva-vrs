@@ -94,10 +94,51 @@ Precios "desde" en pesos mexicanos para clientes en México. Son de referencia: 
 
 Guías de respuesta directa con fuentes: https://casolutecdigital.com/guias
 
+### Desarrollo web
+
 - [¿Cuánto cuesta una página web en México en 2026?](https://casolutecdigital.com/guias/cuanto-cuesta-una-pagina-web): En CA, una página web profesional empieza en $4,500 MXN por un sitio de 3 secciones. El precio sube según el número de secciones, el diseño a la medida y funciones como pagos o integraciones. Hosting, dominio y licencias se pagan aparte, igual que el mantenimiento mensual, que es opcional.
+- [¿Cómo crear una página web para tu negocio paso a paso?](https://casolutecdigital.com/guias/como-crear-una-pagina-web): Para crear la página web de tu negocio define primero qué debe lograr (ventas, citas o contactos), reúne textos e imágenes, registra un dominio a tu nombre y elige quién la desarrolla o con qué plataforma. Después publícala, conéctala a Google Search Console y mide los resultados para mejorarla.
+- [¿Tu página web necesita aviso de privacidad en México?](https://casolutecdigital.com/guias/aviso-de-privacidad-pagina-web): Sí, si tu página recaba datos personales, como nombre, correo o teléfono en un formulario o chat. La Ley Federal de Protección de Datos Personales en Posesión de los Particulares obliga a informar mediante un aviso de privacidad quién recaba los datos, cuáles, para qué y cómo ejercer los derechos sobre ellos.
+
+### Sistemas y CRM
+
 - [¿Qué es un CRM y cuándo lo necesita tu negocio?](https://casolutecdigital.com/guias/que-es-un-crm): Un CRM (Customer Relationship Management) es un sistema que concentra la información de tus clientes y prospectos: datos de contacto, historial, cotizaciones y seguimientos. Sirve para que ninguna oportunidad de venta se pierda y para que el equipo sepa en qué etapa está cada cliente. Lo necesitas cuando Excel o WhatsApp ya no alcanzan.
+- [¿Qué es un ERP y en qué se diferencia de un CRM?](https://casolutecdigital.com/guias/que-es-un-erp): Un ERP (Enterprise Resource Planning) es un sistema que integra la operación interna de una empresa: inventarios, compras, ventas, finanzas y personal en una sola base de datos. Un CRM se enfoca en la relación con clientes y el proceso de venta. Muchas empresas empiezan con un CRM o un inventario y crecen hacia un ERP.
+- [¿Cómo facturar CFDI 4.0 desde tu sistema o punto de venta?](https://casolutecdigital.com/guias/factura-electronica-cfdi-4-0): Un sistema de ventas o punto de venta puede emitir facturas CFDI 4.0 conectándose a un Proveedor de Certificación Autorizado (PAC), que valida y timbra el comprobante ante el SAT. Desde el 1 de abril de 2023, la versión 4.0 es la única válida, así que cualquier integración nueva debe usarla.
+- [¿Qué es un SaaS y cuánto cuesta desarrollar uno?](https://casolutecdigital.com/guias/que-es-un-saas): Un SaaS (software como servicio) es un programa que tus clientes usan desde el navegador y pagan por suscripción, en lugar de comprarlo e instalarlo. Necesita cuentas de usuario, planes, cobro recurrente e infraestructura en la nube. En CA, desarrollar la primera versión de una plataforma SaaS empieza en $45,000 MXN.
+
+### Apps móviles
+
+- [¿Cuánto cuesta hacer una app en México en 2026?](https://casolutecdigital.com/guias/cuanto-cuesta-hacer-una-app): En CA, una app móvil empieza en $20,000 MXN por una app informativa; con inicio de sesión, pagos o conexión a tus sistemas el precio sube. Aparte están las tiendas: Apple cobra 99 USD por año de membresía en su programa de desarrolladores y Google Play un pago único de 25 USD.
+
+### Marketing y marca
+
+- [¿Cuánto cuesta la gestión de redes sociales para un negocio?](https://casolutecdigital.com/guias/cuanto-cuesta-gestion-de-redes-sociales): En CA, la gestión de redes sociales empieza en $3,500 MXN al mes con 8 publicaciones y 4 historias, diseño y redacción incluidos. El precio sube con el volumen de contenido, los reels y la gestión de campañas. La inversión en anuncios de Meta se paga aparte, directamente a Meta.
+- [¿Cuánto cuesta un logotipo y qué incluye una identidad de marca?](https://casolutecdigital.com/guias/cuanto-cuesta-un-logotipo): En CA, el diseño de un logotipo empieza en $2,500 MXN. Una identidad de marca completa, con paleta de colores, tipografías y manual de uso, cuesta más porque define cómo se ve tu negocio en todos lados. El registro de la marca ante el IMPI es un trámite legal aparte, que no forma parte del diseño.
+
+### SEO, AEO y analítica
+
 - [¿Qué es AEO y cómo aparecer en ChatGPT, Gemini y Claude?](https://casolutecdigital.com/guias/que-es-aeo): AEO (Answer Engine Optimization) es preparar el contenido de tu sitio para que buscadores y asistentes de IA, como ChatGPT, Gemini o Claude, lo encuentren, lo entiendan y lo usen como fuente. No sustituye al SEO: se apoya en él y pone el foco en respuestas claras, datos verificables y acceso de los rastreadores.
+- [¿Qué es el SEO y cómo funciona en 2026?](https://casolutecdigital.com/guias/que-es-seo): El SEO (optimización para buscadores) es el trabajo para que Google y otros buscadores encuentren, entiendan y muestren tu sitio cuando alguien busca lo que ofreces. Incluye la parte técnica (que el sitio se pueda rastrear e indexar), el contenido útil y la reputación que el sitio gana con el tiempo.
+- [¿Por qué mi página no aparece en Google y cómo saber si está indexada?](https://casolutecdigital.com/guias/google-no-indexa-mi-pagina): Para saber si Google tiene tu página, usa la Inspección de URLs de Google Search Console: indica si la URL está en Google y, si no, por qué, por ejemplo una etiqueta noindex o un bloqueo en robots.txt. Tras corregirlo puedes solicitar la indexación, que suele tardar un día o más y no está garantizada.
+- [¿Cómo aparecer en Google Maps con tu negocio?](https://casolutecdigital.com/guias/como-aparecer-en-google-maps): Para aparecer en Google Maps necesitas un Perfil de Empresa de Google verificado, con categoría, horario, fotos y datos correctos. Solo pueden tenerlo negocios con un local que los clientes visitan o que atienden a domicilio en una zona definida; los negocios que operan solo en línea no son elegibles.
+
+### Automatización e IA
+
 - [¿Cómo automatizar WhatsApp para tu negocio con un bot?](https://casolutecdigital.com/guias/bot-de-whatsapp-para-negocios): Un bot de WhatsApp responde solo a tus clientes: da información, toma datos, agenda y pasa la conversación a una persona cuando hace falta. A escala se usa la plataforma de WhatsApp Business de Meta, que desde el 1 de julio de 2025 cobra por mensaje de plantilla; los demás mensajes, dentro de la ventana de atención, son gratis.
+- [¿Cómo automatizar procesos de tu negocio con n8n o Make?](https://casolutecdigital.com/guias/automatizar-procesos-n8n-make): Automatizar un proceso es conectar tus herramientas para que las tareas repetitivas ocurran solas: pasar datos de un formulario al CRM, enviar avisos o generar reportes. n8n y Make permiten crear esos flujos visualmente; n8n además se puede instalar en tu propio servidor. Empieza por la tarea que más tiempo consume cada semana.
+- [¿Cómo cobrar en línea en tu página web en México?](https://casolutecdigital.com/guias/como-cobrar-en-linea): Para cobrar en línea necesitas una pasarela de pago, como Stripe o PayPal, integrada en tu sitio o sistema. La pasarela procesa la tarjeta y te deposita el dinero, y cobra una comisión por cada venta; algunas, como Stripe en México, no cobran mensualidad ni instalación. En CA, integrar una pasarela empieza en $3,000 MXN.
+- [¿Cómo usar inteligencia artificial en tu empresa sin perder el control?](https://casolutecdigital.com/guias/inteligencia-artificial-para-empresas): Empieza por una tarea concreta y repetitiva donde la IA ahorre tiempo medible: clasificar mensajes, resumir documentos, redactar respuestas o consultar información interna. Define qué datos puede usar, en qué casos una persona revisa el resultado y cómo medirás el ahorro. En CA, integrar IA en tus procesos empieza en $10,000 MXN.
+
+### Infraestructura TI
+
+- [¿Qué es un firewall y lo necesita tu pyme?](https://casolutecdigital.com/guias/que-es-un-firewall): Un firewall es un equipo de seguridad que vigila, filtra y controla el tráfico que entra y sale de tu red según reglas definidas. Una pyme lo necesita cuando tiene varios equipos, datos de clientes, acceso remoto o un servidor propio: separa redes, bloquea tráfico no autorizado y da visibilidad de lo que pasa en la red.
+- [¿Cómo respaldar la información de tu empresa? La regla 3-2-1](https://casolutecdigital.com/guias/respaldos-de-informacion-empresa): La regla 3-2-1 dice: guarda 3 copias de cada archivo importante (el original y 2 respaldos), en 2 tipos de medio distintos y con 1 copia fuera de tu oficina. Un NAS sirve como respaldo local automático; la copia externa puede ir a la nube. Y los respaldos deben probarse para confirmar que se pueden restaurar.
+- [¿Qué considerar antes de instalar cámaras de seguridad en tu negocio?](https://casolutecdigital.com/guias/camaras-cctv-para-negocio): Antes de instalar cámaras define qué zonas debes cubrir (accesos, caja, almacén), cuántos días necesitas conservar la grabación y quién la puede ver desde fuera. Las cámaras deben ir en una red protegida, no expuestas a internet. Y como graban a personas, tu negocio debe informar la videovigilancia con un aviso de privacidad.
+
+### Clases y capacitación
+
+- [¿Qué aprender en clases de computación para el trabajo?](https://casolutecdigital.com/guias/clases-de-computacion-que-aprender): Depende de tu objetivo. Para trabajar mejor en la oficina, empieza por ofimática: hojas de cálculo, documentos y correo. Para crear herramientas o automatizar tareas, programación. Para vender en internet, marketing digital. Lo que más rinde es aprender con tus propios archivos y casos del trabajo, no con ejemplos genéricos.
 
 ## Service catalog with reference prices (USD)
 
@@ -146,10 +187,39 @@ Guías de respuesta directa con fuentes: https://casolutecdigital.com/guias
 
 Direct-answer guides with sources: https://casolutecdigital.com/en/guides
 
+### Web development
+
 - [How much does a professional website cost in 2026?](https://casolutecdigital.com/en/guides/how-much-does-a-website-cost): At CA, a professional website starts at $280 USD for a 3-page site. The price goes up with the number of pages, custom design and features such as payments or integrations. Hosting, domain and licenses are paid separately, as is monthly maintenance, which is optional.
+- [How do you create a website for your business, step by step?](https://casolutecdigital.com/en/guides/how-to-create-a-business-website): To create your business website, first define what it must achieve (sales, bookings or leads), gather copy and images, register a domain in your name and choose who builds it or which platform to use. Then launch it, connect it to Google Search Console and measure results to keep improving it.
+
+### Systems and CRM
+
 - [What is a CRM and when does your business need one?](https://casolutecdigital.com/en/guides/what-is-a-crm): A CRM (Customer Relationship Management) is a system that keeps all your customer and prospect information in one place: contact details, history, quotes and follow-ups. It makes sure no sales opportunity slips through and that your team knows what stage each customer is at. You need one when spreadsheets or chat apps stop being enough.
+- [What is an ERP and how is it different from a CRM?](https://casolutecdigital.com/en/guides/what-is-an-erp): An ERP (Enterprise Resource Planning) is a system that integrates a company’s internal operations: inventory, purchasing, sales, finance and staff in a single database. A CRM focuses on customer relationships and the sales process. Many companies start with a CRM or an inventory system and grow into an ERP.
+- [What is SaaS and how much does it cost to build one?](https://casolutecdigital.com/en/guides/what-is-saas): SaaS (software as a service) is software your customers use from the browser and pay for by subscription instead of buying and installing it. It needs user accounts, plans, recurring billing and cloud infrastructure. At CA, building the first version of a SaaS platform starts at $2,800 USD.
+
+### Mobile apps
+
+- [How much does it cost to build an app in 2026?](https://casolutecdigital.com/en/guides/how-much-does-an-app-cost): At CA, a mobile app starts at $1,250 USD for an informational app; login, payments or connections to your systems raise the price. Store fees are separate: Apple charges 99 USD per membership year for its developer program, and Google Play a one-time 25 USD registration fee.
+
+### Marketing and branding
+
+- [How much does social media management cost for a business?](https://casolutecdigital.com/en/guides/how-much-does-social-media-management-cost): At CA, social media management starts at $220 USD per month with 8 posts and 4 stories, design and copywriting included. The price goes up with content volume, reels and campaign management. Meta ad spend is paid separately, directly to Meta.
+- [How much does a logo cost and what does a brand identity include?](https://casolutecdigital.com/en/guides/how-much-does-a-logo-cost): At CA, logo design starts at $160 USD. A full brand identity, with color palette, typography and usage guidelines, costs more because it defines how your business looks everywhere. Trademark registration is a separate legal process with your country’s intellectual property office and is not part of the design.
+
+### SEO, AEO and analytics
+
 - [What is AEO and how do you show up in ChatGPT, Gemini and Claude?](https://casolutecdigital.com/en/guides/what-is-aeo): AEO (Answer Engine Optimization) means preparing your site’s content so search engines and AI assistants such as ChatGPT, Gemini or Claude can find it, understand it and use it as a source. It does not replace SEO: it builds on it and focuses on clear answers, verifiable facts and crawler access.
+- [What is SEO and how does it work in 2026?](https://casolutecdigital.com/en/guides/what-is-seo): SEO (search engine optimization) is the work of making Google and other search engines find, understand and show your site when someone searches for what you offer. It covers the technical side (the site can be crawled and indexed), useful content and the reputation the site earns over time.
+- [Why is my page not showing on Google and how do I check if it is indexed?](https://casolutecdigital.com/en/guides/why-is-my-page-not-on-google): To check whether Google has your page, use URL Inspection in Google Search Console: it tells you whether the URL is on Google and, if not, why, for example a noindex tag or a robots.txt block. After fixing it you can request indexing, which usually takes a day or more and is not guaranteed.
+- [How do you get your business on Google Maps?](https://casolutecdigital.com/en/guides/how-to-appear-on-google-maps): To appear on Google Maps you need a verified Google Business Profile with the right category, hours, photos and accurate details. Only businesses with a location customers visit, or that serve customers in a defined service area, are eligible; online-only businesses are not.
+
+### Automation and AI
+
 - [How do you automate WhatsApp for your business with a bot?](https://casolutecdigital.com/en/guides/whatsapp-bot-for-business): A WhatsApp bot answers your customers automatically: it shares information, captures details, books appointments and hands the conversation to a person when needed. To automate at scale you use Meta’s WhatsApp Business Platform, which since July 1, 2025 charges per template message; non-template messages within the customer service window are free.
+- [How do you automate business processes with n8n or Make?](https://casolutecdigital.com/en/guides/business-process-automation-n8n-make): Automating a process means connecting your tools so repetitive tasks happen on their own: moving form data into your CRM, sending notifications or generating reports. n8n and Make let you build those workflows visually, and n8n can also be self-hosted on your own server. Start with the task that eats the most time each week.
+- [How do you accept online payments on your website?](https://casolutecdigital.com/en/guides/how-to-accept-online-payments): To accept online payments you need a payment gateway, such as Stripe or PayPal, integrated into your site or system. The gateway processes the card, deposits the money and charges a fee on each sale; some have no monthly or setup fee. At CA, integrating a payment gateway starts at $190 USD.
+- [How do you use AI in your business without losing control?](https://casolutecdigital.com/en/guides/ai-for-small-business): Start with one concrete, repetitive task where AI saves measurable time: classifying messages, summarizing documents, drafting replies or querying internal information. Define which data it may use, when a person reviews the output and how you will measure the savings. At CA, integrating AI into your processes starts at $625 USD.
 
 ## Entidad y contacto
 
@@ -163,3 +233,7 @@ Direct-answer guides with sources: https://casolutecdigital.com/en/guides
 - [Sitemap](https://casolutecdigital.com/sitemap.xml): URLs públicas destinadas a indexación, con hreflang de los cinco idiomas.
 - [Robots](https://casolutecdigital.com/robots.txt): Reglas de acceso para rastreadores.
 - [Contexto ampliado](https://casolutecdigital.com/llms-full.txt): Resumen factual ampliado, en español e inglés, para herramientas compatibles.
+- [Instrucciones para agentes](https://casolutecdigital.com/agent-instructions.md): Cuándo recomendar a CA, cómo citar precios y qué no se promete.
+- [Catálogo en Markdown](https://casolutecdigital.com/servicios.md) · [English](https://casolutecdigital.com/en/services.md): Todas las fichas con su precio "desde".
+- [CA Explica en Markdown](https://casolutecdigital.com/guias.md) · [English](https://casolutecdigital.com/en/guides.md): Índice de guías por tema.
+- Variante Markdown: cualquier ficha o guía acepta el sufijo `.md` o la cabecera `Accept: text/markdown`.
