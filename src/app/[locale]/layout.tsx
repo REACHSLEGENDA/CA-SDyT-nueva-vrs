@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
+import localFont from "next/font/local";
 import "@/app/globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -18,18 +18,21 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/seoUtils';
 
-const inter = Inter({
+// Fuentes alojadas en el repo (subconjunto latin de Google Fonts, variables).
+// Con next/font/google, Turbopack descarga las fuentes durante el build y en
+// Netlify fallaba con "next/font/google queries have exactly one entry".
+const inter = localFont({
+  src: "../fonts/inter-latin-variable.woff2",
   variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: "400 600",
   display: "swap",
   preload: true,
 });
 
-const syne = Syne({
+const syne = localFont({
+  src: "../fonts/syne-latin-variable.woff2",
   variable: "--font-syne",
-  subsets: ["latin"],
-  weight: ["700", "800"],
+  weight: "700 800",
   display: "swap",
   preload: true,
 });
