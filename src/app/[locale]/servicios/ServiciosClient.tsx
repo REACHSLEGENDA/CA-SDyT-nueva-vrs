@@ -76,7 +76,7 @@ const categoryVisuals = [
 
 
 /* ─── Componente principal ───────────────────────────────────────────── */
-export default function ServicesPage() {
+export default function ServicesPage({ catalog }: { catalog?: React.ReactNode }) {
     const [activeTab, setActiveTab] = useState('digital');
     const [openService, setOpenService] = useState<number | null>(null);
     const t = useTranslations('ServicesPage');
@@ -261,6 +261,9 @@ export default function ServicesPage() {
                     </motion.div>
                 </AnimatePresence>
             </Section>
+
+            {/* Catálogo de fichas con precio "desde" (solo es-MX y en) */}
+            {catalog}
 
             {/* CTA */}
             <Section className="py-20 mb-8">

@@ -27,7 +27,7 @@ import { Link } from '@/i18n/routing';
 import { getTechLogo } from '@/components/ui/TechLogos';
 import Image from 'next/image';
 
-export default function SystemsPage() {
+export default function SystemsPage({ catalog }: { catalog?: React.ReactNode }) {
     const t = useTranslations('SystemsPage');
     return (
         <div className="pt-20 min-h-screen">
@@ -165,6 +165,9 @@ export default function SystemsPage() {
                     <TechIcon name="Next.js" />
                 </div>
             </Section>
+
+            {/* Catálogo de fichas con precio "desde" (solo es-MX y en) */}
+            {catalog}
 
             {/* 5. CTA FINAL - High Conversion */}
             <Section className="py-32">

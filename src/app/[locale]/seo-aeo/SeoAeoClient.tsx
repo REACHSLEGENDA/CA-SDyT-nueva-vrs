@@ -23,7 +23,7 @@ const MOTORES_IA = [
     { name: 'Google AI Mode', color: 'text-ca-mid', bg: 'bg-ca-mid/10 border-ca-mid/20' },
 ];
 
-export default function SeoAeoPage() {
+export default function SeoAeoPage({ catalog }: { catalog?: React.ReactNode }) {
     const t = useTranslations('SeoAeoPage');
     return (
         <div className="pt-20 min-h-screen">
@@ -283,6 +283,9 @@ export default function SeoAeoPage() {
             </Section>
 
             <AeoFAQSection />
+
+            {/* Catálogo de fichas con precio "desde" (solo es-MX y en) */}
+            {catalog}
 
             {/* ─── CTA ─────────────────────────────────────────────── */}
             <Section className="py-24 text-center">

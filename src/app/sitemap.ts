@@ -2,6 +2,10 @@ import { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 import { CONTENT_LAST_REVIEWED } from '@/lib/seoUtils';
 import { getLanguageAlternates } from '@/lib/seoUtils';
+import { guides } from '@/lib/catalog/guides';
+import { CATALOG_LAST_REVIEWED, products } from '@/lib/catalog/products';
+import { guideUrl, guidesIndexUrl, productUrl } from '@/lib/catalog/urls';
+import { CATALOG_LOCALES, type CatalogLocale } from '@/lib/catalog/types';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://casolutecdigital.com';
@@ -90,6 +94,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     });
   });
+
+  // Catálogo y CA Explica (fase 1: es-MX y en). El hreflang solo enlaza las dos
+  // versiones que existen; anunciar las otras tres apuntaría a páginas 404.
+  const catalogEntry = (
+    urls: Record<CatalogLocale, string>,
+    lastModified: string,
+    priority: number,
+  ) =>
+    CATALOG_LOCALES.map((locale) => ({
+      url: urls[locale],
+      lastModified: new Date(lastModified),
+      changeFrequency: 'monthly' as const,
+      priority,
+      alternates: { languages: { 'es-MX': urls['es-MX'], en: urls.en } },
+    }));
+
+  const byLocale = <T,>(build: (locale: CatalogLocale) => T) =>
+    Object.fromEntries(CATALOG_LOCALES.map((locale) => [locale, build(locale)])) as Record<CatalogLocale, T>;
+
+  sitemapEntries.push(...catalogEntry(byLocale(guidesIndexUrl), CONTENT_LAST_REVIEWED, 0.8));
+  for (const guide of guides) {
+    sitemapEntries.push(...catalogEntry(byLocale((locale) => guideUrl(guide, locale)), guide.dateModified, 0.8));
+  }
+  for (const product of products) {
+    sitemapEntries.push(...catalogEntry(byLocale((locale) => productUrl(product, locale)), CATALOG_LAST_REVIEWED, 0.8));
+  }
 
   return sitemapEntries;
 }

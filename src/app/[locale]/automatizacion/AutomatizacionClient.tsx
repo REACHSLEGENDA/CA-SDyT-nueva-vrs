@@ -27,7 +27,7 @@ import {
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
-export default function AutomationPage() {
+export default function AutomationPage({ catalog }: { catalog?: React.ReactNode }) {
     const t = useTranslations('AutomationPage');
     return (
         <div className="pt-20 min-h-screen">
@@ -201,6 +201,9 @@ export default function AutomationPage() {
                     </Card>
                 </div>
             </Section>
+
+            {/* Catálogo de fichas con precio "desde" (solo es-MX y en) */}
+            {catalog}
 
             {/* 5. CTA FINAL */}
             <Section className="py-32 text-center">

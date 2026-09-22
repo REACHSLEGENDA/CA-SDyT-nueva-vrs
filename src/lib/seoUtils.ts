@@ -303,7 +303,7 @@ const SERVICE_NAMES: Record<string, Record<AppLocale, string>> = {
  * Es el conjunto de mercados donde la empresa se ofrece activamente, no una
  * promesa de presencia física.
  */
-const REMOTE_COVERAGE: Record<AppLocale, string[]> = {
+export const REMOTE_COVERAGE: Record<AppLocale, string[]> = {
   'es-MX': ['Mexico', 'United States'],
   'en': ['United States', 'Canada', 'United Kingdom', 'Ireland', 'Australia', 'New Zealand', 'Germany', 'Netherlands', 'United Arab Emirates', 'Singapore'],
   'es-419': ['Colombia', 'Argentina', 'Chile', 'Peru', 'Ecuador', 'Bolivia', 'Uruguay', 'Paraguay', 'Venezuela', 'Costa Rica', 'Panama', 'Guatemala', 'Dominican Republic'],

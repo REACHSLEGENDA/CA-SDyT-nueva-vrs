@@ -25,7 +25,7 @@ import {
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
-export default function MobileAppsPage() {
+export default function MobileAppsPage({ catalog }: { catalog?: React.ReactNode }) {
     const t = useTranslations('MobileAppsPage');
     return (
         <div className="pt-20 min-h-screen">
@@ -161,6 +161,9 @@ export default function MobileAppsPage() {
                     </div>
                 </div>
             </Section>
+
+            {/* Catálogo de fichas con precio "desde" (solo es-MX y en) */}
+            {catalog}
 
             {/* 5. CTA FINAL */}
             <Section className="py-32 text-center">

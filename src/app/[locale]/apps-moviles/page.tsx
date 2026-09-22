@@ -1,3 +1,5 @@
+import { CatalogGrid } from '@/components/catalog/CatalogGrid';
+import { isCatalogLocale } from '@/lib/catalog/types';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import MobileAppsPageClient from './AppsMovilesClient';
@@ -44,7 +46,7 @@ export default async function Page({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
-      <MobileAppsPageClient />
+      <MobileAppsPageClient catalog={isCatalogLocale(locale) ? <CatalogGrid locale={locale} category="apps" /> : undefined} />
     </>
   );
 }

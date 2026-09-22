@@ -9,7 +9,7 @@ import { Zap, ArrowRight, CheckCircle2, Code2, Database, Cloud } from 'lucide-re
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
-export default function AppsWebPage() {
+export default function AppsWebPage({ catalog }: { catalog?: React.ReactNode }) {
     const t = useTranslations('AppsWebPage');
     return (
         <div className="pt-20 min-h-screen">
@@ -139,6 +139,9 @@ export default function AppsWebPage() {
                     <ProcessStep num="04" title={t('step4')} text={t('step4d')} />
                 </div>
             </Section>
+
+            {/* Catálogo de fichas con precio "desde" (solo es-MX y en) */}
+            {catalog}
 
             {/* 5. CTA FINAL */}
             <Section className="py-32">

@@ -49,6 +49,30 @@ export const routing = defineRouting({
       'es-MX': '/seo-aeo',
       'en': '/services/seo-aeo'
     },
+    // Fichas de producto y CA Explica. Fase 1: solo se generan en es-MX y en;
+    // las demás variantes existen en el mapa para que next-intl pueda resolverlas,
+    // pero sus páginas devuelven 404 (ver src/lib/catalog/types.ts).
+    '/servicios/[categoria]/[slug]': {
+      'es-MX': '/servicios/[categoria]/[slug]',
+      'en': '/services/[categoria]/[slug]',
+      'es-419': '/servicios/[categoria]/[slug]',
+      'es-ES': '/servicios/[categoria]/[slug]',
+      'pt-BR': '/servicos/[categoria]/[slug]'
+    },
+    '/guias': {
+      'es-MX': '/guias',
+      'en': '/guides',
+      'es-419': '/guias',
+      'es-ES': '/guias',
+      'pt-BR': '/guias'
+    },
+    '/guias/[slug]': {
+      'es-MX': '/guias/[slug]',
+      'en': '/guides/[slug]',
+      'es-419': '/guias/[slug]',
+      'es-ES': '/guias/[slug]',
+      'pt-BR': '/guias/[slug]'
+    },
     '/infraestructura-ti': '/infraestructura-ti',
     '/marketing': '/marketing',
     '/paquetes-web': '/paquetes-web',

@@ -1,9 +1,11 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { Facebook, Instagram, Mail, MessageCircle } from 'lucide-react';
+import { UI } from '@/lib/catalog/ui';
+import { isCatalogLocale } from '@/lib/catalog/types';
 
 const serviceLinks: { href: any; key: string }[] = [
     { href: '/apps-web', key: 'web' },
@@ -24,6 +26,7 @@ const companyLinks: { href: any; key: string }[] = [
 
 export function Footer() {
     const t = useTranslations('Footer');
+    const locale = useLocale();
 
     return (
         <footer className="relative bg-ca-surface border-t border-ca-border pt-16 pb-8 overflow-hidden">
@@ -108,6 +111,14 @@ export function Footer() {
                                     </Link>
                                 </li>
                             ))}
+                            {/* CA Explica solo existe en es-MX y en (fase 1). */}
+                            {isCatalogLocale(locale) && (
+                                <li>
+                                    <Link href="/guias" className="text-ca-muted text-sm hover:text-ca-text transition-colors">
+                                        {UI[locale].guides}
+                                    </Link>
+                                </li>
+                            )}
                         </ul>
                     </div>
 

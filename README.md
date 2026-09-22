@@ -1,6 +1,6 @@
 # CA Soluciones Digitales y Tecnológicas
 
-This is a premium agency website built with Next.js 14+, Tailwind CSS (v4), and Framer Motion.
+This is a premium agency website built with Next.js 16, Tailwind CSS (v4), and Framer Motion.
 
 ## Features
 - **Modern Dark Aesthetic**: Glassmorphism, neon accents, and smooth animations.
@@ -43,6 +43,17 @@ This is a premium agency website built with Next.js 14+, Tailwind CSS (v4), and 
 The contact form uses [Formspree](https://formspree.io). 
 - Go to `src/components/features/ContactForm.tsx`.
 - Update the `useForm("mpwlzjjo")` with your own Formspree ID if needed.
+
+### Catalog prices (required in production)
+Product pages under `/servicios/[categoria]/[slug]` show a public "from" price. The full per-tier table
+is served by `/api/precios` only after the visitor leaves their details (the lead is forwarded to the
+same Formspree form as `/contacto`).
+
+- Prices live in `src/lib/catalog/pricing.server.ts` (server-only; never shipped to the browser).
+- Set `PRICING_TOKEN_SECRET` in Netlify (Site settings → Environment variables), at least 32 random
+  characters. Without it, the pricing unlock returns 503 in production. In development a local
+  fallback secret is used.
+- `PRICING_SKIP_LEAD_FORWARD=1` (development only) skips the Formspree forward when testing.
 
 ### Colors & Fonts
 - Colors are defined in `src/app/globals.css` under the `@theme` block.

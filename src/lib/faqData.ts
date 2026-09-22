@@ -21,7 +21,7 @@ export const faqsByLocale: Record<AppLocale, FAQItem[]> = {
   'es-MX': [
     {
       question: '¿Cuánto tiempo tarda el desarrollo de un proyecto web?',
-      answer: 'Depende de la complejidad. Una landing page profesional toma entre 1 y 2 semanas. Un sitio corporativo completo, de 3 a 5 semanas. Para plataformas a medida (SaaS, e-commerce avanzado), el plazo varía entre 2 y 4 meses, dependiendo del alcance definido en la fase de análisis.',
+      answer: 'Depende del alcance. Un sitio web básico o mediano toma de 2 a 3 semanas, y uno premium o personalizado de 3 a 5 semanas. Los sistemas, CRM y plataformas SaaS llevan entre 4 y 10 semanas, y las apps móviles y automatizaciones entre 4 y 12. La fecha final se fija en la propuesta.',
     },
     {
       question: '¿Trabajan con empresas fuera de la Ciudad de México?',
@@ -56,7 +56,7 @@ export const faqsByLocale: Record<AppLocale, FAQItem[]> = {
   'en': [
     {
       question: 'How long does it take to build a website?',
-      answer: 'It depends on scope. A professional landing page takes 1 to 2 weeks. A full corporate site, 3 to 5 weeks. Custom platforms (SaaS, advanced e-commerce) run 2 to 4 months, based on the scope agreed during the analysis phase.',
+      answer: 'It depends on scope. A basic or mid-size website takes 2 to 3 weeks, and a premium or custom one 3 to 5 weeks. Systems, CRMs and SaaS platforms take 4 to 10 weeks, and mobile apps and automations 4 to 12. The final date is set in the proposal.',
     },
     {
       question: 'Do you work with clients outside Mexico?',
@@ -91,7 +91,7 @@ export const faqsByLocale: Record<AppLocale, FAQItem[]> = {
   'es-419': [
     {
       question: '¿Cuánto tiempo tarda el desarrollo de un proyecto web?',
-      answer: 'Depende del alcance. Una landing page profesional toma entre 1 y 2 semanas. Un sitio corporativo completo, de 3 a 5 semanas. Las plataformas a medida (SaaS, e-commerce avanzado) llevan entre 2 y 4 meses, según lo definido en la fase de análisis.',
+      answer: 'Depende del alcance. Un sitio web básico o mediano toma de 2 a 3 semanas, y uno premium o personalizado de 3 a 5 semanas. Los sistemas, CRM y plataformas SaaS llevan entre 4 y 10 semanas, y las apps móviles y automatizaciones entre 4 y 12. La fecha final se fija en la propuesta.',
     },
     {
       question: '¿Atienden clientes en Colombia, Chile, Argentina o Perú?',
@@ -126,7 +126,7 @@ export const faqsByLocale: Record<AppLocale, FAQItem[]> = {
   'es-ES': [
     {
       question: '¿Cuánto tiempo tarda el desarrollo de un proyecto web?',
-      answer: 'Depende del alcance. Una landing page profesional lleva entre 1 y 2 semanas. Una web corporativa completa, de 3 a 5 semanas. Las plataformas a medida (SaaS, e-commerce avanzado) requieren entre 2 y 4 meses, según lo definido en la fase de análisis.',
+      answer: 'Depende del alcance. Una web básica o mediana lleva de 2 a 3 semanas, y una premium o personalizada de 3 a 5 semanas. Los sistemas, CRM y plataformas SaaS requieren entre 4 y 10 semanas, y las apps móviles y automatizaciones entre 4 y 12. La fecha final se fija en la propuesta.',
     },
     {
       question: '¿Trabajan con empresas en España desde México?',
@@ -161,7 +161,7 @@ export const faqsByLocale: Record<AppLocale, FAQItem[]> = {
   'pt-BR': [
     {
       question: 'Quanto tempo leva o desenvolvimento de um projeto web?',
-      answer: 'Depende do escopo. Uma landing page profissional leva de 1 a 2 semanas. Um site corporativo completo, de 3 a 5 semanas. Plataformas sob medida (SaaS, e-commerce avançado) levam de 2 a 4 meses, conforme definido na fase de análise.',
+      answer: 'Depende do escopo. Um site básico ou médio leva de 2 a 3 semanas, e um premium ou personalizado de 3 a 5 semanas. Sistemas, CRM e plataformas SaaS levam de 4 a 10 semanas, e aplicativos móveis e automações de 4 a 12. A data final é definida na proposta.',
     },
     {
       question: 'Vocês atendem empresas no Brasil a partir do México?',

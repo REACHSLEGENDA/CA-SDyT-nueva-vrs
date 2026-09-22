@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
-export default function WebPackagesPage() {
+export default function WebPackagesPage({ catalog }: { catalog?: React.ReactNode }) {
     const t = useTranslations('PackagesPage');
     return (
         <div className="pt-20 min-h-screen">
@@ -291,6 +291,9 @@ export default function WebPackagesPage() {
                     </table>
                 </div>
             </Section>
+
+            {/* Catálogo de fichas con precio "desde" (solo es-MX y en) */}
+            {catalog}
 
             {/* CTA final */}
             <Section className="py-24 text-center">

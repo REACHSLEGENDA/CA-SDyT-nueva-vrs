@@ -24,7 +24,7 @@ import {
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
-export default function MarketingPage() {
+export default function MarketingPage({ catalog }: { catalog?: React.ReactNode }) {
     const t = useTranslations('MarketingPage');
     return (
         <div className="pt-20 min-h-screen">
@@ -195,6 +195,9 @@ export default function MarketingPage() {
                     </div>
                 </div>
             </Section>
+
+            {/* Catálogo de fichas con precio "desde" (solo es-MX y en) */}
+            {catalog}
 
             {/* 5. CTA FINAL */}
             <Section className="py-32 text-center">

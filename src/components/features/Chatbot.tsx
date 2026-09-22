@@ -217,7 +217,6 @@ export function Chatbot() {
     const [history, setHistory] = useState<StepId[]>(['start']);
     const [isTyping, setIsTyping] = useState(false);
     const [videoEnded, setVideoEnded] = useState(false);
-    const [frame, setFrame] = useState(1);
     const [isHovered, setIsHovered] = useState(false);
     const pathname = usePathname();
     const t = useTranslations('Chatbot.ui');
@@ -243,17 +242,6 @@ export function Chatbot() {
     }, []);
 
     useEffect(() => {
-        if (isHovered || isOpen) return;
-        const frames = [1, 2, 3, 2];
-        let idx = 0;
-        const interval = setInterval(() => {
-            idx = (idx + 1) % frames.length;
-            setFrame(frames[idx]);
-        }, 350); // 350ms por frame para una animación un poco más lenta y fluida
-        return () => clearInterval(interval);
-    }, [isHovered, isOpen]);
-
-    useEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
@@ -271,8 +259,6 @@ export function Chatbot() {
 
     return (
         <>
-            {/* Los frames de la animación están montados dentro del botón principal para evitar peticiones HTTP, por lo que el preloader antiguo ha sido eliminado. */}
-
             {/* Speech bubble balloon (globito de texto) */}
             <AnimatePresence>
                 {isHovered && !isOpen && !isHeroPlaying && (
@@ -331,25 +317,21 @@ export function Chatbot() {
                             transition={{ duration: 0.2 }}
                             className="relative w-28 h-28 md:w-36 md:h-36 filter drop-shadow-[0_4px_12px_rgba(0,207,255,0.3)]"
                         >
-                            {/* Optimizamos la animación renderizando todos los frames a la vez.
-                                Usamos .webp (~24KB) en vez de .png (~2.7MB) y controlamos visibilidad con CSS.
-                                Se agrega unoptimized para que next/image no intercepte estas peticiones. */}
-                            {[1, 2, 3, 4].map((f) => {
-                                const isCurrentFrame = isHovered ? f === 4 : f === frame;
-                                return (
-                                    <Image
-                                        key={f}
-                                        src={`/assets/bot${f}.webp`}
-                                        alt={`Bot frame ${f}`}
-                                        fill
-                                        className={`object-contain transition-opacity duration-75 ${
-                                            isCurrentFrame ? 'opacity-100' : 'opacity-0'
-                                        }`}
-                                        priority
-                                        unoptimized
-                                    />
-                                );
-                            })}
+                            {/* Nova, la mantarraya de CA. Flota en reposo y se inclina al pasar el cursor. */}
+                            <motion.div
+                                className="absolute inset-0"
+                                animate={isHovered ? { y: -4, rotate: -6 } : { y: [0, -8, 0], rotate: 0 }}
+                                transition={isHovered ? { duration: 0.25 } : { duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+                            >
+                                <Image
+                                    src="/assets/nova-bot.webp"
+                                    alt=""
+                                    fill
+                                    sizes="(max-width: 768px) 112px, 144px"
+                                    className="object-contain"
+                                    priority
+                                />
+                            </motion.div>
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -369,11 +351,11 @@ export function Chatbot() {
                             {/* Header */}
                         <div className="p-4 border-b border-white/5 bg-white/[0.02] flex justify-between items-center shrink-0">
                             <div className="flex items-center gap-3">
-                                <div className="relative w-10 h-10 rounded-full border border-ca-cyan/20 overflow-hidden shadow-[0_0_15px_rgba(0,207,255,0.15)]">
-                                    <Image src="/assets/chat.webp" alt="CA Bot" fill sizes="40px" className="object-cover" />
+                                <div className="relative w-10 h-10 rounded-full bg-ca-surface2 border border-ca-cyan/20 overflow-hidden shadow-[0_0_15px_rgba(0,207,255,0.15)]">
+                                    <Image src="/assets/nova-avatar.webp" alt="Nova" fill sizes="40px" className="object-contain p-0.5" />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-white text-sm">Cassie</h3>
+                                    <h3 className="font-semibold text-white text-sm">Nova</h3>
                                     <span className="flex items-center gap-1.5 text-[11px] text-ca-cyan">
                                         <span className="relative flex h-1.5 w-1.5">
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ca-cyan opacity-75"></span>
@@ -405,8 +387,8 @@ export function Chatbot() {
                                         transition={{ duration: 0.3 }}
                                         className="flex items-start gap-3"
                                     >
-                                        <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 mt-0.5 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-                                            <Image src="/assets/chat.webp" alt="" fill sizes="28px" className="object-cover" />
+                                        <div className="w-7 h-7 rounded-full bg-ca-surface2 overflow-hidden relative shrink-0 mt-0.5 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+                                            <Image src="/assets/nova-avatar.webp" alt="" fill sizes="28px" className="object-contain" />
                                         </div>
                                         <div className="bg-white/[0.03] border border-white/5 px-4 py-3 rounded-2xl rounded-tl-none max-w-[85%] text-sm text-ca-text leading-relaxed shadow-sm">
                                             {stepId === 'start' && index > 0
@@ -420,8 +402,8 @@ export function Chatbot() {
 
                             {isTyping && (
                                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3">
-                                    <div className="w-7 h-7 rounded-full overflow-hidden relative shrink-0 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-                                        <Image src="/assets/chat.webp" alt="" fill sizes="28px" className="object-cover" />
+                                    <div className="w-7 h-7 rounded-full bg-ca-surface2 overflow-hidden relative shrink-0 border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+                                        <Image src="/assets/nova-avatar.webp" alt="" fill sizes="28px" className="object-contain" />
                                     </div>
                                     <div className="bg-white/[0.03] border border-white/5 px-4 py-2 rounded-2xl rounded-tl-none flex items-center justify-center gap-1.5 shadow-sm text-ca-cyan">
                                         <ThinkingOrb state="composing" size={20} />

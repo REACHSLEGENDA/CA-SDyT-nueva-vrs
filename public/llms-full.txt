@@ -48,11 +48,12 @@ La infraestructura física —instalación de redes, servidores, CCTV y soporte 
 
 ## Plazos orientativos
 
-- Landing page profesional: 1 a 2 semanas.
-- Sitio corporativo completo: 3 a 5 semanas.
-- Plataformas a medida (SaaS, e-commerce avanzado): 2 a 4 meses.
+- Sitio web básico o mediano: 2 a 3 semanas.
+- Sitio web premium o personalizado: 3 a 5 semanas.
+- Sistemas, CRM y plataformas SaaS: 4 a 10 semanas.
+- Apps móviles y automatizaciones: 4 a 12 semanas.
 
-Los plazos dependen del alcance definido en la fase de análisis.
+Los plazos son estimados y dependen del alcance, los módulos, las integraciones y la entrega de materiales; la fecha final se fija en la propuesta.
 
 ## Enfoque SEO y AEO
 
@@ -63,6 +64,58 @@ Un archivo llms.txt es una guía complementaria para herramientas que decidan le
 ## Tecnologías publicadas
 
 React, Next.js, TypeScript, Node.js, Python, PostgreSQL, MySQL, MongoDB, Supabase, n8n, Make, Flutter, React Native, Swift, Kotlin, servicios cloud (AWS, Vercel), Fortinet, Synology y herramientas de monitoreo. La selección final depende de los requisitos de cada proyecto.
+
+## Catálogo con precios de referencia (MXN)
+
+Precios "desde" en pesos mexicanos para clientes en México. Son de referencia: el alcance y el precio final se confirman en la propuesta. Hosting, dominios, licencias, consumo de APIs, mensajería y pauta publicitaria se cotizan aparte. Cada ficha muestra qué incluye, qué se necesita para empezar y sus preguntas frecuentes; la tabla completa por nivel se entrega al solicitarla.
+
+### Desarrollo web
+
+- [Página web profesional](https://casolutecdigital.com/servicios/web/pagina-web): Desde $4,500 MXN. Diseñamos y programamos sitios web rápidos, seguros y fáciles de encontrar en Google. Elige el tamaño que necesita tu negocio hoy y crece después sin rehacer el sitio.
+
+### Sistemas y CRM
+
+- [Sistema web a medida](https://casolutecdigital.com/servicios/sistemas/sistema-web-a-medida): Desde $12,000 MXN. Cuando las hojas de cálculo ya no alcanzan, un sistema propio ordena tu operación: un panel para tu equipo, datos centralizados y procesos que no dependen de copiar y pegar.
+- [CRM a medida](https://casolutecdigital.com/servicios/sistemas/crm): Desde $18,000 MXN. Un CRM propio concentra a tus clientes, cotizaciones y seguimientos en un solo lugar, con los campos y etapas que usa tu equipo de ventas, sin licencias mensuales por usuario.
+- [Plataforma SaaS](https://casolutecdigital.com/servicios/sistemas/plataforma-saas): Desde $45,000 MXN. Convierte tu idea o tu servicio en un software que vendes por suscripción: cuentas de clientes, planes, cobro recurrente y un panel para administrarlo todo en la nube.
+- [Sistema de inventarios](https://casolutecdigital.com/servicios/sistemas/sistema-de-inventarios): Desde $18,000 MXN. Controla entradas, salidas y existencias en tiempo real, con los productos, almacenes y reglas de tu negocio. Sin conteos a mano ni hojas de cálculo desactualizadas.
+- [Sistema de ventas y punto de venta](https://casolutecdigital.com/servicios/sistemas/sistema-de-ventas): Desde $22,000 MXN. Registra cada venta, cierra caja sin descuadres y consulta qué se vende, cuándo y quién lo vende, con un sistema hecho para la forma en que cobra tu negocio.
+
+### Apps móviles
+
+- [App móvil para Android y iOS](https://casolutecdigital.com/servicios/apps/app-movil): Desde $20,000 MXN. Lleva tu negocio al celular de tus clientes o de tu equipo con una app para Android y iOS, desde una app informativa hasta una app empresarial conectada a tus sistemas.
+
+### Marketing y marca
+
+- [Gestión de redes sociales](https://casolutecdigital.com/servicios/marketing/gestion-de-redes-sociales): Desde $3,500 MXN/mes. Mantén tus redes activas con contenido diseñado para tu marca y, en los planes superiores, campañas en Meta Ads y embudos que convierten seguidores en clientes.
+- [Diseño de marca y logotipo](https://casolutecdigital.com/servicios/marketing/diseno-de-marca): Desde $2,500 MXN. Una marca coherente hace que tu negocio se vea confiable en todos lados: en tu web, tus redes, tu empaque y tu fachada. Diseñamos desde el logotipo hasta el manual de marca.
+
+### SEO, AEO y analítica
+
+- [SEO local y Google Maps](https://casolutecdigital.com/servicios/seo-aeo/seo-local-google-maps): Desde $2,000 MXN. Cuando alguien busca "cerca de mí", Google muestra primero el mapa. Optimizamos tu perfil de Google Business para que tu negocio aparezca con información completa, fotos y reseñas.
+- [SEO profesional para tu sitio web](https://casolutecdigital.com/servicios/seo-aeo/seo-web): Desde $3,000 MXN. Revisamos tu sitio como lo ve Google: velocidad, estructura, contenido y datos estructurados. Corregimos lo que frena tu visibilidad y medimos el avance cada mes.
+- [AEO: optimización para ChatGPT, Gemini y Claude](https://casolutecdigital.com/servicios/seo-aeo/aeo-optimizacion-ia): Desde $2,000 MXN. Cada vez más clientes preguntan a un asistente de IA antes de buscar en Google. Preparamos tu sitio para que esos asistentes puedan leerlo, entenderlo y citarlo como fuente.
+
+### Automatización e IA
+
+- [Bot de WhatsApp para negocios](https://casolutecdigital.com/servicios/automatizacion/bot-de-whatsapp): Desde $2,500 MXN. Responde al instante las preguntas de siempre, toma datos de interesados y pasa a una persona solo cuando hace falta. Desde bots con menús hasta asistentes con inteligencia artificial.
+- [Agenda automática de citas](https://casolutecdigital.com/servicios/automatizacion/agenda-automatica): Desde $2,000 MXN. Deja de coordinar citas por mensaje. Tus clientes eligen horario disponible, reciben su confirmación y un recordatorio, y tú ves tu agenda ordenada en un solo lugar.
+- [Integración de pasarelas de pago](https://casolutecdigital.com/servicios/automatizacion/pasarelas-de-pago): Desde $3,000 MXN. Cobra en línea desde tu sitio, tu tienda o tu sistema con la pasarela que prefieras: pagos únicos, suscripciones o varios métodos de pago.
+- [Integraciones y APIs](https://casolutecdigital.com/servicios/automatizacion/integraciones-api): Desde $1,500 MXN. Si copias datos de una herramienta a otra, esa tarea se puede automatizar. Conectamos tu sitio, tu CRM, tus hojas de cálculo o tu email marketing para que la información viaje sola.
+- [Inteligencia artificial integrada](https://casolutecdigital.com/servicios/automatizacion/inteligencia-artificial-integrada): Desde $10,000 MXN. La IA rinde cuando resuelve una tarea concreta de tu operación: clasificar solicitudes, resumir documentos, redactar respuestas o consultar tu información interna.
+
+### Paquetes
+
+- [Paquetes 360](https://casolutecdigital.com/servicios/paquetes/paquetes-360): Desde $9,900 MXN. Todo lo que un negocio necesita para arrancar o crecer en internet, en un solo paquete: sitio web, redes, Google Maps y, en los paquetes superiores, chatbot, pagos, SEO y AEO.
+
+## CA Explica (guías)
+
+Guías de respuesta directa con fuentes: https://casolutecdigital.com/guias
+
+- [¿Cuánto cuesta una página web en México en 2026?](https://casolutecdigital.com/guias/cuanto-cuesta-una-pagina-web): En CA, una página web profesional empieza en $4,500 MXN por un sitio de 3 secciones. El precio sube según el número de secciones, el diseño a la medida y funciones como pagos o integraciones. Hosting, dominio y licencias se pagan aparte, igual que el mantenimiento mensual, que es opcional.
+- [¿Qué es un CRM y cuándo lo necesita tu negocio?](https://casolutecdigital.com/guias/que-es-un-crm): Un CRM (Customer Relationship Management) es un sistema que concentra la información de tus clientes y prospectos: datos de contacto, historial, cotizaciones y seguimientos. Sirve para que ninguna oportunidad de venta se pierda y para que el equipo sepa en qué etapa está cada cliente. Lo necesitas cuando Excel o WhatsApp ya no alcanzan.
+- [¿Qué es AEO y cómo aparecer en ChatGPT, Gemini y Claude?](https://casolutecdigital.com/guias/que-es-aeo): AEO (Answer Engine Optimization) es preparar el contenido de tu sitio para que buscadores y asistentes de IA, como ChatGPT, Gemini o Claude, lo encuentren, lo entiendan y lo usen como fuente. No sustituye al SEO: se apoya en él y pone el foco en respuestas claras, datos verificables y acceso de los rastreadores.
+- [¿Cómo automatizar WhatsApp para tu negocio con un bot?](https://casolutecdigital.com/guias/bot-de-whatsapp-para-negocios): Un bot de WhatsApp responde solo a tus clientes: da información, toma datos, agenda y pasa la conversación a una persona cuando hace falta. A escala se usa la plataforma de WhatsApp Business de Meta, que desde el 1 de julio de 2025 cobra por mensaje de plantilla; los demás mensajes, dentro de la ventana de atención, son gratis.
 
 ## Contacto oficial
 
@@ -121,11 +174,12 @@ Mexico time zones overlap with United States business hours, so reviews and meet
 
 ## Indicative timelines
 
-- Professional landing page: 1 to 2 weeks.
-- Full corporate site: 3 to 5 weeks.
-- Custom platforms (SaaS, advanced e-commerce): 2 to 4 months.
+- Basic or mid-size website: 2 to 3 weeks.
+- Premium or custom website: 3 to 5 weeks.
+- Systems, CRM and SaaS platforms: 4 to 10 weeks.
+- Mobile apps and automations: 4 to 12 weeks.
 
-Timelines depend on the scope agreed during the analysis phase.
+Timelines are estimates and depend on scope, modules, integrations and delivery of materials; the final date is set in the proposal.
 
 ## SEO and AEO approach
 
@@ -136,6 +190,58 @@ An llms.txt file is a complementary guide for tools that choose to read it. It d
 ## Published technologies
 
 React, Next.js, TypeScript, Node.js, Python, PostgreSQL, MySQL, MongoDB, Supabase, n8n, Make, Flutter, React Native, Swift, Kotlin, cloud services (AWS, Vercel), Fortinet, Synology and monitoring tools. The final selection depends on each project's requirements.
+
+## Service catalog with reference prices (USD)
+
+"From" prices in US dollars for international clients. They are reference prices: final scope and price are confirmed in the proposal. Hosting, domains, licenses, API usage, messaging and ad spend are quoted separately. Each page lists what is included, what is needed to start and FAQs; the full per-tier table is provided on request.
+
+### Web development
+
+- [Professional website](https://casolutecdigital.com/en/services/web/website): From $280 USD. We design and build fast, secure websites that are easy to find on Google. Pick the size your business needs today and grow later without rebuilding.
+
+### Systems and CRM
+
+- [Custom web system](https://casolutecdigital.com/en/services/systems/custom-web-system): From $750 USD. When spreadsheets stop scaling, a system of your own brings order to operations: one panel for your team, centralized data and processes that no longer depend on copy and paste.
+- [Custom CRM](https://casolutecdigital.com/en/services/systems/crm): From $1,120 USD. A CRM of your own keeps customers, quotes and follow-ups in one place, with the fields and stages your sales team actually uses and no monthly per-seat licenses.
+- [SaaS platform](https://casolutecdigital.com/en/services/systems/saas-platform): From $2,800 USD. Turn your idea or service into software you sell by subscription: customer accounts, plans, recurring billing and a cloud admin panel to run it all.
+- [Inventory system](https://casolutecdigital.com/en/services/systems/inventory-system): From $1,120 USD. Track stock in, stock out and levels in real time, with your products, warehouses and business rules. No manual counts or outdated spreadsheets.
+- [Sales and point-of-sale system](https://casolutecdigital.com/en/services/systems/sales-system): From $1,375 USD. Record every sale, close the register without discrepancies and see what sells, when and by whom, with a system built around how your business charges.
+
+### Mobile apps
+
+- [Android and iOS mobile app](https://casolutecdigital.com/en/services/apps/mobile-app): From $1,250 USD. Put your business on your customers’ or team’s phones with an Android and iOS app, from a simple informational app to an enterprise app connected to your systems.
+
+### Marketing and branding
+
+- [Social media management](https://casolutecdigital.com/en/services/marketing/social-media-management): From $220 USD/month. Keep your social accounts active with content designed for your brand and, on higher plans, Meta Ads campaigns and funnels that turn followers into customers.
+- [Brand and logo design](https://casolutecdigital.com/en/services/marketing/brand-design): From $160 USD. A consistent brand makes your business look trustworthy everywhere: your website, social media, packaging and storefront. We design everything from the logo to the brand guidelines.
+
+### SEO, AEO and analytics
+
+- [Local SEO and Google Maps](https://casolutecdigital.com/en/services/seo-aeo/local-seo-google-maps): From $125 USD. When someone searches "near me", Google shows the map first. We optimize your Google Business Profile so your business appears with complete information, photos and reviews.
+- [Professional website SEO](https://casolutecdigital.com/en/services/seo-aeo/website-seo): From $190 USD. We review your site the way Google sees it: speed, structure, content and structured data. We fix what holds back your visibility and measure progress every month.
+- [AEO: optimization for ChatGPT, Gemini and Claude](https://casolutecdigital.com/en/services/seo-aeo/aeo-ai-search-optimization): From $125 USD. More and more customers ask an AI assistant before searching Google. We prepare your site so those assistants can read it, understand it and cite it as a source.
+
+### Automation and AI
+
+- [WhatsApp bot for business](https://casolutecdigital.com/en/services/automation/whatsapp-bot): From $160 USD. Answer the usual questions instantly, capture leads and hand over to a person only when needed. From menu-based bots to AI-powered assistants.
+- [Automated booking system](https://casolutecdigital.com/en/services/automation/automated-booking): From $125 USD. Stop coordinating appointments by message. Customers pick an available time, get a confirmation and a reminder, and you see a tidy schedule in one place.
+- [Payment gateway integration](https://casolutecdigital.com/en/services/automation/payment-gateways): From $190 USD. Accept online payments on your site, store or system with the gateway you prefer: one-time payments, subscriptions or multiple payment methods.
+- [Integrations and APIs](https://casolutecdigital.com/en/services/automation/api-integrations): From $95 USD. If you copy data from one tool to another, that task can be automated. We connect your website, CRM, spreadsheets or email marketing so information moves on its own.
+- [AI integration](https://casolutecdigital.com/en/services/automation/ai-integration): From $625 USD. AI pays off when it solves a specific task in your operations: classifying requests, summarizing documents, drafting replies or querying your internal information.
+
+### Bundles
+
+- [360 bundles](https://casolutecdigital.com/en/services/packages/360-bundles): From $620 USD. Everything a business needs to launch or grow online, in one bundle: website, social media, Google Maps and, in higher bundles, chatbot, payments, SEO and AEO.
+
+## CA Explains (guides)
+
+Direct-answer guides with sources: https://casolutecdigital.com/en/guides
+
+- [How much does a professional website cost in 2026?](https://casolutecdigital.com/en/guides/how-much-does-a-website-cost): At CA, a professional website starts at $280 USD for a 3-page site. The price goes up with the number of pages, custom design and features such as payments or integrations. Hosting, domain and licenses are paid separately, as is monthly maintenance, which is optional.
+- [What is a CRM and when does your business need one?](https://casolutecdigital.com/en/guides/what-is-a-crm): A CRM (Customer Relationship Management) is a system that keeps all your customer and prospect information in one place: contact details, history, quotes and follow-ups. It makes sure no sales opportunity slips through and that your team knows what stage each customer is at. You need one when spreadsheets or chat apps stop being enough.
+- [What is AEO and how do you show up in ChatGPT, Gemini and Claude?](https://casolutecdigital.com/en/guides/what-is-aeo): AEO (Answer Engine Optimization) means preparing your site’s content so search engines and AI assistants such as ChatGPT, Gemini or Claude can find it, understand it and use it as a source. It does not replace SEO: it builds on it and focuses on clear answers, verifiable facts and crawler access.
+- [How do you automate WhatsApp for your business with a bot?](https://casolutecdigital.com/en/guides/whatsapp-bot-for-business): A WhatsApp bot answers your customers automatically: it shares information, captures details, books appointments and hands the conversation to a person when needed. To automate at scale you use Meta’s WhatsApp Business Platform, which since July 1, 2025 charges per template message; non-template messages within the customer service window are free.
 
 ## Official contact
 
